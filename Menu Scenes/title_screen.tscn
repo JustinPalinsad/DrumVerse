@@ -102,6 +102,7 @@ _data = {
 [node name="Title Screen" type="Control"]
 material = ExtResource("1_t8d06")
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -127,6 +128,7 @@ texture = ExtResource("3_bt1m7")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

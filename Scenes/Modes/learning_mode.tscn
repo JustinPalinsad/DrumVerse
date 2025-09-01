@@ -83,6 +83,7 @@ radius = 19.0
 
 [node name="LearningMode" type="Control"]
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -100,6 +101,7 @@ metadata/_edit_horizontal_guides_ = [328.0]
 [node name="Background" type="ColorRect" parent="."]
 visible = false
 z_index = -7
+layout_mode = 0
 offset_left = -104.0
 offset_top = -41.0
 offset_right = 2011.0
@@ -128,6 +130,7 @@ texture = ExtResource("5_vd5sb")
 
 [node name="ReplayButton" type="Button" parent="."]
 material = ExtResource("4_71jwu")
+layout_mode = 0
 offset_left = 925.0
 offset_top = 679.0
 offset_right = 1093.0
@@ -138,6 +141,7 @@ flat = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 171.0
 offset_top = -16.0
 offset_right = 1813.0
@@ -227,6 +231,7 @@ metadata/_edit_lock_ = true
 
 [node name="BPMLabel" type="Label" parent="."]
 material = ExtResource("4_71jwu")
+layout_mode = 0
 offset_left = 1658.0
 offset_top = 239.0
 offset_right = 1835.0
@@ -269,6 +274,7 @@ position = Vector2(699, 105)
 
 [node name="NotePatternLabel" type="Label" parent="."]
 modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+layout_mode = 0
 offset_left = 516.0
 offset_top = 587.0
 offset_right = 1613.0
