@@ -14,6 +14,7 @@ func _ready():
 	$VBoxContainer/GradeLabel.text = "Grade: %s" % grade
 
 	$VBoxContainer/HBoxContainer/MenuButton.pressed.connect(_on_menu_pressed)
+	GameState.save_grades()
 
 func _on_menu_pressed():
 	$ClickSoundPlayer.play()
