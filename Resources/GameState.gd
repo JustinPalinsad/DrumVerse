@@ -5,3 +5,5 @@ var selected_learning_module: Resource = null
 var mode: String = "practice"
 var lessons = 0 #lesson card
 var dark_mode_enabled: bool = true
+
+var module_grades = ["N", "N","N", "N","N", "N","N", "N","N", "N"]
