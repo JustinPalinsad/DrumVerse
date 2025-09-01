@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2dcmh8ethsok"]
+[gd_scene load_steps=15 format=3 uid="uid://b2auy1v2ih4mq"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_t8d06"]
 [ext_resource type="Texture2D" uid="uid://bw88j21ejf4db" path="res://Menu Assets/Title_Full.png" id="1_v5vr5"]
