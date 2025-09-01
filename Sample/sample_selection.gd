@@ -41,6 +41,7 @@ func _ready() -> void:
 	print("GameState is loaded: ", GameState)
 	
 	grade_display()
+	unlocked_lesson()
 
 func _on_module1_button_pressed() -> void:
 	GameState.lessons = 1
@@ -267,3 +268,11 @@ func grade_display():
 	$"CarouselContainer/Control/Lesson8/Grade Text".text = "Grade: " + GameState.module_grades[7]
 	$"CarouselContainer/Control/Lesson9/Grade Text".text = "Grade: " + GameState.module_grades[8]
 	$"CarouselContainer/Control/Lesson10/Grade Text".text = "Grade: " + GameState.module_grades[9]
+	
+func unlocked_lesson():
+	for i in range(10): # indices 0 to 9
+		var grade = GameState.module_grades[i]
+		if grade not in ["Fail", "N/A"]:
+			var lesson_path = "Lesson" + str(i + 2) # Lesson2..Lesson10
+			var lesson_node = $CarouselContainer/Control.get_node(lesson_path)
+			lesson_node.disabled = false
