@@ -136,6 +136,26 @@ func clear_notes():
 	for note in notes:
 		note.queue_free()
 	notes.clear()
+	
+func _process(delta: float) -> void:
+	if mode != "practice" and not challenge_mode_has_ended:
+		for note in notes:
+			var beams = note.get_node("BeamContainer").get_children()
+			for beam in beams:
+				if beam is Area2D and not beam.has_meta("hit") and not beam.has_meta("missed"):
+					var beam_x = beam.global_position.x
+					var circle_x = moving_circle.global_position.x
+					# Check if the moving circle has passed the hit area
+					if circle_x > beam_x + hit_radius:
+						beam.set_meta("missed", true)
+						on_miss()
+
+func on_miss():
+	total_misses += 1
+
+func on_manual_miss():
+	total_misses += 1
+	play_miss_effect()
 
 func _on_tick() -> void:
 	if challenge_mode_has_ended:
@@ -251,13 +271,14 @@ func animate_pad(pad: Node2D) -> void:
 	pad.scale = original_scale
 
 func check_hit(pad_side: String) -> void:
+	var hit_found = false
 	for note in notes:
 		var required_pad = note.get_meta("required_pad")
 		if required_pad != "both" and required_pad != pad_side:
 			continue
 		var beams = note.get_node("BeamContainer").get_children()
 		for beam in beams:
-			if beam is Area2D and not beam.has_meta("hit"):
+			if beam is Area2D and not beam.has_meta("hit") and not beam.has_meta("missed"):
 				var beam_x = beam.global_position.x
 				var circle_x = moving_circle.global_position.x
 				if abs(beam_x - circle_x) < hit_radius:
@@ -266,11 +287,15 @@ func check_hit(pad_side: String) -> void:
 						beam.register_hit()
 					play_hit_effect(beam.global_position)
 					total_hits += 1
-					return
-	play_miss_effect()
+					hit_found = true
+					break  # Break inner loop
+		if hit_found:
+			break # Break outer loop
+	
+	if not hit_found:
+		on_manual_miss()
 
 func play_miss_effect() -> void:
-	total_misses += 1
 	var miss = miss_effect_scene.instantiate()
 	effects_container.add_child(miss)
 	miss.position = effects_container.to_local(moving_circle.global_position)
@@ -313,7 +338,7 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 	results_scene.total_misses = total_misses
 	results_scene.hit_percentage = passed_hit_percentage
 	results_scene.grade = passed_grade
-	results_scene.mode = mode  # Pass the mode to the results scene
+	results_scene.mode = mode # Pass the mode to the results scene
 
 	get_tree().get_root().add_child(results_scene)
 	hide()
