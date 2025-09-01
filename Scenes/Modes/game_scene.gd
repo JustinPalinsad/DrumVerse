@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @export var hit_radius: float = 45.0
 @export var mode: String = "practice"

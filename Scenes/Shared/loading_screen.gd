@@ -1,5 +1,5 @@
 @tool
-extends Node2D
+extends Control
 
 @onready var loading_label: Label = $LoadingLabel
 @onready var timer: Timer = Timer.new()

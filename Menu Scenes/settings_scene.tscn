@@ -16,11 +16,14 @@
 
 [node name="Settings Scene" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -3.0
-offset_bottom = -3.0
+anchor_left = 0.5
+anchor_top = 0.497
+anchor_right = 0.5
+anchor_bottom = 0.497
+offset_left = -960.0
+offset_top = -539.76
+offset_right = 960.0
+offset_bottom = 540.24
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4s63o")
@@ -64,11 +67,16 @@ texture = ExtResource("2_d372u")
 
 [node name="DarkMode Button" type="TextureButton" parent="."]
 material = ExtResource("1_itmm8")
-layout_mode = 0
-offset_left = 1016.0
-offset_top = 385.0
-offset_right = 2092.0
-offset_bottom = 1029.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.547
+anchor_right = 0.5
+anchor_bottom = 0.547
+offset_left = 56.0
+offset_top = -205.76
+offset_right = 1132.0
+offset_bottom = 438.24
 scale = Vector2(0.639, 0.639)
 toggle_mode = true
 action_mode = 0
@@ -83,11 +91,16 @@ texture_normal = ExtResource("9_53ro8")
 
 [node name="SoundToggle" type="TextureButton" parent="."]
 material = ExtResource("1_itmm8")
-layout_mode = 0
-offset_left = 171.0
-offset_top = 385.0
-offset_right = 1247.0
-offset_bottom = 1029.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.547
+anchor_right = 0.5
+anchor_bottom = 0.547
+offset_left = -789.0
+offset_top = -205.76
+offset_right = 287.0
+offset_bottom = 438.24
 scale = Vector2(0.638759, 0.638759)
 toggle_mode = true
 texture_normal = ExtResource("8_07spo")
@@ -97,11 +110,16 @@ texture_pressed = ExtResource("11_53ro8")
 stream = ExtResource("11_a671u")
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 639.0
-offset_top = 832.0
-offset_right = 1256.0
-offset_bottom = 925.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.493
+anchor_top = 0.813
+anchor_right = 0.493
+anchor_bottom = 0.813
+offset_left = -307.56
+offset_top = -46.04
+offset_right = 309.44
+offset_bottom = 46.96
 theme_override_colors/font_color = Color(1, 0.00784314, 0.0784314, 1)
 theme_override_fonts/font = ExtResource("13_ycs1b")
 theme_override_font_sizes/font_size = 81
