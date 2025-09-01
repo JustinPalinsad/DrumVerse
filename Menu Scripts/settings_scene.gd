@@ -16,10 +16,12 @@ func _ready() -> void:
 			mat.set_shader_parameter("layer_color", COLOR_BROWN)
 			mat.set_shader_parameter("sub_color", COLOR_YELLOW)
 			button.texture_normal = LIGHT_TEXTURE  # Show light icon when in dark mode
+			RenderingServer.set_default_clear_color(COLOR_YELLOW)
 		else:
 			mat.set_shader_parameter("layer_color", COLOR_YELLOW)
 			mat.set_shader_parameter("sub_color", COLOR_BROWN)
 			button.texture_normal = DARK_TEXTURE  # Show dark icon when in light mode
+			RenderingServer.set_default_clear_color(COLOR_BROWN)
 
 	# Optional: disable texture_pressed to prevent flicker
 	button.texture_pressed = null
@@ -36,10 +38,12 @@ func _on_dark_mode_button_pressed() -> void:
 			mat.set_shader_parameter("layer_color", COLOR_BROWN)
 			mat.set_shader_parameter("sub_color", COLOR_YELLOW)
 			button.texture_normal = LIGHT_TEXTURE
+			RenderingServer.set_default_clear_color(COLOR_YELLOW)
 		else:
 			mat.set_shader_parameter("layer_color", COLOR_YELLOW)
 			mat.set_shader_parameter("sub_color", COLOR_BROWN)
 			button.texture_normal = DARK_TEXTURE
+			RenderingServer.set_default_clear_color(COLOR_BROWN)
 
 	# Optional: reset pressed texture to avoid it showing
 	button.texture_pressed = null

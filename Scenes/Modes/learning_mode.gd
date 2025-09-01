@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 # Removed export — we now use GameState.selected_module
 @export var learning_module: Resource = null

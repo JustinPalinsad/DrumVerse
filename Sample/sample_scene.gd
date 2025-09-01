@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var practice_button: TextureButton = $"Buttons Container/Practice"
 @onready var challenge_button: TextureButton = $"Buttons Container/Challenge"

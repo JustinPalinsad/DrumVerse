@@ -2,7 +2,7 @@ extends Control
 
 #variables ng animation player sa code
 @onready var text_animPlayer = $"Tap Anywhere/Text Animation" #for text
-@onready var drum_animPlayer = $"Drum/Drum Animation" #for drum
+@onready var drum_animPlayer = $"Control/Drum/Drum Animation" #for drum
 
 func _ready() -> void:
 	text_animPlayer.play("text_blink_animation")

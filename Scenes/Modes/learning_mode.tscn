@@ -81,7 +81,16 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud0be"]
 radius = 19.0
 
-[node name="LearningMode" type="Node2D"]
+[node name="LearningMode" type="Control"]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
 script = ExtResource("1_qncf5")
 hit_effect_scene = ExtResource("3_vifvf")
 miss_effect_scene = ExtResource("4_ud0be")
@@ -97,10 +106,10 @@ offset_right = 2011.0
 offset_bottom = 1183.0
 mouse_filter = 2
 color = Color(1, 0.752941, 0.145098, 1)
-metadata/_edit_lock_ = true
 
 [node name="bg" type="TextureRect" parent="."]
 material = ExtResource("4_71jwu")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -141,62 +150,68 @@ expand_mode = 1
 [node name="TitleLabel" type="Label" parent="SlideControl"]
 material = ExtResource("4_71jwu")
 anchors_preset = -1
-anchor_right = 0.0109375
-offset_left = 661.0
-offset_top = 16.0
-offset_right = 1271.0
-offset_bottom = 69.0
+anchor_left = 0.509
+anchor_top = 0.5
+anchor_right = 0.509
+anchor_bottom = 0.5
+offset_left = -316.28
+offset_top = -524.0
+offset_right = 314.72
+offset_bottom = -471.0
 theme_override_fonts/font = ExtResource("2_x1tyl")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="TopLabel" type="Label" parent="SlideControl"]
 material = ExtResource("4_71jwu")
 anchors_preset = -1
-anchor_left = 0.040625
-anchor_top = -0.0490741
-anchor_right = 0.390625
-anchor_bottom = 0.0259259
-offset_left = 255.0
-offset_top = 194.0
-offset_right = 865.0
-offset_bottom = 247.0
+anchor_left = 0.507
+anchor_top = 0.5
+anchor_right = 0.507
+anchor_bottom = 0.5
+offset_left = -640.44
+offset_top = -399.0
+offset_right = 641.56
+offset_bottom = -265.0
 theme_override_fonts/font = ExtResource("7_kgv2n")
 theme_override_font_sizes/font_size = 50
 vertical_alignment = 1
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="BottomLabel" type="Label" parent="SlideControl"]
 material = ExtResource("4_71jwu")
 anchors_preset = -1
-anchor_top = -0.0305556
-anchor_bottom = -0.0305556
-offset_left = 276.0
-offset_top = 634.0
-offset_right = 1685.0
-offset_bottom = 815.0
+anchor_left = 0.5
+anchor_top = 0.556
+anchor_right = 0.5
+anchor_bottom = 0.556
+offset_left = -684.0
+offset_top = 0.519897
+offset_right = 725.0
+offset_bottom = 181.52
 theme_override_fonts/font = ExtResource("7_kgv2n")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="Slide3Label" type="Label" parent="SlideControl"]
 material = ExtResource("4_71jwu")
-offset_left = 292.0
-offset_top = 338.0
-offset_right = 1709.0
-offset_bottom = 663.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.614
+anchor_right = 0.5
+anchor_bottom = 0.614
+offset_left = -668.0
+offset_top = -325.12
+offset_right = 749.0
+offset_bottom = -0.119995
 theme_override_fonts/font = ExtResource("2_x1tyl")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="Metronome" parent="." instance=ExtResource("3_60euo")]
 position = Vector2(1751, 143)
