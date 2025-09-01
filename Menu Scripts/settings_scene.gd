@@ -53,3 +53,7 @@ func _on_back_pressed() -> void:
 func _on_sound_toggle_pressed() -> void:
 	$Sound.play()
 	pass # Replace with function body.
+
+func _on_button_pressed() -> void:
+	GameState.reset_grades()
+	GameState.save_grades()
