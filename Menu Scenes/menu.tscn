@@ -30,17 +30,19 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 34.5002
+offset_top = 119.477
 offset_right = 40.0
-offset_bottom = 74.5
+offset_bottom = 159.477
 
 [node name="TextureButton2" type="TextureButton" parent="CarouselContainer/Control"]
+modulate = Color(1, 1, 1, 0.999974)
 z_index = 1
 material = ExtResource("3_op4s7")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
+scale = Vector2(0.999987, 0.999987)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("2_wguuc")
 
