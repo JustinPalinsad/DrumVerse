@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buf7x4yw7uj2f"]
+[gd_scene load_steps=14 format=3 uid="uid://buf7x4yw7uj2f"]
 
 [ext_resource type="Script" uid="uid://b7vfhouher3kw" path="res://Menu Scripts/settings_scene.gd" id="1_4s63o"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_itmm8"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="9_53ro8"]
 [ext_resource type="Texture2D" uid="uid://ckk2xnx0ahc05" path="res://Menu Assets/Sound_Mute.png" id="11_53ro8"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="11_a671u"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="13_ycs1b"]
 
 [node name="Settings Scene" type="Control"]
 layout_mode = 3
@@ -95,6 +96,18 @@ texture_pressed = ExtResource("11_53ro8")
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_a671u")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 832.0
+offset_right = 1256.0
+offset_bottom = 925.0
+theme_override_colors/font_color = Color(1, 0.00784314, 0.0784314, 1)
+theme_override_fonts/font = ExtResource("13_ycs1b")
+theme_override_font_sizes/font_size = 81
+text = "DELETE SAVE"
+
 [connection signal="pressed" from="DarkMode Button" to="." method="_on_dark_mode_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="SoundToggle" to="." method="_on_sound_toggle_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
