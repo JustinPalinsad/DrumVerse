@@ -13,6 +13,7 @@ extends Control
 @onready var module9_button: TextureButton = $CarouselContainer/Control/Lesson9#$SmoothScrollContainer/VBoxContainer/Lesson9
 @onready var module10_button: TextureButton = $CarouselContainer/Control/Lesson10#$SmoothScrollContainer/VBoxContainer/Lesson10
 
+
 var module_callbacks = {
 	1: _on_module1_button_pressed,
 	2: _on_module2_button_pressed,
@@ -41,6 +42,7 @@ func _ready() -> void:
 	print("GameState is loaded: ", GameState)
 	
 	grade_display()
+	change_card()
 	unlocked_lesson()
 
 func _on_module1_button_pressed() -> void:
@@ -276,3 +278,32 @@ func unlocked_lesson():
 			var lesson_path = "Lesson" + str(i + 2) # Lesson2..Lesson10
 			var lesson_node = $CarouselContainer/Control.get_node(lesson_path)
 			lesson_node.disabled = false
+			
+func change_card():
+	# An array of the new card textures for each lesson
+	var card_textures = [
+		null, # Lesson1 is the starting point, so it doesn't need a new texture
+		preload("res://Menu Assets/cards v2/Lesson_Cards_002.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_003.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_004.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_005.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_006.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_007.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_008.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_009.png"),
+		preload("res://Menu Assets/cards v2/Lesson_Cards_010.png")
+	]
+
+	# Loop through all 10 modules
+	for i in range(10):
+		# Check if the grade for the previous module is not "Fail" or "N/A"
+		# The condition is for module 'i+1', so we check the grade of module 'i'
+		if GameState.module_grades[i] != "Fail" and GameState.module_grades[i] != "N/A":
+			var lesson_num = i + 2 # The lesson number starts from 2
+			var lesson_path = "Lesson" + str(lesson_num)
+			var lesson_node = $CarouselContainer/Control.get_node(lesson_path)
+			
+			if lesson_node and i + 1 < card_textures.size():
+				# Change the texture of the current lesson button to the next card
+				lesson_node.texture_normal = card_textures[i + 1]
+	

@@ -321,5 +321,12 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 #this is for storing the grades of each level
 func module_score(final_grade_string: String):
 	var lessons_index = GameState.lessons - 1
+	var grade_ranking = {"S": 5, "A": 4, "B": 3, "C": 2, "Fail": 1, "N/A": 0}
+
 	if lessons_index >= 0 and lessons_index < GameState.module_grades.size():
-		GameState.module_grades[lessons_index] = final_grade_string
+		var existing_grade = GameState.module_grades[lessons_index]
+		var existing_rank = grade_ranking.get(existing_grade, 0)
+		var new_rank = grade_ranking.get(final_grade_string, 0)
+
+		if new_rank > existing_rank:
+			GameState.module_grades[lessons_index] = final_grade_string
