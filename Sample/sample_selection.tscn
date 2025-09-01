@@ -474,7 +474,6 @@ offset_right = 538.0
 offset_bottom = 644.0
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
-keep_pressed_outside = true
 texture_normal = ExtResource("7_28w0c")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson1"]
