@@ -34,9 +34,11 @@ var challenge_mode_has_ended := false
 var total_notes := 0
 var total_hits := 0
 var total_misses := 0
+var grade: String
 
 func _ready() -> void:
 	drum_module = GameState.selected_module
+	print(drum_module)
 	if not drum_module:
 		push_error("No module selected!")
 		return
@@ -59,6 +61,7 @@ func _ready() -> void:
 
 	left_pad.connect("input_event", Callable(self, "_on_left_pad_input"))
 	right_pad.connect("input_event", Callable(self, "_on_right_pad_input"))
+	
 
 func play_countdown() -> void:
 	countdown_label.visible = true
@@ -177,7 +180,6 @@ func end_challenge_mode():
 	if total_attempts > 0:
 		hit_percentage = float(total_hits) / float(total_attempts) * 100.0
 
-	var grade: String
 	if hit_percentage >= 95:
 		grade = "S"
 	elif hit_percentage >= 85:
@@ -196,6 +198,8 @@ func end_challenge_mode():
 	print("Misses: %d" % total_misses)
 	print("Hit %%: %.1f%%" % hit_percentage)
 	print("Grade: %s" % grade)
+	module_score(grade)
+	print("Module Grades :" , GameState.module_grades)
 
 	if has_node("PassSound") and has_node("FailSound"):
 		if player_passed:
@@ -313,3 +317,9 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 
 	get_tree().get_root().add_child(results_scene)
 	hide()
+
+#this is for storing the grades of each level
+func module_score(final_grade_string: String):
+	var lessons_index = GameState.lessons - 1
+	if lessons_index >= 0 and lessons_index < GameState.module_grades.size():
+		GameState.module_grades[lessons_index] = final_grade_string
