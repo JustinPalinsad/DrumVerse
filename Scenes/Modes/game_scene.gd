@@ -61,7 +61,7 @@ func _ready() -> void:
 
 	left_pad.connect("input_event", Callable(self, "_on_left_pad_input"))
 	right_pad.connect("input_event", Callable(self, "_on_right_pad_input"))
-	module_score()
+	
 
 func play_countdown() -> void:
 	countdown_label.visible = true
@@ -198,7 +198,8 @@ func end_challenge_mode():
 	print("Misses: %d" % total_misses)
 	print("Hit %%: %.1f%%" % hit_percentage)
 	print("Grade: %s" % grade)
-	print("Module Grades 1:" , GameState.module_grades[0])
+	module_score(grade)
+	print("Module Grades :" , GameState.module_grades)
 
 	if has_node("PassSound") and has_node("FailSound"):
 		if player_passed:
@@ -317,6 +318,8 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 	get_tree().get_root().add_child(results_scene)
 	hide()
 
-func module_score():
-	if GameState.lessons == 1:
-		GameState.module_grades[0] = grade
+
+func module_score(final_grade_string: String):
+	var lessons_index = GameState.lessons - 1
+	if lessons_index >= 0 and lessons_index < GameState.module_grades.size():
+		GameState.module_grades[lessons_index] = final_grade_string
