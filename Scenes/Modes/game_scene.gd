@@ -318,7 +318,7 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 	get_tree().get_root().add_child(results_scene)
 	hide()
 
-
+#this is for storing the grades of each level
 func module_score(final_grade_string: String):
 	var lessons_index = GameState.lessons - 1
 	if lessons_index >= 0 and lessons_index < GameState.module_grades.size():
