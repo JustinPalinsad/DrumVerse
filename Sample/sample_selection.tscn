@@ -514,6 +514,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("9_puqb1")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson2"]
@@ -553,6 +554,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("11_pm2xg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CarouselContainer/Control/Lesson3"]
@@ -592,6 +594,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("13_47u5r")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson4"]
@@ -631,6 +634,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("15_yfa7k")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson5"]
@@ -670,6 +674,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("17_vhmeq")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson6"]
@@ -709,6 +714,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("19_ntfsj")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson7"]
@@ -756,6 +762,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("20_e3w4p")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson8"]
@@ -804,6 +811,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("21_q7vma")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson9"]
@@ -849,6 +857,7 @@ scale = Vector2(0.735, 0.735)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
+disabled = true
 texture_normal = ExtResource("22_h82b0")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson10"]
