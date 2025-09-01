@@ -222,6 +222,7 @@ text = "BPM: 60"
 vertical_alignment = 1
 
 [node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
+material = ExtResource("4_71jwu")
 position = Vector2(541, 488)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]

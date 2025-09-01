@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=32 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
-[ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
 [ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_8ebx2"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="4_lneat"]
 [ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="7_28w0c"]
@@ -49,12 +48,13 @@ size = Vector2(54.5747, 45.9718)
 size = Vector2(13.9374, 130.355)
 
 [node name="sample_selection" type="Control"]
+material = ExtResource("4_lneat")
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_kdmyb")
 
 [node name="bg" type="TextureRect" parent="."]
-visible = false
+z_index = -999
 z_as_relative = false
 material = ExtResource("4_lneat")
 layout_mode = 1
@@ -74,7 +74,7 @@ texture = ExtResource("3_8ebx2")
 [node name="MenuBg" type="TextureRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.258824)
-material = ExtResource("2_bulmj")
+material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -56.0
 offset_top = -22.0
@@ -460,9 +460,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 119.487
+offset_top = 151.999
 offset_right = 40.0
-offset_bottom = 159.487
+offset_bottom = 191.999
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
@@ -472,7 +472,7 @@ layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999992, 0.999992)
+scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
 keep_pressed_outside = true
 texture_normal = ExtResource("7_28w0c")
@@ -882,6 +882,7 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="SelectionTitle" type="VBoxContainer" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
