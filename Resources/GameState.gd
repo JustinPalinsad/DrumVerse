@@ -6,4 +6,4 @@ var mode: String = "practice"
 var lessons = 0 #lesson card
 var dark_mode_enabled: bool = true
 
-var module_grades = ["N", "N","N", "N","N", "N","N", "N","N", "N"]
+var module_grades = ["N/A", "N/A","N/A", "N/A","N/A", "N/A","N/A", "N/A","N/A", "N/A"]

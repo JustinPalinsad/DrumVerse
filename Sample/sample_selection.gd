@@ -39,6 +39,8 @@ func _ready() -> void:
 	module10_button.pressed.connect(_on_module10_button_pressed)
 	
 	print("GameState is loaded: ", GameState)
+	
+	grade_display()
 
 func _on_module1_button_pressed() -> void:
 	GameState.lessons = 1
@@ -248,10 +250,11 @@ func _on_play_pressed() -> void:
 	else:
 		print("No centered module for lesson: ", GameState.lessons)
 
-
 func _on_up_pressed() -> void:
 	$CarouselContainer._up()
 
-
 func _on_down_pressed() -> void:
 	$CarouselContainer._down()
+	
+func grade_display():
+	$"CarouselContainer/Control/Lesson1/Grade Text".text = "Grade: " + GameState.module_grades[0]
