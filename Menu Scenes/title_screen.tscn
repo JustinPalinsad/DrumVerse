@@ -182,11 +182,4 @@ texture_normal = ExtResource("4_2teth")
 [node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_swmdy")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 251
-text = "ignore this text"
-
 [connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
