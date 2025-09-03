@@ -460,31 +460,33 @@ stream = ExtResource("17_5bfpi")
 
 [node name="CarouselContainer" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("26_qw04s")]
 z_index = -1
-position = Vector2(1217, 79)
-scale = Vector2(0.916, 0.916)
-spacing = -62.0
-opacity_strength = 0.0
-scale_strength = 0.265
-scale_min = 0.01
+position = Vector2(1232, 104)
+scale = Vector2(0.955, 0.955)
+spacing = -40.0
 position_offset_node = NodePath("Control")
+selected_index = 9
 
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 119.48
-offset_right = 40.0
-offset_bottom = 159.48
+offset_left = 16.7539
+offset_top = -6081.49
+offset_right = 56.7539
+offset_bottom = -6041.49
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = 1
+modulate = Color(1, 1, 1, 0.65)
+z_index = -9
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999987, 0.999987)
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
+focus_mode = 0
+mouse_filter = 2
 texture_normal = ExtResource("7_28w0c")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson1"]
@@ -505,7 +507,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson1Area" type="Area2D" parent="CarouselContainer/Control/Lesson1"]
-visible = false
+position = Vector2(-14.8797, 324.479)
+scale = Vector2(0.998585, 0.057261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson1/Lesson1Area"]
 position = Vector2(542.661, 309.182)
@@ -513,14 +516,15 @@ scale = Vector2(18.7622, 13.0209)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson2" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -1
+modulate = Color(1, 1, 1, 0.65)
+z_index = -8
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 582.0
+offset_top = 604.0
 offset_right = 551.0
-offset_bottom = 1316.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 1338.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -545,7 +549,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson2Area" type="Area2D" parent="CarouselContainer/Control/Lesson2"]
-visible = false
+position = Vector2(-1.90284, 386.16)
+scale = Vector2(1, 0.0464037)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson2/Lesson2Area"]
 position = Vector2(542.66, 309.028)
@@ -553,14 +558,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson3" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -2
+modulate = Color(1, 1, 1, 0.65)
+z_index = -7
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 1254.0
+offset_top = 1298.0
 offset_right = 551.0
-offset_bottom = 1988.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 2032.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -585,7 +591,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson3Area" type="Area2D" parent="CarouselContainer/Control/Lesson3"]
-visible = false
+position = Vector2(-27.0363, 386.155)
+scale = Vector2(1.02882, 0.0369943)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson3/Lesson3Area"]
 position = Vector2(542.66, 309.028)
@@ -593,14 +600,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson4" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -3
+modulate = Color(1, 1, 1, 0.65)
+z_index = -6
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 1926.0
+offset_top = 1992.0
 offset_right = 551.0
-offset_bottom = 2660.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 2726.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -625,7 +633,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson4Area" type="Area2D" parent="CarouselContainer/Control/Lesson4"]
-visible = false
+position = Vector2(6.47788, 377.793)
+scale = Vector2(1.00938, 0.06098)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson4/Lesson4Area"]
 position = Vector2(542.66, 309.028)
@@ -633,14 +642,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson5" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -4
+modulate = Color(1, 1, 1, 0.65)
+z_index = -5
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 2598.0
+offset_top = 2686.0
 offset_right = 551.0
-offset_bottom = 3332.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 3420.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -665,7 +675,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson5Area" type="Area2D" parent="CarouselContainer/Control/Lesson5"]
-visible = false
+position = Vector2(-1.99143, 377.501)
+scale = Vector2(1.02301, 0.0515309)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson5/Lesson5Area"]
 position = Vector2(542.66, 309.028)
@@ -673,14 +684,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson6" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -5
+modulate = Color(1, 1, 1, 0.65)
+z_index = -4
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 3270.0
+offset_top = 3380.0
 offset_right = 551.0
-offset_bottom = 4004.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 4114.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -705,7 +717,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson6Area" type="Area2D" parent="CarouselContainer/Control/Lesson6"]
-visible = false
+position = Vector2(-27.1244, 377.51)
+scale = Vector2(1.02923, 0.0428216)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson6/Lesson6Area"]
 position = Vector2(542.66, 309.028)
@@ -713,14 +726,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson7" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -6
+modulate = Color(1, 1, 1, 0.65)
+z_index = -3
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 3942.0
+offset_top = 4074.0
 offset_right = 551.0
-offset_bottom = 4676.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 4808.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -753,7 +767,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson7Area" type="Area2D" parent="CarouselContainer/Control/Lesson7"]
-visible = false
+position = Vector2(-18.7679, 377.442)
+scale = Vector2(1.01142, 0.0365478)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson7/Lesson7Area"]
 position = Vector2(542.66, 309.028)
@@ -761,14 +776,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson8" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -7
+modulate = Color(1, 1, 1, 0.65)
+z_index = -2
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 4614.0
+offset_top = 4768.0
 offset_right = 551.0
-offset_bottom = 5348.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 5502.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -802,7 +818,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson8Area" type="Area2D" parent="CarouselContainer/Control/Lesson8"]
-visible = false
+position = Vector2(14.7796, 385.924)
+scale = Vector2(1.00502, 0.0542575)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson8/Lesson8Area"]
 position = Vector2(542.66, 309.028)
@@ -810,14 +827,15 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson9" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -8
+modulate = Color(1, 1, 1, 0.65)
+z_index = -1
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 5286.0
+offset_top = 5462.0
 offset_right = 551.0
-offset_bottom = 6020.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 6196.0
+scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
@@ -848,7 +866,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson9Area" type="Area2D" parent="CarouselContainer/Control/Lesson9"]
-visible = false
+position = Vector2(14.7164, 385.719)
+scale = Vector2(1.00439, 0.0391757)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson9/Lesson9Area"]
 position = Vector2(542.66, 309.028)
@@ -856,17 +875,16 @@ scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson10" type="TextureButton" parent="CarouselContainer/Control"]
-z_index = -9
+modulate = Color(1, 1, 1, 0.999992)
+z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -551.0
-offset_top = 5958.0
+offset_top = 6156.0
 offset_right = 551.0
-offset_bottom = 6692.0
-scale = Vector2(0.735, 0.735)
+offset_bottom = 6890.0
+scale = Vector2(0.999994, 0.999994)
 pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
@@ -893,7 +911,8 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="Lesson10Area" type="Area2D" parent="CarouselContainer/Control/Lesson10"]
-visible = false
+position = Vector2(14.7065, 377.307)
+scale = Vector2(0.982462, 0.0423042)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson10/Lesson10Area"]
 position = Vector2(542.66, 309.028)
@@ -918,7 +937,7 @@ texture = ExtResource("23_28w0c")
 
 [node name="Play" type="TouchScreenButton" parent="."]
 material = ExtResource("4_lneat")
-position = Vector2(146, 318)
+position = Vector2(128, 328)
 scale = Vector2(0.916, 0.916)
 texture_normal = ExtResource("12_bulmj")
 
