@@ -471,9 +471,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 119.501
+offset_top = 119.48
 offset_right = 40.0
-offset_bottom = 159.501
+offset_bottom = 159.48
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
@@ -483,7 +483,7 @@ layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999987, 0.999987)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
 
@@ -508,8 +508,8 @@ text = "Grade:  S"
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer/Control/Lesson1/Lesson1Area"]
-position = Vector2(542.66, 309.028)
-scale = Vector2(18.7605, 13.0197)
+position = Vector2(542.661, 309.182)
+scale = Vector2(18.7622, 13.0209)
 shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson2" type="TextureButton" parent="CarouselContainer/Control"]
