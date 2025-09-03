@@ -239,6 +239,7 @@ func _on_play_area_area_entered(area: Area2D) -> void:
 		var lesson_str = area.name.substr(6) # Extract the part after "Lesson"
 		var lesson_num = int(lesson_str)
 		if lesson_num >= 1 and lesson_num <= 10:
+			$CardSwipeSFX.play()
 			GameState.lessons = lesson_num
 			print("Entered at " + str(GameState.lessons))
 
