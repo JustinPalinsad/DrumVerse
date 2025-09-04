@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://bnj4r1dds2m88"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7ykpt"]
 [ext_resource type="Script" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://3khwy05smj5f"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7ykpt"]
+[ext_resource type="Script" uid="uid://dc2xqa5qvq8p3" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
+>>>>>>> e5fd9f28d95b438d6b427c29449cfda338cf256a
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="2_xibpe"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="3_xibpe"]
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="4_yww8e"]
