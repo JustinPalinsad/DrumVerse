@@ -480,7 +480,7 @@ offset_bottom = 159.499
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 0.999999)
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
@@ -979,3 +979,4 @@ text = "ADVANCED"
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="area_entered" from="Play/PlayArea" to="." method="_on_play_area_area_entered"]
 [connection signal="area_exited" from="Play/PlayArea" to="." method="_on_play_area_area_exited"]
+[connection signal="pressed" from="Advanced" to="." method="_on_advanced_pressed"]
