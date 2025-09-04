@@ -308,3 +308,8 @@ func change_card():
 				# Change the texture of the current lesson button to the next card
 				lesson_node.texture_normal = card_textures[i + 1]
 	
+#go to advanced lesson
+func _on_advanced_pressed() -> void:
+	$ClickSoundPlayer.play()
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
