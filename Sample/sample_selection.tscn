@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=36 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://t8pixmwvdbbu" path="res://Audio/card swipe sfx bitcrushed.wav" id="25_47u5r"]
 [ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="26_pm2xg"]
 [ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="30_yfa7k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lneat"]
 
@@ -473,20 +474,20 @@ position_offset_node = NodePath("Control")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 16.7539
-offset_top = 119.498
+offset_top = 119.499
 offset_right = 56.7539
-offset_bottom = 159.498
+offset_bottom = 159.499
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 0.999998)
+modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(1, 1)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
 
@@ -951,6 +952,28 @@ texture_normal = ExtResource("12_bulmj")
 position = Vector2(1199.48, 295.852)
 scale = Vector2(85.8047, 0.904198)
 shape = SubResource("RectangleShape2D_bulmj")
+
+[node name="Free" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 872.0
+offset_right = 645.0
+offset_bottom = 1012.0
+scale = Vector2(0.609104, 0.609104)
+theme_override_fonts/font = ExtResource("30_yfa7k")
+theme_override_font_sizes/font_size = 126
+text = "FREE"
+
+[node name="Advanced" type="Button" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 960.0
+offset_right = 943.0
+offset_bottom = 1100.0
+scale = Vector2(0.609104, 0.609104)
+theme_override_fonts/font = ExtResource("30_yfa7k")
+theme_override_font_sizes/font_size = 126
+text = "ADVANCED"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
