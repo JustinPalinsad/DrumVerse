@@ -188,9 +188,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 165.999
+offset_left = 166.001
 offset_top = 119.499
-offset_right = 205.999
+offset_right = 206.001
 offset_bottom = 159.499
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer2/Control"]
@@ -302,10 +302,10 @@ material = ExtResource("1_td22n")
 layout_mode = 0
 offset_left = 7313.35
 offset_top = -367.0
-offset_right = 8415.37
+offset_right = 8415.38
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551.005, 367)
+pivot_offset = Vector2(551.01, 367)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("26_755ea")
@@ -315,9 +315,9 @@ modulate = Color(1, 1, 1, 0.65)
 z_index = -8
 material = ExtResource("1_td22n")
 layout_mode = 0
-offset_left = 8358.13
+offset_left = 8358.14
 offset_top = -367.0
-offset_right = 9460.13
+offset_right = 9460.14
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
@@ -330,12 +330,12 @@ modulate = Color(1, 1, 1, 0.65)
 z_index = -9
 material = ExtResource("1_td22n")
 layout_mode = 0
-offset_left = 9402.9
+offset_left = 9402.91
 offset_top = -367.0
 offset_right = 10504.9
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551.01, 367)
+pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("28_uxmhr")
@@ -355,3 +355,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson1" to="." method="_on_lesson_1_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Notes" load_steps=3 format=3 uid="uid://bggduuwy5ta2k"]
+
+[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="1_xav0x"]
+[ext_resource type="Script" uid="uid://cjsooafovahx" path="res://Resources/notes_resource.gd" id="1_ykj7u"]
+
+[resource]
+script = ExtResource("1_ykj7u")
+name = "Whole Note"
+description = " placeholder placeholder  placeholder placeholder  placeholder placeholder  placeholder placeholder  placeholder placeholder  placeholder placeholder  placeholder placeholder  placeholder placeholder  placeholder placeholder "
+icon = ExtResource("1_xav0x")
+metadata/_custom_type_script = "uid://cjsooafovahx"

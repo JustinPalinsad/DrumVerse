@@ -2,6 +2,9 @@ extends Node
 
 var selected_module: DrumModuleData = null
 var selected_learning_module: Resource = null
+
+var selected_notes_resource : Resource
+
 var mode: String = "practice"
 var lessons = 0
 var dark_mode_enabled: bool = true
