@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Notes" load_steps=2 format=3 uid="uid://q63awkbr7noj"]
+
+[ext_resource type="Script" uid="uid://cjsooafovahx" path="res://Resources/notes_resource.gd" id="1_385rd"]
+
+[resource]
+script = ExtResource("1_385rd")
+name = "Double Stroke"
+description = "This is the double stroke description"
+metadata/_custom_type_script = "uid://cjsooafovahx"

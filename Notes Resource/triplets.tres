@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Notes" load_steps=2 format=3 uid="uid://be17pvk7sekn8"]
+
+[ext_resource type="Script" uid="uid://cjsooafovahx" path="res://Resources/notes_resource.gd" id="1_245wa"]
+
+[resource]
+script = ExtResource("1_245wa")
+name = "Triplets"
+description = "This is the Triplets description"
+metadata/_custom_type_script = "uid://cjsooafovahx"

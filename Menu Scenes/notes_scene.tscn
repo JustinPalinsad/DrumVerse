@@ -188,9 +188,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 166.001
+offset_left = 62.4998
 offset_top = 119.499
-offset_right = 206.001
+offset_right = 102.5
 offset_bottom = 159.499
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer2/Control"]
@@ -356,3 +356,12 @@ grow_vertical = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Lesson1" to="." method="_on_lesson_1_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson2" to="." method="_on_lesson_2_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson3" to="." method="_on_lesson_3_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson4" to="." method="_on_lesson_4_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson5" to="." method="_on_lesson_5_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson6" to="." method="_on_lesson_6_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson7" to="." method="_on_lesson_7_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson8" to="." method="_on_lesson_8_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson9" to="." method="_on_lesson_9_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson10" to="." method="_on_lesson_10_pressed"]

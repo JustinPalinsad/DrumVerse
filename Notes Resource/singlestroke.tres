@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Notes" load_steps=2 format=3 uid="uid://bvby2e164qg2j"]
+
+[ext_resource type="Script" uid="uid://cjsooafovahx" path="res://Resources/notes_resource.gd" id="1_bigp5"]
+
+[resource]
+script = ExtResource("1_bigp5")
+name = "Single Stroke"
+description = "This is the Single Stroke description"
+metadata/_custom_type_script = "uid://cjsooafovahx"
