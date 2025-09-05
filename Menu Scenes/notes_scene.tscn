@@ -302,10 +302,17 @@ offset_left = 7313.35
 offset_top = -367.0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 offset_right = 8415.38
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551.015, 367)
+=======
+offset_right = 8415.36
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+>>>>>>> parent of 7d3d495 (S)
 =======
 offset_right = 8415.36
 offset_bottom = 367.0
@@ -329,9 +336,15 @@ material = ExtResource("1_td22n")
 layout_mode = 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 offset_left = 8358.15
 offset_top = -367.0
 offset_right = 9460.15
+=======
+offset_left = 8358.12
+offset_top = -367.0
+offset_right = 9460.12
+>>>>>>> parent of 7d3d495 (S)
 =======
 offset_left = 8358.12
 offset_top = -367.0
@@ -356,7 +369,11 @@ material = ExtResource("1_td22n")
 layout_mode = 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 offset_left = 9402.92
+=======
+offset_left = 9402.88
+>>>>>>> parent of 7d3d495 (S)
 =======
 offset_left = 9402.88
 >>>>>>> parent of 7d3d495 (S)
@@ -369,7 +386,11 @@ offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 pivot_offset = Vector2(550.99, 367)
+=======
+pivot_offset = Vector2(551, 367)
+>>>>>>> parent of 7d3d495 (S)
 =======
 pivot_offset = Vector2(551, 367)
 >>>>>>> parent of 7d3d495 (S)
@@ -392,11 +413,14 @@ offset_top = -689.0
 offset_right = -920.0
 offset_bottom = -500.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 [node name="delete this" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+=======
+>>>>>>> parent of 7d3d495 (S)
 =======
 >>>>>>> parent of 7d3d495 (S)
 
