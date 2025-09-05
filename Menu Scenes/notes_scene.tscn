@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dbatc56dh6bl3"]
+[gd_scene load_steps=31 format=3 uid="uid://dbatc56dh6bl3"]
 
 [ext_resource type="Script" uid="uid://b3fnb0pimuotg" path="res://Menu Scripts/notes_scene.gd" id="1_iuciy"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_td22n"]
@@ -18,7 +18,16 @@
 [ext_resource type="Texture2D" uid="uid://dl6regabkjdu5" path="res://Menu Assets/cards/Lesson_Cards_010.png" id="12_7buqk"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="17_pvqmc"]
 [ext_resource type="PackedScene" uid="uid://begqla4a53i8e" path="res://Menu Scenes/carousel_container_2.tscn" id="18_0kuvu"]
-[ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="19_3jnbf"]
+[ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="19_c0pgs"]
+[ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="20_5lvhr"]
+[ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="21_3pbgg"]
+[ext_resource type="Texture2D" uid="uid://rwgkhha6dj4u" path="res://Menu Assets/cards v2/Lesson_Cards_004.png" id="22_ive2b"]
+[ext_resource type="Texture2D" uid="uid://b6m05r7vtdh2j" path="res://Menu Assets/cards v2/Lesson_Cards_005.png" id="23_b72b1"]
+[ext_resource type="Texture2D" uid="uid://1wb7qyfvrcsw" path="res://Menu Assets/cards v2/Lesson_Cards_006.png" id="24_tf82c"]
+[ext_resource type="Texture2D" uid="uid://d1tpmykefv61n" path="res://Menu Assets/cards v2/Lesson_Cards_007.png" id="25_70r8x"]
+[ext_resource type="Texture2D" uid="uid://bew2bm8ubto0n" path="res://Menu Assets/cards v2/Lesson_Cards_008.png" id="26_755ea"]
+[ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="27_trhhx"]
+[ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="28_uxmhr"]
 
 [sub_resource type="Resource" id="Resource_0kuvu"]
 script = ExtResource("5_pvqmc")
@@ -185,14 +194,16 @@ offset_right = 205.999
 offset_bottom = 159.499
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("1_td22n")
 layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
+scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("19_c0pgs")
 
 [node name="Lesson2" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -207,7 +218,7 @@ scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("20_5lvhr")
 
 [node name="Lesson3" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -222,7 +233,7 @@ scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("21_3pbgg")
 
 [node name="Lesson4" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -237,7 +248,7 @@ scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("22_ive2b")
 
 [node name="Lesson5" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -252,7 +263,7 @@ scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("23_b72b1")
 
 [node name="Lesson6" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -267,7 +278,7 @@ scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("24_tf82c")
 
 [node name="Lesson7" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -282,7 +293,7 @@ scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("25_70r8x")
 
 [node name="Lesson8" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -291,43 +302,43 @@ material = ExtResource("1_td22n")
 layout_mode = 0
 offset_left = 7313.35
 offset_top = -367.0
-offset_right = 8415.36
+offset_right = 8415.37
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
+pivot_offset = Vector2(551.005, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("26_755ea")
 
 [node name="Lesson9" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -8
 material = ExtResource("1_td22n")
 layout_mode = 0
-offset_left = 8358.12
+offset_left = 8358.13
 offset_top = -367.0
-offset_right = 9460.12
+offset_right = 9460.13
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
 pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("27_trhhx")
 
 [node name="Lesson10" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -9
 material = ExtResource("1_td22n")
 layout_mode = 0
-offset_left = 9402.88
+offset_left = 9402.9
 offset_top = -367.0
 offset_right = 10504.9
 offset_bottom = 367.0
 scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
+pivot_offset = Vector2(551.01, 367)
 focus_mode = 0
 mouse_filter = 2
-texture_normal = ExtResource("19_3jnbf")
+texture_normal = ExtResource("28_uxmhr")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -340,5 +351,7 @@ offset_left = -960.0
 offset_top = -689.0
 offset_right = -920.0
 offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
