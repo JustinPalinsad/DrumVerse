@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmetg178twh7x"]
 
-[ext_resource type="Script" uid="uid://3rvxdakw64ww" path="res://Menu Scripts/notes_content.gd" id="1_1r65y"]
+[ext_resource type="Script" path="res://Menu Scripts/notes_content.gd" id="1_1r65y"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_nl48f"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_xk2gt"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="4_vqy6w"]
@@ -54,6 +54,7 @@ offset_bottom = 775.0
 texture = ExtResource("5_vqy6w")
 
 [node name="Description" type="Label" parent="."]
+material = ExtResource("1_nl48f")
 layout_mode = 0
 offset_left = 784.0
 offset_top = 320.0
