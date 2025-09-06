@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=43 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
@@ -29,8 +29,14 @@
 [ext_resource type="AudioStream" uid="uid://t8pixmwvdbbu" path="res://Audio/card swipe sfx bitcrushed.wav" id="25_47u5r"]
 [ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="26_pm2xg"]
 [ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
-[ext_resource type="Texture2D" uid="uid://dcqhwid37cwpk" path="res://Menu Assets/Lesson_Cards_001_hover_lighter.png" id="27_vhmeq"]
+[ext_resource type="Texture2D" uid="uid://bfywe0bedsaca" path="res://Menu Assets/Highlights/Lesson_Cards_001.png" id="27_vhmeq"]
+[ext_resource type="Texture2D" uid="uid://cpyi13m5jyb7j" path="res://Menu Assets/Highlights/Lesson_Cards_002.png" id="29_t3bws"]
+[ext_resource type="Texture2D" uid="uid://cjmvmnudtcc8g" path="res://Menu Assets/Highlights/Lesson_Cards_003.png" id="30_hpywi"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="30_yfa7k"]
+[ext_resource type="Texture2D" uid="uid://cxva7hmkehs2" path="res://Menu Assets/Highlights/Lesson_Cards_004.png" id="31_fm8kt"]
+[ext_resource type="Texture2D" uid="uid://lbf1le2a11hm" path="res://Menu Assets/Highlights/Lesson_Cards_005.png" id="32_u4s2c"]
+[ext_resource type="Texture2D" uid="uid://pbq40jptixrd" path="res://Menu Assets/Highlights/Lesson_Cards_006.png" id="33_gavew"]
+[ext_resource type="Texture2D" uid="uid://bwvpu615uub8i" path="res://Menu Assets/Highlights/Lesson_Cards_007.png" id="34_es5p8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lneat"]
 
@@ -475,13 +481,13 @@ position_offset_node = NodePath("Control")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 16.7539
-offset_top = 119.499
+offset_top = 119.5
 offset_right = 56.7539
-offset_bottom = 159.499
+offset_bottom = 159.5
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 0.999999)
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
@@ -534,6 +540,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("29_t3bws")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson2"]
 material = ExtResource("4_lneat")
@@ -576,6 +583,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("30_hpywi")
 
 [node name="Sprite2D" type="Sprite2D" parent="CarouselContainer/Control/Lesson3"]
 material = ExtResource("4_lneat")
@@ -618,6 +626,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("31_fm8kt")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson4"]
 material = ExtResource("4_lneat")
@@ -660,6 +669,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("32_u4s2c")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson5"]
 material = ExtResource("4_lneat")
@@ -702,6 +712,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("33_gavew")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson6"]
 material = ExtResource("4_lneat")
@@ -744,6 +755,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("34_es5p8")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson7"]
 material = ExtResource("4_lneat")
