@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://cjq2sjdxb672h"]
+
+[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="1_8fhj0"]
+[ext_resource type="Script" uid="uid://dh8qvcp2cw5ic" path="res://Resources/notesresource.gd" id="2_8aneh"]
+
+[resource]
+script = ExtResource("2_8aneh")
+Name = "Eight Notes"
+Description = ""
+Icon = ExtResource("1_8fhj0")
+metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"

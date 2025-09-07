@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://dv1avyxnt7o0t"]
+
+[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="1_hwmpn"]
+[ext_resource type="Script" uid="uid://dh8qvcp2cw5ic" path="res://Resources/notesresource.gd" id="2_dyrew"]
+
+[resource]
+script = ExtResource("2_dyrew")
+Name = "Single Stroke"
+Description = ""
+Icon = ExtResource("1_hwmpn")
+metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"
