@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://bbg8qgjmvxlt6"]
+
+[ext_resource type="Script" uid="uid://dh8qvcp2cw5ic" path="res://Resources/notesresource.gd" id="1_wy6bw"]
+
+[resource]
+script = ExtResource("1_wy6bw")
+Name = ""
+Description = ""
+metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"
