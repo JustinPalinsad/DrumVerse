@@ -26,7 +26,10 @@ var queued_print_index := -1
 
 @export var selected_index: int:
 	get: return _selected_index
-	set(value): set_selected_index(value)
+	set(value): 
+		set_selected_index(value)
+		# 💾 Save selected index to GameState singleton here.
+		GameState.notes_carousel_index = value
 
 func set_selected_index(value: int):
 	if position_offset_node:
@@ -35,6 +38,7 @@ func set_selected_index(value: int):
 		_selected_index = value
 
 func _ready():
+	#_selected_index = GameState.notes_carousel_index
 	if position_offset_node:
 		for child in position_offset_node.get_children():
 			if child.has_signal("pressed") and not child.is_connected("pressed", Callable(self, "_on_button_pressed")):
@@ -52,6 +56,8 @@ func _on_button_pressed(button: Control):
 		# 🔄 Update selection if the correct button is pressed
 		selected_index = button.get_index()
 		queued_print_index = button.get_index()
+		
+		# The `selected_index` setter will now handle saving to the singleton.
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -60,7 +66,6 @@ func _input(event):
 				dragging = true
 				released = false
 				last_mouse_pos = event.position
-				velocity = 0.0
 
 				if position_offset_node:
 					for child in position_offset_node.get_children():
@@ -144,7 +149,10 @@ func _up():
 	selected_index -= 1
 	if selected_index < 0:
 		selected_index += 1
+	# The `selected_index` setter will now handle saving to the singleton.
+	
 func _down():
 	selected_index += 1
 	if selected_index > position_offset_node.get_child_count()-1:
 		selected_index -= 1
+	# The `selected_index` setter will now handle saving to the singleton.
