@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_dyrew")
-Name = "Single Stroke"
+Name = "Double Stroke"
 Description = ""
 Icon = ExtResource("1_hwmpn")
 metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"

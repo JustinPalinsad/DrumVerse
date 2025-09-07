@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://mdsyhujf2cmt"]
+[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://mdsyhujf2cmt"]
 
+[ext_resource type="Texture2D" uid="uid://c5v3i83vwtkt7" path="res://Assets/HNote.png" id="1_upca7"]
 [ext_resource type="Script" uid="uid://dh8qvcp2cw5ic" path="res://Resources/notesresource.gd" id="1_v0d66"]
 
 [resource]
 script = ExtResource("1_v0d66")
-Name = ""
+Name = "Half Note"
 Description = ""
+Icon = ExtResource("1_upca7")
 metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"

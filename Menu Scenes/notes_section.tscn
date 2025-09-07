@@ -84,8 +84,8 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 327.997
-offset_right = 367.997
+offset_left = 123.502
+offset_right = 163.502
 offset_bottom = 40.0
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer2/Control"]

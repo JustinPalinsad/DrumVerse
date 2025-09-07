@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_21m0y")
-Name = "Whole Note"
+Name = "Flam"
 Description = ""
 Icon = ExtResource("1_5segi")
 metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"

@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_qgd38")
-Name = ""
+Name = "Quarter Note"
 Description = ""
 metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"
