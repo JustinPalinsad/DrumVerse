@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2cxgyn3f4xby"]
+[gd_scene load_steps=27 format=3 uid="uid://b2cxgyn3f4xby"]
 
 [ext_resource type="Script" uid="uid://d1sh6gpmclmne" path="res://Menu Scripts/notes_section.gd" id="1_gu1wp"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
@@ -7,15 +7,25 @@
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="4_tgrf2"]
 [ext_resource type="PackedScene" uid="uid://begqla4a53i8e" path="res://Menu Scenes/carousel_container_2.tscn" id="6_tap5y"]
 [ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="7_0d0so"]
+[ext_resource type="Texture2D" uid="uid://bf3jjdv46qrph" path="res://Menu Assets/Highlights v2/Lesson_Cards_001.png" id="8_6sqpu"]
 [ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="8_ls0eo"]
 [ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="9_tewhv"]
+[ext_resource type="Texture2D" uid="uid://cm5h0mborkein" path="res://Menu Assets/Highlights v2/Lesson_Cards_002.png" id="10_7trj5"]
 [ext_resource type="Texture2D" uid="uid://rwgkhha6dj4u" path="res://Menu Assets/cards v2/Lesson_Cards_004.png" id="10_un2gc"]
 [ext_resource type="Texture2D" uid="uid://b6m05r7vtdh2j" path="res://Menu Assets/cards v2/Lesson_Cards_005.png" id="11_37m5n"]
+[ext_resource type="Texture2D" uid="uid://ci02h6415twie" path="res://Menu Assets/Highlights v2/Lesson_Cards_003.png" id="12_sofsx"]
 [ext_resource type="Texture2D" uid="uid://1wb7qyfvrcsw" path="res://Menu Assets/cards v2/Lesson_Cards_006.png" id="12_tujtb"]
 [ext_resource type="Texture2D" uid="uid://d1tpmykefv61n" path="res://Menu Assets/cards v2/Lesson_Cards_007.png" id="13_8mnoc"]
+[ext_resource type="Texture2D" uid="uid://dicx1oq5bgui6" path="res://Menu Assets/Highlights v2/Lesson_Cards_004.png" id="14_4t3fb"]
 [ext_resource type="Texture2D" uid="uid://bew2bm8ubto0n" path="res://Menu Assets/cards v2/Lesson_Cards_008.png" id="14_gbwgf"]
 [ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="15_b7bqg"]
 [ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="16_6sqpu"]
+[ext_resource type="Texture2D" uid="uid://bb01hx52rcpvd" path="res://Menu Assets/Highlights v2/Lesson_Cards_005.png" id="16_oc1d3"]
+[ext_resource type="Texture2D" uid="uid://djs4ga5v7vrpt" path="res://Menu Assets/Highlights v2/Lesson_Cards_006.png" id="18_4pe3o"]
+[ext_resource type="Texture2D" uid="uid://c7gvy8nta5co0" path="res://Menu Assets/Highlights v2/Lesson_Cards_007.png" id="20_83p5i"]
+[ext_resource type="Texture2D" uid="uid://dqhbbiji1bgvv" path="res://Menu Assets/Highlights v2/Lesson_Cards_008.png" id="22_tsfeq"]
+[ext_resource type="Texture2D" uid="uid://w1y4qr0fb32h" path="res://Menu Assets/Highlights v2/Lesson_Cards_009.png" id="24_alfai"]
+[ext_resource type="Texture2D" uid="uid://bogyvh2xbknj8" path="res://Menu Assets/Highlights v2/Lesson_Cards_010.png" id="26_a5qsf"]
 
 [node name="notes_section" type="Control"]
 layout_mode = 3
@@ -89,6 +99,7 @@ offset_bottom = 367.0
 scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 texture_normal = ExtResource("7_0d0so")
+texture_pressed = ExtResource("8_6sqpu")
 
 [node name="Lesson2" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -104,6 +115,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("8_ls0eo")
+texture_pressed = ExtResource("10_7trj5")
 
 [node name="Lesson3" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -119,6 +131,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("9_tewhv")
+texture_pressed = ExtResource("12_sofsx")
 
 [node name="Lesson4" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -134,6 +147,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("10_un2gc")
+texture_pressed = ExtResource("14_4t3fb")
 
 [node name="Lesson5" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -149,6 +163,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("11_37m5n")
+texture_pressed = ExtResource("16_oc1d3")
 
 [node name="Lesson6" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -164,6 +179,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("12_tujtb")
+texture_pressed = ExtResource("18_4pe3o")
 
 [node name="Lesson7" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -179,6 +195,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("13_8mnoc")
+texture_pressed = ExtResource("20_83p5i")
 
 [node name="Lesson8" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -194,6 +211,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("14_gbwgf")
+texture_pressed = ExtResource("22_tsfeq")
 
 [node name="Lesson9" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -209,6 +227,7 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("15_b7bqg")
+texture_pressed = ExtResource("24_alfai")
 
 [node name="Lesson10" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -224,5 +243,16 @@ pivot_offset = Vector2(538, 322)
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("16_6sqpu")
+texture_pressed = ExtResource("26_a5qsf")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson1" to="." method="_on_lesson_1_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson2" to="." method="_on_lesson_2_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson3" to="." method="_on_lesson_3_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson4" to="." method="_on_lesson_4_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson5" to="." method="_on_lesson_5_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson6" to="." method="_on_lesson_6_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson7" to="." method="_on_lesson_7_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson8" to="." method="_on_lesson_8_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson9" to="." method="_on_lesson_9_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Lesson10" to="." method="_on_lesson_10_pressed"]
