@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2auy1v2ih4mq"]
+[gd_scene load_steps=15 format=3 uid="uid://b2auy1v2ih4mq"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_t8d06"]
 [ext_resource type="Texture2D" uid="uid://bw88j21ejf4db" path="res://Menu Assets/Title_Full.png" id="1_v5vr5"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_bt1m7"]
 [ext_resource type="Texture2D" uid="uid://brgnm7s6r367t" path="res://Menu Assets/Icon_Bg.png" id="4_2teth"]
 [ext_resource type="AudioStream" uid="uid://dvgqg4u0q0qwp" path="res://Audio/tr808-snare-drum-241403.mp3" id="6_swmdy"]
-[ext_resource type="Texture2D" uid="uid://pspv0wlgysn5" path="res://Assets/16Note.png" id="8_tfv06"]
 
 [sub_resource type="Animation" id="Animation_t8d06"]
 length = 0.001
@@ -231,9 +230,5 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(-5157, -2659)
 scale = Vector2(10.6961, 5.73471)
 texture_normal = ExtResource("4_2teth")
-
-[node name="16Note" type="Sprite2D" parent="."]
-position = Vector2(923, 257)
-texture = ExtResource("8_tfv06")
 
 [connection signal="pressed" from="Control2/Start Button" to="." method="_on_start_button_pressed"]
