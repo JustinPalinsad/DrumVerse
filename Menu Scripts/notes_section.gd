@@ -10,7 +10,7 @@ func _on_back_pressed() -> void:
 
 
 func _on_lesson_1_pressed() -> void:
-	var loaded_resource = load("res://Notes Section/wholenote.tres")
+	var loaded_resource = load("res://Resources/testing_lang.tres")
 	GameState.selected_notes_resource = loaded_resource
 	$BackSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout

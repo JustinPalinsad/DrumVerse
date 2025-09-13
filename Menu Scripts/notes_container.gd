@@ -4,7 +4,10 @@ extends Control
 func _ready() -> void:
 	if GameState.selected_notes_resource != null:
 		$NoteName.text = GameState.selected_notes_resource.Name
-		$NoteDescription.text = GameState.selected_notes_resource.Description
+		
+		# Join the array elements with two newline characters for a double line break.
+		$NoteDescription.text = "\n\n".join(GameState.selected_notes_resource.ArrayDesc)
+		
 		$Icon.texture = GameState.selected_notes_resource.Icon
 	else:
 		print("No Note name and description")

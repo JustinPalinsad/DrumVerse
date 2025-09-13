@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://wmiekc7pxeuf"]
+
+[ext_resource type="Script" uid="uid://dh8qvcp2cw5ic" path="res://Resources/notesresource.gd" id="1_f5fn7"]
+[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="1_ul3g1"]
+
+[resource]
+script = ExtResource("1_f5fn7")
+Name = "Whole Note"
+Description = ""
+Icon = ExtResource("1_ul3g1")
+ArrayDesc = [&"This is a whole note", &"A whole note is the longest note we\'ll learn. It lasts for 4 counts. That means you hit once... and wait. This is a whole note. It has no stem—just the round head.", &"This will always be tapped on the 1st beat of the 4/4 beat"]
+metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"
