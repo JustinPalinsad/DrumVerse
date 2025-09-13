@@ -1,12 +1,119 @@
-[gd_scene load_steps=4 format=3 uid="uid://drqp03sxxq87f"]
+[gd_scene load_steps=12 format=3 uid="uid://drqp03sxxq87f"]
 
 [ext_resource type="Texture2D" uid="uid://blthkb5bwvrjb" path="res://Assets/Continue.png" id="1_mlwp0"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_p4cin"]
 [ext_resource type="Texture2D" uid="uid://wljvuirpt75o" path="res://Assets/End.png" id="3_s7ys8"]
+[ext_resource type="Texture2D" uid="uid://do44m1e04vx5k" path="res://Assets/Time SIgnature Parts/Continue.png" id="4_0vc53"]
+[ext_resource type="Texture2D" uid="uid://d182fu3fw4tq8" path="res://Assets/Time SIgnature Parts/Line.png" id="5_u2oel"]
+[ext_resource type="Texture2D" uid="uid://c8eodby2f53qg" path="res://Assets/Time SIgnature Parts/TimeSigRef.png" id="6_omye3"]
+[ext_resource type="Texture2D" uid="uid://hqwn8e44qnpv" path="res://Assets/Time SIgnature Parts/End.png" id="7_hjh0g"]
+
+[sub_resource type="Animation" id="Animation_s7ys8"]
+resource_name = "Animation"
+
+[sub_resource type="Animation" id="Animation_l5up7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Continue:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_0vc53")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Line:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_u2oel")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/TimeSigRef:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_omye3")]
+}
+
+[sub_resource type="Animation" id="Animation_0vc53"]
+resource_name = "Play"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Continue:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_0vc53")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Line:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_u2oel")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/TimeSigRef:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_omye3")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/End:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i7n5g"]
+_data = {
+&"Animation": SubResource("Animation_s7ys8"),
+&"Play": SubResource("Animation_0vc53"),
+&"RESET": SubResource("Animation_l5up7")
+}
 
 [node name="HitLine" type="Node2D"]
+position = Vector2(7, 28)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Start" type="Sprite2D" parent="."]
+visible = false
 material = ExtResource("1_p4cin")
 texture = ExtResource("1_mlwp0")
 
@@ -15,3 +122,104 @@ visible = false
 material = ExtResource("1_p4cin")
 position = Vector2(49, -1)
 texture = ExtResource("3_s7ys8")
+
+[node name="Node2D" type="Node2D" parent="."]
+material = ExtResource("1_p4cin")
+
+[node name="Continue" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+material = ExtResource("1_p4cin")
+position = Vector2(64, 0)
+texture = ExtResource("4_0vc53")
+
+[node name="Line" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+material = ExtResource("1_p4cin")
+position = Vector2(27, 0)
+scale = Vector2(1.02628, 1)
+texture = ExtResource("5_u2oel")
+
+[node name="TimeSigRef" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+material = ExtResource("1_p4cin")
+texture = ExtResource("6_omye3")
+
+[node name="End" type="Sprite2D" parent="Node2D"]
+visible = false
+texture_filter = 1
+material = ExtResource("1_p4cin")
+position = Vector2(111, 0)
+texture = ExtResource("7_hjh0g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i7n5g")
+}
+autoplay = "RESET"
+
+[node name="Points" type="Node2D" parent="."]
+
+[node name="0_25" type="Node2D" parent="Points"]
+position = Vector2(-975.155, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="0_5" type="Node2D" parent="Points"]
+position = Vector2(-812.812, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="0_75" type="Node2D" parent="Points"]
+position = Vector2(-650.467, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1" type="Node2D" parent="Points"]
+position = Vector2(-488.125, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1_25" type="Node2D" parent="Points"]
+position = Vector2(-325.78, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1_50" type="Node2D" parent="Points"]
+position = Vector2(-163.438, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1_75" type="Node2D" parent="Points"]
+position = Vector2(-1.09253, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2" type="Node2D" parent="Points"]
+position = Vector2(161.25, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2_25" type="Node2D" parent="Points"]
+position = Vector2(323.595, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2_5" type="Node2D" parent="Points"]
+position = Vector2(485.938, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2_75" type="Node2D" parent="Points"]
+position = Vector2(648.282, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3" type="Node2D" parent="Points"]
+position = Vector2(810.625, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3_25" type="Node2D" parent="Points"]
+position = Vector2(972.97, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3_5" type="Node2D" parent="Points"]
+position = Vector2(1135.31, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3_75" type="Node2D" parent="Points"]
+visible = false
+position = Vector2(1297.66, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="4" type="Node2D" parent="Points"]
+position = Vector2(1460, 98)
+scale = Vector2(0.5, 0.5)

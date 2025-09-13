@@ -470,9 +470,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 251.498
+offset_top = 52.5049
 offset_right = 40.0
-offset_bottom = 291.498
+offset_bottom = 92.5049
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
@@ -482,7 +482,7 @@ layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999996, 0.999996)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
 

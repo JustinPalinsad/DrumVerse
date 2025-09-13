@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://8okljo6navqg"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_gepi4"]
+[ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/NoteParts/Stem.png" id="2_cetej"]
+[ext_resource type="Texture2D" uid="uid://dhtsi6hn3y3qm" path="res://Assets/NoteParts/Note.png" id="3_6gu4l"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="0_5" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Stem" type="Sprite2D" parent="0_5"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_gepi4")
+position = Vector2(0, -254)
+texture = ExtResource("2_cetej")
+
+[node name="Note" type="Sprite2D" parent="0_5"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_gepi4")
+texture = ExtResource("3_6gu4l")
+
+[node name="0_75" type="Node2D" parent="."]
+position = Vector2(162.345, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(324.687, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Stem" type="Sprite2D" parent="1"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_gepi4")
+position = Vector2(-139.874, -254)
+texture = ExtResource("2_cetej")
+
+[node name="Note" type="Sprite2D" parent="1"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_gepi4")
+position = Vector2(-139.874, 0)
+texture = ExtResource("3_6gu4l")
+
+[node name="1_25" type="Node2D" parent="."]
+position = Vector2(487.032, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Stem" type="Sprite2D" parent="1_25"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_gepi4")
+position = Vector2(0, -254)
+texture = ExtResource("2_cetej")
+
+[node name="Note" type="Sprite2D" parent="1_25"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_gepi4")
+texture = ExtResource("3_6gu4l")

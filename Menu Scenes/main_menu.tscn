@@ -327,9 +327,9 @@ anchor_left = 0.96
 anchor_top = 0.137
 anchor_right = 0.96
 anchor_bottom = 0.137
-offset_left = -60.2001
+offset_left = -118.2
 offset_top = -111.96
-offset_right = 60.7999
+offset_right = 2.80005
 offset_bottom = 111.04
 
 [node name="MetronomeV2" parent="Control" instance=ExtResource("16_rswhg")]

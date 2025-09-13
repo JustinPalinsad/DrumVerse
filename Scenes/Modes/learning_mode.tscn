@@ -48,10 +48,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1.25, 2.25, 3.25, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(517, 488), Vector2(581, 488), Vector2(835, 488), Vector2(1092, 488), Vector2(1349, 488), Vector2(1574, 488)]
+"values": [Vector2(517, 488), Vector2(1556, 488)]
 }
 
 [sub_resource type="Animation" id="Animation_vifvf"]
@@ -117,10 +117,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -107.0
-offset_top = -47.0
-offset_right = 118.0
-offset_bottom = 181.0
+offset_left = -138.0
+offset_top = -210.0
+offset_right = 87.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(9.64669, 5.47508)
@@ -210,9 +210,9 @@ anchor_top = 0.614
 anchor_right = 0.5
 anchor_bottom = 0.614
 offset_left = -668.0
-offset_top = -325.12
+offset_top = -357.12
 offset_right = 749.0
-offset_bottom = -0.119995
+offset_bottom = -32.12
 theme_override_fonts/font = ExtResource("2_x1tyl")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
@@ -243,22 +243,6 @@ theme_override_font_sizes/font_size = 40
 text = "BPM: 60"
 vertical_alignment = 1
 
-[node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
-position = Vector2(541, 488)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
-libraries = {
-&"": SubResource("AnimationLibrary_vifvf")
-}
-
-[node name="HitArea" type="Area2D" parent="MovingCircle"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
-shape = SubResource("CircleShape2D_ud0be")
-debug_color = Color(0, 0.6, 0.701961, 0)
-metadata/_edit_lock_ = true
-
 [node name="HitSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_q7mwf")
 
@@ -288,7 +272,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="QuarterNote" parent="." instance=ExtResource("15_q7mwf")]
-visible = false
 position = Vector2(1376, -46)
 
 [node name="QuarterNote4" parent="." instance=ExtResource("16_ufs4h")]
@@ -300,5 +283,23 @@ modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
 position = Vector2(92, 66)
 scale = Vector2(0.529703, 0.529703)
 texture_normal = ExtResource("18_kgv2n")
+
+[node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
+position = Vector2(541, 488)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
+libraries = {
+&"": SubResource("AnimationLibrary_vifvf")
+}
+
+[node name="HitArea" type="Area2D" parent="MovingCircle"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
+shape = SubResource("CircleShape2D_ud0be")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
