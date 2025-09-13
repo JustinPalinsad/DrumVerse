@@ -96,7 +96,6 @@ layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
-scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 texture_normal = ExtResource("7_0d0so")
 texture_pressed = ExtResource("8_6sqpu")

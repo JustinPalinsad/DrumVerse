@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://dahixxipvpxm7"]
+[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://dahixxipvpxm7"]
 
+[ext_resource type="Texture2D" uid="uid://bfe33it6jxmc1" path="res://Assets/4Note.png" id="1_fvctv"]
 [ext_resource type="Script" uid="uid://dh8qvcp2cw5ic" path="res://Resources/notesresource.gd" id="1_qgd38"]
 
 [resource]
 script = ExtResource("1_qgd38")
 Name = "Quarter Note"
 Description = ""
+Icon = ExtResource("1_fvctv")
 metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"
