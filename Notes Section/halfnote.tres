@@ -8,4 +8,5 @@ script = ExtResource("1_v0d66")
 Name = "Half Note"
 Description = ""
 Icon = ExtResource("1_upca7")
+ArrayDesc = []
 metadata/_custom_type_script = "uid://dh8qvcp2cw5ic"
