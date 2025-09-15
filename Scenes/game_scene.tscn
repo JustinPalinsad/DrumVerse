@@ -280,6 +280,8 @@ position = Vector2(133, 45)
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("14_ldntv")
 
+[node name="BPMAudio" type="AudioStreamPlayer" parent="."]
+
 [node name="BPMMenuButton" type="MenuButton" parent="."]
 material = ExtResource("11_4xiap")
 layout_mode = 0
