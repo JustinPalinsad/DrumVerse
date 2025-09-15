@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://12gneqnb4n55"]
+[gd_scene load_steps=26 format=3 uid="uid://12gneqnb4n55"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://ci3egfykqwf44" path="res://Audio/lose.wav" id="10_uscyt"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_4xiap"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
+[ext_resource type="Script" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -242,10 +243,10 @@ horizontal_alignment = 1
 [node name="BPMLabel" type="Label" parent="."]
 material = ExtResource("11_4xiap")
 layout_mode = 0
-offset_left = 1660.0
-offset_top = 241.0
-offset_right = 1868.0
-offset_bottom = 284.0
+offset_left = 1325.0
+offset_top = -154.0
+offset_right = 1533.0
+offset_bottom = -111.0
 theme_override_fonts/font = ExtResource("6_rgj8m")
 theme_override_font_sizes/font_size = 40
 text = "BPM:"
@@ -278,6 +279,28 @@ material = ExtResource("11_4xiap")
 position = Vector2(133, 45)
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("14_ldntv")
+
+[node name="BPMMenuButton" type="MenuButton" parent="."]
+material = ExtResource("11_4xiap")
+layout_mode = 0
+offset_left = 1666.0
+offset_top = 231.0
+offset_right = 1851.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 40
+text = "BPM: 60"
+item_count = 4
+popup/item_0/text = "60"
+popup/item_0/id = 0
+popup/item_1/text = "80"
+popup/item_1/id = 1
+popup/item_2/text = "100"
+popup/item_2/id = 2
+popup/item_3/text = "120"
+popup/item_3/id = 3
+script = ExtResource("18_gtbs0")
+popup_font_size = 35
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]

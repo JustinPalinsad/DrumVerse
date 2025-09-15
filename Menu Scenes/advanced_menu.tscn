@@ -39,6 +39,7 @@ layout_mode = 2
 texture = ExtResource("2_xibpe")
 
 [node name="Free" type="Button" parent="."]
+layout_mode = 0
 offset_left = 280.0
 offset_top = 872.0
 offset_right = 645.0
@@ -49,6 +50,7 @@ theme_override_font_sizes/font_size = 126
 text = "FREE"
 
 [node name="Advanced" type="Button" parent="."]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 960.0
 offset_right = 943.0
