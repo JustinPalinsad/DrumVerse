@@ -27,6 +27,12 @@ extends Control
 # 🔊 Use this AudioStreamPlayer node (child of GameScene) for your mp3 clicks
 @onready var bpm_audio: AudioStreamPlayer = $BPMAudio
 
+@onready var bar_offsets := {
+	"continue": Vector2(0, 0),   # perfectly aligned at origin
+	"end": Vector2(49, -1)       # the adjustment you tested
+}
+
+
 const BPM_AUDIO_PATHS := {
 	60: "res://Audio/metronomes 0.25 ver/60 BPM.mp3",
 	80: "res://Audio/metronomes 0.25 ver/80_BPM.mp3",
@@ -164,12 +170,14 @@ func spawn_current_bar():
 		# Continue bar
 		bar_data = drum_module.continue_bars[current_bar_index]
 		hitline_sprite.texture = con_texture
-		hitline_sprite.position.x = 0
+		hitline_sprite.position = bar_offsets["continue"]
+
 	elif current_bar_index == total_continue_bars:
-		# End bar — Practice Mode now shows it
+		# End bar
 		bar_data = drum_module.end_bar
 		hitline_sprite.texture = end_texture
-		hitline_sprite.position.x = 0
+		hitline_sprite.position = bar_offsets["end"]
+
 	else:
 		# Beyond end bar
 		if mode == "practice":
@@ -177,10 +185,9 @@ func spawn_current_bar():
 			current_bar_index = 0
 			bar_data = drum_module.continue_bars[current_bar_index]
 			hitline_sprite.texture = con_texture
-			hitline_sprite.position.x = 0
+			hitline_sprite.position = bar_offsets["continue"]
 		else:
 			# Challenge Mode → finished this BPM's bars, ask to switch
-			# (Don't spawn here; switching logic will handle countdown & next spawn)
 			switch_or_finish()
 			return
 
@@ -190,6 +197,7 @@ func spawn_current_bar():
 	# Apply MovingCircle animation for current BPM
 	var bpm_now: int = bpm_sequence[current_bpm_index]
 	apply_moving_circle_for_bpm(bpm_now)
+
 
 
 # -----------------------
@@ -276,6 +284,10 @@ func switch_or_finish():
 	else:
 		# finished last BPM completely
 		end_challenge_mode()
+# Reset hitline to continue-bar during countdown
+	hitline_sprite.texture = con_texture
+	hitline_sprite.position = bar_offsets["continue"]
+
 
 
 # -----------------------
@@ -640,7 +652,7 @@ func compute_total_notes_from_module() -> int:
 #this is for storing the grades of each level
 func module_score(final_grade_string: String):
 	var lessons_index = GameState.lessons - 1
-	var grade_ranking = {"S": 5, "A": 4, "B": 3, "C": 2, "Failed": 1, "N/A": 0}
+	var grade_ranking = {"S": 5, "A": 4, "B": 3, "C": 2, "Fail": 1, "N/A": 0}
 
 	if lessons_index >= 0 and lessons_index < GameState.module_grades.size():
 		var existing_grade = GameState.module_grades[lessons_index]
