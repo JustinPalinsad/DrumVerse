@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lrubqrvxkrb"]
+[gd_scene load_steps=31 format=3 uid="uid://dlw3tjpl4wn3u"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
