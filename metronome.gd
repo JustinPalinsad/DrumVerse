@@ -7,7 +7,6 @@ signal beat_tick
 
 var bpm: float = 60.0
 var timer: Timer
-var game_start_time_msec: int = 0
 var loop_counter: int = 0
 var max_loops: int = 4
 var mode: String = "practice"
@@ -21,45 +20,34 @@ func _ready() -> void:
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 
 func start(bpm_value, mode_value: String = "practice") -> void:
-	bpm = float(bpm_value) # accept 60 or "60"
+	bpm = float(bpm_value)
 	mode = mode_value
 	loop_counter = 0
 
+	# how long one bar is (your audio length for 4 ticks)
+	var bar_duration = 240.0 / bpm   # 240 / 60 = 4 sec, 240 / 120 = 2 sec, etc.
+
+	# adjust fps so 96 frames always fit in one bar
+	var fps = sprite.sprite_frames.get_frame_count("metronome") / bar_duration
+	sprite.sprite_frames.set_animation_speed("metronome", fps)
+
+	# play the animation and sound together
+	sprite.play("metronome")
+	tick_sound.play()
+
+	# start the timer for per-beat ticks
 	timer.wait_time = 60.0 / bpm
 	timer.start()
 
-	game_start_time_msec = Time.get_ticks_msec()
-
-	print("Metronome started with BPM:", bpm)
+	print("Metronome started with BPM:", bpm, " | FPS:", fps)
 
 func _on_timer_timeout() -> void:
-	play_tick()
+	emit_signal("beat_tick")
 	loop_counter += 1
 
-	if mode == "practice":
-		if loop_counter >= max_loops:
-			print("Restarting bar in Practice Mode")
-			loop_counter = 0
-
-func play_tick() -> void:
-	if tick_sound and tick_sound.stream:
-		tick_sound.play()
-	else:
-		print("No tick sound assigned!")
-
-	if sprite:
-		sprite.play("metronome")
-
-	emit_signal("beat_tick")
-
-	# Debug log
-	var current_time_msec = Time.get_ticks_msec()
-	var elapsed_seconds = (current_time_msec - game_start_time_msec) / 1000.0
-	var moving_circle = get_parent().get_node_or_null("MovingCircle")
-	if moving_circle:
-		print("Tick at", str(elapsed_seconds) + "s | MovingCircle X:", moving_circle.position.x)
-	else:
-		print("Tick at", str(elapsed_seconds) + "s | MovingCircle missing")
+	if mode == "practice" and loop_counter >= max_loops:
+		print("Restarting bar in Practice Mode")
+		loop_counter = 0
 
 func stop() -> void:
 	if timer:
