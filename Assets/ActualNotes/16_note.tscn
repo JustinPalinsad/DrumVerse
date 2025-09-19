@@ -37,12 +37,12 @@ position = Vector2(0, 0)
 
 [node name="Beam" type="Sprite2D" parent="."]
 material = ExtResource("1_cmxfp")
-position = Vector2(336.91, -126.75)
+position = Vector2(343.5, -126.75)
 scale = Vector2(2.06, 0.5)
 texture = ExtResource("4_hivwu")
 
 [node name="Beam2" type="Sprite2D" parent="."]
 material = ExtResource("1_cmxfp")
-position = Vector2(337.88, -64)
+position = Vector2(342.5, -64)
 scale = Vector2(2.02, 0.5)
 texture = ExtResource("4_hivwu")

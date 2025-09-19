@@ -19,18 +19,18 @@ script = ExtResource("1_m403o")
 texture_filter = 1
 texture_repeat = 1
 material = ExtResource("1_cj64u")
-position = Vector2(80.5, -254)
+position = Vector2(109.5, -254)
 texture = ExtResource("2_86awc")
 
 [node name="Note" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 material = ExtResource("1_cj64u")
-position = Vector2(80.5, 0)
+position = Vector2(109.5, 0)
 texture = ExtResource("3_fei70")
 
 [node name="BeamContainer" type="Node2D" parent="."]
-position = Vector2(66, 0)
+position = Vector2(95, 0)
 
 [node name="Beam1" type="Area2D" parent="BeamContainer"]
 position = Vector2(15, 8)

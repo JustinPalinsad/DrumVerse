@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
 [ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_8m72m"]
-[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="3_ikfsv"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="3_ldntv"]
 [ext_resource type="PackedScene" uid="uid://m3vdw1jlra6r" path="res://Scenes/Shared/drum_pad.tscn" id="4_5dgvu"]
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="4_w8jfd"]
@@ -21,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="13_mipjh"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
+[ext_resource type="PackedScene" uid="uid://bs0c0pd3dan5b" path="res://Scenes/Shared/hit_line_v2.tscn" id="20_he58o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -290,85 +290,6 @@ action = "right_pad"
 [node name="Snare" type="AudioStreamPlayer" parent="TouchPadContainer"]
 stream = ExtResource("7_a7fet")
 
-[node name="HitLine_Group" parent="." instance=ExtResource("3_ikfsv")]
-position = Vector2(978, 376)
-scale = Vector2(0.4, 0.4)
-
-[node name="Points3" type="Node2D" parent="HitLine_Group"]
-position = Vector2(0, 22.5)
-
-[node name="0_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-975.155, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/0_25" instance=ExtResource("10_aq00n")]
-
-[node name="0_5" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-812.812, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="0_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-650.467, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="1" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-488.125, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="1_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-325.78, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/1_25" instance=ExtResource("10_aq00n")]
-
-[node name="1_50" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-163.438, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="1_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-1.09253, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="2" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(161.25, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="2_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(323.595, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/2_25" instance=ExtResource("10_aq00n")]
-
-[node name="2_5" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(485.938, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="2_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(648.282, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="3" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(810.625, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="3_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(972.97, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/3_25" instance=ExtResource("10_aq00n")]
-
-[node name="3_5" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(1135.31, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="3_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(1297.66, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="4" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(1460, 98)
-scale = Vector2(0.5, 0.5)
-
 [node name="LeftPad" parent="." instance=ExtResource("4_5dgvu")]
 visible = false
 position = Vector2(-645, 1170)
@@ -472,6 +393,85 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("13_mipjh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="HitLinev2" parent="." instance=ExtResource("20_he58o")]
+position = Vector2(978, 376)
+
+[node name="Points3" type="Node2D" parent="HitLinev2"]
+position = Vector2(0, 22.4999)
+scale = Vector2(1, 1)
+
+[node name="0_25" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-975.155, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="Node2D" parent="HitLinev2/Points3/0_25" instance=ExtResource("10_aq00n")]
+
+[node name="0_5" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-812.812, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="0_75" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-650.467, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-488.125, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1_25" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-325.78, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="Node2D" parent="HitLinev2/Points3/1_25" instance=ExtResource("10_aq00n")]
+
+[node name="1_50" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-163.438, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="1_75" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(-1.09253, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(161.25, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2_25" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(323.595, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="Node2D" parent="HitLinev2/Points3/2_25" instance=ExtResource("10_aq00n")]
+
+[node name="2_5" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(485.938, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="2_75" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(648.282, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(810.625, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3_25" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(972.97, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="Node2D" parent="HitLinev2/Points3/3_25" instance=ExtResource("10_aq00n")]
+
+[node name="3_5" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(1135.31, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="3_75" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(1297.66, 98)
+scale = Vector2(0.5, 0.5)
+
+[node name="4" type="Node2D" parent="HitLinev2/Points3"]
+position = Vector2(1460, 98)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
