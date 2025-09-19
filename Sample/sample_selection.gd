@@ -1,17 +1,17 @@
-@tool	
+@tool
 extends Control
 
-#use the texture buttons Mark inside the vboxcontainer
-@onready var module1_button: TextureButton = $CarouselContainer/Control/Lesson1#$SmoothScrollContainer/VBoxContainer/Lesson1
-@onready var module2_button: TextureButton = $CarouselContainer/Control/Lesson2#$SmoothScrollContainer/VBoxContainer/Lesson2
-@onready var module3_button: TextureButton = $CarouselContainer/Control/Lesson3#$SmoothScrollContainer/VBoxContainer/Lesson3
-@onready var module4_button: TextureButton = $CarouselContainer/Control/Lesson4#$SmoothScrollContainer/VBoxContainer/Lesson4
-@onready var module5_button: TextureButton = $CarouselContainer/Control/Lesson5#$SmoothScrollContainer/VBoxContainer/Lesson5
-@onready var module6_button: TextureButton = $CarouselContainer/Control/Lesson6 #$SmoothScrollContainer/VBoxContainer/Lesson6
-@onready var module7_button: TextureButton = $CarouselContainer/Control/Lesson7#$SmoothScrollContainer/VBoxContainer/Lesson7
-@onready var module8_button: TextureButton = $CarouselContainer/Control/Lesson8#$SmoothScrollContainer/VBoxContainer/Lesson8
-@onready var module9_button: TextureButton = $CarouselContainer/Control/Lesson9#$SmoothScrollContainer/VBoxContainer/Lesson9
-@onready var module10_button: TextureButton = $CarouselContainer/Control/Lesson10#$SmoothScrollContainer/VBoxContainer/Lesson10
+# Use the texture buttons Mark inside the vboxcontainer
+@onready var module1_button: TextureButton = $CarouselContainer/Control/Lesson1
+@onready var module2_button: TextureButton = $CarouselContainer/Control/Lesson2
+@onready var module3_button: TextureButton = $CarouselContainer/Control/Lesson3
+@onready var module4_button: TextureButton = $CarouselContainer/Control/Lesson4
+@onready var module5_button: TextureButton = $CarouselContainer/Control/Lesson5
+@onready var module6_button: TextureButton = $CarouselContainer/Control/Lesson6
+@onready var module7_button: TextureButton = $CarouselContainer/Control/Lesson7
+@onready var module8_button: TextureButton = $CarouselContainer/Control/Lesson8
+@onready var module9_button: TextureButton = $CarouselContainer/Control/Lesson9
+@onready var module10_button: TextureButton = $CarouselContainer/Control/Lesson10
 
 
 var module_callbacks = {
@@ -29,8 +29,8 @@ var module_callbacks = {
 
 func _ready() -> void:
 	module1_button.pressed.connect(_on_module1_button_pressed)
-	module2_button.pressed.connect(_on_module2_button_pressed)   
-	module3_button.pressed.connect(_on_module3_button_pressed) 
+	module2_button.pressed.connect(_on_module2_button_pressed)
+	module3_button.pressed.connect(_on_module3_button_pressed)
 	module4_button.pressed.connect(_on_module4_button_pressed)
 	module5_button.pressed.connect(_on_module5_button_pressed)
 	module6_button.pressed.connect(_on_module6_button_pressed)
@@ -58,11 +58,10 @@ func _on_module1_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
-
 
 func _on_module2_button_pressed() -> void:
 	GameState.lessons = 2
@@ -77,7 +76,7 @@ func _on_module2_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -95,7 +94,7 @@ func _on_module3_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -113,7 +112,7 @@ func _on_module4_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -130,7 +129,7 @@ func _on_module5_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -147,7 +146,7 @@ func _on_module6_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -164,7 +163,7 @@ func _on_module7_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -181,7 +180,7 @@ func _on_module8_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  # store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -198,7 +197,7 @@ func _on_module9_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  #  store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -215,7 +214,7 @@ func _on_module10_button_pressed() -> void:
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
 		GameState.selected_module = module_resource
-		GameState.selected_learning_module = learning_resource  #  store learning version too
+		GameState.selected_learning_module = learning_resource
 		call_deferred("_goto_sample_scene")
 	else:
 		push_error("Failed to load module or learning module!")
@@ -232,18 +231,14 @@ func _on_back_pressed() -> void:
 	#go back to main menu
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
-
-
 func _on_play_area_area_entered(area: Area2D) -> void:
 	if area.name.begins_with("Lesson"):
-		var lesson_str = area.name.substr(6) # Extract the part after "Lesson"
+		var lesson_str = area.name.substr(6)
 		var lesson_num = int(lesson_str)
 		if lesson_num >= 1 and lesson_num <= 10:
 			$CardSwipeSFX.play()
 			GameState.lessons = lesson_num
 			print("Entered at " + str(GameState.lessons))
-
-
 
 func _on_play_area_area_exited(area: Area2D) -> void:
 	print("Exited")
@@ -273,17 +268,17 @@ func grade_display():
 	$"CarouselContainer/Control/Lesson10/Grade Text".text = "Grade: " + GameState.module_grades[9]
 	
 func unlocked_lesson():
-	for i in range(10): # indices 0 to 9
-		var grade = GameState.module_grades[i]
-		if grade not in ["Fail", "N/A"]:
-			var lesson_path = "Lesson" + str(i + 2) # Lesson2..Lesson10
-			var lesson_node = $CarouselContainer/Control.get_node(lesson_path)
-			lesson_node.disabled = false
+	# Loop from Lesson 2 to Lesson 10
+	for i in range(1, 10): 
+		# If the previous lesson (i-1) is not "Fail" or "N/A"
+		if GameState.module_grades[i-1] != "Fail" and GameState.module_grades[i-1] != "N/A":
+			var lesson_node = $CarouselContainer/Control.get_node("Lesson" + str(i + 1))
+			if lesson_node:
+				lesson_node.disabled = false
 			
 func change_card():
-	# An array of the new card textures for each lesson
 	var card_textures = [
-		null, # Lesson1 is the starting point, so it doesn't need a new texture
+		null, # Lesson1 doesn't need a new texture here
 		preload("res://Menu Assets/cards v2/Lesson_Cards_002.png"),
 		preload("res://Menu Assets/cards v2/Lesson_Cards_003.png"),
 		preload("res://Menu Assets/cards v2/Lesson_Cards_004.png"),
@@ -295,17 +290,15 @@ func change_card():
 		preload("res://Menu Assets/cards v2/Lesson_Cards_010.png")
 	]
 
-	# Loop through all 10 modules
-	for i in range(10):
-		# Check if the grade for the previous module is not "Fail" or "N/A"
-		# The condition is for module 'i+1', so we check the grade of module 'i'
+	# Loop through all 9 subsequent lessons (2 to 10)
+	for i in range(9):
+		# Check if the grade for the previous module (i.e., module i) is not "Fail" or "N/A"
 		if GameState.module_grades[i] != "Fail" and GameState.module_grades[i] != "N/A":
-			var lesson_num = i + 2 # The lesson number starts from 2
+			var lesson_num = i + 2 
 			var lesson_path = "Lesson" + str(lesson_num)
 			var lesson_node = $CarouselContainer/Control.get_node(lesson_path)
 			
 			if lesson_node and i + 1 < card_textures.size():
-				# Change the texture of the current lesson button to the next card
 				lesson_node.texture_normal = card_textures[i + 1]
 	
 #go to advanced lesson
@@ -313,3 +306,7 @@ func _on_advanced_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
+
+func _on_complete_grades_pressed() -> void:
+	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
+	print("New Module Grades: ", GameState.module_grades)
