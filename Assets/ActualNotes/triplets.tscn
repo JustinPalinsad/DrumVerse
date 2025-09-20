@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://8okljo6navqg"]
+
+[ext_resource type="PackedScene" uid="uid://3m2332pvcevj" path="res://Assets/ActualNotes/quarter_note.tscn" id="1_2114i"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_gepi4"]
+[ext_resource type="Texture2D" uid="uid://hd3v2ijvhr57" path="res://Assets/NoteParts/Beam.png" id="3_cetej"]
+[ext_resource type="Texture2D" uid="uid://bwfrvm8opmumk" path="res://Assets/NoteParts/Triple_Slide.png" id="4_6hb0f"]
+
+[node name="triplets" type="Node2D"]
+
+[node name="0_5" type="Node2D" parent="."]
+
+[node name="Quarter_Note" parent="0_5" instance=ExtResource("1_2114i")]
+
+[node name="0_75" type="Node2D" parent="."]
+position = Vector2(162.345, 0)
+
+[node name="Quarter_Note3" parent="0_75" instance=ExtResource("1_2114i")]
+position = Vector2(37.655, 0)
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(324.687, 0)
+
+[node name="Quarter_Note2" parent="1" instance=ExtResource("1_2114i")]
+position = Vector2(75.313, 0)
+
+[node name="1_25" type="Node2D" parent="."]
+position = Vector2(487.032, 0)
+
+[node name="Beam" type="Sprite2D" parent="."]
+texture_filter = 2
+material = ExtResource("2_gepi4")
+position = Vector2(305, -127)
+scale = Vector2(1.62643, 0.5)
+texture = ExtResource("3_cetej")
+
+[node name="TripleSlide" type="Sprite2D" parent="."]
+material = ExtResource("2_gepi4")
+position = Vector2(305, -395)
+scale = Vector2(1.29008, 1.29008)
+texture = ExtResource("4_6hb0f")

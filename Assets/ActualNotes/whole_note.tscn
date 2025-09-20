@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bidxab2pmkp1d"]
+[gd_scene load_steps=6 format=3 uid="uid://bidxab2pmkp1d"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_bgxsr"]
 [ext_resource type="Texture2D" uid="uid://16dx1uilmytw" path="res://Assets/NoteParts/Head1.png" id="2_t7v7p"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="3_fhdka"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_h7qn3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hp4kv"]
+radius = 21.9503
+height = 52.1405
 
 [node name="whole_note" type="Node2D"]
 
@@ -14,3 +20,26 @@ texture_repeat = 1
 material = ExtResource("1_bgxsr")
 position = Vector2(109.5, 0)
 texture = ExtResource("2_t7v7p")
+
+[node name="BeamContainer" type="Node2D" parent="."]
+position = Vector2(47.5, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Beam1" type="Area2D" parent="BeamContainer"]
+position = Vector2(15, 8)
+rotation = -0.186924
+scale = Vector2(5.03281, 4.28231)
+script = ExtResource("3_fhdka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
+position = Vector2(0, -2)
+rotation = 4.16805
+shape = SubResource("CapsuleShape2D_hp4kv")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_h7qn3")
+theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true
