@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2cxgyn3f4xby"]
+[gd_scene load_steps=3 format=3 uid="uid://sfwf3o4spc4e"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_otgxm"]
