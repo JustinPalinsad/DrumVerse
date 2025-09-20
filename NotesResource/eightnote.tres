@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://erlaj7ilya"]
+
+[ext_resource type="Texture2D" uid="uid://cf08glkitvy2t" path="res://Assets/8Note.png" id="1_jargk"]
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_qaq2t"]
+
+[resource]
+script = ExtResource("1_qaq2t")
+Name = "Eight Note"
+Description = ""
+Icon = ExtResource("1_jargk")
+ArrayDesc = ["This is an eighth note.", "An eighth note lasts for half a beat. You play two hits in one beat: “1 and, 2 and, 3 and, 4 and.”", "It looks like a quarter note but has a flag (or is joined by a beam when grouped)."]

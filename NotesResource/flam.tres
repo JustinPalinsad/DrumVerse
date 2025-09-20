@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://8t3ty8jyahbh"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_sjtfa"]
+
+[resource]
+script = ExtResource("1_sjtfa")
+Name = "Flam"
+Description = ""
+ArrayDesc = ["This is a flam.", "You play a small hit with one hand, followed right after by a strong hit with the other.", "It sounds like “ba-dum” as one thicker note."]

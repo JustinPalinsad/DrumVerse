@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://bllkrrpuj4nim"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_uuu43"]
+
+[resource]
+script = ExtResource("1_uuu43")
+Name = "Paradiddle"
+Description = ""
+ArrayDesc = ["This is a paradiddle.", "It’s a mix of singles and doubles: Right-Left-Right-Right, Left-Right-Left-Left.", "It helps with hand coordination."]

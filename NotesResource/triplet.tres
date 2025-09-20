@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://dny128w43ap0l"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_llkfp"]
+
+[resource]
+script = ExtResource("1_llkfp")
+Name = "Triplets"
+Description = ""
+ArrayDesc = ["These are triplets.", "Triplets split one beat into 3 equal hits. You count them like: “1-trip-let, 2-trip-let.”", "They are written with a little “3” above the group of notes."]

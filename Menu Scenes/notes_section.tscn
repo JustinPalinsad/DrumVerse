@@ -57,8 +57,8 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 187.001
-offset_right = 227.001
+offset_left = 186.999
+offset_right = 226.999
 offset_bottom = 40.0
 
 [node name="Notes1" type="TextureButton" parent="CarouselContainer2/Control"]
@@ -211,3 +211,10 @@ texture_normal = ExtResource("13_tujtb")
 [connection signal="pressed" from="CarouselContainer2/Control/Notes1" to="." method="_on_notes_1_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes2" to="." method="_on_notes_2_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes3" to="." method="_on_notes_3_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes4" to="." method="_on_notes_4_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes5" to="." method="_on_notes_5_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes6" to="." method="_on_notes_6_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes7" to="." method="_on_notes_7_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes8" to="." method="_on_notes_8_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes9" to="." method="_on_notes_9_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes10" to="." method="_on_notes_10_pressed"]

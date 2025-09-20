@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://bp1fubse0cihd"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_jv1cj"]
+
+[resource]
+script = ExtResource("1_jv1cj")
+Name = "Sixteenth Note"
+Description = ""
+ArrayDesc = ["This is a sixteenth note.", "A sixteenth note lasts for one-fourth of a beat. You play four hits in one beat: “1 e & a.”", "It looks like an eighth note but with two flags (or two beams when grouped)."]
