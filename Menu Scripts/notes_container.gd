@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	chosen_note()
 	if GameState.selected_notes_resource != null:
 		$Name.text = GameState.selected_notes_resource.Name
 		
@@ -19,3 +20,17 @@ func _ready() -> void:
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
+
+func chosen_note():
+	var selected_note = GameState.notes
+	
+	var notes_container = $NotesIconContainer
+	
+	for child in notes_container.get_children():
+		# Construct the expected name, e.g., "Notes1", "Notes2"
+		var expected_name = "Notes" + str(selected_note)
+		
+		if child.name == expected_name:
+			child.visible = true
+		else:
+			child.visible = false

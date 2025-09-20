@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://dgv3p0iaatbi1"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_xrv8r"]
+
+[resource]
+script = ExtResource("1_xrv8r")
+Name = "Double Stroke"
+Description = ""
+ArrayDesc = ["This is a double stroke.", "You play two hits with each hand—Right-Right, Left-Left, and repeat."]

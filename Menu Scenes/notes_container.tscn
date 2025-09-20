@@ -1,12 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn6uh5pxuw3fb"]
+[gd_scene load_steps=14 format=3 uid="uid://cauh5jax5yya2"]
 
 [ext_resource type="Script" uid="uid://g6f8fn5eo7f3" path="res://Menu Scripts/notes_container.gd" id="1_ajmvm"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_gn6xg"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_ddj8f"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="3_ddj8f"]
-[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="4_to5b8"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="6_tyaro"]
+[ext_resource type="Texture2D" uid="uid://cje4cf6ype4cb" path="res://Menu Assets/NotePreview/1_Note.png" id="7_2vdk4"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="7_hpg51"]
+[ext_resource type="Texture2D" uid="uid://dben4ditlq4w6" path="res://Menu Assets/NotePreview/2_Note.png" id="8_wdoh0"]
+[ext_resource type="Texture2D" uid="uid://dm73qffeayb7d" path="res://Menu Assets/NotePreview/4_Note.png" id="9_wdoh0"]
+[ext_resource type="Texture2D" uid="uid://dku0d84ek8bmo" path="res://Menu Assets/NotePreview/8_Note.png" id="10_br166"]
+[ext_resource type="Texture2D" uid="uid://diiqb0dnhtm15" path="res://Menu Assets/NotePreview/16_Note.png" id="11_brb48"]
+[ext_resource type="Texture2D" uid="uid://blkqcxqkiindh" path="res://Menu Assets/NotePreview/Triplet.png" id="12_ec4fg"]
+[ext_resource type="Texture2D" uid="uid://cqlpbd3f0twx6" path="res://Menu Assets/NotePreview/Flam.png" id="13_m60bu"]
 
 [node name="Notes Container" type="Control"]
 layout_mode = 3
@@ -56,22 +62,13 @@ theme_override_fonts/font = ExtResource("3_ddj8f")
 theme_override_font_sizes/font_size = 106
 text = "Placeholder"
 
-[node name="Icon" type="TextureRect" parent="."]
-material = ExtResource("1_gn6xg")
-layout_mode = 0
-offset_left = 528.0
-offset_top = 344.0
-offset_right = 672.0
-offset_bottom = 711.0
-texture = ExtResource("4_to5b8")
-
 [node name="Description" type="Label" parent="."]
 material = ExtResource("1_gn6xg")
 layout_mode = 0
 offset_left = 800.0
-offset_top = 272.0
+offset_top = 360.0
 offset_right = 1840.0
-offset_bottom = 896.0
+offset_bottom = 712.0
 theme_override_fonts/font = ExtResource("6_tyaro")
 theme_override_font_sizes/font_size = 35
 text = "PLACEHOLDER"
@@ -91,5 +88,85 @@ offset_right = 110.36
 offset_bottom = 115.36
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("7_hpg51")
+
+[node name="Icon" type="TextureRect" parent="."]
+material = ExtResource("1_gn6xg")
+layout_mode = 0
+offset_left = 304.0
+offset_top = 352.0
+offset_right = 344.0
+offset_bottom = 392.0
+
+[node name="NotesIconContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Notes1" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(640, 568)
+scale = Vector2(0.70227, 0.70227)
+texture = ExtResource("7_2vdk4")
+
+[node name="Notes2" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(640, 552)
+scale = Vector2(0.757834, 0.757834)
+texture = ExtResource("8_wdoh0")
+
+[node name="Notes3" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(640, 552)
+scale = Vector2(0.764913, 0.764913)
+texture = ExtResource("9_wdoh0")
+
+[node name="Notes4" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(624, 552)
+scale = Vector2(0.747371, 0.747371)
+texture = ExtResource("10_br166")
+
+[node name="Notes5" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(600, 552)
+scale = Vector2(0.746237, 0.746237)
+texture = ExtResource("11_brb48")
+
+[node name="Notes6" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(504, 552)
+scale = Vector2(0.446933, 0.446933)
+texture = ExtResource("12_ec4fg")
+
+[node name="Notes7" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(504, 552)
+scale = Vector2(0.446933, 0.446933)
+
+[node name="Notes8" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(504, 552)
+scale = Vector2(0.446933, 0.446933)
+
+[node name="Notes9" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(504, 552)
+scale = Vector2(0.446933, 0.446933)
+
+[node name="Notes10" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(600, 552)
+scale = Vector2(0.73792, 0.73792)
+texture = ExtResource("13_m60bu")
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
