@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c3y8lswnxm60c"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_jq8md"]
-[ext_resource type="Script" path="res://Scenes/metronomev_2.gd" id="1_q0drd"]
+[ext_resource type="Script" uid="uid://cwo7lkpphws3f" path="res://Scenes/metronomev_2.gd" id="1_q0drd"]
 [ext_resource type="Texture2D" uid="uid://bgmo2xtponl6y" path="res://Assets/Metronome_V2/Metronome_Body.png" id="2_jvalm"]
 [ext_resource type="Texture2D" uid="uid://yaqma4l7boro" path="res://Assets/Metronome_V2/Metronome_Pendulum.png" id="3_q0drd"]
 [ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="4_jvalm"]
