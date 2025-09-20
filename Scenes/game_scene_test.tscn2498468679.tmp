@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dlw3tjpl4wn3u"]
+[gd_scene load_steps=31 format=3 uid="uid://dlw3tjpl4wn3u"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="12_gtbs0"]
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="13_mipjh"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
-[ext_resource type="Script" uid="uid://yyaxt0up5y4y" path="res://Scenes/animation_player_2.gd" id="18_m0nlo"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
 [ext_resource type="PackedScene" uid="uid://bs0c0pd3dan5b" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
 
@@ -302,10 +301,12 @@ action = "right_pad"
 stream = ExtResource("7_a7fet")
 
 [node name="LeftPad" parent="." instance=ExtResource("4_5dgvu")]
+visible = false
 position = Vector2(-645, 1170)
 scale = Vector2(0.5, 0.5)
 
 [node name="RightPad" parent="." instance=ExtResource("4_5dgvu")]
+visible = false
 position = Vector2(2513, 1115)
 scale = Vector2(0.5, 0.5)
 
@@ -387,8 +388,6 @@ metadata/_edit_lock_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_lsk3b")
 }
-autoplay = "animation w sound_2"
-script = ExtResource("18_m0nlo")
 
 [node name="TickSound" type="AudioStreamPlayer2D" parent="MovingCircle"]
 position = Vector2(-7, 486)

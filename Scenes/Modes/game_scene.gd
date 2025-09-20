@@ -37,6 +37,10 @@ var total_misses := 0
 var grade: String
 
 func _ready() -> void:
+	
+	$MovingCircle/AnimationPlayer2
+	
+	
 	drum_module = GameState.selected_module
 	print(drum_module)
 	if not drum_module:

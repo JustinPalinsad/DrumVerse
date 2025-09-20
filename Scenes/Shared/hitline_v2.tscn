@@ -124,7 +124,6 @@ _data = {
 }
 
 [node name="HitLinev2" type="Node2D"]
-position = Vector2(7, 28)
 scale = Vector2(0.4, 0.4)
 
 [node name="Start" type="Sprite2D" parent="."]
@@ -181,9 +180,9 @@ position = Vector2(-1137.5, 135)
 scale = Vector2(0.5, 0.5)
 
 [node name="16Note" parent="Points/0" instance=ExtResource("8_j55vy")]
-visible = false
 
 [node name="Br16_1" parent="Points/0" instance=ExtResource("9_8voxq")]
+visible = false
 
 [node name="0_25" type="Node2D" parent="Points"]
 position = Vector2(-975.155, 135)
