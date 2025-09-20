@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dweovflxaqyur"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_2sx3m"]
+[ext_resource type="PackedScene" path="res://Assets/ActualNotes/quarter_note.tscn" id="1_dtrov"]
+[ext_resource type="Texture2D" path="res://Assets/NoteParts/Beam.png" id="4_3aam4"]
+
+[node name="8 Note" type="Node2D"]
+
+[node name="0_5" type="Node2D" parent="."]
+
+[node name="Quarter_Note" parent="0_5" instance=ExtResource("1_dtrov")]
+
+[node name="0_75" type="Node2D" parent="."]
+position = Vector2(162.345, 0)
+
+[node name="1" type="Node2D" parent="."]
+position = Vector2(324.687, 0)
+
+[node name="Quarter_Note" parent="1" instance=ExtResource("1_dtrov")]
+
+[node name="1_25" type="Node2D" parent="."]
+position = Vector2(487.032, 0)
+
+[node name="Beam" type="Sprite2D" parent="."]
+texture_filter = 2
+material = ExtResource("1_2sx3m")
+position = Vector2(263, -127)
+scale = Vector2(1.42643, 0.5)
+texture = ExtResource("4_3aam4")
