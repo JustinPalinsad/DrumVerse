@@ -34,10 +34,14 @@ shape = SubResource("CapsuleShape2D_l0sik")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Label" type="Label" parent="BeamContainer/Beam1"]
-offset_right = 40.0
-offset_bottom = 23.0
+material = ExtResource("2_if7xb")
+offset_left = -23.8361
+offset_top = 39.0529
+offset_right = 16.1639
+offset_bottom = 72.0529
 theme_override_fonts/font = ExtResource("4_vahsl")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
 
 [node name="Beam2" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(0, 2)
@@ -51,10 +55,14 @@ shape = SubResource("CapsuleShape2D_l0sik")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Label" type="Label" parent="BeamContainer/Beam2"]
-offset_right = 40.0
-offset_bottom = 23.0
+material = ExtResource("2_if7xb")
+offset_left = -23.8361
+offset_top = 39.0529
+offset_right = 16.1639
+offset_bottom = 72.0529
 theme_override_fonts/font = ExtResource("4_vahsl")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
 
 [node name="Beam3" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(71, 2)
@@ -68,7 +76,11 @@ shape = SubResource("CapsuleShape2D_l0sik")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Label" type="Label" parent="BeamContainer/Beam3"]
-offset_right = 40.0
-offset_bottom = 23.0
+material = ExtResource("2_if7xb")
+offset_left = -23.8361
+offset_top = 39.0529
+offset_right = 16.1639
+offset_bottom = 72.0529
 theme_override_fonts/font = ExtResource("4_vahsl")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
