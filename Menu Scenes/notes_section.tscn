@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dign4hotw0f7s"]
 
-[ext_resource type="Script" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
+[ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_otgxm"]
 [ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]

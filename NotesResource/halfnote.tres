@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://yl4wrrl2nycu"]
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://yl4wrrl2nycu"]
 
-[ext_resource type="Texture2D" uid="uid://c5v3i83vwtkt7" path="res://Assets/HNote.png" id="1_2ebck"]
 [ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_v8q0k"]
 
 [resource]
 script = ExtResource("1_v8q0k")
 Name = "Half Note"
 Description = ""
-Icon = ExtResource("1_2ebck")
 ArrayDesc = ["This is a half note.", "A half note lasts for 2 counts. That means you hit once, then wait for two beats before hitting again.", "It looks like a round circle with a stem."]

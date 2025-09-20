@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://bgalsv7sy8cq4"]
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://bgalsv7sy8cq4"]
 
 [ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_lm1bv"]
-[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="1_q3nck"]
 
 [resource]
 script = ExtResource("1_lm1bv")
 Name = "Whole Note"
 Description = ""
-Icon = ExtResource("1_q3nck")
 ArrayDesc = ["This is a whole note.", "A whole note is the longest note we’ll learn. It lasts for 4 counts. That means you hit once… and wait.", "It looks like a round circle with no stem."]

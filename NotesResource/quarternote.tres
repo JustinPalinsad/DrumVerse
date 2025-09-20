@@ -1,11 +1,9 @@
-[gd_resource type="Resource" script_class="NotesRes" load_steps=3 format=3 uid="uid://dpxtp3dfioe76"]
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://dpxtp3dfioe76"]
 
 [ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_423o7"]
-[ext_resource type="Texture2D" uid="uid://gwd1ka5agd8q" path="res://Assets/Z/Note4.png" id="1_f2sif"]
 
 [resource]
 script = ExtResource("1_423o7")
 Name = "Quarter Note"
 Description = ""
-Icon = ExtResource("1_f2sif")
 ArrayDesc = ["This is a quarter note.", "A quarter note lasts for 1 count. You hit on every beat—like a steady heartbeat: boom, boom, boom, boom.", "It looks like a filled-in circle with a stem."]
