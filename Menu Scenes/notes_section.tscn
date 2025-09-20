@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dign4hotw0f7s"]
+[gd_scene load_steps=16 format=3 uid="uid://dign4hotw0f7s"]
 
 [ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bew2bm8ubto0n" path="res://Menu Assets/cards v2/Lesson_Cards_008.png" id="11_un2gc"]
 [ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="12_37m5n"]
 [ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="13_tujtb"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_lk4x5"]
 
 [node name="notes_section" type="Control"]
 layout_mode = 3
@@ -207,6 +208,21 @@ focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("13_tujtb")
 
+[node name="Back" type="TextureButton" parent="."]
+material = ExtResource("1_tgiwa")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.092
+anchor_top = 0.083
+anchor_right = 0.092
+anchor_bottom = 0.083
+offset_left = -43.64
+offset_top = -44.64
+offset_right = 110.36
+offset_bottom = 115.36
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("15_lk4x5")
+
 [connection signal="pressed" from="CarouselContainer2/Control/Notes1" to="." method="_on_notes_1_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes2" to="." method="_on_notes_2_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes3" to="." method="_on_notes_3_pressed"]
@@ -217,3 +233,4 @@ texture_normal = ExtResource("13_tujtb")
 [connection signal="pressed" from="CarouselContainer2/Control/Notes8" to="." method="_on_notes_8_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes9" to="." method="_on_notes_9_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes10" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

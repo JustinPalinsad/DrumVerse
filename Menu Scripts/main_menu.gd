@@ -81,6 +81,7 @@ func _on_select_button_pressed() -> void:
 	match current_index:
 		0:
 			print("Notes")
+			get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
 			#get_tree().change_scene_to_file("res://Menu Scenes/notes_scene.tscn")
 			#go to notes scene
 		1:
