@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfu4avca38o5i"]
+[gd_scene load_steps=15 format=3 uid="uid://dign4hotw0f7s"]
 
-[ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
+[ext_resource type="Script" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_otgxm"]
-[ext_resource type="PackedScene" uid="uid://oq6h2ifxr55l" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]
+[ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]
 [ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="4_qx663"]
 [ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="5_ppldb"]
 [ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="6_lk4x5"]
@@ -51,14 +51,13 @@ scale = Vector2(1.05905, 1.05905)
 spacing = -57.0
 scale_strength = 0.193
 scale_min = 0.01
-smoothing_speed = 13.0
 position_offset_node = NodePath("Control")
 
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 186.999
-offset_right = 226.999
+offset_left = 187.5
+offset_right = 227.5
 offset_bottom = 40.0
 
 [node name="Notes1" type="TextureButton" parent="CarouselContainer2/Control"]
