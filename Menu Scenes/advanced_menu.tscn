@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmhdwfj4un1jy"]
+[gd_scene load_steps=8 format=3 uid="uid://ba8jsoptp8x8q"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7ykpt"]
-[ext_resource type="Script" uid="uid://dc2xqa5qvq8p3" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
+[ext_resource type="Script" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="2_xibpe"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="3_xibpe"]
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="4_yww8e"]
@@ -39,6 +39,7 @@ layout_mode = 2
 texture = ExtResource("2_xibpe")
 
 [node name="Free" type="Button" parent="."]
+layout_mode = 0
 offset_left = 280.0
 offset_top = 872.0
 offset_right = 645.0
@@ -49,6 +50,7 @@ theme_override_font_sizes/font_size = 126
 text = "FREE"
 
 [node name="Advanced" type="Button" parent="."]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 960.0
 offset_right = 943.0
