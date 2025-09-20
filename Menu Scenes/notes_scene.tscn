@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtid7job07qba"]
+[gd_scene load_steps=31 format=3 uid="uid://cnih3s2wff5ib"]
 
 [ext_resource type="Script" path="res://Menu Scripts/notes_scene.gd" id="1_iuciy"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_td22n"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bk12hqlfhcuvm" path="res://Menu Assets/cards/Lesson_Cards_009.png" id="11_6mrjy"]
 [ext_resource type="Texture2D" uid="uid://dl6regabkjdu5" path="res://Menu Assets/cards/Lesson_Cards_010.png" id="12_7buqk"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="17_pvqmc"]
-[ext_resource type="PackedScene" uid="uid://begqla4a53i8e" path="res://Menu Scenes/carousel_container_2.tscn" id="18_0kuvu"]
+[ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_2.tscn" id="18_0kuvu"]
 [ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="19_c0pgs"]
 [ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="20_5lvhr"]
 [ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="21_3pbgg"]
@@ -188,9 +188,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 62.4998
+offset_left = 176.0
 offset_top = 119.499
-offset_right = 102.5
+offset_right = 216.0
 offset_bottom = 159.499
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer2/Control"]
