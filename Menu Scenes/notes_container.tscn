@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn6uh5pxuw3fb"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_gn6xg"]
+[ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_ddj8f"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="3_ddj8f"]
+[ext_resource type="Texture2D" uid="uid://dqlcj768so7yl" path="res://Assets/WNote.png" id="4_to5b8"]
+
+[node name="Notes Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Notes Title" type="TextureRect" parent="."]
+material = ExtResource("1_gn6xg")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -431.0
+offset_top = -184.0
+offset_right = 431.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_ddj8f")
+
+[node name="Name" type="Label" parent="."]
+material = ExtResource("1_gn6xg")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -435.0
+offset_top = -404.0
+offset_right = 435.0
+offset_bottom = -293.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ddj8f")
+theme_override_font_sizes/font_size = 106
+text = "Placeholder"
+
+[node name="Icon" type="TextureRect" parent="."]
+material = ExtResource("1_gn6xg")
+layout_mode = 0
+offset_left = 528.0
+offset_top = 344.0
+offset_right = 672.0
+offset_bottom = 711.0
+texture = ExtResource("4_to5b8")
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 272.0
+offset_right = 1704.0
+offset_bottom = 896.0
