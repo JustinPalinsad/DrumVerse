@@ -3,11 +3,14 @@
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_bgxsr"]
 [ext_resource type="Texture2D" uid="uid://16dx1uilmytw" path="res://Assets/NoteParts/Head1.png" id="2_t7v7p"]
 
-[node name="Node2D" type="Node2D"]
+[node name="whole_note" type="Node2D"]
 
-[node name="Note" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Note" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 texture_repeat = 1
 material = ExtResource("1_bgxsr")
-position = Vector2(79.5, 0)
+position = Vector2(109.5, 0)
 texture = ExtResource("2_t7v7p")

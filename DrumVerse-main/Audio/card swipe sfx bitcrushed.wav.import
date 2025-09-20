@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://t8pixmwvdbbu"
+path="res://.godot/imported/card swipe sfx bitcrushed.wav-8cd38eb4d05cbc5ceda3b224bb9b8713.sample"
+
+[deps]
+
+source_file="res://Audio/card swipe sfx bitcrushed.wav"
+dest_files=["res://.godot/imported/card swipe sfx bitcrushed.wav-8cd38eb4d05cbc5ceda3b224bb9b8713.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

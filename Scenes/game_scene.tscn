@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lrubqrvxkrb"]
+[gd_scene load_steps=25 format=3 uid="uid://lrubqrvxkrb"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -14,13 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="7_a7fet"]
 [ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="8_7iton"]
 [ext_resource type="AudioStream" uid="uid://c3fnu8ebevbk4" path="res://Audio/congrats.wav" id="9_5dgvu"]
-[ext_resource type="PackedScene" uid="uid://cmwsai2v025ss" path="res://Assets/ActualNotes/16_note.tscn" id="10_aq00n"]
 [ext_resource type="AudioStream" uid="uid://ci3egfykqwf44" path="res://Audio/lose.wav" id="10_uscyt"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_4xiap"]
-[ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="12_gtbs0"]
-[ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="13_mipjh"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
-[ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -30,7 +26,7 @@ length = 4.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -39,100 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(514, 442), Vector2(1542, 442)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("TickSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("Solid-snare:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_np3vi"]
-resource_name = "animation w sound"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(517, 442), Vector2(1622.5, 442)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TickSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_817jg"]
-resource_name = "animation w sound_2"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(517, 442), Vector2(1556, 442)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("TickSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("Solid-snare:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_jj1xe"]
@@ -146,10 +48,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.25, 1.25, 2.25, 3.25, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(517, 442), Vector2(1556, 442)]
+"values": [Vector2(517, 442), Vector2(580, 442), Vector2(838, 442), Vector2(1092, 442), Vector2(1349, 442), Vector2(1541, 442)]
 }
 
 [sub_resource type="Animation" id="Animation_4xiap"]
@@ -206,8 +108,6 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lsk3b"]
 _data = {
 &"RESET": SubResource("Animation_ewxye"),
-&"animation w sound": SubResource("Animation_np3vi"),
-&"animation w sound_2": SubResource("Animation_817jg"),
 &"moving_circle": SubResource("Animation_jj1xe"),
 &"moving_circle_100": SubResource("Animation_4xiap"),
 &"moving_circle_120": SubResource("Animation_5dgvu"),
@@ -290,85 +190,9 @@ action = "right_pad"
 [node name="Snare" type="AudioStreamPlayer" parent="TouchPadContainer"]
 stream = ExtResource("7_a7fet")
 
-[node name="HitLine_Group" parent="." instance=ExtResource("3_ikfsv")]
-position = Vector2(978, 376)
+[node name="HitLine" parent="." instance=ExtResource("3_ikfsv")]
+position = Vector2(972, 366)
 scale = Vector2(0.4, 0.4)
-
-[node name="Points3" type="Node2D" parent="HitLine_Group"]
-visible = false
-position = Vector2(0, 22.5)
-
-[node name="0_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-975.155, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/0_25" instance=ExtResource("10_aq00n")]
-
-[node name="0_5" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-812.812, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="0_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-650.467, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="1" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-488.125, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="1_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-325.78, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/1_25" instance=ExtResource("10_aq00n")]
-
-[node name="1_50" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-163.438, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="1_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(-1.09253, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="2" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(161.25, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="2_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(323.595, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/2_25" instance=ExtResource("10_aq00n")]
-
-[node name="2_5" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(485.938, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="2_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(648.282, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="3" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(810.625, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="3_25" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(972.97, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLine_Group/Points3/3_25" instance=ExtResource("10_aq00n")]
-
-[node name="3_5" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(1135.31, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="3_75" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(1297.66, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="4" type="Node2D" parent="HitLine_Group/Points3"]
-position = Vector2(1460, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="LeftPad" parent="." instance=ExtResource("4_5dgvu")]
 visible = false
@@ -382,6 +206,22 @@ scale = Vector2(0.5, 0.5)
 
 [node name="EffectsContainer" type="Node2D" parent="."]
 z_index = 1
+
+[node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
+position = Vector2(514, 442)
+
+[node name="HitArea" type="Area2D" parent="MovingCircle"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
+shape = SubResource("CircleShape2D_1ixah")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
+libraries = {
+&"": SubResource("AnimationLibrary_lsk3b")
+}
 
 [node name="Metronome" parent="." instance=ExtResource("6_4xiap")]
 material = ExtResource("11_4xiap")
@@ -402,10 +242,10 @@ horizontal_alignment = 1
 [node name="BPMLabel" type="Label" parent="."]
 material = ExtResource("11_4xiap")
 layout_mode = 0
-offset_left = 1660.0
-offset_top = 241.0
-offset_right = 1868.0
-offset_bottom = 284.0
+offset_left = 1325.0
+offset_top = -154.0
+offset_right = 1533.0
+offset_bottom = -111.0
 theme_override_fonts/font = ExtResource("6_rgj8m")
 theme_override_font_sizes/font_size = 40
 text = "BPM:"
@@ -439,39 +279,27 @@ position = Vector2(133, 45)
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("14_ldntv")
 
-[node name="MetronomeV2" parent="." instance=ExtResource("20_aq00n")]
-position = Vector2(979, 621)
-scale = Vector2(0.101848, 0.101848)
+[node name="BPMAudio" type="AudioStreamPlayer" parent="."]
 
-[node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
-position = Vector2(517, 442)
-
-[node name="HitArea" type="Area2D" parent="MovingCircle"]
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
-shape = SubResource("CircleShape2D_1ixah")
-debug_color = Color(0, 0.6, 0.701961, 0)
-metadata/_edit_lock_ = true
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
-libraries = {
-&"": SubResource("AnimationLibrary_lsk3b")
-}
-autoplay = "animation w sound_2"
-
-[node name="TickSound" type="AudioStreamPlayer2D" parent="MovingCircle"]
-position = Vector2(-7, 486)
-stream = ExtResource("12_gtbs0")
-
-[node name="Solid-snare" type="AudioStreamPlayer" parent="MovingCircle"]
-stream = ExtResource("7_a7fet")
-
-[node name="MetronomePendulum" type="Sprite2D" parent="MovingCircle"]
-visible = false
-position = Vector2(0, -56)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("13_mipjh")
+[node name="BPMMenuButton" type="MenuButton" parent="."]
+material = ExtResource("11_4xiap")
+layout_mode = 0
+offset_left = 1666.0
+offset_top = 231.0
+offset_right = 1851.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 40
+text = "BPM: 60"
+item_count = 4
+popup/item_0/text = "60"
+popup/item_0/id = 0
+popup/item_1/text = "80"
+popup/item_1/id = 1
+popup/item_2/text = "100"
+popup/item_2/id = 2
+popup/item_3/text = "120"
+popup/item_3/id = 3
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]

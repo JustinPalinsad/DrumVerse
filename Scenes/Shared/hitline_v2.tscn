@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bs0c0pd3dan5b"]
+[gd_scene load_steps=12 format=3 uid="uid://bs0c0pd3dan5b"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_hq15t"]
 [ext_resource type="Texture2D" uid="uid://blthkb5bwvrjb" path="res://Assets/Continue.png" id="2_8voxq"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d182fu3fw4tq8" path="res://Assets/Time SIgnature Parts/Line.png" id="5_gwofh"]
 [ext_resource type="Texture2D" uid="uid://c8eodby2f53qg" path="res://Assets/Time SIgnature Parts/TimeSigRef.png" id="6_tl0hi"]
 [ext_resource type="Texture2D" uid="uid://hqwn8e44qnpv" path="res://Assets/Time SIgnature Parts/End.png" id="7_8yi08"]
-[ext_resource type="PackedScene" uid="uid://cmwsai2v025ss" path="res://Assets/ActualNotes/16_note.tscn" id="8_j55vy"]
-[ext_resource type="PackedScene" uid="uid://du1rc2dvuk17w" path="res://Assets/ActualNotes/Broken16Notes/br16_1.tscn" id="9_8voxq"]
 
 [sub_resource type="Animation" id="Animation_s7ys8"]
 resource_name = "Animation"
@@ -173,83 +171,54 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Points" type="Node2D" parent="."]
-visible = false
 
 [node name="0" type="Node2D" parent="Points"]
 position = Vector2(-1137.5, 135)
-scale = Vector2(0.5, 0.5)
-
-[node name="16Note" parent="Points/0" instance=ExtResource("8_j55vy")]
-
-[node name="Br16_1" parent="Points/0" instance=ExtResource("9_8voxq")]
-visible = false
 
 [node name="0_25" type="Node2D" parent="Points"]
 position = Vector2(-975.155, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="0_5" type="Node2D" parent="Points"]
 position = Vector2(-812.812, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="0_75" type="Node2D" parent="Points"]
 position = Vector2(-650.467, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="1" type="Node2D" parent="Points"]
 position = Vector2(-488.125, 135)
-scale = Vector2(0.5, 0.5)
-
-[node name="16Note" parent="Points/1" instance=ExtResource("8_j55vy")]
 
 [node name="1_25" type="Node2D" parent="Points"]
 position = Vector2(-325.78, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="1_50" type="Node2D" parent="Points"]
 position = Vector2(-163.438, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="1_75" type="Node2D" parent="Points"]
 position = Vector2(-1.09253, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="2" type="Node2D" parent="Points"]
 position = Vector2(161.25, 135)
-scale = Vector2(0.5, 0.5)
-
-[node name="16Note" parent="Points/2" instance=ExtResource("8_j55vy")]
 
 [node name="2_25" type="Node2D" parent="Points"]
 position = Vector2(323.595, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="2_5" type="Node2D" parent="Points"]
 position = Vector2(485.938, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="2_75" type="Node2D" parent="Points"]
 position = Vector2(648.282, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="3" type="Node2D" parent="Points"]
 position = Vector2(810.625, 135)
-scale = Vector2(0.5, 0.5)
-
-[node name="16Note" parent="Points/3" instance=ExtResource("8_j55vy")]
 
 [node name="3_25" type="Node2D" parent="Points"]
 position = Vector2(972.97, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="3_5" type="Node2D" parent="Points"]
 position = Vector2(1135.31, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="3_75" type="Node2D" parent="Points"]
 position = Vector2(1297.66, 135)
-scale = Vector2(0.5, 0.5)
 
 [node name="4" type="Node2D" parent="Points"]
 position = Vector2(1460, 135)
-scale = Vector2(0.5, 0.5)

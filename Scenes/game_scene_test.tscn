@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dlw3tjpl4wn3u"]
+[gd_scene load_steps=35 format=3 uid="uid://dlw3tjpl4wn3u"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -22,6 +22,9 @@
 [ext_resource type="Script" uid="uid://yyaxt0up5y4y" path="res://Scenes/animation_player_2.gd" id="18_m0nlo"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
 [ext_resource type="PackedScene" uid="uid://bs0c0pd3dan5b" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
+[ext_resource type="PackedScene" uid="uid://cn3ojx1h0de6n" path="res://Assets/ActualNotes/half_note.tscn" id="22_71sgh"]
+[ext_resource type="PackedScene" uid="uid://3m2332pvcevj" path="res://Assets/ActualNotes/quarter_note.tscn" id="23_1esad"]
+[ext_resource type="PackedScene" uid="uid://bidxab2pmkp1d" path="res://Assets/ActualNotes/whole_note.tscn" id="24_71sgh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -262,12 +265,13 @@ texture = ExtResource("3_8m72m")
 [node name="Counter" type="Label" parent="."]
 material = ExtResource("11_4xiap")
 layout_mode = 0
-offset_left = 1152.0
-offset_top = 512.0
-offset_right = 1418.0
-offset_bottom = 725.0
+offset_left = 1266.0
+offset_top = 75.0
+offset_right = 1532.0
+offset_bottom = 288.0
 theme_override_fonts/font = ExtResource("6_rgj8m")
 theme_override_font_sizes/font_size = 100
+text = "s"
 
 [node name="GuideHitLine" type="TextureRect" parent="."]
 visible = false
@@ -412,83 +416,62 @@ position = Vector2(0, 22.4999)
 
 [node name="0" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-1137.5, 98)
-scale = Vector2(0.5, 0.5)
 
-[node name="Node2D" parent="HitLinev2/Points3/0" instance=ExtResource("10_aq00n")]
-scale = Vector2(2, 2)
+[node name="half_note" parent="HitLinev2/Points3/0" instance=ExtResource("22_71sgh")]
 
 [node name="0_25" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-975.155, 98)
-scale = Vector2(0.5, 0.5)
+
+[node name="Quarter_Note" parent="HitLinev2/Points3/0_25" instance=ExtResource("23_1esad")]
 
 [node name="0_5" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-812.812, 98)
-scale = Vector2(0.5, 0.5)
+
+[node name="whole_note" parent="HitLinev2/Points3/0_5" instance=ExtResource("24_71sgh")]
 
 [node name="0_75" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-650.467, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="1" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-488.125, 98)
-scale = Vector2(0.5, 0.5)
 
-[node name="Node2D" parent="HitLinev2/Points3/1" instance=ExtResource("10_aq00n")]
-scale = Vector2(2, 2)
+[node name="16Note" parent="HitLinev2/Points3/1" instance=ExtResource("10_aq00n")]
 
 [node name="1_25" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-325.78, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="1_50" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-163.438, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="1_75" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(-1.09253, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="2" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(161.25, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLinev2/Points3/2" instance=ExtResource("10_aq00n")]
-scale = Vector2(2, 2)
 
 [node name="2_25" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(323.595, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="2_5" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(485.938, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="2_75" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(648.282, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="3" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(810.625, 98)
-scale = Vector2(0.5, 0.5)
-
-[node name="Node2D" parent="HitLinev2/Points3/3" instance=ExtResource("10_aq00n")]
-scale = Vector2(2, 2)
 
 [node name="3_25" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(972.97, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="3_5" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(1135.31, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="3_75" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(1297.66, 98)
-scale = Vector2(0.5, 0.5)
 
 [node name="4" type="Node2D" parent="HitLinev2/Points3"]
 position = Vector2(1460, 98)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
