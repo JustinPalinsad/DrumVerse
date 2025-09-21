@@ -4,14 +4,18 @@ extends Node2D
 
 func _ready():
 	var beams = get_node("BeamContainer").get_children()
-	var drum_note: DrumNote = get_meta("drum_note_resource")  # Assigned in spawn_notes_from_bar
+	var drum_note: DrumNote = null
 
-	for i in beams.size():
+	# 🔹 Only fetch if the meta exists
+	if has_meta("drum_note_resource"):
+		drum_note = get_meta("drum_note_resource")
+
+	for i in range(beams.size()):
 		var beam = beams[i]
 		if beam.has_method("is_beam") and beam.is_beam():
 			beam.parent_note = self
 
-			# Assign pad based on DrumNote property
+			# Only assign pads if the DrumNote exists
 			if drum_note:
 				match i:
 					0:
