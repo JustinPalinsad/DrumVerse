@@ -17,7 +17,6 @@
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="14_i72bd"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="16_rswhg"]
 
-
 [sub_resource type="Animation" id="Animation_afnto"]
 length = 0.001
 tracks/0/type = "value"
