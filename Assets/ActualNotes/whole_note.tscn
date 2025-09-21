@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="3_fhdka"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_h7qn3"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hp4kv"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhdka"]
 radius = 21.9503
 height = 52.1405
 
@@ -19,22 +19,23 @@ position = Vector2(55, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_t7v7p")
 
-[node name="BeamContainer" type="Node2D" parent="Note"]
-position = Vector2(-14, 0)
+[node name="BeamContainer" type="Node2D" parent="."]
+position = Vector2(54.75, 0)
+scale = Vector2(0.5, 0.5)
 
-[node name="Beam1" type="Area2D" parent="Note/BeamContainer"]
-position = Vector2(15, 8)
+[node name="Beam1" type="Area2D" parent="BeamContainer"]
+position = Vector2(0.5, 8)
 rotation = -0.186924
 scale = Vector2(5.03281, 4.28231)
 script = ExtResource("3_fhdka")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Note/BeamContainer/Beam1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
 position = Vector2(0, -2)
 rotation = 4.16805
-shape = SubResource("CapsuleShape2D_hp4kv")
+shape = SubResource("CapsuleShape2D_fhdka")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
-[node name="Label" type="Label" parent="Note/BeamContainer/Beam1"]
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("4_h7qn3")

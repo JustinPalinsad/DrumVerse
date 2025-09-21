@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://roxnyah5ksrl"]
+[gd_scene load_steps=7 format=3 uid="uid://roxnyah5ksrl"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_le55e"]
 [ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/NoteParts/Stem.png" id="2_vbm00"]
 [ext_resource type="PackedScene" uid="uid://bnjhw7nyhvxsn" path="res://Assets/ActualNotes/whole_note.tscn" id="3_le55e"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_0lfo6"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_yo8lh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nyqbm"]
+radius = 21.9503
+height = 52.1405
 
 [node name="half_note" type="Node2D"]
 
@@ -18,3 +24,26 @@ position = Vector2(79.5, -254)
 texture = ExtResource("2_vbm00")
 
 [node name="whole_note" parent="." instance=ExtResource("3_le55e")]
+
+[node name="BeamContainer" type="Node2D" parent="."]
+position = Vector2(54.75, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Beam1" type="Area2D" parent="BeamContainer"]
+position = Vector2(0.5, 8)
+rotation = -0.186924
+scale = Vector2(5.03281, 4.28231)
+script = ExtResource("4_0lfo6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
+position = Vector2(0, -2)
+rotation = 4.16805
+shape = SubResource("CapsuleShape2D_nyqbm")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("5_yo8lh")
+theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true

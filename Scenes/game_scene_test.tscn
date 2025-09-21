@@ -388,79 +388,62 @@ scale = Vector2(0.4, 0.4)
 
 [node name="0" type="Node2D" parent="."]
 position = Vector2(517, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="triplets" parent="0" instance=ExtResource("22_m0nlo")]
 
 [node name="0_25" type="Node2D" parent="."]
 position = Vector2(581.938, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="0_5" type="Node2D" parent="."]
 position = Vector2(646.875, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="0_75" type="Node2D" parent="."]
 position = Vector2(711.813, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="1" type="Node2D" parent="."]
 position = Vector2(776.75, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="triplets" parent="1" instance=ExtResource("22_m0nlo")]
 
 [node name="1_25" type="Node2D" parent="."]
 position = Vector2(841.688, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="1_50" type="Node2D" parent="."]
 position = Vector2(906.625, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="1_75" type="Node2D" parent="."]
 position = Vector2(971.563, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="2" type="Node2D" parent="."]
 position = Vector2(1036.5, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="triplets" parent="2" instance=ExtResource("22_m0nlo")]
 
 [node name="2_25" type="Node2D" parent="."]
 position = Vector2(1101.44, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="2_5" type="Node2D" parent="."]
 position = Vector2(1166.38, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="2_75" type="Node2D" parent="."]
 position = Vector2(1231.31, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="3" type="Node2D" parent="."]
 position = Vector2(1296.25, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="triplets" parent="3" instance=ExtResource("22_m0nlo")]
 
 [node name="3_25" type="Node2D" parent="."]
 position = Vector2(1361.19, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="3_5" type="Node2D" parent="."]
 position = Vector2(1426.12, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="3_75" type="Node2D" parent="."]
 position = Vector2(1491.06, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [node name="4" type="Node2D" parent="."]
 position = Vector2(1556, 424.2)
-scale = Vector2(0.4, 0.4)
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
