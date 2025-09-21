@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://roxnyah5ksrl"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_le55e"]
+[ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/NoteParts/Stem.png" id="2_vbm00"]
+[ext_resource type="PackedScene" uid="uid://bnjhw7nyhvxsn" path="res://Assets/ActualNotes/whole_note.tscn" id="3_le55e"]
+
+[node name="half_note" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(15, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Stem" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_le55e")
+position = Vector2(79.5, -254)
+texture = ExtResource("2_vbm00")
+
+[node name="whole_note" parent="." instance=ExtResource("3_le55e")]

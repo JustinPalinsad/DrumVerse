@@ -6,9 +6,12 @@
 
 [sub_resource type="Resource" id="Resource_tkpdm"]
 script = ExtResource("1_223ax")
-required_pad = "both"
 x_position = 581.0
 note_scene = ExtResource("2_jdeam")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [resource]
