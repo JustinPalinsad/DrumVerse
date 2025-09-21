@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3hy268ubw8ts"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_cj64u"]
+[ext_resource type="Script" path="res://Assets/ActualNotes/quarter_note.gd" id="1_m403o"]
+[ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/NoteParts/Stem.png" id="2_86awc"]
+[ext_resource type="Texture2D" uid="uid://dhtsi6hn3y3qm" path="res://Assets/NoteParts/Note.png" id="3_fei70"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_fei70"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_m403o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jq82e"]
+radius = 21.9503
+height = 52.1405
+
+[node name="4_note" type="Node2D"]
+script = ExtResource("1_m403o")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="Stem" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_cj64u")
+position = Vector2(109.5, -254)
+texture = ExtResource("2_86awc")
+
+[node name="Note" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("1_cj64u")
+position = Vector2(109.5, 0)
+texture = ExtResource("3_fei70")
+
+[node name="BeamContainer" type="Node2D" parent="Node2D"]
+position = Vector2(95, 0)
+
+[node name="Beam1" type="Area2D" parent="Node2D/BeamContainer"]
+position = Vector2(15, 8)
+rotation = -0.186924
+scale = Vector2(5.03281, 4.28231)
+script = ExtResource("4_fei70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/BeamContainer/Beam1"]
+position = Vector2(0, -2)
+rotation = 4.16805
+shape = SubResource("CapsuleShape2D_jq82e")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="Node2D/BeamContainer/Beam1"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("5_m403o")
+theme_override_font_sizes/font_size = 20
+metadata/_edit_use_anchors_ = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dgex3dfsgovyk"]
+[gd_scene load_steps=31 format=3 uid="uid://dgex3dfsgovyk"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -18,10 +18,9 @@
 [ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="12_gtbs0"]
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="13_mipjh"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
-[ext_resource type="Script" path="res://Scenes/animation_player_2.gd" id="18_m0nlo"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
-[ext_resource type="PackedScene" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
-[ext_resource type="PackedScene" path="res://Assets/ActualNotes/triplets.tscn" id="22_m0nlo"]
+[ext_resource type="PackedScene" uid="uid://bs0c0pd3dan5b" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
+[ext_resource type="PackedScene" uid="uid://4tw1e6gfyh3t" path="res://Assets/ActualNotes/triplets.tscn" id="22_m0nlo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -66,35 +65,6 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_np3vi"]
-resource_name = "animation w sound"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(517, 442), Vector2(1622.5, 442)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TickSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true]
-}
-
 [sub_resource type="Animation" id="Animation_817jg"]
 resource_name = "animation w sound_2"
 length = 4.0
@@ -134,6 +104,23 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_np3vi"]
+resource_name = "moving circle v2"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(517, 442), Vector2(1622.5, 442)]
 }
 
 [sub_resource type="Animation" id="Animation_jj1xe"]
@@ -207,8 +194,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lsk3b"]
 _data = {
 &"RESET": SubResource("Animation_ewxye"),
-&"animation w sound": SubResource("Animation_np3vi"),
 &"animation w sound_2": SubResource("Animation_817jg"),
+&"moving circle v2": SubResource("Animation_np3vi"),
 &"moving_circle": SubResource("Animation_jj1xe"),
 &"moving_circle_100": SubResource("Animation_4xiap"),
 &"moving_circle_120": SubResource("Animation_5dgvu"),
@@ -258,17 +245,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(9.64669, 5.47508)
 texture = ExtResource("3_8m72m")
-
-[node name="Counter" type="Label" parent="."]
-material = ExtResource("11_4xiap")
-layout_mode = 0
-offset_left = 1266.0
-offset_top = 75.0
-offset_right = 1532.0
-offset_bottom = 288.0
-theme_override_fonts/font = ExtResource("6_rgj8m")
-theme_override_font_sizes/font_size = 100
-text = "s"
 
 [node name="GuideHitLine" type="TextureRect" parent="."]
 visible = false
@@ -388,8 +364,7 @@ metadata/_edit_lock_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_lsk3b")
 }
-autoplay = "animation w sound_2"
-script = ExtResource("18_m0nlo")
+autoplay = "moving circle v2"
 
 [node name="TickSound" type="AudioStreamPlayer2D" parent="MovingCircle"]
 position = Vector2(-7, 486)
@@ -408,67 +383,84 @@ texture = ExtResource("13_mipjh")
 [node name="HitLinev2" parent="." instance=ExtResource("20_he58o")]
 position = Vector2(978, 376)
 
-[node name="Points3" type="Node2D" parent="HitLinev2"]
-position = Vector2(0, 22.4999)
+[node name="Points3" type="Node2D" parent="."]
+scale = Vector2(0.4, 0.4)
 
-[node name="0" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-1137.5, 98)
+[node name="0" type="Node2D" parent="."]
+position = Vector2(517, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="triplets" parent="HitLinev2/Points3/0" instance=ExtResource("22_m0nlo")]
+[node name="triplets" parent="0" instance=ExtResource("22_m0nlo")]
 
-[node name="0_25" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-975.155, 98)
+[node name="0_25" type="Node2D" parent="."]
+position = Vector2(581.938, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="0_5" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-812.812, 98)
+[node name="0_5" type="Node2D" parent="."]
+position = Vector2(646.875, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="0_75" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-650.467, 98)
+[node name="0_75" type="Node2D" parent="."]
+position = Vector2(711.813, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="1" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-488.125, 98)
+[node name="1" type="Node2D" parent="."]
+position = Vector2(776.75, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="triplets" parent="HitLinev2/Points3/1" instance=ExtResource("22_m0nlo")]
+[node name="triplets" parent="1" instance=ExtResource("22_m0nlo")]
 
-[node name="1_25" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-325.78, 98)
+[node name="1_25" type="Node2D" parent="."]
+position = Vector2(841.688, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="1_50" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-163.438, 98)
+[node name="1_50" type="Node2D" parent="."]
+position = Vector2(906.625, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="1_75" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(-1.09253, 98)
+[node name="1_75" type="Node2D" parent="."]
+position = Vector2(971.563, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="2" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(161.25, 98)
+[node name="2" type="Node2D" parent="."]
+position = Vector2(1036.5, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="triplets" parent="HitLinev2/Points3/2" instance=ExtResource("22_m0nlo")]
+[node name="triplets" parent="2" instance=ExtResource("22_m0nlo")]
 
-[node name="2_25" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(323.595, 98)
+[node name="2_25" type="Node2D" parent="."]
+position = Vector2(1101.44, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="2_5" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(485.938, 98)
+[node name="2_5" type="Node2D" parent="."]
+position = Vector2(1166.38, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="2_75" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(648.282, 98)
+[node name="2_75" type="Node2D" parent="."]
+position = Vector2(1231.31, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="3" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(810.625, 98)
+[node name="3" type="Node2D" parent="."]
+position = Vector2(1296.25, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="triplets" parent="HitLinev2/Points3/3" instance=ExtResource("22_m0nlo")]
+[node name="triplets" parent="3" instance=ExtResource("22_m0nlo")]
 
-[node name="3_25" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(972.97, 98)
+[node name="3_25" type="Node2D" parent="."]
+position = Vector2(1361.19, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="3_5" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(1135.31, 98)
+[node name="3_5" type="Node2D" parent="."]
+position = Vector2(1426.12, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="3_75" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(1297.66, 98)
+[node name="3_75" type="Node2D" parent="."]
+position = Vector2(1491.06, 424.2)
+scale = Vector2(0.4, 0.4)
 
-[node name="4" type="Node2D" parent="HitLinev2/Points3"]
-position = Vector2(1460, 98)
+[node name="4" type="Node2D" parent="."]
+position = Vector2(1556, 424.2)
+scale = Vector2(0.4, 0.4)
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
