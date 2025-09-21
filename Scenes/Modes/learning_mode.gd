@@ -124,24 +124,45 @@ func _spawn_miss_effect(pos: Vector2):
 		effect.z_index = 10
 		await get_tree().create_timer(0.5).timeout
 		effect.queue_free()
-		
+
+
 func update_note_pattern_label(bar_data):
 	var pattern := ""
+
 	for i in bar_data.notes.size():
-		var pad = bar_data.notes[i].required_pad
-		var note_char = ""
-		match pad:
-			"left":
-				note_char = "L"
-			"right":
-				note_char = "R"
-			_:
-				note_char = "B"
-		pattern += note_char
+		var note_data: DrumNote = bar_data.notes[i]
+
+		# Collect all pads for this note
+		var pads: Array = []
+		if note_data.pad_beam_1 != "":
+			pads.append(note_data.pad_beam_1)
+		if note_data.pad_beam_2 != "":
+			pads.append(note_data.pad_beam_2)
+		if note_data.pad_beam_3 != "":
+			pads.append(note_data.pad_beam_3)
+		if note_data.pad_beam_4 != "":
+			pads.append(note_data.pad_beam_4)
+
+		# Convert pads to letters
+		for pad in pads:
+			var note_char = ""
+			match pad:
+				"left":
+					note_char = "L"
+				"right":
+					note_char = "R"
+				_:
+					note_char = "B"
+			pattern += note_char
+
+		# Add dash between notes
 		if i < bar_data.notes.size() - 1:
 			pattern += "-"
+
+	# Apply result to label
 	if note_pattern_label:
 		note_pattern_label.text = pattern
+
 
 
 
@@ -310,9 +331,13 @@ func _spawn_bar(bar_data):
 		if note_data != null and note_data.note_scene != null:
 			var note = note_data.note_scene.instantiate()
 			note.position = Vector2(note_data.x_position, NOTE_Y_POSITION)
-			note.set_meta("required_pad", note_data.required_pad)
+
+			# ✅ Pass the resource into the Note node
+			note.set_meta("drum_note_resource", note_data)
+
 			notes_container.add_child(note)
 			notes.append(note)
+
 
 func _clear_notes():
 	for note in notes:
