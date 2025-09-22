@@ -168,6 +168,7 @@ offset_right = 1610.0
 offset_bottom = 445.0
 texture = ExtResource("2_5dgvu")
 expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="NotesContainer" type="Node2D" parent="."]
 
@@ -194,6 +195,7 @@ stream = ExtResource("7_a7fet")
 [node name="HitLine" parent="." instance=ExtResource("3_ikfsv")]
 position = Vector2(972, 366)
 scale = Vector2(0.4, 0.4)
+metadata/_edit_lock_ = true
 
 [node name="LeftPad" parent="." instance=ExtResource("4_5dgvu")]
 visible = false

@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://djdfajuf6spe2"]
+
+[ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_uko0o"]
+[ext_resource type="Texture2D" uid="uid://hms6rjofa8nm" path="res://Assets/NewNotes/br7.png" id="1_uwy35"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_scycs"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="2_yb2c0"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_tq7q2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uko0o"]
+radius = 15.2159
+height = 41.176
+
+[node name="Broken16th_7" type="Node2D"]
+script = ExtResource("1_uko0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_scycs")
+position = Vector2(0, -35)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_uwy35")
+
+[node name="BeamContainer" type="Node2D" parent="."]
+
+[node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
+position = Vector2(31, 0)
+script = ExtResource("2_yb2c0")
+parent_note = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
+position = Vector2(1, 6)
+rotation = -2.02099
+shape = SubResource("CapsuleShape2D_uko0o")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
+material = ExtResource("2_scycs")
+offset_left = -19.0
+offset_top = 32.0
+offset_right = 21.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("4_tq7q2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Beam2" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
+position = Vector2(96, 6)
+script = ExtResource("2_yb2c0")
+parent_note = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam2"]
+position = Vector2(1, -5.68434e-14)
+rotation = -2.02099
+shape = SubResource("CapsuleShape2D_uko0o")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam2"]
+material = ExtResource("2_scycs")
+offset_left = -19.0
+offset_top = 26.0
+offset_right = 21.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("4_tq7q2")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
