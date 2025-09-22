@@ -974,7 +974,6 @@ theme_override_font_sizes/font_size = 126
 text = "ADVANCED"
 
 [node name="CompleteGrades" type="Button" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 224.0
 offset_top = 176.0
