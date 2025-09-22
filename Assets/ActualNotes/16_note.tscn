@@ -12,38 +12,7 @@ height = 52.1405
 
 [node name="16Note" type="Node2D"]
 material = ExtResource("1_cmxfp")
-scale = Vector2(2, 2)
-
-[node name="0_5" type="Node2D" parent="."]
-
-[node name="Quarter_Note" parent="0_5" instance=ExtResource("2_7vqge")]
-
-[node name="0_75" type="Node2D" parent="."]
-position = Vector2(162.345, 0)
-
-[node name="Quarter_Note" parent="0_75" instance=ExtResource("2_7vqge")]
-
-[node name="1" type="Node2D" parent="."]
-position = Vector2(324.687, 0)
-
-[node name="Quarter_Note" parent="1" instance=ExtResource("2_7vqge")]
-
-[node name="1_25" type="Node2D" parent="."]
-position = Vector2(487.032, 0)
-
-[node name="Quarter_Note" parent="1_25" instance=ExtResource("2_7vqge")]
-
-[node name="Beam" type="Sprite2D" parent="."]
-material = ExtResource("1_cmxfp")
-position = Vector2(343.5, -126.75)
-scale = Vector2(2.06, 0.5)
-texture = ExtResource("4_hivwu")
-
-[node name="Beam2" type="Sprite2D" parent="."]
-material = ExtResource("1_cmxfp")
-position = Vector2(342.5, -64)
-scale = Vector2(2.02, 0.5)
-texture = ExtResource("4_hivwu")
+scale = Vector2(0.4, 0.4)
 
 [node name="BeamContainer" type="Node2D" parent="."]
 position = Vector2(54.75, 0)
@@ -124,3 +93,40 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("5_oi4w4")
 theme_override_font_sizes/font_size = 20
 metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="0_5" type="Node2D" parent="Node2D"]
+
+[node name="Quarter_Note" parent="Node2D/0_5" instance=ExtResource("2_7vqge")]
+scale = Vector2(1, 1)
+
+[node name="0_75" type="Node2D" parent="Node2D"]
+position = Vector2(162.345, 0)
+
+[node name="Quarter_Note" parent="Node2D/0_75" instance=ExtResource("2_7vqge")]
+scale = Vector2(1, 1)
+
+[node name="1" type="Node2D" parent="Node2D"]
+position = Vector2(324.687, 0)
+
+[node name="Quarter_Note" parent="Node2D/1" instance=ExtResource("2_7vqge")]
+scale = Vector2(1, 1)
+
+[node name="1_25" type="Node2D" parent="Node2D"]
+position = Vector2(487.032, 0)
+
+[node name="Quarter_Note" parent="Node2D/1_25" instance=ExtResource("2_7vqge")]
+scale = Vector2(1, 1)
+
+[node name="Beam" type="Sprite2D" parent="Node2D"]
+material = ExtResource("1_cmxfp")
+position = Vector2(343.5, -126.75)
+scale = Vector2(2.06, 0.5)
+texture = ExtResource("4_hivwu")
+
+[node name="Beam2" type="Sprite2D" parent="Node2D"]
+material = ExtResource("1_cmxfp")
+position = Vector2(342.5, -64)
+scale = Vector2(2.02, 0.5)
+texture = ExtResource("4_hivwu")

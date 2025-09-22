@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var sprite: Sprite2D = get_node("Sprite2D")
+#@onready var sprite: Sprite2D = get_node("Sprite2D")
 
 func _ready():
 	var beams = get_node("BeamContainer").get_children()

@@ -11,6 +11,7 @@ radius = 21.9503
 height = 52.1405
 
 [node name="half_note" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(15, 0)
@@ -24,6 +25,7 @@ position = Vector2(79.5, -254)
 texture = ExtResource("2_vbm00")
 
 [node name="whole_note" parent="." instance=ExtResource("3_le55e")]
+scale = Vector2(1, 1)
 
 [node name="BeamContainer" type="Node2D" parent="."]
 position = Vector2(54.75, 0)

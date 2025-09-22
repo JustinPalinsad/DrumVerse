@@ -11,16 +11,18 @@ radius = 21.9503
 height = 52.1405
 
 [node name="16_note_br4" type="Node2D"]
-scale = Vector2(2, 2)
+scale = Vector2(0.4, 0.4)
 
 [node name="0_5" type="Node2D" parent="."]
 
 [node name="Quarter_Note" parent="0_5" instance=ExtResource("1_jgl1a")]
+scale = Vector2(1, 1)
 
 [node name="0_75" type="Node2D" parent="."]
 position = Vector2(162.345, 0)
 
 [node name="Quarter_Note" parent="0_75" instance=ExtResource("1_jgl1a")]
+scale = Vector2(1, 1)
 
 [node name="1" type="Node2D" parent="."]
 position = Vector2(324.687, 0)
@@ -29,6 +31,7 @@ position = Vector2(324.687, 0)
 position = Vector2(487.032, 0)
 
 [node name="Quarter_Note" parent="1_25" instance=ExtResource("1_jgl1a")]
+scale = Vector2(1, 1)
 
 [node name="Beam" type="Sprite2D" parent="."]
 material = ExtResource("2_agjy0")

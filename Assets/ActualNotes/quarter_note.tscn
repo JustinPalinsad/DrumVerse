@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c3hy268ubw8ts"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_cj64u"]
-[ext_resource type="Script" path="res://Assets/ActualNotes/quarter_note.gd" id="1_m403o"]
+[ext_resource type="Script" uid="uid://bnslgypy0lw0g" path="res://Assets/ActualNotes/quarter_note.gd" id="1_m403o"]
 [ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/NoteParts/Stem.png" id="2_86awc"]
 [ext_resource type="Texture2D" uid="uid://dhtsi6hn3y3qm" path="res://Assets/NoteParts/Note.png" id="3_fei70"]
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_fei70"]
@@ -12,6 +12,7 @@ radius = 21.9503
 height = 52.1405
 
 [node name="4_note" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_m403o")
 
 [node name="Node2D" type="Node2D" parent="."]

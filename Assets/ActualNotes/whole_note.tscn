@@ -10,6 +10,7 @@ radius = 21.9503
 height = 52.1405
 
 [node name="whole_note" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 
 [node name="Note" type="Sprite2D" parent="."]
 texture_filter = 1
