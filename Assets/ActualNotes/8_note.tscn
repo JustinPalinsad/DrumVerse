@@ -11,12 +11,14 @@ radius = 21.9503
 height = 52.1405
 
 [node name="8_note" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="0_5" type="Node2D" parent="Node2D"]
 
 [node name="Quarter_Note" parent="Node2D/0_5" instance=ExtResource("1_dtrov")]
+scale = Vector2(1, 1)
 
 [node name="0_75" type="Node2D" parent="Node2D"]
 position = Vector2(162.345, 0)
@@ -25,6 +27,7 @@ position = Vector2(162.345, 0)
 position = Vector2(324.687, 0)
 
 [node name="Quarter_Note" parent="Node2D/1" instance=ExtResource("1_dtrov")]
+scale = Vector2(1, 1)
 
 [node name="1_25" type="Node2D" parent="Node2D"]
 position = Vector2(487.032, 0)
