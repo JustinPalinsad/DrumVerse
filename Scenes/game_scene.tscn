@@ -158,6 +158,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(9.64669, 5.47508)
 texture = ExtResource("3_8m72m")
+metadata/_edit_lock_ = true
 
 [node name="GuideHitLine" type="TextureRect" parent="."]
 visible = false

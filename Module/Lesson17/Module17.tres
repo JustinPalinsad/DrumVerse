@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="DrumModuleData" load_steps=3 format=3 uid="uid://bky0emejf3id2"]
+[gd_resource type="Resource" script_class="DrumModuleData" load_steps=5 format=3 uid="uid://bky0emejf3id2"]
 
 [ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="1_uoeb2"]
 [ext_resource type="Script" uid="uid://cpnvfbg8tgmgt" path="res://Resources/DrumModuleData.gd" id="2_0yk6v"]
+[ext_resource type="Resource" uid="uid://brlhbn54j25pt" path="res://Module/Lesson17/continuebar17_1.tres" id="2_k0g2k"]
+[ext_resource type="Resource" uid="uid://bdg1131skecy7" path="res://Module/Lesson17/endbar17_1.tres" id="3_y5onk"]
 
 [resource]
 script = ExtResource("2_0yk6v")
-continue_bars = Array[ExtResource("1_uoeb2")]([])
+continue_bars = Array[ExtResource("1_uoeb2")]([ExtResource("2_k0g2k"), ExtResource("2_k0g2k"), ExtResource("2_k0g2k")])
 show_note_labels = false
+end_bar = ExtResource("3_y5onk")
 bpm = 60
 moving_circle_duration = 4.0
 metadata/_custom_type_script = "uid://cpnvfbg8tgmgt"

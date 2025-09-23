@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://3a8xge8c408l" path="res://Menu Assets/advanced cards/Lesson_Cards__012.png" id="6_back5"]
 [ext_resource type="Texture2D" uid="uid://1wnpnwsqen2s" path="res://Menu Assets/advanced cards/Lesson_Cards__013.png" id="7_0egvd"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="7_8dq57"]
-[ext_resource type="PackedScene" uid="uid://ca3y7mttg1hur" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
+[ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
 [ext_resource type="Texture2D" uid="uid://dxk15uv7jws7m" path="res://Menu Assets/advanced cards/Lesson_Cards__014.png" id="8_vnhdg"]
 [ext_resource type="Texture2D" uid="uid://c3s7bwwhw7bo0" path="res://Menu Assets/advanced cards/Lesson_Cards__015.png" id="9_6f14r"]
 [ext_resource type="Texture2D" uid="uid://bf3ax2jly6isy" path="res://Menu Assets/advanced cards/Lesson_Cards__016.png" id="10_e2tj8"]
@@ -49,17 +49,19 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 114.0
+offset_top = -19.4999
 offset_right = 40.0
-offset_bottom = 154.0
+offset_bottom = 20.5001
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("1_7ykpt")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
+scale = Vector2(1, 1)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("5_1rn87")
 
