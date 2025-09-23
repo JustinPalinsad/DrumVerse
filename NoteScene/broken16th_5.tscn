@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6wa7twg1vepm"]
+
+[ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_5f2xi"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_8iyth"]
+[ext_resource type="Texture2D" uid="uid://03t1igx8yu6q" path="res://Assets/NewNotes/br5.png" id="2_g0whf"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="3_g0whf"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_pd1ib"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8iyth"]
+radius = 15.1901
+height = 40.2447
+
+[node name="Broken16th_5" type="Node2D"]
+script = ExtResource("1_5f2xi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_8iyth")
+position = Vector2(0, -35)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_g0whf")
+
+[node name="BeamContainer" type="Node2D" parent="."]
+
+[node name="Beam1" type="Area2D" parent="BeamContainer"]
+position = Vector2(-99, 5)
+script = ExtResource("3_g0whf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
+position = Vector2(1, 0)
+rotation = -2.0495
+shape = SubResource("CapsuleShape2D_8iyth")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
+offset_left = -19.0
+offset_top = 30.0
+offset_right = 21.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("5_pd1ib")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Beam2" type="Area2D" parent="BeamContainer"]
+position = Vector2(-34, 5)
+script = ExtResource("3_g0whf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam2"]
+position = Vector2(1, 0)
+rotation = -2.0495
+shape = SubResource("CapsuleShape2D_8iyth")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam2"]
+offset_left = -19.0
+offset_top = 30.0
+offset_right = 21.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("5_pd1ib")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

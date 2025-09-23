@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="13_mipjh"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
-[ext_resource type="PackedScene" uid="uid://bs0c0pd3dan5b" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
+[ext_resource type="PackedScene" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
 [ext_resource type="PackedScene" uid="uid://4tw1e6gfyh3t" path="res://Assets/ActualNotes/triplets.tscn" id="22_m0nlo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
