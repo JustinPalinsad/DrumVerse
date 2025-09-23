@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://c515ddi5dusfi"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_m8qpt"]
+
+[resource]
+script = ExtResource("1_m8qpt")
+Name = "Broken 16th Missing E, N"
+Description = ""
+ArrayDesc = []

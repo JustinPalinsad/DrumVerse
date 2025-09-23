@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cauh5jax5yya2"]
+[gd_scene load_steps=21 format=3 uid="uid://cauh5jax5yya2"]
 
 [ext_resource type="Script" uid="uid://g6f8fn5eo7f3" path="res://Menu Scripts/notes_container.gd" id="1_ajmvm"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_gn6xg"]
@@ -12,7 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dku0d84ek8bmo" path="res://Menu Assets/NotePreview/8_Note.png" id="10_br166"]
 [ext_resource type="Texture2D" uid="uid://diiqb0dnhtm15" path="res://Menu Assets/NotePreview/16_Note.png" id="11_brb48"]
 [ext_resource type="Texture2D" uid="uid://blkqcxqkiindh" path="res://Menu Assets/NotePreview/Triplet.png" id="12_ec4fg"]
+[ext_resource type="Texture2D" uid="uid://bymu70coi2004" path="res://Assets/NewNotes/br1.png" id="13_6sgqt"]
 [ext_resource type="Texture2D" uid="uid://cqlpbd3f0twx6" path="res://Menu Assets/NotePreview/Flam.png" id="13_m60bu"]
+[ext_resource type="Texture2D" uid="uid://l0c206s1mw4" path="res://Assets/NewNotes/br2.png" id="14_lp35a"]
+[ext_resource type="Texture2D" uid="uid://d3gd015a7463" path="res://Assets/NewNotes/br3.png" id="15_pq0pr"]
+[ext_resource type="Texture2D" uid="uid://bfhrng4ogxwy7" path="res://Assets/NewNotes/br4.png" id="16_yh8qq"]
+[ext_resource type="Texture2D" uid="uid://03t1igx8yu6q" path="res://Assets/NewNotes/br5.png" id="17_5o7y8"]
+[ext_resource type="Texture2D" uid="uid://c10wttntlncqd" path="res://Assets/NewNotes/br6.png" id="18_nl3q1"]
+[ext_resource type="Texture2D" uid="uid://hms6rjofa8nm" path="res://Assets/NewNotes/br7.png" id="19_ljoxj"]
 
 [node name="Notes Container" type="Control"]
 layout_mode = 3
@@ -163,6 +170,76 @@ position = Vector2(504, 552)
 scale = Vector2(0.446933, 0.446933)
 
 [node name="Notes10" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(400, 552)
+scale = Vector2(1.29289, 1.29289)
+texture = ExtResource("13_6sgqt")
+
+[node name="Notes11" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(408, 552)
+scale = Vector2(1.26749, 1.26749)
+texture = ExtResource("13_6sgqt")
+
+[node name="Notes12" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(504, 552)
+scale = Vector2(1.22854, 1.22854)
+texture = ExtResource("14_lp35a")
+
+[node name="Notes13" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(424, 552)
+scale = Vector2(1.19103, 1.19103)
+texture = ExtResource("15_pq0pr")
+
+[node name="Notes14" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(424, 552)
+scale = Vector2(1.20352, 1.20352)
+texture = ExtResource("16_yh8qq")
+
+[node name="Notes15" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(808, 552)
+scale = Vector2(1.20709, 1.20709)
+texture = ExtResource("17_5o7y8")
+
+[node name="Notes16" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(624, 552)
+scale = Vector2(1.18445, 1.18445)
+texture = ExtResource("18_nl3q1")
+
+[node name="Notes17" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(424, 552)
+scale = Vector2(1.21686, 1.21686)
+texture = ExtResource("19_ljoxj")
+
+[node name="Notes18" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(600, 552)
+scale = Vector2(0.73792, 0.73792)
+texture = ExtResource("13_m60bu")
+
+[node name="Notes19" type="Sprite2D" parent="NotesIconContainer"]
+visible = false
+material = ExtResource("1_gn6xg")
+position = Vector2(600, 552)
+scale = Vector2(0.73792, 0.73792)
+texture = ExtResource("13_m60bu")
+
+[node name="Notes20" type="Sprite2D" parent="NotesIconContainer"]
 visible = false
 material = ExtResource("1_gn6xg")
 position = Vector2(600, 552)
