@@ -2,69 +2,69 @@ extends Control
 
 
 func _on_notes_11_pressed() -> void:
-	GameState.notes = 1
-	var loaded_resource = load("res://NotesResource/wholenote.tres")
+	GameState.notes = 11
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missinge.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_12_pressed() -> void:
-	GameState.notes = 2
-	var loaded_resource = load("res://NotesResource/halfnote.tres")
+	GameState.notes = 12
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingn.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_13_pressed() -> void:
-	GameState.notes = 3
-	var loaded_resource = load("res://NotesResource/quarternote.tres")
+	GameState.notes = 13
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingna.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_14_pressed() -> void:
-	GameState.notes = 4
-	var loaded_resource = load("res://NotesResource/eightnote.tres")
+	GameState.notes = 14
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missing1.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_15_pressed() -> void:
-	GameState.notes = 5
-	var loaded_resource = load("res://NotesResource/sixteenthnote.tres")
+	GameState.notes = 15
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missing1e.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_16_pressed() -> void:
-	GameState.notes = 6
-	var loaded_resource = load("res://NotesResource/triplet.tres")
+	GameState.notes = 16
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingen.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_17_pressed() -> void:
-	GameState.notes = 7
-	var loaded_resource = load("res://NotesResource/singlestroke.tres")
+	GameState.notes = 17
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingna.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_18_pressed() -> void:
-	GameState.notes = 8
-	var loaded_resource = load("res://NotesResource/doublestroke.tres")
+	GameState.notes = 18
+	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missing1a.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 func _on_notes_19_pressed() -> void:
-	GameState.notes = 9
+	GameState.notes = 19
 	var loaded_resource = load("res://NotesResource/paradiddle.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_20_pressed() -> void:
-	GameState.notes = 10
+	GameState.notes = 20
 	var loaded_resource = load("res://NotesResource/flam.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -76,3 +76,7 @@ func _on_back_pressed() -> void:
 
 func _on_free_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
+	
+
+
+		
