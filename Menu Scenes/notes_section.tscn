@@ -62,14 +62,12 @@ offset_right = 228.499
 offset_bottom = 40.0
 
 [node name="Notes1" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("1_tgiwa")
 layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
-scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 texture_normal = ExtResource("4_qx663")
 
