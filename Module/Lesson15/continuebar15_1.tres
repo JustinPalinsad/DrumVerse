@@ -1,12 +1,42 @@
-[gd_resource type="Resource" script_class="HitlineData" load_steps=5 format=3 uid="uid://802t8g5ej8s4"]
+[gd_resource type="Resource" script_class="HitlineData" load_steps=8 format=3 uid="uid://lcel8b28kuau"]
 
-[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_gyngr"]
-[ext_resource type="PackedScene" uid="uid://c4cmka6dx17b4" path="res://NoteScene/broken16th_1.tscn" id="2_7ssc3"]
-[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="2_k6vcx"]
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_k6vcx"]
+[ext_resource type="PackedScene" uid="uid://ciihyjxgvkup4" path="res://NoteScene/broken16th_6.tscn" id="2_7ssc3"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="3_7can6"]
 
-[sub_resource type="Resource" id="Resource_7can6"]
-script = ExtResource("1_gyngr")
-x_position = 642.0
+[sub_resource type="Resource" id="Resource_xux8d"]
+script = ExtResource("1_k6vcx")
+x_position = 757.0
+note_scene = ExtResource("2_7ssc3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_cx52d"]
+script = ExtResource("1_k6vcx")
+x_position = 1014.0
+note_scene = ExtResource("2_7ssc3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_dra2b"]
+script = ExtResource("1_k6vcx")
+x_position = 1271.0
+note_scene = ExtResource("2_7ssc3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_o0j54"]
+script = ExtResource("1_k6vcx")
+x_position = 1525.0
 note_scene = ExtResource("2_7ssc3")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
@@ -15,6 +45,6 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [resource]
-script = ExtResource("2_k6vcx")
-notes = Array[ExtResource("1_gyngr")]([SubResource("Resource_7can6")])
+script = ExtResource("3_7can6")
+notes = Array[ExtResource("1_k6vcx")]([SubResource("Resource_xux8d"), SubResource("Resource_cx52d"), SubResource("Resource_dra2b"), SubResource("Resource_o0j54")])
 metadata/_custom_type_script = "uid://dg6qemsyefrt5"
