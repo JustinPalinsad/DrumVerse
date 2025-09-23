@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dign4hotw0f7s"]
+[gd_scene load_steps=17 format=3 uid="uid://dign4hotw0f7s"]
 
 [ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="12_37m5n"]
 [ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="13_tujtb"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_lk4x5"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="16_tap5y"]
 
 [node name="notes_section" type="Control"]
 layout_mode = 3
@@ -57,17 +58,19 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 188.499
-offset_right = 228.499
+offset_left = 205.5
+offset_right = 245.5
 offset_bottom = 40.0
 
 [node name="Notes1" type="TextureButton" parent="CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("1_tgiwa")
 layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
+scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 texture_normal = ExtResource("4_qx663")
 
@@ -221,6 +224,26 @@ offset_bottom = 115.36
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_lk4x5")
 
+[node name="Free" type="Button" parent="."]
+offset_left = 200.0
+offset_top = 896.0
+offset_right = 565.0
+offset_bottom = 1036.0
+scale = Vector2(0.609104, 0.609104)
+theme_override_fonts/font = ExtResource("16_tap5y")
+theme_override_font_sizes/font_size = 126
+text = "FREE"
+
+[node name="Advanced" type="Button" parent="."]
+offset_left = 1376.0
+offset_top = 896.0
+offset_right = 2159.0
+offset_bottom = 1036.0
+scale = Vector2(0.609104, 0.609104)
+theme_override_fonts/font = ExtResource("16_tap5y")
+theme_override_font_sizes/font_size = 126
+text = "ADVANCED"
+
 [connection signal="pressed" from="CarouselContainer2/Control/Notes1" to="." method="_on_notes_1_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes2" to="." method="_on_notes_2_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes3" to="." method="_on_notes_3_pressed"]
@@ -232,3 +255,4 @@ texture_normal = ExtResource("15_lk4x5")
 [connection signal="pressed" from="CarouselContainer2/Control/Notes9" to="." method="_on_notes_9_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes10" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Advanced" to="." method="_on_advanced_pressed"]

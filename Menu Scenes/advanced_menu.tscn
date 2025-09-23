@@ -44,9 +44,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 96.5004
+offset_top = 114.0
 offset_right = 40.0
-offset_bottom = 136.5
+offset_bottom = 154.0
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 1)
