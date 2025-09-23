@@ -63,8 +63,8 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 183.001
-offset_right = 223.001
+offset_left = 183.499
+offset_right = 223.499
 offset_bottom = 40.0
 
 [node name="Notes11" type="TextureButton" parent="CarouselContainer2/Control"]
@@ -305,6 +305,7 @@ scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_qke8r")
 
 [node name="Free" type="Button" parent="."]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 896.0
 offset_right = 565.0
@@ -315,6 +316,7 @@ theme_override_font_sizes/font_size = 126
 text = "FREE"
 
 [node name="Advanced" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1376.0
 offset_top = 896.0
 offset_right = 2159.0

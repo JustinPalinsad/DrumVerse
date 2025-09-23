@@ -22,7 +22,7 @@ func _on_advance_lesson_11_pressed() -> void:
 	print("Loading Module11.tres and Module11_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson11/Module11.tres")
-	var learning_resource = load("res://Module/Lesson1/Module1_Learning.tres")#replace this
+	var learning_resource = load("res://Module/Lesson1/Module1_Learning.tres") #replace this
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
