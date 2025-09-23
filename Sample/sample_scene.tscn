@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://2ogpwbrbmfgl"]
+[gd_scene load_steps=37 format=3 uid="uid://2ogpwbrbmfgl"]
 
 [ext_resource type="Script" uid="uid://yn2ct3n8pebr" path="res://Sample/sample_scene.gd" id="1_i6auh"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_q6e57"]
@@ -19,8 +19,23 @@
 [ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="15_3noja"]
 [ext_resource type="Texture2D" uid="uid://ckgv8u4tqhqvq" path="res://Menu Assets/Challenge (1).png" id="15_dh22i"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="16_bc8xi"]
+[ext_resource type="Texture2D" uid="uid://q5j700ebio86" path="res://Menu Assets/advanced cards/Lesson_Cards__011.png" id="16_icmbb"]
+[ext_resource type="Texture2D" uid="uid://3a8xge8c408l" path="res://Menu Assets/advanced cards/Lesson_Cards__012.png" id="17_u155t"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="18_vw3n4"]
+[ext_resource type="Texture2D" uid="uid://1wnpnwsqen2s" path="res://Menu Assets/advanced cards/Lesson_Cards__013.png" id="18_x8dpr"]
+[ext_resource type="Texture2D" uid="uid://dxk15uv7jws7m" path="res://Menu Assets/advanced cards/Lesson_Cards__014.png" id="19_fglqt"]
+[ext_resource type="Texture2D" uid="uid://c3s7bwwhw7bo0" path="res://Menu Assets/advanced cards/Lesson_Cards__015.png" id="20_dfaio"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="20_ynbi3"]
+[ext_resource type="Texture2D" uid="uid://bf3ax2jly6isy" path="res://Menu Assets/advanced cards/Lesson_Cards__016.png" id="21_f3ytu"]
+[ext_resource type="Texture2D" uid="uid://h3p04kedoqf" path="res://Menu Assets/advanced cards/Lesson_Cards__017.png" id="22_txl05"]
+[ext_resource type="Texture2D" uid="uid://duf45ihu7vutl" path="res://Menu Assets/advanced cards/Lesson_Cards__018.png" id="23_6lvi0"]
+[ext_resource type="Texture2D" uid="uid://s54p4p0y5jpj" path="res://Menu Assets/advanced cards/Lesson_Cards__019.png" id="24_kh8v1"]
+[ext_resource type="Texture2D" uid="uid://c6m3ryyp3b6i3" path="res://Menu Assets/advanced cards/Lesson_Cards__020.png" id="25_iw1n8"]
+[ext_resource type="Texture2D" uid="uid://c58umkgwsscge" path="res://Menu Assets/advanced cards/Lesson_Cards__021.png" id="26_f3ytu"]
+[ext_resource type="Texture2D" uid="uid://bofp3k76xxj1q" path="res://Menu Assets/advanced cards/Lesson_Cards__022.png" id="27_txl05"]
+[ext_resource type="Texture2D" uid="uid://cmscp1so67gcd" path="res://Menu Assets/advanced cards/Lesson_Cards__023.png" id="28_6lvi0"]
+[ext_resource type="Texture2D" uid="uid://dm1ffvty14faq" path="res://Menu Assets/advanced cards/Lesson_Cards__024.png" id="29_kh8v1"]
+[ext_resource type="Texture2D" uid="uid://b4thhqefi2osw" path="res://Menu Assets/advanced cards/Lesson_Cards__025.png" id="30_iw1n8"]
 
 [node name="ModeSelection" type="Control"]
 layout_mode = 3
@@ -168,6 +183,96 @@ visible = false
 material = ExtResource("2_q6e57")
 position = Vector2(837.841, 822.27)
 texture = ExtResource("15_3noja")
+
+[node name="Lesson11" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("16_icmbb")
+
+[node name="Lesson12" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("17_u155t")
+
+[node name="Lesson13" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("18_x8dpr")
+
+[node name="Lesson14" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("19_fglqt")
+
+[node name="Lesson15" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("20_dfaio")
+
+[node name="Lesson16" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("21_f3ytu")
+
+[node name="Lesson17" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("22_txl05")
+
+[node name="Lesson18" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("23_6lvi0")
+
+[node name="Lesson19" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("24_kh8v1")
+
+[node name="Lesson20" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("25_iw1n8")
+
+[node name="Lesson21" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("26_f3ytu")
+
+[node name="Lesson22" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("27_txl05")
+
+[node name="Lesson23" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("28_6lvi0")
+
+[node name="Lesson24" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("29_kh8v1")
+
+[node name="Lesson25" type="Sprite2D" parent="Lesson Container"]
+visible = false
+material = ExtResource("2_q6e57")
+position = Vector2(837.841, 822.27)
+texture = ExtResource("30_iw1n8")
 
 [node name="Buttons Container" type="VBoxContainer" parent="."]
 layout_mode = 0
