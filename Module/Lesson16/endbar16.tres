@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="HitlineData" load_steps=12 format=3 uid="uid://bux0ix28no7xp"]
+[gd_resource type="Resource" script_class="HitlineData" load_steps=12 format=3 uid="uid://bq0jhoo30vn02"]
 
-[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_s35jq"]
-[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="2_31kka"]
-[ext_resource type="PackedScene" uid="uid://cul5jp1l63kct" path="res://NoteScene/sixteenth_note_single.tscn" id="2_oc5b4"]
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_bkaq3"]
+[ext_resource type="PackedScene" uid="uid://cul5jp1l63kct" path="res://NoteScene/sixteenth_note_single.tscn" id="2_6ekei"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="3_mv3fl"]
 
 [sub_resource type="Resource" id="Resource_sidb8"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 692.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -15,9 +15,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_r80w1"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 887.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -25,9 +25,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_renim"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 948.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -35,9 +35,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_pvlvy"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 1143.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -45,9 +45,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_t5h8v"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 1204.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -55,9 +55,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_utxwn"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 1399.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -65,9 +65,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_n7qhk"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 1460.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -75,9 +75,9 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_fcbx7"]
-script = ExtResource("1_s35jq")
+script = ExtResource("1_bkaq3")
 x_position = 1655.0
-note_scene = ExtResource("2_oc5b4")
+note_scene = ExtResource("2_6ekei")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
 pad_beam_3 = "both"
@@ -85,6 +85,6 @@ pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [resource]
-script = ExtResource("2_31kka")
-notes = Array[ExtResource("1_s35jq")]([SubResource("Resource_sidb8"), SubResource("Resource_r80w1"), SubResource("Resource_renim"), SubResource("Resource_pvlvy"), SubResource("Resource_t5h8v"), SubResource("Resource_utxwn"), SubResource("Resource_n7qhk"), SubResource("Resource_fcbx7")])
+script = ExtResource("3_mv3fl")
+notes = Array[ExtResource("1_bkaq3")]([SubResource("Resource_sidb8"), SubResource("Resource_r80w1"), SubResource("Resource_renim"), SubResource("Resource_pvlvy"), SubResource("Resource_t5h8v"), SubResource("Resource_utxwn"), SubResource("Resource_n7qhk"), SubResource("Resource_fcbx7")])
 metadata/_custom_type_script = "uid://dg6qemsyefrt5"

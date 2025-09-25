@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="HitlineData" load_steps=9 format=3 uid="uid://dw5hsl0qjtp"]
+
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_5okxh"]
+[ext_resource type="PackedScene" uid="uid://dhseekxscwvn4" path="res://NoteScene/sixteenth_new.tscn" id="2_4h14n"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="2_ocin3"]
+[ext_resource type="PackedScene" uid="uid://ciihyjxgvkup4" path="res://NoteScene/broken16th_6.tscn" id="3_qim0f"]
+
+[sub_resource type="Resource" id="Resource_5okxh"]
+script = ExtResource("1_5okxh")
+x_position = 692.0
+note_scene = ExtResource("2_4h14n")
+pad_beam_1 = "right"
+pad_beam_2 = "left"
+pad_beam_3 = "right"
+pad_beam_4 = "right"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_ocin3"]
+script = ExtResource("1_5okxh")
+x_position = 883.0
+note_scene = ExtResource("3_qim0f")
+pad_beam_1 = "left"
+pad_beam_2 = "left"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_4h14n"]
+script = ExtResource("1_5okxh")
+x_position = 1205.0
+note_scene = ExtResource("2_4h14n")
+pad_beam_1 = "right"
+pad_beam_2 = "left"
+pad_beam_3 = "right"
+pad_beam_4 = "right"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_qim0f"]
+script = ExtResource("1_5okxh")
+x_position = 1396.0
+note_scene = ExtResource("3_qim0f")
+pad_beam_1 = "left"
+pad_beam_2 = "left"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[resource]
+script = ExtResource("2_ocin3")
+notes = Array[ExtResource("1_5okxh")]([SubResource("Resource_5okxh"), SubResource("Resource_ocin3"), SubResource("Resource_4h14n"), SubResource("Resource_qim0f")])
+metadata/_custom_type_script = "uid://dg6qemsyefrt5"

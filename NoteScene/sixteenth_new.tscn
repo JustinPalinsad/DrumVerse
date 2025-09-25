@@ -21,9 +21,10 @@ texture = ExtResource("1_vmvqg")
 
 [node name="BeamContainer" type="Node2D" parent="."]
 
-[node name="Beam1" type="Area2D" parent="BeamContainer"]
+[node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(-98, 5)
 script = ExtResource("3_oysp4")
+parent_note = NodePath("../..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
@@ -42,9 +43,10 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Beam2" type="Area2D" parent="BeamContainer"]
+[node name="Beam2" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(-33, 5)
 script = ExtResource("3_oysp4")
+parent_note = NodePath("../..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam2"]
@@ -63,9 +65,10 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Beam3" type="Area2D" parent="BeamContainer"]
+[node name="Beam3" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(33, 5)
 script = ExtResource("3_oysp4")
+parent_note = NodePath("../..")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam3"]
@@ -84,9 +87,10 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Beam4" type="Area2D" parent="BeamContainer"]
+[node name="Beam4" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(97, 5)
 script = ExtResource("3_oysp4")
+parent_note = NodePath("../..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam4"]
 rotation = -2.06292
