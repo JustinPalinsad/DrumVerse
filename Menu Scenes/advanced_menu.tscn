@@ -49,19 +49,19 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 96.4824
+offset_top = 96.499
 offset_right = 40.0
-offset_bottom = 136.482
+offset_bottom = 136.499
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
-modulate = Color(1, 1, 1, 0.999985)
+modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("1_7ykpt")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999989, 0.999989)
+scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("5_1rn87")
 
@@ -382,4 +382,8 @@ text = "placeholder"
 [connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson18" to="." method="_on_advance_lesson_18_pressed"]
 [connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson19" to="." method="_on_advance_lesson_19_pressed"]
 [connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson20" to="." method="_on_advance_lesson_20_pressed"]
+[connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson21" to="." method="_on_advance_lesson_21_pressed"]
+[connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson22" to="." method="_on_advance_lesson_22_pressed"]
+[connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson23" to="." method="_on_advance_lesson_23_pressed"]
+[connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson24" to="." method="_on_advance_lesson_24_pressed"]
 [connection signal="pressed" from="Free" to="." method="_on_free_pressed"]
