@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://16dx1uilmytw"
-path="res://.godot/imported/Head1.png-ed1584d519faac50868857b21c9c7911.ctex"
+uid="uid://4pw5v4xj4a37"
+path="res://.godot/imported/Triple_Slide.png-c99826191477723befaaf9d9b5466f9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NoteParts/Head1.png"
-dest_files=["res://.godot/imported/Head1.png-ed1584d519faac50868857b21c9c7911.ctex"]
+source_file="res://Assets/Junk/ActualNotes/Triple_Slide.png"
+dest_files=["res://.godot/imported/Triple_Slide.png-c99826191477723befaaf9d9b5466f9f.ctex"]
 
 [params]
 

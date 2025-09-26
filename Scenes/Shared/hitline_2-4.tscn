@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7nxsv031e1l0"]
+[gd_scene load_steps=11 format=3 uid="uid://66tbdhkgqns1"]
 
-[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_hq15t"]
-[ext_resource type="Texture2D" uid="uid://blthkb5bwvrjb" path="res://Assets/Continue.png" id="2_8voxq"]
-[ext_resource type="Texture2D" uid="uid://wljvuirpt75o" path="res://Assets/End.png" id="3_yqitu"]
-[ext_resource type="Texture2D" uid="uid://do44m1e04vx5k" path="res://Assets/Time SIgnature Parts/Continue.png" id="4_p7g21"]
-[ext_resource type="Texture2D" uid="uid://d182fu3fw4tq8" path="res://Assets/Time SIgnature Parts/Line.png" id="5_gwofh"]
-[ext_resource type="Texture2D" uid="uid://c8eodby2f53qg" path="res://Assets/Time SIgnature Parts/TimeSigRef.png" id="6_tl0hi"]
-[ext_resource type="Texture2D" uid="uid://hqwn8e44qnpv" path="res://Assets/Time SIgnature Parts/End.png" id="7_8yi08"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_75j2y"]
+[ext_resource type="Texture2D" uid="uid://do44m1e04vx5k" path="res://Assets/Time SIgnature Parts/Continue.png" id="2_v4bt6"]
+[ext_resource type="Texture2D" uid="uid://d182fu3fw4tq8" path="res://Assets/Time SIgnature Parts/Line.png" id="3_8xbnx"]
+[ext_resource type="Texture2D" uid="uid://c8eodby2f53qg" path="res://Assets/Time SIgnature Parts/TimeSigRef.png" id="4_mqw2h"]
+[ext_resource type="Texture2D" uid="uid://hqwn8e44qnpv" path="res://Assets/Time SIgnature Parts/End.png" id="5_cv8cd"]
+[ext_resource type="PackedScene" uid="uid://chhpipfjhex1m" path="res://Assets/Junk/ActualNotes/16_note.tscn" id="6_jr5lt"]
 
 [sub_resource type="Animation" id="Animation_s7ys8"]
 resource_name = "Animation"
@@ -24,7 +23,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_p7g21")]
+"values": [ExtResource("2_v4bt6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -36,7 +35,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_gwofh")]
+"values": [ExtResource("3_8xbnx")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -48,7 +47,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_tl0hi")]
+"values": [ExtResource("4_mqw2h")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -75,7 +74,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_p7g21")]
+"values": [ExtResource("2_v4bt6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -87,7 +86,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_gwofh")]
+"values": [ExtResource("3_8xbnx")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -99,7 +98,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_tl0hi")]
+"values": [ExtResource("4_mqw2h")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -111,7 +110,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_8yi08")]
+"values": [ExtResource("5_cv8cd")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i7n5g"]
@@ -121,49 +120,37 @@ _data = {
 &"RESET": SubResource("Animation_l5up7")
 }
 
-[node name="HitLinev2" type="Node2D"]
-position = Vector2(7, 28)
-scale = Vector2(0.4, 0.4)
-
-[node name="Start" type="Sprite2D" parent="."]
-visible = false
-material = ExtResource("1_hq15t")
-texture = ExtResource("2_8voxq")
-
-[node name="End" type="Sprite2D" parent="."]
-visible = false
-material = ExtResource("1_hq15t")
-position = Vector2(49, -1)
-texture = ExtResource("3_yqitu")
+[node name="hitline 2_4" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
-material = ExtResource("1_hq15t")
+material = ExtResource("1_75j2y")
 position = Vector2(-75, 0)
+scale = Vector2(1, 1)
 
 [node name="Continue" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-material = ExtResource("1_hq15t")
-position = Vector2(64, 0)
-texture = ExtResource("4_p7g21")
+material = ExtResource("1_75j2y")
+position = Vector2(-1340, 0)
+texture = ExtResource("2_v4bt6")
 
 [node name="Line" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-material = ExtResource("1_hq15t")
-position = Vector2(27, 0)
-scale = Vector2(1.02628, 1)
-texture = ExtResource("5_gwofh")
+material = ExtResource("1_75j2y")
+position = Vector2(-630, 0)
+scale = Vector2(0.546279, 1)
+texture = ExtResource("3_8xbnx")
 
 [node name="TimeSigRef" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-material = ExtResource("1_hq15t")
-texture = ExtResource("6_tl0hi")
+material = ExtResource("1_75j2y")
+texture = ExtResource("4_mqw2h")
 
 [node name="End" type="Sprite2D" parent="Node2D"]
 visible = false
 texture_filter = 1
-material = ExtResource("1_hq15t")
+material = ExtResource("1_75j2y")
 position = Vector2(111, 0)
-texture = ExtResource("7_8yi08")
+texture = ExtResource("5_cv8cd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -172,9 +159,13 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Points" type="Node2D" parent="."]
+scale = Vector2(1, 1)
 
 [node name="0" type="Node2D" parent="Points"]
 position = Vector2(-1137.5, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="16Note" parent="Points/0" instance=ExtResource("6_jr5lt")]
 
 [node name="0_25" type="Node2D" parent="Points"]
 position = Vector2(-975.155, 98)
@@ -187,6 +178,9 @@ position = Vector2(-650.467, 98)
 
 [node name="1" type="Node2D" parent="Points"]
 position = Vector2(-488.125, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="16Note" parent="Points/1" instance=ExtResource("6_jr5lt")]
 
 [node name="1_25" type="Node2D" parent="Points"]
 position = Vector2(-325.78, 98)

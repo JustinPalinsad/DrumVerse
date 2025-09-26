@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dgex3dfsgovyk"]
+[gd_scene load_steps=32 format=3 uid="uid://dgex3dfsgovyk"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="13_mipjh"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="20_aq00n"]
-[ext_resource type="PackedScene" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
+[ext_resource type="PackedScene" uid="uid://b7nxsv031e1l0" path="res://Scenes/Shared/hitline_v2.tscn" id="20_he58o"]
 [ext_resource type="PackedScene" uid="uid://4tw1e6gfyh3t" path="res://Assets/ActualNotes/triplets.tscn" id="22_m0nlo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
@@ -79,7 +79,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(517, 442), Vector2(1556, 442)]
+"values": [Vector2(517, 688), Vector2(1556, 688)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -191,10 +191,52 @@ tracks/0/keys = {
 "values": [Vector2(517, 442), Vector2(581, 442), Vector2(838, 442), Vector2(1092, 442), Vector2(1349, 442), Vector2(1540, 442)]
 }
 
+[sub_resource type="Animation" id="Animation_mgbhm"]
+resource_name = "animation w sound_top"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(517, 440), Vector2(1556, 440)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lsk3b"]
 _data = {
 &"RESET": SubResource("Animation_ewxye"),
 &"animation w sound_2": SubResource("Animation_817jg"),
+&"animation w sound_top": SubResource("Animation_mgbhm"),
 &"moving circle v2": SubResource("Animation_np3vi"),
 &"moving_circle": SubResource("Animation_jj1xe"),
 &"moving_circle_100": SubResource("Animation_4xiap"),
@@ -232,6 +274,7 @@ color = Color(1, 0.752941, 0.145098, 1)
 metadata/_edit_lock_ = true
 
 [node name="bg" type="TextureRect" parent="."]
+visible = false
 material = ExtResource("11_4xiap")
 layout_mode = 1
 anchors_preset = 15
@@ -350,9 +393,10 @@ position = Vector2(979, 621)
 scale = Vector2(0.101848, 0.101848)
 
 [node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
-position = Vector2(517, 442)
+position = Vector2(1556, 442)
 
 [node name="HitArea" type="Area2D" parent="MovingCircle"]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
@@ -387,6 +431,7 @@ position = Vector2(978, 376)
 scale = Vector2(0.4, 0.4)
 
 [node name="0" type="Node2D" parent="."]
+visible = false
 position = Vector2(517, 424.2)
 
 [node name="triplets" parent="0" instance=ExtResource("22_m0nlo")]
@@ -401,6 +446,7 @@ position = Vector2(646.875, 424.2)
 position = Vector2(711.813, 424.2)
 
 [node name="1" type="Node2D" parent="."]
+visible = false
 position = Vector2(776.75, 424.2)
 
 [node name="triplets" parent="1" instance=ExtResource("22_m0nlo")]
@@ -415,6 +461,7 @@ position = Vector2(906.625, 424.2)
 position = Vector2(971.563, 424.2)
 
 [node name="2" type="Node2D" parent="."]
+visible = false
 position = Vector2(1036.5, 424.2)
 
 [node name="triplets" parent="2" instance=ExtResource("22_m0nlo")]
@@ -429,6 +476,7 @@ position = Vector2(1166.38, 424.2)
 position = Vector2(1231.31, 424.2)
 
 [node name="3" type="Node2D" parent="."]
+visible = false
 position = Vector2(1296.25, 424.2)
 
 [node name="triplets" parent="3" instance=ExtResource("22_m0nlo")]

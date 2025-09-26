@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://chhpipfjhex1m"]
+[gd_scene load_steps=8 format=3 uid="uid://chhpipfjhex1m"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_cmxfp"]
-[ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/ActualNotes/quarter_note.tscn" id="2_7vqge"]
+[ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/Junk/ActualNotes/4_note.tscn" id="2_7vqge"]
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_dyjeg"]
-[ext_resource type="Texture2D" uid="uid://hd3v2ijvhr57" path="res://Assets/NoteParts/Beam.png" id="4_hivwu"]
+[ext_resource type="Texture2D" uid="uid://hd3v2ijvhr57" path="res://Assets/Junk/NoteParts/Beam.png" id="4_hivwu"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_oi4w4"]
+[ext_resource type="Texture2D" uid="uid://dhtsi6hn3y3qm" path="res://Assets/Junk/NoteParts/Note.png" id="6_oi4w4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hivwu"]
 radius = 21.9503
@@ -130,3 +131,11 @@ material = ExtResource("1_cmxfp")
 position = Vector2(342.5, -64)
 scale = Vector2(2.02, 0.5)
 texture = ExtResource("4_hivwu")
+
+[node name="Note" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(542, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_oi4w4")
+
+[node name="Node2D2" type="Node2D" parent="."]
