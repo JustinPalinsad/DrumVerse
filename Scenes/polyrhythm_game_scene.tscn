@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bik162a4anf2x"]
 
-[ext_resource type="Script" path="res://Scenes/polyrhythm_game_scene.gd" id="1_vabtg"]
+[ext_resource type="Script" uid="uid://cvl4viruu28xf" path="res://Scenes/polyrhythm_game_scene.gd" id="1_vabtg"]
 [ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="2_8lhxk"]
 [ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="2_b02qn"]
 [ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="3_q1dhj"]
