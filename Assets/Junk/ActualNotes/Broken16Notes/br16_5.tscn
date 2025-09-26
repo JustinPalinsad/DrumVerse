@@ -1,85 +1,85 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkglg263r51dt"]
+[gd_scene load_steps=7 format=3 uid="uid://bjayd1iymt3vb"]
 
-[ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/ActualNotes/quarter_note.tscn" id="1_jytf8"]
-[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_10k2b"]
-[ext_resource type="Texture2D" uid="uid://hd3v2ijvhr57" path="res://Assets/NoteParts/Beam.png" id="3_jp33f"]
-[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_jp33f"]
-[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_sqofs"]
+[ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/Junk/ActualNotes/4_note.tscn" id="1_som5i"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_savof"]
+[ext_resource type="Texture2D" uid="uid://hd3v2ijvhr57" path="res://Assets/Junk/NoteParts/Beam.png" id="3_obu03"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_p453c"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_2xg75"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_af2j7"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4j6g"]
 radius = 21.9503
 height = 52.1405
 
-[node name="16_note_br6" type="Node2D"]
+[node name="16_note_br5" type="Node2D"]
 scale = Vector2(0.4, 0.4)
 
 [node name="0_5" type="Node2D" parent="."]
 
+[node name="Quarter_Note" parent="0_5" instance=ExtResource("1_som5i")]
+scale = Vector2(1, 1)
+
 [node name="0_75" type="Node2D" parent="."]
 position = Vector2(162.345, 0)
 
-[node name="Quarter_Note" parent="0_75" instance=ExtResource("1_jytf8")]
+[node name="Quarter_Note" parent="0_75" instance=ExtResource("1_som5i")]
 scale = Vector2(1, 1)
 
 [node name="1" type="Node2D" parent="."]
 position = Vector2(324.687, 0)
 
-[node name="Quarter_Note" parent="1" instance=ExtResource("1_jytf8")]
-scale = Vector2(1, 1)
-
 [node name="1_25" type="Node2D" parent="."]
 position = Vector2(487.032, 0)
 
 [node name="Beam" type="Sprite2D" parent="."]
-material = ExtResource("2_10k2b")
-position = Vector2(344.39, -126.75)
+material = ExtResource("2_savof")
+position = Vector2(181.39, -126.75)
 scale = Vector2(0.740001, 0.5)
-texture = ExtResource("3_jp33f")
+texture = ExtResource("3_obu03")
 
 [node name="Beam2" type="Sprite2D" parent="."]
-material = ExtResource("2_10k2b")
-position = Vector2(345.39, -64)
+material = ExtResource("2_savof")
+position = Vector2(182.39, -64)
 scale = Vector2(0.718552, 0.5)
-texture = ExtResource("3_jp33f")
+texture = ExtResource("3_obu03")
 
 [node name="BeamContainer" type="Node2D" parent="."]
 position = Vector2(54.75, 0)
 scale = Vector2(0.5, 0.5)
 
 [node name="Beam1" type="Area2D" parent="BeamContainer"]
-position = Vector2(324.5, 8)
+position = Vector2(0.5, 8)
 rotation = -0.186924
 scale = Vector2(5.03281, 4.28231)
-script = ExtResource("4_jp33f")
+script = ExtResource("4_p453c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
 position = Vector2(0, -2)
 rotation = 4.16805
-shape = SubResource("CapsuleShape2D_af2j7")
+shape = SubResource("CapsuleShape2D_b4j6g")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Label" type="Label" parent="BeamContainer/Beam1"]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("5_sqofs")
+theme_override_fonts/font = ExtResource("5_2xg75")
 theme_override_font_sizes/font_size = 20
 metadata/_edit_use_anchors_ = true
 
 [node name="Beam2" type="Area2D" parent="BeamContainer"]
-position = Vector2(650.5, 9.00001)
+position = Vector2(326.5, 9.00001)
 rotation = -0.186924
 scale = Vector2(5.03281, 4.28231)
-script = ExtResource("4_jp33f")
+script = ExtResource("4_p453c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam2"]
 position = Vector2(0, -2)
 rotation = 4.16805
-shape = SubResource("CapsuleShape2D_af2j7")
+shape = SubResource("CapsuleShape2D_b4j6g")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Label" type="Label" parent="BeamContainer/Beam2"]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("5_sqofs")
+theme_override_fonts/font = ExtResource("5_2xg75")
 theme_override_font_sizes/font_size = 20
 metadata/_edit_use_anchors_ = true

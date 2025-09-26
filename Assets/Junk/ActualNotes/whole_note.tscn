@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnjhw7nyhvxsn"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_bgxsr"]
-[ext_resource type="Texture2D" uid="uid://16dx1uilmytw" path="res://Assets/NoteParts/Head1.png" id="2_t7v7p"]
+[ext_resource type="Texture2D" uid="uid://16dx1uilmytw" path="res://Assets/Junk/NoteParts/Head1.png" id="2_t7v7p"]
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="3_fhdka"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_h7qn3"]
 

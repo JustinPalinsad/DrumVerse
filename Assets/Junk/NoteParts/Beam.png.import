@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4pw5v4xj4a37"
-path="res://.godot/imported/Triple_Slide.png-18ec63583df98b9db8caeef5131c7dcb.ctex"
+uid="uid://hd3v2ijvhr57"
+path="res://.godot/imported/Beam.png-b6c1c1c2de51413cb9866ce94b38a4ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ActualNotes/Triple_Slide.png"
-dest_files=["res://.godot/imported/Triple_Slide.png-18ec63583df98b9db8caeef5131c7dcb.ctex"]
+source_file="res://Assets/Junk/NoteParts/Beam.png"
+dest_files=["res://.godot/imported/Beam.png-b6c1c1c2de51413cb9866ce94b38a4ce.ctex"]
 
 [params]
 

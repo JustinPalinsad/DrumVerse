@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://roxnyah5ksrl"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_le55e"]
-[ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/NoteParts/Stem.png" id="2_vbm00"]
-[ext_resource type="PackedScene" uid="uid://bnjhw7nyhvxsn" path="res://Assets/ActualNotes/whole_note.tscn" id="3_le55e"]
+[ext_resource type="Texture2D" uid="uid://chy7umlb623rn" path="res://Assets/Junk/NoteParts/Stem.png" id="2_vbm00"]
+[ext_resource type="PackedScene" uid="uid://bnjhw7nyhvxsn" path="res://Assets/Junk/ActualNotes/whole_note.tscn" id="3_le55e"]
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_0lfo6"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_yo8lh"]
 

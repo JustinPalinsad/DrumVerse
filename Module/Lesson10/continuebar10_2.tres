@@ -7,58 +7,82 @@
 
 [sub_resource type="Resource" id="Resource_udcg2"]
 script = ExtResource("1_mpked")
-required_pad = "left"
 x_position = 588.0
 note_scene = ExtResource("2_20ah3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_nxb1c"]
 script = ExtResource("1_mpked")
-required_pad = "right"
 x_position = 608.0
 note_scene = ExtResource("3_wtpi8")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_ww806"]
 script = ExtResource("1_mpked")
-required_pad = "right"
 x_position = 844.0
 note_scene = ExtResource("2_20ah3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_sr5oa"]
 script = ExtResource("1_mpked")
-required_pad = "left"
 x_position = 864.0
 note_scene = ExtResource("3_wtpi8")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_ige0u"]
 script = ExtResource("1_mpked")
-required_pad = "left"
 x_position = 1099.0
 note_scene = ExtResource("2_20ah3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_6jcsy"]
 script = ExtResource("1_mpked")
-required_pad = "right"
 x_position = 1119.0
 note_scene = ExtResource("3_wtpi8")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_x6362"]
 script = ExtResource("1_mpked")
-required_pad = "right"
 x_position = 1356.0
 note_scene = ExtResource("2_20ah3")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_4uh8r"]
 script = ExtResource("1_mpked")
-required_pad = "left"
 x_position = 1376.0
 note_scene = ExtResource("3_wtpi8")
+pad_beam_1 = "both"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
 metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [resource]
