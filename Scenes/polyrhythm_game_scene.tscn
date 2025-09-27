@@ -17,6 +17,47 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
 radius = 18.0
 
+[sub_resource type="Animation" id="Animation_817jg"]
+resource_name = "Bottom_Line"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(517, 688), Vector2(1296.25, 688), Vector2(1556, 688)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+
 [sub_resource type="Animation" id="Animation_ewxye"]
 length = 2.0
 loop_mode = 1
@@ -79,6 +120,47 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(517, 688)]
+}
+
+[sub_resource type="Animation" id="Animation_mgbhm"]
+resource_name = "Top_Line"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(517, 440), Vector2(1036.5, 440), Vector2(1556, 440)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_np3vi"]
@@ -204,88 +286,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(517, 688)]
-}
-
-[sub_resource type="Animation" id="Animation_817jg"]
-resource_name = "Bottom_Line"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(517, 688), Vector2(1296.25, 688), Vector2(1556, 688)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("TickSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("Solid-snare:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true]
-}
-
-[sub_resource type="Animation" id="Animation_mgbhm"]
-resource_name = "Top_Line"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(517, 440), Vector2(1036.5, 440), Vector2(1556, 440)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("TickSound:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("Solid-snare:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lsk3b"]
