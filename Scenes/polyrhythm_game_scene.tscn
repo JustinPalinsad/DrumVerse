@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bik162a4anf2x"]
+[gd_scene load_steps=24 format=3 uid="uid://bik162a4anf2x"]
 
 [ext_resource type="Script" uid="uid://cvl4viruu28xf" path="res://Scenes/polyrhythm_game_scene.gd" id="1_vabtg"]
 [ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="2_8lhxk"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="5_vabtg"]
 [ext_resource type="PackedScene" uid="uid://66tbdhkgqns1" path="res://Scenes/Shared/hitline_2-4.tscn" id="8_dj2j3"]
 [ext_resource type="PackedScene" uid="uid://b2fgioqo75kcb" path="res://Scenes/Shared/hitline_3-4.tscn" id="9_ndwsn"]
-[ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="10_sd245"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_d0yf2"]
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="12_iv2sl"]
 [ext_resource type="Texture2D" uid="uid://bu1mpu22fct5w" path="res://Assets/Drum2_F.png" id="13_tkqq0"]
@@ -313,7 +312,6 @@ position = Vector2(984, 632)
 scale = Vector2(0.4, 0.4)
 
 [node name="TouchPadContainer" type="Node2D" parent="."]
-script = ExtResource("10_sd245")
 
 [node name="LeftTouchPad" type="TouchScreenButton" parent="TouchPadContainer"]
 material = ExtResource("11_d0yf2")
