@@ -2,5 +2,5 @@ extends Node2D
 
 
 func _ready() -> void:
-	$MovingCircleTop/TopBallAnim.play("animation w sound_top")
-	$MovingCircleBottom/BottomBallAnim.play("animation w sound_2")
+	$"Moving Circe"/MovingCircleTop/TopBallAnim.play("Top_Line")
+	$"Moving Circe"/MovingCircleBottom/BottomBallAnim.play("Bottom_Line")
