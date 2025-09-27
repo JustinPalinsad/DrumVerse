@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2fgioqo75kcb"]
+[gd_scene load_steps=10 format=3 uid="uid://b2fgioqo75kcb"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7qwew"]
 [ext_resource type="Texture2D" uid="uid://do44m1e04vx5k" path="res://Assets/Time SIgnature Parts/Continue.png" id="2_dvikw"]
 [ext_resource type="Texture2D" uid="uid://d182fu3fw4tq8" path="res://Assets/Time SIgnature Parts/Line.png" id="3_ga64b"]
 [ext_resource type="Texture2D" uid="uid://c8eodby2f53qg" path="res://Assets/Time SIgnature Parts/TimeSigRef.png" id="4_shd1c"]
 [ext_resource type="Texture2D" uid="uid://hqwn8e44qnpv" path="res://Assets/Time SIgnature Parts/End.png" id="5_tfvok"]
-[ext_resource type="PackedScene" uid="uid://chhpipfjhex1m" path="res://Assets/Junk/ActualNotes/16_note.tscn" id="6_rjpk4"]
 
 [sub_resource type="Animation" id="Animation_s7ys8"]
 resource_name = "Animation"
@@ -125,7 +124,6 @@ _data = {
 [node name="Node2D" type="Node2D" parent="."]
 material = ExtResource("1_7qwew")
 position = Vector2(-75, 0)
-scale = Vector2(1, 1)
 
 [node name="Continue" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
@@ -159,13 +157,10 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Points" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="0" type="Node2D" parent="Points"]
 position = Vector2(-1137.5, 98)
 scale = Vector2(2.4, 2.4)
-
-[node name="16Note" parent="Points/0" instance=ExtResource("6_rjpk4")]
 
 [node name="0_25" type="Node2D" parent="Points"]
 position = Vector2(-975.155, 98)
@@ -180,8 +175,6 @@ position = Vector2(-650.467, 98)
 position = Vector2(-488.125, 98)
 scale = Vector2(2.4, 2.4)
 
-[node name="16Note" parent="Points/1" instance=ExtResource("6_rjpk4")]
-
 [node name="1_25" type="Node2D" parent="Points"]
 position = Vector2(-325.78, 98)
 
@@ -194,8 +187,6 @@ position = Vector2(-1.09253, 98)
 [node name="2" type="Node2D" parent="Points"]
 position = Vector2(161.25, 98)
 scale = Vector2(2.4, 2.4)
-
-[node name="16Note" parent="Points/2" instance=ExtResource("6_rjpk4")]
 
 [node name="2_25" type="Node2D" parent="Points"]
 position = Vector2(323.595, 98)
