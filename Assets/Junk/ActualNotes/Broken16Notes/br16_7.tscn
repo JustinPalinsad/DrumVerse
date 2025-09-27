@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://h3cjfx0inhwn"]
+[gd_scene load_steps=8 format=3 uid="uid://h3cjfx0inhwn"]
 
+[ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_4ai3m"]
 [ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/Junk/ActualNotes/4_note.tscn" id="1_kbxy0"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_g4uxo"]
 [ext_resource type="Texture2D" uid="uid://hd3v2ijvhr57" path="res://Assets/Junk/NoteParts/Beam.png" id="3_j6q05"]
@@ -12,6 +13,7 @@ height = 52.1405
 
 [node name="16_note_br7" type="Node2D"]
 scale = Vector2(0.4, 0.4)
+script = ExtResource("1_4ai3m")
 
 [node name="0_5" type="Node2D" parent="."]
 

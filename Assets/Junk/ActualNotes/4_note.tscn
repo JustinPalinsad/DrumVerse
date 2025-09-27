@@ -15,8 +15,21 @@ height = 52.1405
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_tu4fu")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Stem" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("4_l3q80")
+position = Vector2(55, -127)
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_lawt5")
+
+[node name="Note" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+material = ExtResource("4_l3q80")
+position = Vector2(55, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ev3si")
 
 [node name="BeamContainer" type="Node2D" parent="."]
 position = Vector2(54.75, 0)
@@ -40,19 +53,3 @@ offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("3_ip3j0")
 theme_override_font_sizes/font_size = 20
 metadata/_edit_use_anchors_ = true
-
-[node name="Stem" type="Sprite2D" parent="."]
-texture_filter = 1
-texture_repeat = 1
-material = ExtResource("4_l3q80")
-position = Vector2(55, -127)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_lawt5")
-
-[node name="Note" type="Sprite2D" parent="."]
-texture_filter = 1
-texture_repeat = 1
-material = ExtResource("4_l3q80")
-position = Vector2(55, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_ev3si")
