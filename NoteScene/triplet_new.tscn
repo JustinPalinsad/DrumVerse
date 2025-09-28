@@ -15,17 +15,16 @@ script = ExtResource("1_16g1v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_aiots")
-position = Vector2(0, -35)
+position = Vector2(0, -60)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_rnkda")
 
 [node name="BeamContainer" type="Node2D" parent="."]
 
 [node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
-position = Vector2(-98, 37)
+position = Vector2(-98, 12)
 script = ExtResource("2_8mlvc")
 parent_note = NodePath("../..")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
 rotation = -2.04247
@@ -44,7 +43,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Beam2" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
-position = Vector2(-18, 37)
+position = Vector2(-18, 12)
 script = ExtResource("2_8mlvc")
 parent_note = NodePath("../..")
 
@@ -65,7 +64,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Beam3" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
-position = Vector2(62, 37)
+position = Vector2(62, 12)
 script = ExtResource("2_8mlvc")
 parent_note = NodePath("../..")
 
