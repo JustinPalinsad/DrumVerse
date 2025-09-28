@@ -7,15 +7,66 @@ var MissScene := preload("res://Scenes/Shared/MissEffect.tscn")
 var top_target: Area2D = null
 var bottom_target: Area2D = null
 
+# counters
+var top_play_count: int = 0
+var bottom_play_count: int = 0
+var max_plays: int = 4
+
+# references for readability
+@onready var top_anim = $Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim
+@onready var bottom_anim = $Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim
+
 func _ready() -> void:
-	$Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim.play("Top_Line")
-	$Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim.play("Bottom_Line")
+	# hide animations until countdown is done
+	top_anim.stop()
+	bottom_anim.stop()
 
 	# connect hitbox signals
 	$Middle_Point/HitLineTop/MovingCircleTop/HitArea.area_entered.connect(_on_top_area_entered)
 	$Middle_Point/HitLineTop/MovingCircleTop/HitArea.area_exited.connect(_on_top_area_exited)
 	$Middle_Point/HitLineBottom/MovingCircleBottom/HitArea.area_entered.connect(_on_bottom_area_entered)
 	$Middle_Point/HitLineBottom/MovingCircleBottom/HitArea.area_exited.connect(_on_bottom_area_exited)
+
+	# start countdown before game
+	_start_countdown()
+
+
+# --- COUNTDOWN ---
+func _start_countdown() -> void:
+	await get_tree().create_timer(1.0).timeout
+	print("3")
+	await get_tree().create_timer(1.0).timeout
+	print("2")
+	await get_tree().create_timer(1.0).timeout
+	print("1")
+	await get_tree().create_timer(1.0).timeout
+	print("Go!")
+
+	# start both animations
+	_play_top_animation()
+	_play_bottom_animation()
+
+
+# --- ANIMATION PLAY LIMIT ---
+func _play_top_animation() -> void:
+	if top_play_count < max_plays:
+		top_play_count += 1
+		top_anim.play("Top_Line")
+		# wait until finished, then try again
+		await top_anim.animation_finished
+		_play_top_animation()
+	else:
+		print("Top animation done")
+
+
+func _play_bottom_animation() -> void:
+	if bottom_play_count < max_plays:
+		bottom_play_count += 1
+		bottom_anim.play("Bottom_Line")
+		await bottom_anim.animation_finished
+		_play_bottom_animation()
+	else:
+		print("Bottom animation done")
 
 
 # --- TOP HITBOX ---
