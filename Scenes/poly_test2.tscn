@@ -36,7 +36,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("TickSound:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -456,7 +456,7 @@ scale = Vector2(2.6, 2.6)
 
 [node name="MovingCircleTop" type="Node2D" parent="Middle_Point/HitLineTop"]
 z_index = 3
-position = Vector2(-321.271, 140)
+position = Vector2(-1167.5, 140)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("9_x5dye")
 
