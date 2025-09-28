@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c0prltnh2t7yw"]
+[gd_scene load_steps=30 format=3 uid="uid://c0prltnh2t7yw"]
 
 [ext_resource type="Script" uid="uid://cgmb2c6mgixno" path="res://Scenes/poly_test_2.gd" id="1_yjtkh"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="2_rbad5"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="12_xs11p"]
 [ext_resource type="PackedScene" uid="uid://b2fgioqo75kcb" path="res://Scenes/Shared/hitline_3-4.tscn" id="13_3uanj"]
 [ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="14_qv7y0"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="15_rbad5"]
+[ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="16_xgh5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
 radius = 18.0
@@ -384,7 +386,9 @@ _data = {
 &"poly_test": SubResource("Animation_dj2j3")
 }
 
-[node name="Polyrhythm_Game_Scene" type="Node2D"]
+[node name="Polyrhythm_Game_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_yjtkh")
 
 [node name="TouchPadContainer" type="Node2D" parent="."]
@@ -575,9 +579,27 @@ position = Vector2(0, -56)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_xs11p")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CountdownLabel" type="Label" parent="."]
+material = ExtResource("3_xgh5x")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 960.0
+offset_top = 640.0
+offset_right = 1070.0
+offset_bottom = 788.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("15_rbad5")
+theme_override_font_sizes/font_size = 141
+text = "3"
+
+[node name="CountdownAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_xgh5x")
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]

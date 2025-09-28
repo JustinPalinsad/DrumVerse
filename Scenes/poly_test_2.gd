@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var HitScene := preload("res://Scenes/Shared/HitEffect.tscn")
 var MissScene := preload("res://Scenes/Shared/MissEffect.tscn")
@@ -15,6 +15,7 @@ var max_plays: int = 4
 # references for readability
 @onready var top_anim = $Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim
 @onready var bottom_anim = $Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim
+@onready var countdown_label: Label = $CountdownLabel   # 👈 Make sure you have a Label node named "CountdownLabel"
 
 func _ready() -> void:
 	# hide animations until countdown is done
@@ -33,16 +34,25 @@ func _ready() -> void:
 
 # --- COUNTDOWN ---
 func _start_countdown() -> void:
+	countdown_label.visible = true
+	
+	countdown_label.text = "3"
+	$CountdownAudioPlayer.play()
 	await get_tree().create_timer(1.0).timeout
-	print("3")
+	countdown_label.text = "2"
+	$CountdownAudioPlayer.play()
 	await get_tree().create_timer(1.0).timeout
-	print("2")
+	countdown_label.text = "1"
+	$CountdownAudioPlayer.play()
 	await get_tree().create_timer(1.0).timeout
-	print("1")
+	countdown_label.text = "Go!"
+	$CountdownAudioPlayer.play()
 	await get_tree().create_timer(1.0).timeout
-	print("Go!")
-
-	# start both animations
+	
+	# hide the label after "Go!"
+	countdown_label.visible = false
+	
+	# now start both animations
 	_play_top_animation()
 	_play_bottom_animation()
 
