@@ -12,10 +12,15 @@ var top_play_count: int = 0
 var bottom_play_count: int = 0
 var max_plays: int = 4
 
+# --- scoring ---
+var total_hits: int = 0
+var total_misses: int = 0
+var total_attempts: int = 0
+
 # references for readability
 @onready var top_anim = $Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim
 @onready var bottom_anim = $Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim
-@onready var countdown_label: Label = $CountdownLabel   # 👈 Make sure you have a Label node named "CountdownLabel"
+@onready var countdown_label: Label = $CountdownLabel   # 👈 Label node for countdown
 
 func _ready() -> void:
 	# hide animations until countdown is done
@@ -36,6 +41,9 @@ func _ready() -> void:
 func _start_countdown() -> void:
 	countdown_label.visible = true
 	
+	countdown_label.text = "3"
+	$CountdownAudioPlayer.play()
+	await get_tree().create_timer(1.0).timeout
 	countdown_label.text = "2"
 	$CountdownAudioPlayer.play()
 	await get_tree().create_timer(1.0).timeout
@@ -59,11 +67,10 @@ func _play_top_animation() -> void:
 	if top_play_count < max_plays:
 		top_play_count += 1
 		top_anim.play("Top_Line")
-		# wait until finished, then try again
 		await top_anim.animation_finished
 		_play_top_animation()
 	else:
-		print("Top animation done")
+		_check_results()
 
 
 func _play_bottom_animation() -> void:
@@ -73,47 +80,87 @@ func _play_bottom_animation() -> void:
 		await bottom_anim.animation_finished
 		_play_bottom_animation()
 	else:
-		print("Bottom animation done")
+		_check_results()
 
 
 # --- TOP HITBOX ---
 func _on_top_area_entered(area: Area2D) -> void:
 	top_target = area
+	area.set_meta("was_hit", false)
+	area.set_meta("enter_time", Time.get_ticks_msec())  # 👈 track when it entered
+
 
 func _on_top_area_exited(area: Area2D) -> void:
 	if top_target == area:
+		var stay_time = Time.get_ticks_msec() - int(area.get_meta("enter_time"))
+
+		# only count as miss if it stayed long enough and wasn't hit
+		if stay_time > 100 and not area.get_meta("was_hit"):
+			total_attempts += 1
+			total_misses += 1
+			print("TOP MISS (passed without hit)")
+			# 👇 no spawn miss effect here anymore
+
 		top_target = null
 
 
 # --- BOTTOM HITBOX ---
 func _on_bottom_area_entered(area: Area2D) -> void:
 	bottom_target = area
+	area.set_meta("was_hit", false)
+	area.set_meta("enter_time", Time.get_ticks_msec())
+
 
 func _on_bottom_area_exited(area: Area2D) -> void:
 	if bottom_target == area:
+		var stay_time = Time.get_ticks_msec() - int(area.get_meta("enter_time"))
+
+		if stay_time > 100 and not area.get_meta("was_hit"):
+			total_attempts += 1
+			total_misses += 1
+			print("BOTTOM MISS (passed without hit)")
+			# 👇 no spawn miss effect here either
+
 		bottom_target = null
+
+
+
+# --- HELPER: activate after 1 frame ---
+func _activate_note(area: Area2D) -> void:
+	if is_instance_valid(area):
+		area.set_meta("active", true)
+
 
 
 func _process(delta: float) -> void:
 	# check top (left_pad)
 	if Input.is_action_just_pressed("left_pad"):
+		total_attempts += 1
 		if top_target:
 			print("TOP HIT")
+			total_hits += 1
+			top_target.set_meta("was_hit", true)
 			_spawn_hit_effect(top_target)
 		else:
-			print("TOP MISS")
+			print("TOP MISS (pressed outside)")
+			total_misses += 1
 			_spawn_miss_effect($Middle_Point/HitLineTop/MovingCircleTop/HitArea)
 
-	# check bottom (right_pad)
 	if Input.is_action_just_pressed("right_pad"):
+		total_attempts += 1
 		if bottom_target:
 			print("BOTTOM HIT")
+			total_hits += 1
+			bottom_target.set_meta("was_hit", true)
 			_spawn_hit_effect(bottom_target)
 		else:
-			print("BOTTOM MISS")
+			print("BOTTOM MISS (pressed outside)")
+			total_misses += 1
 			_spawn_miss_effect($Middle_Point/HitLineBottom/MovingCircleBottom/HitArea)
 
 
+
+# --- EFFECTS ---
 func _spawn_hit_effect(target: Node) -> void:
 	var hit_instance = HitScene.instantiate()
 	add_child(hit_instance)
@@ -152,3 +199,43 @@ func _spawn_miss_effect(area_node: Node) -> void:
 			if is_instance_valid(miss_instance):
 				miss_instance.queue_free()
 	)
+
+
+# --- RESULTS CALCULATION ---
+func _check_results() -> void:
+	# Only show results once both top and bottom are done
+	if top_play_count >= max_plays and bottom_play_count >= max_plays:
+		var hit_percentage: float = 0.0
+		if total_attempts > 0:
+			hit_percentage = float(total_hits) / float(total_attempts) * 100.0
+
+		var grade: String = ""
+		if hit_percentage >= 95:
+			grade = "S"
+		elif hit_percentage >= 85:
+			grade = "A"
+		elif hit_percentage >= 70:
+			grade = "B"
+		elif hit_percentage >= 50:
+			grade = "C"
+		else:
+			grade = "Failed"
+
+		print("Results -> Hits:", total_hits, " Misses:", total_misses, 
+			  " Attempts:", total_attempts, " Percentage:", hit_percentage, " Grade:", grade)
+
+		_show_results(hit_percentage, grade)
+
+
+# --- SHOW RESULTS SCENE ---
+func _show_results(passed_hit_percentage: float, passed_grade: String) -> void:
+	var results_scene = preload("res://Sample/result_scene.tscn").instantiate()
+	results_scene.total_hits = total_hits
+	results_scene.total_notes = total_attempts
+	results_scene.total_misses = total_misses
+	results_scene.hit_percentage = passed_hit_percentage
+	results_scene.grade = passed_grade
+	results_scene.mode = "default"  # or whatever mode you want to pass
+
+	get_tree().get_root().add_child(results_scene)
+	hide()
