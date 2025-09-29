@@ -6,9 +6,9 @@
 
 [resource]
 script = ExtResource("5_usr45")
-title_text = "Lesson 10"
-top_texts = Array[String](["\"The last rudiment is the flam. ", "Like this"])
-bottom_texts = Array[String](["This is a special type of note where one hand taps slightly before the other.", "You’ll hear a 'grace note' followed by a full hit.", "It sounds like 'ba-DUM', not just 'DUM'.", "Flams make your drumming sound expressive and professional.", "Try tapping with one quiet tap, followed by a louder one. ", "Left-right... right-left... That’s a flam!"])
+title_text = "Lesson 11"
+top_texts = Array[String](["Missing e", "Like this"])
+bottom_texts = Array[String](["this time in broken 16th notes we are going to learn what if there is missing notes in the 16th ", "Remember how we counted in 16th notes ", "1-E-N-A  2-E-N-A  3-E-N-A  4-E-N-A", "we all hit on the counts of 16th notes", "but this time we will not hit the E which is the 2nd, 6th, 10th and 14th beat ", "and still keeping the same count."])
 demo_bars = Array[Resource]([ExtResource("1_x3n27"), ExtResource("1_x3n27"), ExtResource("1_x3n27"), ExtResource("2_qihei")])
 show_note_labels = false
 slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."

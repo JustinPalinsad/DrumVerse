@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="HitlineData" load_steps=7 format=3 uid="uid://c8qqhe40imqi7"]
+
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_arwlo"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="2_1govq"]
+[ext_resource type="PackedScene" uid="uid://dhut0svmge575" path="res://NoteScene/triplet_new.tscn" id="2_3uelb"]
+[ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="2_8fnfx"]
+
+[sub_resource type="Resource" id="Resource_3uelb"]
+script = ExtResource("1_arwlo")
+x_position = 589.0
+note_scene = ExtResource("2_8fnfx")
+pad_beam_1 = "left"
+pad_beam_2 = "both"
+pad_beam_3 = "both"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_8fnfx"]
+script = ExtResource("1_arwlo")
+x_position = 700.0
+note_scene = ExtResource("2_3uelb")
+pad_beam_1 = "right"
+pad_beam_2 = "left"
+pad_beam_3 = "right"
+pad_beam_4 = "both"
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[resource]
+script = ExtResource("2_1govq")
+notes = Array[ExtResource("1_arwlo")]([SubResource("Resource_3uelb"), SubResource("Resource_8fnfx")])
+metadata/_custom_type_script = "uid://dg6qemsyefrt5"

@@ -133,10 +133,10 @@ texture = ExtResource("5_vd5sb")
 [node name="ReplayButton" type="Button" parent="."]
 material = ExtResource("4_71jwu")
 layout_mode = 0
-offset_left = 925.0
+offset_left = 851.0
 offset_top = 679.0
-offset_right = 1093.0
-offset_bottom = 890.0
+offset_right = 1248.0
+offset_bottom = 1070.0
 scale = Vector2(0.744876, 0.744876)
 icon = ExtResource("6_71jwu")
 flat = true
