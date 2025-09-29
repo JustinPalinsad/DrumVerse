@@ -11,6 +11,8 @@ var dark_mode_enabled: bool = true
 
 var notes = 0
 
+var polyrhythm_mode = "practice"
+
 var module_grades: Array[String] = []
 const SAVE_PATH = "user://saved_grades.save"
 

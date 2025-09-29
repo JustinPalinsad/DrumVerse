@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c0prltnh2t7yw"]
+[gd_scene load_steps=31 format=3 uid="uid://c0prltnh2t7yw"]
 
 [ext_resource type="Script" uid="uid://cgmb2c6mgixno" path="res://Scenes/poly_test_2.gd" id="1_yjtkh"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="2_rbad5"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="14_qv7y0"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="15_rbad5"]
 [ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="16_xgh5x"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="17_pfkuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
 radius = 18.0
@@ -601,7 +602,14 @@ text = "3"
 [node name="CountdownAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_xgh5x")
 
+[node name="Back" type="TouchScreenButton" parent="."]
+material = ExtResource("3_xgh5x")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("17_pfkuq")
+
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
 [connection signal="pressed" from="TouchPadContainer/RightTouchPad" to="TouchPadContainer" method="_on_right_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/RightTouchPad" to="TouchPadContainer" method="_on_right_touch_pad_released"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

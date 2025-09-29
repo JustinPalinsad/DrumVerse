@@ -64,23 +64,38 @@ func _start_countdown() -> void:
 
 # --- ANIMATION PLAY LIMIT ---
 func _play_top_animation() -> void:
-	if top_play_count < max_plays:
-		top_play_count += 1
+	if GameState.polyrhythm_mode == "practice":
+		# loop forever
 		top_anim.play("Top_Line")
 		await top_anim.animation_finished
 		_play_top_animation()
 	else:
-		_check_results()
+		# challenge → limit to 4 times
+		if top_play_count < max_plays:
+			top_play_count += 1
+			top_anim.play("Top_Line")
+			await top_anim.animation_finished
+			_play_top_animation()
+		else:
+			_check_results()
 
 
 func _play_bottom_animation() -> void:
-	if bottom_play_count < max_plays:
-		bottom_play_count += 1
+	if GameState.polyrhythm_mode == "practice":
+		# loop forever
 		bottom_anim.play("Bottom_Line")
 		await bottom_anim.animation_finished
 		_play_bottom_animation()
 	else:
-		_check_results()
+		# challenge → limit to 4 times
+		if bottom_play_count < max_plays:
+			bottom_play_count += 1
+			bottom_anim.play("Bottom_Line")
+			await bottom_anim.animation_finished
+			_play_bottom_animation()
+		else:
+			_check_results()
+
 
 
 # --- TOP HITBOX ---
@@ -239,3 +254,8 @@ func _show_results(passed_hit_percentage: float, passed_grade: String) -> void:
 
 	get_tree().get_root().add_child(results_scene)
 	hide()
+
+
+func _on_back_pressed() -> void:
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")

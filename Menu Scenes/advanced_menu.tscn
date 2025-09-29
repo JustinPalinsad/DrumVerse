@@ -49,9 +49,9 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 58.0004
+offset_top = 119.5
 offset_right = 40.0
-offset_bottom = 98.0004
+offset_bottom = 159.5
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 1)
@@ -386,4 +386,5 @@ text = "placeholder"
 [connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson22" to="." method="_on_advance_lesson_22_pressed"]
 [connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson23" to="." method="_on_advance_lesson_23_pressed"]
 [connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson24" to="." method="_on_advance_lesson_24_pressed"]
+[connection signal="pressed" from="carousel_container_3/Control/AdvanceLesson25" to="." method="_on_advance_lesson_25_pressed"]
 [connection signal="pressed" from="Free" to="." method="_on_free_pressed"]
