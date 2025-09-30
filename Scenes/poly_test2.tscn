@@ -609,6 +609,7 @@ scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("17_pfkuq")
 
 [node name="TutorialLabel" type="Label" parent="."]
+visible = false
 material = ExtResource("3_xgh5x")
 layout_mode = 0
 offset_left = 448.0
