@@ -28,6 +28,7 @@ func _on_learning_button_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
+		GameState.polyrhythm_mode = "learning"
 		get_tree().change_scene_to_file("res://Scenes/poly_test2.tscn")
 	else:
 		change_to_learning_scene("learning")
