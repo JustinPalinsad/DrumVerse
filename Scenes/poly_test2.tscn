@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c0prltnh2t7yw"]
+[gd_scene load_steps=32 format=3 uid="uid://c0prltnh2t7yw"]
 
 [ext_resource type="Script" uid="uid://cgmb2c6mgixno" path="res://Scenes/poly_test_2.gd" id="1_yjtkh"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="2_rbad5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="4_pfkuq"]
 [ext_resource type="Texture2D" uid="uid://bu1mpu22fct5w" path="res://Assets/Drum2_F.png" id="5_o46p2"]
 [ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="6_m7tj4"]
+[ext_resource type="PackedScene" uid="uid://curt6jjh03ds7" path="res://Scenes/Shared/poly_Anim.tscn" id="7_o46p2"]
 [ext_resource type="PackedScene" uid="uid://66tbdhkgqns1" path="res://Scenes/Shared/hitline_2-4.tscn" id="7_ojrvq"]
 [ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/Junk/ActualNotes/4_note.tscn" id="8_gq143"]
 [ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="9_x5dye"]
@@ -412,8 +413,14 @@ action = "right_pad"
 [node name="Snare" type="AudioStreamPlayer" parent="TouchPadContainer"]
 stream = ExtResource("6_m7tj4")
 
+[node name="Demo Vid" parent="." instance=ExtResource("7_o46p2")]
+visible = false
+position = Vector2(1020, 431)
+scale = Vector2(0.39286, 0.39286)
+
 [node name="Middle_Point" type="Node2D" parent="."]
 position = Vector2(860, 540)
+metadata/_edit_lock_ = true
 
 [node name="HitLineTop" parent="Middle_Point" instance=ExtResource("7_ojrvq")]
 position = Vector2(167, -241)
@@ -459,7 +466,7 @@ scale = Vector2(2.6, 2.6)
 
 [node name="MovingCircleTop" type="Node2D" parent="Middle_Point/HitLineTop"]
 z_index = 3
-position = Vector2(-1167.5, 140)
+position = Vector2(517, 688)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("9_x5dye")
 
