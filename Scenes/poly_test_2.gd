@@ -23,6 +23,7 @@ var total_attempts: int = 0
 @onready var countdown_label: Label = $CountdownLabel   # 👈 Label node for countdown
 
 func _ready() -> void:
+	#$"Demo Vid/AnimationPlayer".play("Animation")
 	# hide animations until countdown is done
 	top_anim.stop()
 	bottom_anim.stop()

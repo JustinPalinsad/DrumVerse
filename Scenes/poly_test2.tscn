@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c0prltnh2t7yw"]
+[gd_scene load_steps=49 format=3 uid="uid://c0prltnh2t7yw"]
 
 [ext_resource type="Script" uid="uid://cgmb2c6mgixno" path="res://Scenes/poly_test_2.gd" id="1_yjtkh"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="2_rbad5"]
@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="4_pfkuq"]
 [ext_resource type="Texture2D" uid="uid://bu1mpu22fct5w" path="res://Assets/Drum2_F.png" id="5_o46p2"]
 [ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="6_m7tj4"]
-[ext_resource type="PackedScene" uid="uid://curt6jjh03ds7" path="res://Scenes/Shared/poly_Anim.tscn" id="7_o46p2"]
 [ext_resource type="PackedScene" uid="uid://66tbdhkgqns1" path="res://Scenes/Shared/hitline_2-4.tscn" id="7_ojrvq"]
 [ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/Junk/ActualNotes/4_note.tscn" id="8_gq143"]
+[ext_resource type="PackedScene" uid="uid://cijuwbww32k1s" path="res://Assets/New Effect/Hitteffect2.tscn" id="9_o46p2"]
 [ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="9_x5dye"]
 [ext_resource type="Texture2D" uid="uid://battv6y8amyfm" path="res://Assets/vecteezy_geometric-design-element_21048718.png" id="10_nt3le"]
 [ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="11_7j3g2"]
@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="16_xgh5x"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="17_pfkuq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4q76m"]
 radius = 18.0
 
 [sub_resource type="Animation" id="Animation_817jg"]
@@ -388,6 +388,608 @@ _data = {
 &"poly_test": SubResource("Animation_dj2j3")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_51ajk"]
+radius = 18.0
+
+[sub_resource type="Animation" id="Animation_4glgx"]
+resource_name = "Animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitline 2_4/MovingCircleTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1167.5, 140), Vector2(131.25, 140)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hitline 3_4/MovingCircleBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1167.5, 140), Vector2(780.625, 140)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitline 3_4/Points2/1/Effect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.13333, 1.34316),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hitline 3_4/Points2/2/Effect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.0784, 2.28775),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hitline 3_4/Points2/0/Effect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.305642),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hitline 2_4/Points2/1/Effect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6099, 1.81977),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("hitline 2_4/Points2/0/Effect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.12, 0.305642),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Solid-snare:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.12, 1.6193),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Solid-snare2:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.12, 1.08197, 2.0784),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_ef5tj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitline 2_4/MovingCircleTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1167.5, 140)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hitline 3_4/MovingCircleBottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1167.5, 140)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitline 3_4/Points2/1/Effect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hitline 3_4/Points2/2/Effect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hitline 3_4/Points2/0/Effect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hitline 2_4/Points2/1/Effect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("hitline 2_4/Points2/0/Effect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Solid-snare:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Solid-snare2:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m082j"]
+_data = {
+&"Animation": SubResource("Animation_4glgx"),
+&"RESET": SubResource("Animation_ef5tj")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
+radius = 18.0
+
+[sub_resource type="Animation" id="Animation_m7tj4"]
+resource_name = "Bottom_Line"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1167.5, 140), Vector2(780.625, 140), Vector2(1556, 688)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_ojrvq"]
+resource_name = "Bottom_Line_2"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1167.5, 140), Vector2(780.625, 140), Vector2(1556, 688)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_gq143"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(514, 442), Vector2(1542, 442)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(517, 440)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath(".:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(517, 688)]
+}
+
+[sub_resource type="Animation" id="Animation_x5dye"]
+resource_name = "Top_Line"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1167.5, 140), Vector2(131.25, 140), Vector2(1556, 440)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_nt3le"]
+resource_name = "Top_Line_2"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1167.5, 140), Vector2(131.25, 140), Vector2(1556, 440)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TickSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.25, 2.25, 3.25, 4.66667, 5.66667, 6.66667, 7.66667, 8.86667, 9.86667, 10.8667, 11.8667, 13.0333, 14.0333, 15.0333, 16.0333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Solid-snare:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.6, 2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_7j3g2"]
+resource_name = "moving circle v2"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(517, 442), Vector2(1622.5, 442)]
+}
+
+[sub_resource type="Animation" id="Animation_xs11p"]
+resource_name = "moving_circle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(517, 442), Vector2(1556, 442)]
+}
+
+[sub_resource type="Animation" id="Animation_3uanj"]
+resource_name = "moving_circle_100"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.85, 1.45, 2.05, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(517, 442), Vector2(579, 442), Vector2(837, 442), Vector2(1092, 442), Vector2(1350, 442), Vector2(1542, 442)]
+}
+
+[sub_resource type="Animation" id="Animation_qv7y0"]
+resource_name = "moving_circle_120"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1.25, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(517, 442), Vector2(581, 442), Vector2(838, 442), Vector2(1093, 442), Vector2(1350, 442), Vector2(1542, 442)]
+}
+
+[sub_resource type="Animation" id="Animation_1w0dq"]
+resource_name = "moving_circle_80"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1, 1.75, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(517, 442), Vector2(581, 442), Vector2(838, 442), Vector2(1092, 442), Vector2(1349, 442), Vector2(1540, 442)]
+}
+
+[sub_resource type="Animation" id="Animation_ifah2"]
+resource_name = "poly_test"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(514, 442)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(517, 688)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ra3f1"]
+_data = {
+&"Bottom_Line": SubResource("Animation_m7tj4"),
+&"Bottom_Line_2": SubResource("Animation_ojrvq"),
+&"RESET": SubResource("Animation_gq143"),
+&"Top_Line": SubResource("Animation_x5dye"),
+&"Top_Line_2": SubResource("Animation_nt3le"),
+&"moving circle v2": SubResource("Animation_7j3g2"),
+&"moving_circle": SubResource("Animation_xs11p"),
+&"moving_circle_100": SubResource("Animation_3uanj"),
+&"moving_circle_120": SubResource("Animation_qv7y0"),
+&"moving_circle_80": SubResource("Animation_1w0dq"),
+&"poly_test": SubResource("Animation_ifah2")
+}
+
 [node name="Polyrhythm_Game_Scene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -413,12 +1015,236 @@ action = "right_pad"
 [node name="Snare" type="AudioStreamPlayer" parent="TouchPadContainer"]
 stream = ExtResource("6_m7tj4")
 
-[node name="Demo Vid" parent="." instance=ExtResource("7_o46p2")]
-visible = false
+[node name="Demo Vid" type="Node2D" parent="."]
 position = Vector2(1020, 431)
 scale = Vector2(0.39286, 0.39286)
 
+[node name="hitline 2_4" parent="Demo Vid" instance=ExtResource("7_ojrvq")]
+position = Vector2(0, -342)
+
+[node name="Points2" type="Node2D" parent="Demo Vid/hitline 2_4"]
+position = Vector2(0, 26)
+
+[node name="0" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-1137.5, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="4_note" parent="Demo Vid/hitline 2_4/Points2/0" instance=ExtResource("8_gq143")]
+
+[node name="Effect" parent="Demo Vid/hitline 2_4/Points2/0" instance=ExtResource("9_o46p2")]
+visible = false
+
+[node name="0_25" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-975.155, 98)
+
+[node name="0_5" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-812.812, 98)
+
+[node name="0_75" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-650.467, 98)
+
+[node name="1" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-488.125, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="4_note" parent="Demo Vid/hitline 2_4/Points2/1" instance=ExtResource("8_gq143")]
+
+[node name="Effect" parent="Demo Vid/hitline 2_4/Points2/1" instance=ExtResource("9_o46p2")]
+visible = false
+
+[node name="1_25" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-325.78, 98)
+
+[node name="1_50" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-163.438, 98)
+
+[node name="1_75" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(-1.09253, 98)
+
+[node name="2" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(161.25, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="2_25" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(323.595, 98)
+
+[node name="2_5" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(485.938, 98)
+
+[node name="2_75" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(648.282, 98)
+
+[node name="3" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(810.625, 98)
+
+[node name="3_25" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(972.97, 98)
+
+[node name="3_5" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(1135.31, 98)
+
+[node name="3_75" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(1297.66, 98)
+
+[node name="4" type="Node2D" parent="Demo Vid/hitline 2_4/Points2"]
+position = Vector2(1460, 98)
+
+[node name="MovingCircleTop" type="Node2D" parent="Demo Vid/hitline 2_4"]
+z_index = 3
+position = Vector2(-1167.5, 140)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("9_x5dye")
+
+[node name="Circle" type="Sprite2D" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+z_index = 1
+scale = Vector2(0.0106773, 0.0106773)
+texture = ExtResource("10_nt3le")
+
+[node name="OutlineSprite" type="Sprite2D" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+scale = Vector2(0.016, 0.016)
+texture = ExtResource("10_nt3le")
+
+[node name="HitArea" type="Area2D" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Demo Vid/hitline 2_4/MovingCircleTop/HitArea"]
+shape = SubResource("CircleShape2D_4q76m")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="TopBallAnim" type="AnimationPlayer" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+libraries = {
+&"": SubResource("AnimationLibrary_lsk3b")
+}
+
+[node name="TickSound" type="AudioStreamPlayer2D" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+position = Vector2(-7, 486)
+stream = ExtResource("11_7j3g2")
+
+[node name="Solid-snare" type="AudioStreamPlayer" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+stream = ExtResource("6_m7tj4")
+
+[node name="MetronomePendulum" type="Sprite2D" parent="Demo Vid/hitline 2_4/MovingCircleTop"]
+position = Vector2(0, -56)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_xs11p")
+
+[node name="hitline 3_4" parent="Demo Vid" instance=ExtResource("13_3uanj")]
+position = Vector2(0, 249)
+
+[node name="Points2" type="Node2D" parent="Demo Vid/hitline 3_4"]
+position = Vector2(0, 26)
+
+[node name="0" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-1137.5, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="4_note" parent="Demo Vid/hitline 3_4/Points2/0" instance=ExtResource("8_gq143")]
+
+[node name="Effect" parent="Demo Vid/hitline 3_4/Points2/0" instance=ExtResource("9_o46p2")]
+visible = false
+
+[node name="0_25" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-975.155, 98)
+
+[node name="0_5" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-812.812, 98)
+
+[node name="0_75" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-650.467, 98)
+
+[node name="1" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-488.125, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="4_note" parent="Demo Vid/hitline 3_4/Points2/1" instance=ExtResource("8_gq143")]
+
+[node name="Effect" parent="Demo Vid/hitline 3_4/Points2/1" instance=ExtResource("9_o46p2")]
+visible = false
+
+[node name="1_25" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-325.78, 98)
+
+[node name="1_50" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-163.438, 98)
+
+[node name="1_75" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(-1.09253, 98)
+
+[node name="2" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(161.25, 98)
+scale = Vector2(2.4, 2.4)
+
+[node name="4_note" parent="Demo Vid/hitline 3_4/Points2/2" instance=ExtResource("8_gq143")]
+
+[node name="Effect" parent="Demo Vid/hitline 3_4/Points2/2" instance=ExtResource("9_o46p2")]
+visible = false
+
+[node name="2_25" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(323.595, 98)
+
+[node name="2_5" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(485.938, 98)
+
+[node name="2_75" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(648.282, 98)
+
+[node name="3" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(810.625, 98)
+
+[node name="3_25" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(972.97, 98)
+
+[node name="3_5" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(1135.31, 98)
+
+[node name="3_75" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(1297.66, 98)
+
+[node name="4" type="Node2D" parent="Demo Vid/hitline 3_4/Points2"]
+position = Vector2(1460, 98)
+
+[node name="MovingCircleBottom" parent="Demo Vid/hitline 3_4" instance=ExtResource("14_qv7y0")]
+position = Vector2(-1167.5, 140)
+scale = Vector2(2.5, 2.5)
+
+[node name="HitArea" type="Area2D" parent="Demo Vid/hitline 3_4/MovingCircleBottom"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Demo Vid/hitline 3_4/MovingCircleBottom/HitArea"]
+shape = SubResource("CircleShape2D_51ajk")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="TickSound" type="AudioStreamPlayer2D" parent="Demo Vid/hitline 3_4/MovingCircleBottom"]
+position = Vector2(-7, 486)
+stream = ExtResource("11_7j3g2")
+
+[node name="Solid-snare" type="AudioStreamPlayer" parent="Demo Vid/hitline 3_4/MovingCircleBottom"]
+stream = ExtResource("6_m7tj4")
+
+[node name="MetronomePendulum" type="Sprite2D" parent="Demo Vid/hitline 3_4/MovingCircleBottom"]
+position = Vector2(0, -56)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("12_xs11p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Demo Vid"]
+libraries = {
+&"": SubResource("AnimationLibrary_m082j")
+}
+
+[node name="Solid-snare" type="AudioStreamPlayer2D" parent="Demo Vid"]
+position = Vector2(-861, 50)
+stream = ExtResource("6_m7tj4")
+
+[node name="Solid-snare2" type="AudioStreamPlayer2D" parent="Demo Vid"]
+position = Vector2(-861, 50)
+stream = ExtResource("6_m7tj4")
+
 [node name="Middle_Point" type="Node2D" parent="."]
+visible = false
 position = Vector2(860, 540)
 metadata/_edit_lock_ = true
 
@@ -490,7 +1316,7 @@ metadata/_edit_lock_ = true
 
 [node name="TopBallAnim" type="AnimationPlayer" parent="Middle_Point/HitLineTop/MovingCircleTop"]
 libraries = {
-&"": SubResource("AnimationLibrary_lsk3b")
+&"": SubResource("AnimationLibrary_ra3f1")
 }
 
 [node name="TickSound" type="AudioStreamPlayer2D" parent="Middle_Point/HitLineTop/MovingCircleTop"]
@@ -576,7 +1402,7 @@ stream = ExtResource("11_7j3g2")
 
 [node name="BottomBallAnim" type="AnimationPlayer" parent="Middle_Point/HitLineBottom/MovingCircleBottom"]
 libraries = {
-&"": SubResource("AnimationLibrary_lsk3b")
+&"": SubResource("AnimationLibrary_ra3f1")
 }
 
 [node name="Solid-snare" type="AudioStreamPlayer" parent="Middle_Point/HitLineBottom/MovingCircleBottom"]
