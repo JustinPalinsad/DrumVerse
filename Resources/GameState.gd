@@ -9,6 +9,8 @@ var mode: String = "practice"
 var lessons = 0
 var dark_mode_enabled: bool = true
 
+var polyrhythm_mode = "learning"
+
 var notes = 0
 
 var module_grades: Array[String] = []
