@@ -1027,6 +1027,7 @@ action = "right_pad"
 stream = ExtResource("6_m7tj4")
 
 [node name="Demo Vid" type="Node2D" parent="."]
+visible = false
 position = Vector2(1020, 431)
 scale = Vector2(0.39286, 0.39286)
 
@@ -1257,7 +1258,6 @@ stream = ExtResource("6_m7tj4")
 [node name="Middle_Point" type="Node2D" parent="."]
 visible = false
 position = Vector2(860, 540)
-metadata/_edit_lock_ = true
 
 [node name="HitLineTop" parent="Middle_Point" instance=ExtResource("7_ojrvq")]
 position = Vector2(167, -241)
@@ -1303,7 +1303,7 @@ scale = Vector2(2.6, 2.6)
 
 [node name="MovingCircleTop" type="Node2D" parent="Middle_Point/HitLineTop"]
 z_index = 3
-position = Vector2(517, 688)
+position = Vector2(-1167.5, 140)
 scale = Vector2(2.5, 2.5)
 script = ExtResource("9_x5dye")
 
