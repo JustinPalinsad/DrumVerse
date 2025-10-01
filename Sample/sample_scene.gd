@@ -27,18 +27,30 @@ func _ready() -> void:
 func _on_learning_button_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.3).timeout
-	change_to_learning_scene("learning")
+	if GameState.lessons == 25:
+		GameState.polyrhythm_mode = "learning"
+		get_tree().change_scene_to_file("res://Scenes/Modes/poly_test2.tscn")
+	else:
+		change_to_learning_scene("learning")
 
 
 func _on_practice_button_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.3).timeout
-	change_to_game_scene("practice")
+	if GameState.lessons == 25:
+		GameState.polyrhythm_mode = "practice"
+		get_tree().change_scene_to_file("res://Scenes/Modes/poly_test2.tscn")
+	else:
+		change_to_game_scene("practice")
 
 func _on_challenge_button_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.3).timeout
-	change_to_game_scene("challenge")
+	if GameState.lessons == 25:
+		GameState.polyrhythm_mode = "challenge"
+		get_tree().change_scene_to_file("res://Scenes/Modes/poly_test2.tscn")
+	else:
+		change_to_game_scene("challenge")
 
 func change_to_game_scene(mode: String) -> void:
 	var loading_scene = load("res://Scenes/Shared/loading_screen.tscn") as PackedScene
