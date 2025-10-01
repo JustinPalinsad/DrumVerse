@@ -164,6 +164,7 @@ texture = ExtResource("3_8m72m")
 metadata/_edit_lock_ = true
 
 [node name="GuideHitLine" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 335.0
 offset_top = 282.0
@@ -311,10 +312,10 @@ script = ExtResource("18_gtbs0")
 popup_font_size = 35
 
 [node name="QuarterNote" parent="." instance=ExtResource("19_mipjh")]
-position = Vector2(-324, 409)
+position = Vector2(-80, 456)
 
 [node name="Triplet_New" parent="." instance=ExtResource("20_aq00n")]
-position = Vector2(-216, 364)
+position = Vector2(31, 434)
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="1_1k22x"]
 [ext_resource type="Script" uid="uid://cpnvfbg8tgmgt" path="res://Resources/DrumModuleData.gd" id="2_3xdqx"]
 [ext_resource type="Resource" uid="uid://c8qqhe40imqi7" path="res://Module/Lesson24/continuebar24.tres" id="2_4ife1"]
-[ext_resource type="Resource" uid="uid://c4wun5pjjei0b" path="res://Module/Lesson24/endbar24.tres" id="3_mn3x5"]
+[ext_resource type="Resource" uid="uid://wo8k0yp7tg3q" path="res://Module/Lesson24/endbar24.tres" id="3_mn3x5"]
 
 [resource]
 script = ExtResource("2_3xdqx")

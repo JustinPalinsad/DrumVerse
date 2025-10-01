@@ -7,8 +7,8 @@
 [resource]
 script = ExtResource("3_lq8fj")
 title_text = "Lesson 17"
-top_texts = Array[String](["Missing 1, a", "Like this"])
-bottom_texts = Array[String](["Remember how we counted in 16th notes ", "1-E-N-A  2-E-N-A  3-E-N-A  4-E-N-A", "we all hit on the counts of 16th notes", "and this time we will not hit the 1 and A which is the 4th, 8th, 12th and 16th beat", "and still keeping the same count."])
+top_texts = Array[String](["Missing n, a", "Like this"])
+bottom_texts = Array[String](["Remember how we counted in 16th notes ", "1-E-N-A  2-E-N-A  3-E-N-A  4-E-N-A", "we all hit on the counts of 16th notes", "and this time we will not hit the N and A", "which is the 1st & 2nd, 5th & 6th, 9th & 10th and 13th & 14th beat and still keeping the same count."])
 demo_bars = Array[Resource]([ExtResource("1_3e3sc"), ExtResource("1_3e3sc"), ExtResource("1_3e3sc"), ExtResource("2_j66pp")])
 show_note_labels = false
 slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."
