@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://ci3egfykqwf44" path="res://Audio/lose.wav" id="10_uscyt"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_4xiap"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
-[ext_resource type="Script" uid="uid://det1facwxs68p" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
+[ext_resource type="Script" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0

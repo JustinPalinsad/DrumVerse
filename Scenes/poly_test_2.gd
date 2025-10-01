@@ -1,5 +1,7 @@
 extends Control
 
+signal tap_detected # Custom signal to reliably detect a tap/click
+
 var HitScene := preload("res://Scenes/Shared/HitEffect.tscn")
 var MissScene := preload("res://Scenes/Shared/MissEffect.tscn")
 
@@ -10,6 +12,7 @@ var bottom_target: Area2D = null
 # counters
 var top_play_count: int = 0
 var bottom_play_count: int = 0
+var demo_play_count: int = 0
 var max_plays: int = 4
 
 # --- scoring ---
@@ -20,24 +23,33 @@ var total_attempts: int = 0
 # references for readability
 @onready var top_anim = $Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim
 @onready var bottom_anim = $Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim
-@onready var countdown_label: Label = $CountdownLabel   # 👈 Label node for countdown
+@onready var countdown_label: Label = $CountdownLabel    # 👈 Label node for countdown
+
+# --- INPUT FUNCTION FOR TAP DETECTION ---
+func _input(event: InputEvent) -> void:
+	# Emit the signal when the user presses the left mouse button (for tap/click)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		tap_detected.emit()
+	# Also check "ui_accept" action (usually Space/Enter/Tap on mobile)
+	elif event.is_action_pressed("ui_accept"):
+		tap_detected.emit()
 
 func _ready() -> void:
-	#$"Demo Vid/AnimationPlayer".play("Animation")
-	# hide animations until countdown is done
-	top_anim.stop()
-	bottom_anim.stop()
+	if GameState.polyrhythm_mode == "learning":
+		learning_mode()
+	else:
+		# hide animations until countdown is done
+		top_anim.stop()
+		bottom_anim.stop()
 
-	# connect hitbox signals
-	$Middle_Point/HitLineTop/MovingCircleTop/HitArea.area_entered.connect(_on_top_area_entered)
-	$Middle_Point/HitLineTop/MovingCircleTop/HitArea.area_exited.connect(_on_top_area_exited)
-	$Middle_Point/HitLineBottom/MovingCircleBottom/HitArea.area_entered.connect(_on_bottom_area_entered)
-	$Middle_Point/HitLineBottom/MovingCircleBottom/HitArea.area_exited.connect(_on_bottom_area_exited)
+		# connect hitbox signals
+		$Middle_Point/HitLineTop/MovingCircleTop/HitArea.area_entered.connect(_on_top_area_entered)
+		$Middle_Point/HitLineTop/MovingCircleTop/HitArea.area_exited.connect(_on_top_area_exited)
+		$Middle_Point/HitLineBottom/MovingCircleBottom/HitArea.area_entered.connect(_on_bottom_area_entered)
+		$Middle_Point/HitLineBottom/MovingCircleBottom/HitArea.area_exited.connect(_on_bottom_area_exited)
 
-	# start countdown before game
-	_start_countdown()
-
-
+		# start countdown before game
+		_start_countdown()
 # --- COUNTDOWN ---
 func _start_countdown() -> void:
 	countdown_label.visible = true
@@ -260,3 +272,60 @@ func _show_results(passed_hit_percentage: float, passed_grade: String) -> void:
 func _on_back_pressed() -> void:
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
+
+func learning_mode():
+	$TouchPadContainer.hide()
+	var children = $TutorialHolder.get_children()
+
+	# Hide all labels first
+	for child in children:
+		if child is Label:
+			child.visible = false
+
+	# Show labels one by one when the user taps/clicks
+	for i in range(children.size()):
+		if children[i] is Label:
+			# Hide the previous label (if any)
+			if i > 0 and children[i - 1] is Label:
+				children[i - 1].visible = false
+
+			# Show current label
+			children[i].visible = true
+
+			# Wait until user taps once
+			await _wait_for_tap()
+
+	# After the sequence, hide the last label
+	if children.size() > 0 and children[-1] is Label:
+		children[-1].visible = false
+
+	# --- MODIFICATION START ---
+	# Play the animation until it reaches max_plays
+	while demo_play_count < max_plays:
+		demo_play_count += 1
+		print("Playing Demo Animation (Loop ", demo_play_count, " of ", max_plays, ")")
+		
+		# Play the animation
+		$"Demo Vid/AnimationPlayer".play("Animation")
+		
+		# Wait for the animation to finish before looping again
+		await $"Demo Vid/AnimationPlayer".animation_finished
+	
+	print("Demo animation finished.")
+	$ReplayButton.show()
+	# --- MODIFICATION END ---
+			
+	
+
+
+# --- HELPER: Wait for a single tap (FIXED) ---
+func _wait_for_tap() -> void:
+	# Await the custom signal that is emitted when the user taps/clicks in _input()
+	await tap_detected
+
+
+func _on_replay_button_pressed() -> void:
+	$ReplayButton.hide()
+	demo_play_count = 0
+	learning_mode()
+	
