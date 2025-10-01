@@ -23,7 +23,7 @@ var total_attempts: int = 0
 # references for readability
 @onready var top_anim = $Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim
 @onready var bottom_anim = $Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim
-@onready var countdown_label: Label = $CountdownLabel    # 👈 Label node for countdown
+@onready var countdown_label: Label = $CountdownLabel     # 👈 Label node for countdown
 
 # --- INPUT FUNCTION FOR TAP DETECTION ---
 func _input(event: InputEvent) -> void:
@@ -37,7 +37,19 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	if GameState.polyrhythm_mode == "learning":
 		learning_mode()
+		# In learning_mode(), Demo Vid and TutorialHolder are shown, Middle_Point is hidden.
 	else:
+		# If not learning mode (i.e., practice or challenge):
+		
+		# 1. DISABLE/HIDE Demo Vid
+		$"Demo Vid".hide()
+		$"Demo Vid".position.x = 2616.0
+		
+		# 2. Setup the game scene
+		$TutorialHolder.hide()
+		$Middle_Point.show()
+		$TouchPadContainer.show()
+		
 		# hide animations until countdown is done
 		top_anim.stop()
 		bottom_anim.stop()
@@ -274,7 +286,16 @@ func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
 
 func learning_mode():
+	$"Demo Vid".show()
+	$Middle_Point.hide()
+	$TutorialHolder.show()
 	$TouchPadContainer.hide()
+	
+	# Hide any lingering TryAgain or Replay buttons at the start
+	if has_node("TryAgain"):
+		$TryAgain.hide()
+	$ReplayButton.hide()
+	
 	var children = $TutorialHolder.get_children()
 
 	# Hide all labels first
@@ -299,7 +320,6 @@ func learning_mode():
 	if children.size() > 0 and children[-1] is Label:
 		children[-1].visible = false
 
-	# --- MODIFICATION START ---
 	# Play the animation until it reaches max_plays
 	while demo_play_count < max_plays:
 		demo_play_count += 1
@@ -312,10 +332,25 @@ func learning_mode():
 		await $"Demo Vid/AnimationPlayer".animation_finished
 	
 	print("Demo animation finished.")
-	$ReplayButton.show()
-	# --- MODIFICATION END ---
-			
 	
+	# --- LOGIC FOR TAP/REPLAY/TRYAGAIN ---
+	
+	# We use a temporary timer and await _wait_for_tap() at the same time.
+	# We don't need a timer here; we'll rely only on the tap to decide if 'TryAgain' shows.
+	
+	# 1. Show the Replay button first.
+	$ReplayButton.show()
+	
+	# 2. Wait for a tap. If a tap occurs, it means the user tapped the screen instead of the button.
+	await _wait_for_tap()
+
+	# 3. If the code reaches here, a tap occurred. The ReplayButton was ignored.
+	$"Demo Vid".hide()
+	$ReplayButton.hide()
+	
+	# Only show $TryAgain if it exists
+	if has_node("TryAgain"):
+		$TryAgain.show()
 
 
 # --- HELPER: Wait for a single tap (FIXED) ---
@@ -325,7 +360,9 @@ func _wait_for_tap() -> void:
 
 
 func _on_replay_button_pressed() -> void:
+	# If the user pressed the replay button, reset and restart
 	$ReplayButton.hide()
+	if has_node("TryAgain"):
+		$TryAgain.hide()
 	demo_play_count = 0
 	learning_mode()
-	
