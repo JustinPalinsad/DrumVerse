@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="LearningModuleData" load_steps=4 format=3 uid="uid://bvsnr7up20h5y"]
 
 [ext_resource type="Resource" uid="uid://c8qqhe40imqi7" path="res://Module/Lesson24/continuebar24.tres" id="1_ugs5u"]
-[ext_resource type="Resource" uid="uid://c4wun5pjjei0b" path="res://Module/Lesson24/endbar24.tres" id="2_8lfhd"]
+[ext_resource type="Resource" uid="uid://wo8k0yp7tg3q" path="res://Module/Lesson24/endbar24.tres" id="2_8lfhd"]
 [ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="3_whxsi"]
 
 [resource]
 script = ExtResource("3_whxsi")
 title_text = "Lesson 24"
-top_texts = Array[String](["\"The last rudiment is the flam. ", "Like this"])
-bottom_texts = Array[String](["This is a special type of note where one hand taps slightly before the other.", "You’ll hear a 'grace note' followed by a full hit.", "It sounds like 'ba-DUM', not just 'DUM'.", "Flams make your drumming sound expressive and professional.", "Try tapping with one quiet tap, followed by a louder one. ", "Left-right... right-left... That’s a flam!"])
+top_texts = Array[String](["SWISS ARMY TRIPLET", "Like this"])
+bottom_texts = Array[String](["Remember the triplets and the flam? ", "now in this Swiss army triplets the combination of flam and triplets", "there is a flam on the first beat of every triplet", "and there is a sticking pattern of (l)R-R-L -OR- (r)L-L-R. ", "and this is going to be noted in triplets with a flam on the start of every triplet"])
 demo_bars = Array[Resource]([ExtResource("1_ugs5u"), ExtResource("1_ugs5u"), ExtResource("1_ugs5u"), ExtResource("2_8lfhd")])
 show_note_labels = false
 slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."
