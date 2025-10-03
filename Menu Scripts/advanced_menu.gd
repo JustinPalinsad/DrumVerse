@@ -282,10 +282,9 @@ func _goto_sample_scene() -> void:
 	get_tree().current_scene = sample_scene
 
 
-func _on_advance_lesson_25_pressed() -> void:
+func _on_advance_lesson_25_pressed() -> void: 
 	GameState.lessons = 25
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
-	
