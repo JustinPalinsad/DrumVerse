@@ -68,14 +68,12 @@ offset_right = 223.499
 offset_bottom = 40.0
 
 [node name="Notes11" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("2_04jee")
 layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
-scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 texture_normal = ExtResource("5_pofgg")
 
@@ -326,35 +324,35 @@ theme_override_fonts/font = ExtResource("16_3ua8c")
 theme_override_font_sizes/font_size = 126
 text = "ADVANCED"
 
-[connection signal="pressed" from="CarouselContainer2/Control/Notes11" to="." method="_on_notes_1_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes11" to="." method="_on_notes_11_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes12" to="." method="_on_notes_2_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes11" to="." method="_on_notes_1_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes12" to="." method="_on_notes_12_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes13" to="." method="_on_notes_3_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes12" to="." method="_on_notes_2_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes13" to="." method="_on_notes_13_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes14" to="." method="_on_notes_4_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes13" to="." method="_on_notes_3_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes14" to="." method="_on_notes_14_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes15" to="." method="_on_notes_5_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes14" to="." method="_on_notes_4_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes15" to="." method="_on_notes_15_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes16" to="." method="_on_notes_6_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes15" to="." method="_on_notes_5_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes16" to="." method="_on_notes_16_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes17" to="." method="_on_notes_7_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes16" to="." method="_on_notes_6_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes17" to="." method="_on_notes_17_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes18" to="." method="_on_notes_8_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes17" to="." method="_on_notes_7_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes18" to="." method="_on_notes_18_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes19" to="." method="_on_notes_9_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes18" to="." method="_on_notes_8_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes19" to="." method="_on_notes_19_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes20" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes19" to="." method="_on_notes_9_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes20" to="." method="_on_notes_20_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes21" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes20" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes21" to="." method="_on_notes_20_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes22" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes21" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes22" to="." method="_on_notes_20_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes23" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes22" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes23" to="." method="_on_notes_20_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes24" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes23" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes24" to="." method="_on_notes_20_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes25" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes24" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes25" to="." method="_on_notes_20_pressed"]
+[connection signal="pressed" from="CarouselContainer2/Control/Notes25" to="." method="_on_notes_10_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Free" to="." method="_on_free_pressed"]
