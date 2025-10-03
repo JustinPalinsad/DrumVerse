@@ -49,12 +49,12 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 96.5005
+offset_top = 251.499
 offset_right = 40.0
-offset_bottom = 136.5
+offset_bottom = 291.499
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
-modulate = Color(1, 1, 1, 1)
+modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("1_7ykpt")
 layout_mode = 0

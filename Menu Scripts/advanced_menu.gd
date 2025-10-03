@@ -60,7 +60,7 @@ func _on_advance_lesson_13_pressed() -> void:
 	print("Loading Module13.tres and Module13_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson13/Module13.tres")
-	var learning_resource = load("res://Module/Lesson13/Module13_Learning.tres")#replace this
+	var learning_resource = load("res://Module/Lesson13/Module13_learning.tres")#replace this
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -79,7 +79,7 @@ func _on_advance_lesson_14_pressed() -> void:
 	print("Loading Module14.tres and Module14_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson14/Module14.tres")
-	var learning_resource = load("res://Module/Lesson14/Module14_Learning.tres")#replace this
+	var learning_resource = load("res://Module/Lesson14/Module14_learning.tres")#replace this
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -98,7 +98,7 @@ func _on_advance_lesson_15_pressed() -> void:
 	print("Loading Module15.tres and Module15_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson15/Module15.tres")
-	var learning_resource = load("res://Module/Lesson15/Module15_Learning.tres")#replace this
+	var learning_resource = load("res://Module/Lesson15/Module15_learning.tres")#replace this
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -117,7 +117,7 @@ func _on_advance_lesson_16_pressed() -> void:
 	print("Loading Module16.tres and Module16_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson16/Module16.tres")
-	var learning_resource = load("res://Module/Lesson16/Module16_Learning.tres") #replace this
+	var learning_resource = load("res://Module/Lesson16/Module16_learning.tres") #replace this
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -136,7 +136,7 @@ func _on_advance_lesson_17_pressed() -> void:
 	print("Loading Module17.tres and Module17_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson17/Module17.tres")
-	var learning_resource = load("res://Module/Lesson17/Module17_Learning.tres")
+	var learning_resource = load("res://Module/Lesson17/Module17_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -155,7 +155,7 @@ func _on_advance_lesson_18_pressed() -> void:
 	print("Loading Module18.tres and Module18_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson18/Module18.tres")
-	var learning_resource = load("res://Module/Lesson18/Module18_Learning.tres")
+	var learning_resource = load("res://Module/Lesson18/Module18_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -174,7 +174,7 @@ func _on_advance_lesson_19_pressed() -> void:
 	print("Loading Module19.tres and Module19_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson19/Module19.tres")
-	var learning_resource = load("res://Module/Lesson19/Module19_Learning.tres")
+	var learning_resource = load("res://Module/Lesson19/Module19_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -193,7 +193,7 @@ func _on_advance_lesson_20_pressed() -> void:
 	print("Loading Module20.tres and Module20_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson20/Module20.tres")
-	var learning_resource = load("res://Module/Lesson20/Module20_Learning.tres")
+	var learning_resource = load("res://Module/Lesson20/Module20_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -211,7 +211,7 @@ func _on_advance_lesson_21_pressed() -> void:
 	print("Loading Module21.tres and Module21_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson21/Module21.tres")
-	var learning_resource = load("res://Module/Lesson21/Module21_Learning.tres")
+	var learning_resource = load("res://Module/Lesson21/Module21_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -229,7 +229,7 @@ func _on_advance_lesson_22_pressed() -> void:
 	print("Loading Module22.tres and Module22_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson22/Module22.tres")
-	var learning_resource = load("res://Module/Lesson22/Module22_Learning.tres")
+	var learning_resource = load("res://Module/Lesson22/Module22_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -247,7 +247,7 @@ func _on_advance_lesson_23_pressed() -> void:
 	print("Loading Module23.tres and Module23_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson23/Module23.tres")
-	var learning_resource = load("res://Module/Lesson23/Module23_Learning.tres")
+	var learning_resource = load("res://Module/Lesson23/Module23_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
@@ -265,7 +265,7 @@ func _on_advance_lesson_24_pressed() -> void:
 	print("Loading Module24.tres and Module24_Learning.tres...")
 
 	var module_resource = load("res://Module/Lesson24/Module24.tres")
-	var learning_resource = load("res://Module/Lesson24/Module24_Learning.tres")
+	var learning_resource = load("res://Module/Lesson24/Module24_learning.tres")
 	
 	if module_resource and learning_resource:
 		print("Both module and learning module loaded.")
