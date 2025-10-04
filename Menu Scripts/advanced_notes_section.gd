@@ -109,6 +109,6 @@ func _on_notes_24_pressed() -> void:
 
 func _on_notes_25_pressed() -> void:
 	GameState.notes = 25
-	var loaded_resource = load("res://NotesResource/advanced notes resource/double_paradiddle.tres")
+	var loaded_resource = load("res://NotesResource/advanced notes resource/polyrhythm.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
