@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LearningModuleData" load_steps=4 format=3 uid="uid://bq7vn8jei5f4q"]
 
-[ext_resource type="Resource" uid="uid://ce0h732ys6g24" path="res://Module/Lesson15/continuebar15.tres" id="1_fm74o"]
-[ext_resource type="Resource" uid="uid://ddx1bml0o357l" path="res://Module/Lesson15/endbar15.tres" id="2_ynsat"]
+[ext_resource type="Resource" uid="uid://djrb3oru013nn" path="res://Module/Lesson21/continuebar21_1.tres" id="1_gs7wc"]
+[ext_resource type="Resource" uid="uid://bdqsr5hdh0vc3" path="res://Module/Lesson21/endbar21_1.tres" id="2_nr123"]
 [ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="3_56rta"]
 
 [resource]
@@ -9,7 +9,7 @@ script = ExtResource("3_56rta")
 title_text = "Lesson 21"
 top_texts = Array[String](["FIVE STROKE ROLL", "Like this"])
 bottom_texts = Array[String](["Now this time", "the five-stroke roll which is composed of a double stroke and a hit of a single", "the Pattern is", "R-R-L-L-R  OR   L-L-R-R-L ", "in this lesson it will be noted with full 16th note followed by a quarter note", "you can play this in a continuous pattern but for this app, we will let you have a pause so you can ready yourself. "])
-demo_bars = Array[Resource]([ExtResource("1_fm74o"), ExtResource("1_fm74o"), ExtResource("1_fm74o"), ExtResource("2_ynsat")])
+demo_bars = Array[Resource]([ExtResource("1_gs7wc"), ExtResource("1_gs7wc"), ExtResource("1_gs7wc"), ExtResource("2_nr123")])
 show_note_labels = false
 slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."
 metadata/_custom_type_script = "uid://djj7wpg1sjvv7"
