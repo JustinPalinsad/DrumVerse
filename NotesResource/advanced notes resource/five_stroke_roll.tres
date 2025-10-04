@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://d3mp4opgsfm4d"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_14k2r"]
+
+[resource]
+script = ExtResource("1_14k2r")
+Name = "Five Stroke Roll"
+Description = ""
+ArrayDesc = ["Now this time, the five-stroke roll which is composed of a double stroke and a hit of a single,", "the Pattern is R-R-L-L-R -OR- L-L-R-R-L ", "in this lesson it will be noted with full 16th note followed by a quarter note."]

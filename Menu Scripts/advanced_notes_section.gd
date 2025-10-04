@@ -58,14 +58,14 @@ func _on_notes_18_pressed() -> void:
 
 func _on_notes_19_pressed() -> void:
 	GameState.notes = 19
-	var loaded_resource = load("res://NotesResource/paradiddle.tres")
+	var loaded_resource = load("res://NotesResource/advanced notes resource/paradiddle_diddle.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_20_pressed() -> void:
 	GameState.notes = 20
-	var loaded_resource = load("res://NotesResource/flam.tres")
+	var loaded_resource = load("res://NotesResource/advanced notes resource/double_paradiddle.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
@@ -79,4 +79,36 @@ func _on_free_pressed() -> void:
 	
 
 
-		
+func _on_notes_21_pressed() -> void:
+	GameState.notes = 21
+	var loaded_resource = load("res://NotesResource/advanced notes resource/five_stroke_roll.tres")
+	GameState.selected_notes_resource = loaded_resource
+	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+
+
+func _on_notes_22_pressed() -> void:
+	GameState.notes = 22
+	var loaded_resource = load("res://NotesResource/advanced notes resource/six_stroke_roll.tres")
+	GameState.selected_notes_resource = loaded_resource
+	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+
+
+func _on_notes_23_pressed() -> void:
+	GameState.notes = 23
+	var loaded_resource = load("res://NotesResource/advanced notes resource/seven_stroke_roll.tres")
+	GameState.selected_notes_resource = loaded_resource
+	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+
+
+func _on_notes_24_pressed() -> void:
+	GameState.notes = 24
+	var loaded_resource = load("res://NotesResource/advanced notes resource/swiss_army_triplet.tres")
+	GameState.selected_notes_resource = loaded_resource
+	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+
+
+func _on_notes_25_pressed() -> void:
+	GameState.notes = 25
+	var loaded_resource = load("res://NotesResource/advanced notes resource/double_paradiddle.tres")
+	GameState.selected_notes_resource = loaded_resource
+	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")

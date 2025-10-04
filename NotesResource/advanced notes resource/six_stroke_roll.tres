@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://daqi32uoxt662"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_gla4u"]
+
+[resource]
+script = ExtResource("1_gla4u")
+Name = "Six Stroke Roll"
+Description = ""
+ArrayDesc = ["The six stroke roll, R-R-L-L-R-L -OR- L-L-R-R-L-R ", "in this lesson it will be noted by a full 16th note and a broken 16th note (1, e)."]

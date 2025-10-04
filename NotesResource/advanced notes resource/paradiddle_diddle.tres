@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://dl3x5d1mnj2bn"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_yifwd"]
+
+[resource]
+script = ExtResource("1_yifwd")
+Name = "Paradiddle-Diddle"
+Description = ""
+ArrayDesc = ["It’s a mix of single strokes and doubles.", "You play Right, Left, Right-Right, Left-Left OR Left, Right, Left-Left, Right-Right.", "Notice it has six hits total."]

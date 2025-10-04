@@ -6,4 +6,4 @@
 script = ExtResource("1_lf23n")
 Name = "Broken 16th Missing E"
 Description = ""
-ArrayDesc = []
+ArrayDesc = ["Remember how we counted in 16th notes 1 E N A 2 E N A 3 E N A 4 E N A. ", "we all hit on the counts of 16th notes", "but this time we will not hit the E which is the 2nd, 6th, 10th and 14th beat and still keeping the same count."]

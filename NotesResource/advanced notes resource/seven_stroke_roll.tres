@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://lio01ar0xi2s"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_jrrdc"]
+
+[resource]
+script = ExtResource("1_jrrdc")
+Name = "Seven Stroke Roll"
+Description = ""
+ArrayDesc = ["This is the Seven Stroke Roll. ", "The pattern is R-R-L-L-R-R-L -OR- L-L-R-R-L-L-R", "You play three doubles and finish with a single.", "this is the note pattern a full 16th note and a broken 16th note (1, e, n)."]
