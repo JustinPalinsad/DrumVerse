@@ -20,4 +20,4 @@ func _on_menu_pressed():
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
-	queue_free()  #  Remove this results scene
+	hide()

@@ -1,7 +1,6 @@
 @tool
 extends Control
 
-# Use the texture buttons Mark inside the vboxcontainer
 @onready var module1_button: TextureButton = $CarouselContainer/Control/Lesson1
 @onready var module2_button: TextureButton = $CarouselContainer/Control/Lesson2
 @onready var module3_button: TextureButton = $CarouselContainer/Control/Lesson3
@@ -228,7 +227,6 @@ func _goto_sample_scene() -> void:
 func _on_back_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
-	#go back to main menu
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 func _on_play_area_area_entered(area: Area2D) -> void:
@@ -267,23 +265,42 @@ func grade_display():
 	$"CarouselContainer/Control/Lesson9/Grade Text".text = "Grade: " + GameState.module_grades[8]
 	$"CarouselContainer/Control/Lesson10/Grade Text".text = "Grade: " + GameState.module_grades[9]
 	
+## Fix for Lesson Unlocking
+
 func unlocked_lesson():
+	# Lesson 1 is always unlocked
+	var lesson1 = $CarouselContainer/Control/Lesson1
+	if lesson1:
+		lesson1.disabled = false
+		for child in lesson1.get_children():
+			child.visible = true
+
 	# Loop from Lesson 2 to Lesson 10
 	for i in range(1, 10):
-		# If the previous lesson (i-1) is not "Fail" or "N/A"
-		if GameState.module_grades[i - 1] != "Fail" and GameState.module_grades[i - 1] != "N/A":
-			var lesson_node = $CarouselContainer/Control.get_node("Lesson" + str(i + 1))
-			if lesson_node:
+		var lesson_num = i + 1
+		var lesson_node = $CarouselContainer/Control.get_node("Lesson" + str(lesson_num))
+		var previous_grade = GameState.module_grades[i - 1] if i - 1 < GameState.module_grades.size() else "N/A"
+
+		if lesson_node:
+			# UNLOCK only if previous grade is PASSED (S, A, B, or C)
+			if previous_grade in ["S", "A", "B", "C"]:
 				lesson_node.disabled = false
-				
-				# Show all children of the unlocked lesson
 				for child in lesson_node.get_children():
 					child.visible = true
+			else:
+				# LOCK if previous grade is "Fail" or "N/A"
+				lesson_node.disabled = true
+				for child in lesson_node.get_children():
+					# Keep texture button visible (so lock image shows), hide other elements
+					if not (child is TextureButton):
+						child.visible = false
 
-			
+
+## Updated Card Changing Logic
+
 func change_card():
 	var card_textures = [
-		null, # Lesson1 doesn't need a new texture here
+		preload("res://Menu Assets/cards v2/Lesson_Cards_001.png"),
 		preload("res://Menu Assets/cards v2/Lesson_Cards_002.png"),
 		preload("res://Menu Assets/cards v2/Lesson_Cards_003.png"),
 		preload("res://Menu Assets/cards v2/Lesson_Cards_004.png"),
@@ -295,18 +312,26 @@ func change_card():
 		preload("res://Menu Assets/cards v2/Lesson_Cards_010.png")
 	]
 
-	# Loop through all 9 subsequent lessons (2 to 10)
-	for i in range(9):
-		# Check if the grade for the previous module (i.e., module i) is not "Fail" or "N/A"
-		if GameState.module_grades[i] != "Fail" and GameState.module_grades[i] != "N/A":
-			var lesson_num = i + 2 
-			var lesson_path = "Lesson" + str(lesson_num)
-			var lesson_node = $CarouselContainer/Control.get_node(lesson_path)
-			
-			if lesson_node and i + 1 < card_textures.size():
-				lesson_node.texture_normal = card_textures[i + 1]
+	var locked_texture = preload("res://Menu Assets/Locked_Card.png")
+
+	for i in range(10):
+		var lesson_num = i + 1
+		var lesson_node = $CarouselContainer/Control.get_node("Lesson" + str(lesson_num))
+		if not lesson_node:
+			continue
+
+		if i == 0:
+			lesson_node.texture_normal = card_textures[i]  # Lesson 1 always unlocked
+			continue
+
+		var previous_grade = GameState.module_grades[i - 1] if i - 1 < GameState.module_grades.size() else "N/A"
+
+		if previous_grade in ["S", "A", "B", "C"]:
+			lesson_node.texture_normal = card_textures[i]
+		else:
+			lesson_node.texture_normal = locked_texture
+
 	
-#go to advanced lesson
 func _on_advanced_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
