@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	print(GameState.module_grades[24])
 	grade_display()
 	change_card()
 	unlocked_advanced_lessons()

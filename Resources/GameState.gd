@@ -20,9 +20,15 @@ func _ready() -> void:
 	print(module_grades)
 
 func save_grades() -> void:
+	# Ensure we always have exactly 25 entries
+	if module_grades.size() < MAX_GRADES:
+		for i in range(module_grades.size(), MAX_GRADES):
+			module_grades.append("N/A")
+
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_var(module_grades)
+		file.close()
 	else:
 		printerr("Failed to save grades. Error code: ", FileAccess.get_open_error())
 
@@ -32,11 +38,16 @@ func load_grades() -> void:
 		if file:
 			var loaded_data = file.get_var()
 			if loaded_data is Array:
-				# Ensure the array always has 25 entries
-				loaded_data.resize(MAX_GRADES)
-				module_grades = loaded_data
+				module_grades = loaded_data.duplicate()
+				# Fix null entries and pad missing ones
+				for i in range(MAX_GRADES):
+					if i >= module_grades.size():
+						module_grades.append("N/A")
+					elif module_grades[i] == null:
+						module_grades[i] = "N/A"
 			else:
 				reset_grades()
+			file.close()
 		else:
 			printerr("Failed to open save file for reading. Error code: ", FileAccess.get_open_error())
 			reset_grades()

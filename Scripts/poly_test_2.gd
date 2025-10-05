@@ -268,17 +268,16 @@ func _check_results() -> void:
 
 
 # --- SHOW RESULTS SCENE ---
-func _show_results(passed_hit_percentage: float, passed_grade: String) -> void:
+func _show_results(passed_hit_percentage: float, passed_grade: String):
 	var results_scene = preload("res://Sample/result_scene.tscn").instantiate()
-	results_scene.total_hits = total_hits
-	results_scene.total_notes = total_attempts
-	results_scene.total_misses = total_misses
-	results_scene.hit_percentage = passed_hit_percentage
-	results_scene.grade = passed_grade
-	results_scene.mode = "default"  # or whatever mode you want to pass
+	Results.total_hits = total_hits
+	Results.total_notes = total_attempts
+	Results.total_misses = total_misses
+	Results.hit_percentage = passed_hit_percentage
+	Results.grade = passed_grade
+	Results.mode = "default"
 
-	get_tree().get_root().add_child(results_scene)
-	hide()
+	get_tree().change_scene_to_file("res://Sample/polyrhythm_result_scene.tscn")
 
 
 func _on_back_pressed() -> void:
