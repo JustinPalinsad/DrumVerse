@@ -1,7 +1,7 @@
 extends MenuButton
 
 # All possible BPMs
-var all_bpms = [60, 80, 100, 120]
+var all_bpms = [60, 80, 100]
 
 # Custom font size
 @export var popup_font_size: int = 22
