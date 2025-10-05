@@ -225,6 +225,7 @@ func _goto_sample_scene() -> void:
 	get_tree().current_scene = sample_scene
 	
 func _on_back_pressed() -> void:
+	GameState.notes_index = 0
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")

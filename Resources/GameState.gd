@@ -11,6 +11,10 @@ var dark_mode_enabled: bool = true
 var polyrhythm_mode = "learning"
 var notes = 0
 
+
+var notes_index = 0
+var lesson_index = 0
+
 var module_grades: Array[String] = []
 const SAVE_PATH = "user://saved_grades.save"
 const MAX_GRADES = 25

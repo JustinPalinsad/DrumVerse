@@ -468,6 +468,7 @@ z_index = -1
 position = Vector2(1232, 104)
 scale = Vector2(0.955, 0.955)
 spacing = -40.0
+wraparound_width = null
 position_offset_node = NodePath("Control")
 
 [node name="Control" type="Control" parent="CarouselContainer"]

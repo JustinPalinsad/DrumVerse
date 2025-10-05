@@ -4,7 +4,7 @@ extends Node2D
 @export var spacing: float = 20.0
 @export var wraparound_enabled: bool = false
 @export var wraparound_radius: float = 300.0
-@export var wraparound_width: float = 50.0 # Changed from height to width
+@export var wraparound_width: float = 50.0
 
 @export_range(0.0, 1.0) var opacity_strength: float = 0.35
 @export_range(0.0, 1.0) var scale_strength: float = 0.25
@@ -13,43 +13,39 @@ extends Node2D
 @export var smoothing_speed: float = 6.5
 @export var follow_button_focus: bool = true
 @export var position_offset_node: Control
-@export var up_button: Button # New export for your up button
-@export var down_button: Button # New export for your down button
+@export var up_button: Button
+@export var down_button: Button
 
 var dragging := false
 var last_mouse_pos := Vector2.ZERO
 var velocity := 0.0
 var released := false
 
-var _selected_index := 0
 var queued_print_index := -1
 
-@export var selected_index: int:
-	get: return _selected_index
-	set(value): set_selected_index(value)
-
-func set_selected_index(value: int):
-	if position_offset_node:
-		_selected_index = clamp(value, 0, position_offset_node.get_child_count() - 1)
-	else:
-		_selected_index = value
+# 🔹 Property directly tied to GameState.notes_index
+var selected_index: int:
+	get:
+		return GameState.notes_index if Engine.is_editor_hint() == false else 0
+	set(value):
+		if position_offset_node:
+			GameState.notes_index = clamp(value, 0, position_offset_node.get_child_count() - 1)
+		else:
+			GameState.notes_index = value
 
 func _ready():
 	if position_offset_node:
 		for child in position_offset_node.get_children():
 			if child.has_signal("pressed") and not child.is_connected("pressed", Callable(self, "_on_button_pressed")):
 				child.connect("pressed", Callable(self, "_on_button_pressed").bind(child))
-	
-	# Connect the up and down buttons to their functions
+
 	if up_button:
 		up_button.connect("pressed", Callable(self, "_up"))
 	if down_button:
 		down_button.connect("pressed", Callable(self, "_down"))
 
 func _on_button_pressed(button: Control):
-	# Only execute the action if the button pressed is the highlighted one
 	if button.get_index() == selected_index:
-		# 🔄 Update selection if the correct button is pressed
 		selected_index = button.get_index()
 		queued_print_index = button.get_index()
 
@@ -61,7 +57,6 @@ func _input(event):
 				released = false
 				last_mouse_pos = event.position
 				velocity = 0.0
-
 				if position_offset_node:
 					for child in position_offset_node.get_children():
 						if child.has_focus():
@@ -72,8 +67,8 @@ func _input(event):
 
 	elif event is InputEventMouseMotion and dragging:
 		var delta = event.position - last_mouse_pos
-		position_offset_node.position.x += delta.x # Changed to .x
-		velocity = delta.x # Changed to .x
+		position_offset_node.position.x += delta.x
+		velocity = delta.x
 		last_mouse_pos = event.position
 
 func _process(delta: float) -> void:
@@ -86,51 +81,48 @@ func _process(delta: float) -> void:
 	var x := 0.0
 	for i in position_offset_node.get_children():
 		i.pivot_offset = i.size / 2.0
-		i.position = Vector2(x, -i.size.y / 2.0) # Changed to .x and .y
-		x += i.size.x + spacing # Changed to .x
+		i.position = Vector2(x, -i.size.y / 2.0)
+		x += i.size.x + spacing
 
-	# ✅ Follow focused button (keyboard/tab)
+	# Focus tracking
 	if follow_button_focus:
 		for i in position_offset_node.get_children():
 			if i.has_focus():
 				selected_index = i.get_index()
 				break
 
-	# 📍 Smooth scroll to selected
+	# Smooth scroll
 	if !dragging:
 		var target_item = position_offset_node.get_child(selected_index)
-		var target_x = -(target_item.position.x + target_item.size.x / 2.0 - get_viewport_rect().size.x / 2.0) # Changed to .x and .width
-		position_offset_node.position.x = lerp(position_offset_node.position.x, target_x, smoothing_speed * delta) # Changed to .x
+		var target_x = -(target_item.position.x + target_item.size.x / 2.0 - get_viewport_rect().size.x / 2.0)
+		position_offset_node.position.x = lerp(position_offset_node.position.x, target_x, smoothing_speed * delta)
 
-	# 🔄 Snap to closest after swipe
+	# Swipe release logic
 	if released:
 		released = false
-		var center_x = get_viewport_rect().size.x / 2.0 # Changed to .x
+		var center_x = get_viewport_rect().size.x / 2.0
 		var closest_index := 0
 		var smallest_dist := INF
 
 		for i in position_offset_node.get_children():
-			var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0 # Changed to .x
-			var dist = abs(center_x - item_center_x) # Changed to .x
-
+			var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0
+			var dist = abs(center_x - item_center_x)
 			if dist < smallest_dist:
 				smallest_dist = dist
 				closest_index = i.get_index()
 
-		selected_index = closest_index
+		selected_index = closest_index  # ✅ Update GameState.notes_index when swiping
 
-	# 🧠 Live scaling, opacity, and interactivity control
-	var center_x := get_viewport_rect().size.x / 2.0 # Changed to .x
+	# Visual updates
+	var center_x := get_viewport_rect().size.x / 2.0
 	for i in position_offset_node.get_children():
-		var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0 # Changed to .x
-		var pixel_dist = abs(center_x - item_center_x) # Changed to .x
-
-		var normalized = clamp(pixel_dist / (get_viewport_rect().size.x / 2.0), 0.0, 1.0) # Changed to .x
+		var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0
+		var pixel_dist = abs(center_x - item_center_x)
+		var normalized = clamp(pixel_dist / (get_viewport_rect().size.x / 2.0), 0.0, 1.0)
 
 		i.scale = Vector2.ONE * clamp(1.0 - scale_strength * normalized, scale_min, 1.0)
 		i.modulate.a = clamp(1.0 - opacity_strength * normalized, 0.0, 1.0)
 
-		# 🎯 Centered child is interactable; others are ignored
 		if i.get_index() == selected_index:
 			i.z_index = 1
 			i.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -139,12 +131,9 @@ func _process(delta: float) -> void:
 			i.z_index = -abs(i.get_index() - selected_index)
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			i.focus_mode = Control.FOCUS_NONE
-			
+
 func _up():
 	selected_index -= 1
-	if selected_index < 0:
-		selected_index += 1
+
 func _down():
 	selected_index += 1
-	if selected_index > position_offset_node.get_child_count()-1:
-		selected_index -= 1

@@ -73,6 +73,7 @@ func _on_notes_10_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
+	GameState.notes_index = 0
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 func _on_advanced_pressed() -> void:
