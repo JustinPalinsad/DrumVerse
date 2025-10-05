@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://cqkst3qbfogt5"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_468wn"]
+
+[resource]
+script = ExtResource("1_468wn")
+Name = "Polyrhythm"
+Description = ""
+ArrayDesc = ["A polyrhythm means we’re playing two different rhythms at the same time.In a 2:3 polyrhythm, one part divides the beat into two, while the other divides the same beat into three. That’s why it’s called ‘two against three.", "if you will notice they are playing different time signatures the 2 is playing 2/4 and the 3 is playing 3/4 but in different tempos", "the essence of polyrhythm is that they always meet at 1 together"]

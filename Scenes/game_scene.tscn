@@ -17,7 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://ci3egfykqwf44" path="res://Audio/lose.wav" id="10_uscyt"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_4xiap"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
-[ext_resource type="Script" uid="uid://det1facwxs68p" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
+[ext_resource type="Script" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
+[ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="19_mipjh"]
+[ext_resource type="PackedScene" uid="uid://dhut0svmge575" path="res://NoteScene/triplet_new.tscn" id="20_aq00n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -306,6 +308,14 @@ popup/item_2/text = "100"
 popup/item_2/id = 2
 script = ExtResource("18_gtbs0")
 popup_font_size = 35
+
+[node name="QuarterNote" parent="." instance=ExtResource("19_mipjh")]
+visible = false
+position = Vector2(-80, 456)
+
+[node name="Triplet_New" parent="." instance=ExtResource("20_aq00n")]
+visible = false
+position = Vector2(31, 434)
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]

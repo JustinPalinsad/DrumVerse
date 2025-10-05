@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://dadjlq8vcdhf3"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_dbh7g"]
+
+[resource]
+script = ExtResource("1_dbh7g")
+Name = "Swiss Army Triplet"
+Description = ""
+ArrayDesc = ["Remember the triplets and the flam?", "now in this Swiss army triplets the combination of flam and triplets,", "there is a flam on the first beat of every triplet and there is a sticking pattern of (l)R-R-L -OR- (r)L-L-R.", "and this is going to be noted in triplets with a flam on the start of every triplet."]

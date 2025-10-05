@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="NotesRes" load_steps=2 format=3 uid="uid://d31p5hyn4x8v"]
+
+[ext_resource type="Script" path="res://Resources/notesresource.gd" id="1_fru43"]
+
+[resource]
+script = ExtResource("1_fru43")
+Name = "Double Paradiddle"
+Description = ""
+ArrayDesc = ["Remember the PARADIDDLE? ", "R-L-R-R or L-R-L-L now in this lesson this like two paradiddles combined, the pattern is R-L-R-L-R-R-L-L -OR- L-R-L-R-L-L-R-R.", "SINCE THIS IS AN 8 PATTERN STICKING, this will be played in a 16th note pattern. "]
