@@ -64,8 +64,8 @@ selected_index = 14
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -14064.0
-offset_right = -14024.0
+offset_left = -14063.6
+offset_right = -14023.6
 offset_bottom = 40.0
 
 [node name="Notes11" type="TextureButton" parent="CarouselContainer2/Control"]
@@ -278,7 +278,7 @@ mouse_filter = 2
 texture_normal = ExtResource("18_r4dek")
 
 [node name="Notes25" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.999984)
+modulate = Color(1, 1, 1, 0.999945)
 z_index = 1
 material = ExtResource("2_04jee")
 layout_mode = 0
@@ -286,7 +286,7 @@ offset_left = 14292.0
 offset_top = -322.0
 offset_right = 15368.0
 offset_bottom = 322.0
-scale = Vector2(0.999991, 0.999991)
+scale = Vector2(0.999969, 0.999969)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("19_ubsbp")
 
