@@ -36,9 +36,9 @@ selected_index = 14
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = -9641.49
+offset_top = -9641.4
 offset_right = 40.0
-offset_bottom = -9601.49
+offset_bottom = -9601.4
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -432,7 +432,7 @@ theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
 [node name="AdvanceLesson25" type="TextureButton" parent="carousel_container_3/Control"]
-modulate = Color(1, 1, 1, 0.999992)
+modulate = Color(1, 1, 1, 0.999919)
 z_index = 1
 material = ExtResource("1_7ykpt")
 layout_mode = 0
@@ -440,7 +440,7 @@ offset_left = -551.0
 offset_top = 9716.0
 offset_right = 551.0
 offset_bottom = 10450.0
-scale = Vector2(0.999994, 0.999994)
+scale = Vector2(0.999942, 0.999942)
 pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("5_rugy4")
@@ -554,6 +554,7 @@ theme_override_font_sizes/font_size = 91
 text = "placeholder"
 
 [node name="CompleteGrades" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 224.0
 offset_top = 176.0

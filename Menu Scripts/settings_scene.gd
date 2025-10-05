@@ -61,3 +61,19 @@ func _on_sound_toggle_pressed() -> void:
 func _on_button_pressed() -> void:
 	GameState.reset_grades()
 	GameState.save_grades()
+
+
+func _on_button_2_pressed() -> void:
+	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
+	set_advanced_lessons_to_S()
+
+func set_advanced_lessons_to_S():
+	# Ensure GameState.module_grades is long enough
+	while GameState.module_grades.size() < 25:
+		GameState.module_grades.append("N/A")
+
+	# Set Lessons 11–24 (indices 10–23) to "S"
+	for i in range(10, 25):
+		GameState.module_grades[i] = "S"
+
+	print("✅ Lessons 11–24 grades set to 'S'!")
