@@ -77,3 +77,4 @@ func set_advanced_lessons_to_S():
 		GameState.module_grades[i] = "S"
 
 	print("✅ Lessons 11–24 grades set to 'S'!")
+	GameState.save_grades()

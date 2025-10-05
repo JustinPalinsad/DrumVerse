@@ -109,3 +109,7 @@ func change_card():
 		else:
 			lesson_node.texture_normal = locked_texture
 			lesson_node.disabled = true
+			
+func show_notes_section():
+	var notes_section_scene = preload("res://Menu Scenes/notes_container.tscn")
+	get_tree().root.add_child(notes_section_scene)

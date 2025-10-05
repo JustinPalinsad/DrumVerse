@@ -19,10 +19,11 @@ func _ready() -> void:
 
 
 func _on_back_pressed() -> void:
-	if GameState.notes < 11:
-		get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Menu Scenes/advanced_notes_section.tscn")
+	#if GameState.notes < 11:
+		#get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
+	#else:
+		#get_tree().change_scene_to_file("res://Menu Scenes/advanced_notes_section.tscn")
+	hide()
 
 func chosen_note():
 	var selected_note = GameState.notes
