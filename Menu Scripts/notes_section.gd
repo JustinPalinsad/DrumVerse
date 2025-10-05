@@ -1,5 +1,8 @@
 extends Control
 
+var random_scene: PackedScene = preload("res://Menu Scenes/notes_container.tscn")
+var random_instance: Control = null
+
 func _ready() -> void:
 	change_card()
 	
@@ -7,7 +10,7 @@ func _on_notes_1_pressed() -> void:
 	GameState.notes = 1
 	var loaded_resource = load("res://NotesResource/wholenote.tres")
 	GameState.selected_notes_resource = loaded_resource
-	show_notes_section()
+	show_section()
 	#get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
@@ -15,14 +18,16 @@ func _on_notes_2_pressed() -> void:
 	GameState.notes = 2
 	var loaded_resource = load("res://NotesResource/halfnote.tres")
 	GameState.selected_notes_resource = loaded_resource
-	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+	show_section()
+	#get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_3_pressed() -> void:
 	GameState.notes = 3
 	var loaded_resource = load("res://NotesResource/quarternote.tres")
 	GameState.selected_notes_resource = loaded_resource
-	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+	show_section()
+	#get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_4_pressed() -> void:
@@ -111,9 +116,21 @@ func change_card():
 			lesson_node.texture_normal = locked_texture
 			lesson_node.disabled = true
 			
-func show_notes_section():
-	var notes_section_scene = preload("res://Menu Scenes/notes_container.tscn")
-	var notes_section_instance = notes_section_scene.instantiate()
-	
-	get_tree().root.add_child(notes_section_instance)
+func set_random_instance(node: Control) -> void:
+	random_instance = node
+
+func show_section() -> void:
+	# If we already have the random instance, just show it
+	if random_instance and is_instance_valid(random_instance):
+		random_instance.show()
+	else:
+		# Otherwise create it once and tell the new instance who we are
+		random_instance = random_scene.instantiate() as Control
+		# preferred: call a method on the other scene if it exists
+		if random_instance.has_method("set_main_instance"):
+			random_instance.set_main_instance(self)
+		else:
+			random_instance.main_instance = self
+		get_tree().root.add_child(random_instance)
+	# hide this scene so the other becomes visible
 	hide()
