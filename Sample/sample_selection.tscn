@@ -474,9 +474,9 @@ position_offset_node = NodePath("Control")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 16.7539
-offset_top = 96.5002
+offset_top = 119.499
 offset_right = 56.7539
-offset_bottom = 136.501
+offset_bottom = 159.5
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
@@ -994,6 +994,7 @@ theme_override_font_sizes/font_size = 126
 text = "ADVANCED"
 
 [node name="CompleteGrades" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 224.0
 offset_top = 176.0
