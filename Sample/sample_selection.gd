@@ -269,12 +269,17 @@ func grade_display():
 	
 func unlocked_lesson():
 	# Loop from Lesson 2 to Lesson 10
-	for i in range(1, 10): 
+	for i in range(1, 10):
 		# If the previous lesson (i-1) is not "Fail" or "N/A"
-		if GameState.module_grades[i-1] != "Fail" and GameState.module_grades[i-1] != "N/A":
+		if GameState.module_grades[i - 1] != "Fail" and GameState.module_grades[i - 1] != "N/A":
 			var lesson_node = $CarouselContainer/Control.get_node("Lesson" + str(i + 1))
 			if lesson_node:
 				lesson_node.disabled = false
+				
+				# Show all children of the unlocked lesson
+				for child in lesson_node.get_children():
+					child.visible = true
+
 			
 func change_card():
 	var card_textures = [

@@ -474,20 +474,20 @@ position_offset_node = NodePath("Control")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 16.7539
-offset_top = 96.5067
+offset_top = 96.5002
 offset_right = 56.7539
-offset_bottom = 136.508
+offset_bottom = 136.501
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 0.999994)
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(1, 1)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
 
@@ -534,12 +534,14 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson2"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(943.232, 473.576)
 scale = Vector2(0.730436, 0.606109)
 texture = ExtResource("11_qw04s")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson2"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -576,12 +578,14 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CarouselContainer/Control/Lesson3"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(959.607, 461.127)
 scale = Vector2(1.18948, 1.18948)
 texture = ExtResource("8_rpu63")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson3"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -618,12 +622,14 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson4"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(874.454, 484.703)
 scale = Vector2(1.101, 0.913598)
 texture = ExtResource("15_47u5r")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson4"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -660,12 +666,14 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson5"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(874.454, 495.179)
 scale = Vector2(0.428407, 0.428407)
 texture = ExtResource("10_rpu63")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson5"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -702,12 +710,14 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson6"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(896.288, 477.271)
 scale = Vector2(0.31154, 0.31154)
 texture = ExtResource("11_tu1r8")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson6"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -744,6 +754,7 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson7"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 651.747
@@ -758,6 +769,7 @@ Stroke"
 horizontal_alignment = 1
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson7"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -794,6 +806,7 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson8"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 548.035
@@ -809,6 +822,7 @@ Stroke
 horizontal_alignment = 1
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson8"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -845,6 +859,7 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson9"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 649.563
@@ -857,6 +872,7 @@ theme_override_font_sizes/font_size = 96
 text = "Paradiddle"
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson9"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -893,6 +909,7 @@ disabled = true
 texture_normal = ExtResource("26_pm2xg")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson10"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 782.751
@@ -904,6 +921,7 @@ theme_override_font_sizes/font_size = 96
 text = "Flam"
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson10"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
