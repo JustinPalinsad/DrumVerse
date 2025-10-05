@@ -7,7 +7,8 @@ func _on_notes_1_pressed() -> void:
 	GameState.notes = 1
 	var loaded_resource = load("res://NotesResource/wholenote.tres")
 	GameState.selected_notes_resource = loaded_resource
-	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
+	show_notes_section()
+	#get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_notes_2_pressed() -> void:
@@ -112,4 +113,7 @@ func change_card():
 			
 func show_notes_section():
 	var notes_section_scene = preload("res://Menu Scenes/notes_container.tscn")
-	get_tree().root.add_child(notes_section_scene)
+	var notes_section_instance = notes_section_scene.instantiate()
+	
+	get_tree().root.add_child(notes_section_instance)
+	hide()

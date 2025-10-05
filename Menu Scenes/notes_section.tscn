@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="16_tap5y"]
 
 [node name="notes_section" type="Control"]
+z_index = -1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
