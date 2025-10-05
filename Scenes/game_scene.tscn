@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://12gneqnb4n55"]
+[gd_scene load_steps=26 format=3 uid="uid://12gneqnb4n55"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -299,15 +299,13 @@ offset_bottom = 282.0
 theme_override_fonts/font = ExtResource("6_rgj8m")
 theme_override_font_sizes/font_size = 40
 text = "BPM: 60"
-item_count = 4
+item_count = 3
 popup/item_0/text = "60"
 popup/item_0/id = 0
 popup/item_1/text = "80"
 popup/item_1/id = 1
 popup/item_2/text = "100"
 popup/item_2/id = 2
-popup/item_3/text = "120"
-popup/item_3/id = 3
 script = ExtResource("18_gtbs0")
 popup_font_size = 35
 

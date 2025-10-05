@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_qel6c"]
 script = ExtResource("1_e17vf")
-x_position = 0.0
+x_position = 1204.0
 note_scene = ExtResource("2_qel6c")
 pad_beam_1 = "left"
 pad_beam_2 = "left"

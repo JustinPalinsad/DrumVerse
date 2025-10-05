@@ -36,8 +36,7 @@ extends Control
 const BPM_AUDIO_PATHS := {
 	60: "res://Audio/metronomes 0.25 ver/60 BPM.mp3",
 	80: "res://Audio/metronomes 0.25 ver/80_BPM.mp3",
-	100: "res://Audio/metronomes 0.25 ver/100_BPM.mp3",
-	120: "res://Audio/metronomes 0.25 ver/120_BPM.mp3"
+	100: "res://Audio/metronomes 0.25 ver/100_BPM.mp3"
 }
 
 var notes: Array[Node2D] = []
@@ -47,7 +46,7 @@ var current_bar_index: int = 0                  # 0..N where N == number of cont
 var beats_to_cover: int = 4                     # beats per bar
 var moving_circle_duration: float
 var challenge_mode_has_ended := false
-var bpm_sequence: Array[int] = [60, 80, 100, 120]
+var bpm_sequence: Array[int] = [60, 80, 100]
 var current_bpm_index: int = 0
 var bars_per_bpm: int = 4                       # expected bars per BPM (3 continue + 1 end)
 
@@ -530,7 +529,6 @@ func apply_moving_circle_for_bpm(bpm: int) -> void:
 		60: anim = "moving_circle"
 		80: anim = "moving_circle_80"
 		100: anim = "moving_circle_100"
-		120: anim = "moving_circle_120"
 
 	# Duration a bar should take at this BPM
 	moving_circle_duration = (60.0 / float(bpm)) * beats_to_cover  # 4 beats
