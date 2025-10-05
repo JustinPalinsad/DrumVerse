@@ -2,19 +2,18 @@ extends Node
 
 var selected_module: DrumModuleData = null
 var selected_learning_module: Resource = null
-
-var selected_notes_resource : Resource
+var selected_notes_resource: Resource
 
 var mode: String = "practice"
 var lessons = 0
 var dark_mode_enabled: bool = true
 
 var polyrhythm_mode = "learning"
-
 var notes = 0
 
 var module_grades: Array[String] = []
 const SAVE_PATH = "user://saved_grades.save"
+const MAX_GRADES = 25
 
 func _ready() -> void:
 	load_grades()
@@ -33,7 +32,8 @@ func load_grades() -> void:
 		if file:
 			var loaded_data = file.get_var()
 			if loaded_data is Array:
-				loaded_data.resize(10)
+				# Ensure the array always has 25 entries
+				loaded_data.resize(MAX_GRADES)
 				module_grades = loaded_data
 			else:
 				reset_grades()
@@ -45,5 +45,5 @@ func load_grades() -> void:
 
 func reset_grades() -> void:
 	module_grades.clear()
-	for i in range(10):
+	for i in range(MAX_GRADES):
 		module_grades.append("N/A")

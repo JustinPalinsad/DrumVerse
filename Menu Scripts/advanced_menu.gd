@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	grade_display()
 
 func _on_back_pressed() -> void:
 	$ClickSoundPlayer.play()
@@ -288,3 +290,20 @@ func _on_advance_lesson_25_pressed() -> void:
 	await get_tree().create_timer(0.2).timeout
 	
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
+
+func grade_display():
+	$"carousel_container_3/Control/AdvanceLesson11/Grade Text".text = "Grade: " + GameState.module_grades[10]
+	$"carousel_container_3/Control/AdvanceLesson12/Grade Text".text = "Grade: " + GameState.module_grades[11]
+	$"carousel_container_3/Control/AdvanceLesson13/Grade Text".text = "Grade: " + GameState.module_grades[12]
+	$"carousel_container_3/Control/AdvanceLesson14/Grade Text".text = "Grade: " + GameState.module_grades[13]
+	$"carousel_container_3/Control/AdvanceLesson15/Grade Text".text = "Grade: " + GameState.module_grades[14]
+	$"carousel_container_3/Control/AdvanceLesson16/Grade Text".text = "Grade: " + GameState.module_grades[15]
+	$"carousel_container_3/Control/AdvanceLesson17/Grade Text".text = "Grade: " + GameState.module_grades[16]
+	$"carousel_container_3/Control/AdvanceLesson18/Grade Text".text = "Grade: " + GameState.module_grades[17]
+	$"carousel_container_3/Control/AdvanceLesson19/Grade Text".text = "Grade: " + GameState.module_grades[18]
+	$"carousel_container_3/Control/AdvanceLesson20/Grade Text".text = "Grade: " + GameState.module_grades[19]
+	$"carousel_container_3/Control/AdvanceLesson21/Grade Text".text = "Grade: " + GameState.module_grades[20]
+	$"carousel_container_3/Control/AdvanceLesson22/Grade Text".text = "Grade: " + GameState.module_grades[21]
+	$"carousel_container_3/Control/AdvanceLesson23/Grade Text".text = "Grade: " + GameState.module_grades[22]
+	$"carousel_container_3/Control/AdvanceLesson24/Grade Text".text = "Grade: " + GameState.module_grades[23]
+	$"carousel_container_3/Control/AdvanceLesson25/Grade Text".text = "Grade: " + GameState.module_grades[24]
