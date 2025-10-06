@@ -12,6 +12,7 @@
 
 [node name="advanced_menu" type="Control"]
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -40,19 +41,19 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 74.4998
+offset_top = 74.5012
 offset_right = 40.0
-offset_bottom = 114.5
+offset_bottom = 114.501
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
-modulate = Color(1, 1, 1, 1)
+modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("1_7ykpt")
 layout_mode = 0
 offset_left = -551.0
 offset_right = 551.0
 offset_bottom = 734.0
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("5_rugy4")

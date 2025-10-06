@@ -79,6 +79,9 @@ func _on_back_pressed() -> void:
 func _on_free_pressed() -> void:
 	GameState.notes_index = 0
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
+	if GameState.notes_index > 0:
+		GameState.notes_index = 0
+		print(GameState.notes_index)
 	
 
 
