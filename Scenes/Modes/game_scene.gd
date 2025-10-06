@@ -377,6 +377,7 @@ func end_challenge_mode():
 	if has_node("PassSound") and has_node("FailSound"):
 		if grade != "Failed":
 			get_node("PassSound").play()
+			$PassInstrumental.play()
 		else:
 			get_node("FailSound").play()
 
