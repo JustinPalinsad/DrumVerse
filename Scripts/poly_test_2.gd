@@ -64,6 +64,9 @@ func _ready() -> void:
 		_start_countdown()
 # --- COUNTDOWN ---
 func _start_countdown() -> void:
+	if GameState.polyrhythm_mode == "challenge":
+		$Middle_Point/HitLineTop/MovingCircleTop.hide()
+		$Middle_Point/HitLineBottom/MovingCircleBottom.hide()
 	countdown_label.visible = true
 	
 	countdown_label.text = "3"

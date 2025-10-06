@@ -13,10 +13,14 @@ func _on_back_pressed() -> void:
 	
 
 func _on_free_pressed() -> void:
+	GameState.notes_index = 0
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	#go back to main menu
 	get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
+	if GameState.notes_index > 0:
+		GameState.notes_index = 0
+		print(GameState.notes_index)
 
 
 func _on_advance_lesson_11_pressed() -> void:
