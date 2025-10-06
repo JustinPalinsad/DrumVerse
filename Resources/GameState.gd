@@ -11,6 +11,8 @@ var dark_mode_enabled: bool = true
 var polyrhythm_mode = "learning"
 var notes = 0
 
+var music_bus = AudioServer.get_bus_index("Master")
+var is_muted: bool = false
 
 var notes_index = 0
 var lesson_index = 0
