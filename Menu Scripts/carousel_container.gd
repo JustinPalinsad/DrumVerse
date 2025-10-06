@@ -22,6 +22,7 @@ var velocity := 0.0
 var released := false
 
 var queued_print_index := -1
+var last_known_global_index := -1  # 👈 used for sync check
 
 # 🔹 Property directly tied to GameState.notes_index
 var selected_index: int:
@@ -75,6 +76,12 @@ func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
 
+	# 🔹 POLLING SYNC (Option 1)
+	# Detect if GameState.notes_index was changed externally
+	if GameState.notes_index != last_known_global_index:
+		selected_index = GameState.notes_index
+		last_known_global_index = GameState.notes_index
+
 	selected_index = clamp(selected_index, 0, position_offset_node.get_child_count() - 1)
 
 	# 🔹 Layout children vertically
@@ -112,6 +119,7 @@ func _process(delta: float) -> void:
 				closest_index = i.get_index()
 
 		selected_index = closest_index  # ✅ Update GameState.notes_index when swiping
+		last_known_global_index = selected_index  # sync tracking
 
 	# 🔹 Visual updates (scale + opacity)
 	var center_y := get_viewport_rect().size.y / 2.0
@@ -134,6 +142,8 @@ func _process(delta: float) -> void:
 
 func _up():
 	selected_index -= 1
+	last_known_global_index = selected_index
 
 func _down():
 	selected_index += 1
+	last_known_global_index = selected_index

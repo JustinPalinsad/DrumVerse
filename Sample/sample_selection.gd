@@ -229,6 +229,9 @@ func _on_back_pressed() -> void:
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
+	if GameState.notes_index > 0:
+		GameState.notes_index = 0
+		print(GameState.notes_index)
 
 func _on_play_area_area_entered(area: Area2D) -> void:
 	if area.name.begins_with("Lesson"):
@@ -334,9 +337,13 @@ func change_card():
 
 	
 func _on_advanced_pressed() -> void:
+	GameState.notes_index = 0
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
+	if GameState.notes_index > 0:
+		GameState.notes_index = 0
+		print(GameState.notes_index)
 
 func _on_complete_grades_pressed() -> void:
 	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
