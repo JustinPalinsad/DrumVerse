@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=46 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
@@ -29,7 +29,17 @@
 [ext_resource type="AudioStream" uid="uid://t8pixmwvdbbu" path="res://Audio/card swipe sfx bitcrushed.wav" id="25_47u5r"]
 [ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="26_pm2xg"]
 [ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
+[ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="27_u4s2c"]
+[ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="29_gavew"]
+[ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="30_es5p8"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="30_yfa7k"]
+[ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="31_2fdqk"]
+[ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="32_ihbhp"]
+[ext_resource type="Texture2D" uid="uid://dk3lt3k67fxbb" path="res://Menu Assets/highlights/Lesson_Cards_006.png" id="33_i71hg"]
+[ext_resource type="Texture2D" uid="uid://dju1fd1g1kv61" path="res://Menu Assets/highlights/Lesson_Cards_007.png" id="34_m0han"]
+[ext_resource type="Texture2D" uid="uid://dpef8xtpelnvw" path="res://Menu Assets/highlights/Lesson_Cards_008.png" id="35_ui2kx"]
+[ext_resource type="Texture2D" uid="uid://cp1nai02qlky2" path="res://Menu Assets/highlights/Lesson_Cards_009.png" id="36_75tn7"]
+[ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="37_yebvn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lneat"]
 
@@ -490,6 +500,7 @@ offset_bottom = 644.0
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
+texture_pressed = ExtResource("27_u4s2c")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson1"]
 material = ExtResource("4_lneat")
@@ -532,6 +543,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("29_gavew")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson2"]
 visible = false
@@ -576,6 +588,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("30_es5p8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CarouselContainer/Control/Lesson3"]
 visible = false
@@ -620,6 +633,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("31_2fdqk")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson4"]
 visible = false
@@ -664,6 +678,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("32_ihbhp")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson5"]
 visible = false
@@ -708,6 +723,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("33_i71hg")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson6"]
 visible = false
@@ -752,6 +768,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("34_m0han")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson7"]
 visible = false
@@ -804,6 +821,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("35_ui2kx")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson8"]
 visible = false
@@ -857,6 +875,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("36_75tn7")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson9"]
 visible = false
@@ -907,6 +926,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("26_pm2xg")
+texture_pressed = ExtResource("37_yebvn")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson10"]
 visible = false

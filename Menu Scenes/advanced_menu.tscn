@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba8jsoptp8x8q"]
+[gd_scene load_steps=25 format=3 uid="uid://ba8jsoptp8x8q"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7ykpt"]
 [ext_resource type="Script" uid="uid://dc2xqa5qvq8p3" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
@@ -7,8 +7,23 @@
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="4_yww8e"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_nqdss"]
 [ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="5_rugy4"]
+[ext_resource type="Texture2D" uid="uid://da6mthi7jt8je" path="res://Menu Assets/highlights/Lesson_Cards_011.png" id="6_back5"]
+[ext_resource type="Texture2D" uid="uid://dfblf1quuck6k" path="res://Menu Assets/highlights/Lesson_Cards_012.png" id="7_0egvd"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="7_8dq57"]
 [ext_resource type="PackedScene" uid="uid://ca3y7mttg1hur" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
+[ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_vnhdg"]
+[ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
+[ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_e2tj8"]
+[ext_resource type="Texture2D" uid="uid://b5kepsn6uyhug" path="res://Menu Assets/highlights/Lesson_Cards_016.png" id="11_dm0fn"]
+[ext_resource type="Texture2D" uid="uid://c21j1lr8ap2i2" path="res://Menu Assets/highlights/Lesson_Cards_017.png" id="12_ghggj"]
+[ext_resource type="Texture2D" uid="uid://bob2ulj25w540" path="res://Menu Assets/highlights/Lesson_Cards_018.png" id="13_4a6ue"]
+[ext_resource type="Texture2D" uid="uid://bq2embbuq4tjf" path="res://Menu Assets/highlights/Lesson_Cards_019.png" id="14_ihbiu"]
+[ext_resource type="Texture2D" uid="uid://cix12lc7atpsl" path="res://Menu Assets/highlights/Lesson_Cards_020.png" id="15_y1kmf"]
+[ext_resource type="Texture2D" uid="uid://ust6nl5pkpq6" path="res://Menu Assets/highlights/Lesson_Cards_021.png" id="16_i30v3"]
+[ext_resource type="Texture2D" uid="uid://bv6wepbfkvubq" path="res://Menu Assets/highlights/Lesson_Cards_022.png" id="17_h0m75"]
+[ext_resource type="Texture2D" uid="uid://bsmu78p4xftxy" path="res://Menu Assets/highlights/Lesson_Cards_023.png" id="18_rqjic"]
+[ext_resource type="Texture2D" uid="uid://ds4r63bi33uoa" path="res://Menu Assets/highlights/Lesson_Cards_024.png" id="19_3p4md"]
+[ext_resource type="Texture2D" uid="uid://0u8wsxsv4eeb" path="res://Menu Assets/highlights/Lesson_Cards_025.png" id="20_ys1tp"]
 
 [node name="advanced_menu" type="Control"]
 layout_mode = 3
@@ -41,22 +56,23 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="carousel_container_3"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 74.5012
+offset_top = 74.5004
 offset_right = 40.0
-offset_bottom = 114.501
+offset_bottom = 114.5
 
 [node name="AdvanceLesson11" type="TextureButton" parent="carousel_container_3/Control"]
-modulate = Color(1, 1, 1, 0.999999)
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("1_7ykpt")
 layout_mode = 0
 offset_left = -551.0
 offset_right = 551.0
 offset_bottom = 734.0
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("6_back5")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson11"]
 visible = false
@@ -85,6 +101,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("7_0egvd")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson12"]
 visible = false
@@ -113,6 +130,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("8_vnhdg")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson13"]
 visible = false
@@ -141,6 +159,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("9_6f14r")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson14"]
 visible = false
@@ -169,6 +188,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("10_e2tj8")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson15"]
 visible = false
@@ -197,6 +217,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("11_dm0fn")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson16"]
 visible = false
@@ -225,6 +246,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("12_ghggj")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson17"]
 visible = false
@@ -253,6 +275,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("13_4a6ue")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson18"]
 visible = false
@@ -281,6 +304,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("14_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson19"]
 visible = false
@@ -309,6 +333,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("15_y1kmf")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson20"]
 visible = false
@@ -337,6 +362,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("16_i30v3")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson21"]
 visible = false
@@ -365,6 +391,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("17_h0m75")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson22"]
 visible = false
@@ -393,6 +420,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("18_rqjic")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson23"]
 visible = false
@@ -421,6 +449,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("19_3p4md")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson24"]
 visible = false
@@ -449,6 +478,7 @@ focus_mode = 0
 mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
+texture_pressed = ExtResource("20_ys1tp")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson25"]
 visible = false
