@@ -21,6 +21,8 @@ var module_grades: Array[String] = []
 const SAVE_PATH = "user://saved_grades.save"
 const MAX_GRADES = 25
 
+var sample_selection_anim_has_played = false
+
 func _ready() -> void:
 	load_grades()
 	print(module_grades)

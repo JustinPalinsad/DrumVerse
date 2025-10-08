@@ -14,6 +14,9 @@ func _ready():
 	anim_player.play("menu_animation")	
 	anim_player.seek(0.3, true)
 	anim_player.pause()
+	
+	GameState.sample_selection_anim_has_played = false
+	GameState.notes_index = 0
 
 func _unhandled_input(event):
 	if is_animating:
@@ -77,7 +80,7 @@ func _process(_delta):
 
 func _on_select_button_pressed() -> void:
 	$BackSoundPlayer.play()
-	await get_tree().create_timer(0.5).timeout
+	#await get_tree().create_timer(0.5).timeout
 	match current_index:
 		0:
 			print("Notes")

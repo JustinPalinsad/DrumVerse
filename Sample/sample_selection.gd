@@ -40,6 +40,14 @@ func _ready() -> void:
 	
 	print("GameState is loaded: ", GameState)
 	
+	if GameState.sample_selection_anim_has_played == false:
+		$freemenuAnim.play("free_menu_anim")
+		GameState.sample_selection_anim_has_played = true
+	else:
+		$freemenuAnim.play("free_menu_anim")
+		$freemenuAnim.seek(0.25, true)
+		$freemenuAnim.pause()
+	
 	grade_display()
 	change_card()
 	unlocked_lesson()
@@ -227,11 +235,13 @@ func _goto_sample_scene() -> void:
 func _on_back_pressed() -> void:
 	GameState.notes_index = 0
 	$ClickSoundPlayer.play()
-	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
+	#await get_tree().create_timer(0.2).timeout
 	if GameState.notes_index > 0:
 		GameState.notes_index = 0
 		print(GameState.notes_index)
+	$freemenuAnim.play_backwards("free_menu_anim")
+	await  $freemenuAnim.animation_finished
+	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 func _on_play_area_area_entered(area: Area2D) -> void:
 	if area.name.begins_with("Lesson"):
@@ -339,7 +349,7 @@ func change_card():
 func _on_advanced_pressed() -> void:
 	GameState.notes_index = 0
 	$ClickSoundPlayer.play()
-	await get_tree().create_timer(0.2).timeout
+	#await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
 	if GameState.notes_index > 0:
 		GameState.notes_index = 0
