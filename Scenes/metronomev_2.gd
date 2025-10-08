@@ -8,3 +8,4 @@ func _ready():
 	$AnimationPlayer.speed_scale = bpm
 	$AnimationPlayer.play("swing")
 	$BPM.text = str(bpmx)
+	

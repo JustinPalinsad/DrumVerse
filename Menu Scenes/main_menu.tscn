@@ -322,6 +322,7 @@ stream = ExtResource("13_cv22u")
 stream = ExtResource("14_i72bd")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchor_left = 0.96
 anchor_top = 0.137

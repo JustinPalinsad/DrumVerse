@@ -159,6 +159,7 @@ libraries = {
 [node name="TickSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-7, 486)
 stream = ExtResource("4_jvalm")
+volume_db = -80.0
 pitch_scale = 1.5
 
 [node name="BPM_ Label" type="Label" parent="."]
