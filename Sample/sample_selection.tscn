@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=54 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
@@ -41,6 +41,10 @@
 [ext_resource type="Texture2D" uid="uid://dpef8xtpelnvw" path="res://Menu Assets/highlights/Lesson_Cards_008.png" id="35_ui2kx"]
 [ext_resource type="Texture2D" uid="uid://cp1nai02qlky2" path="res://Menu Assets/highlights/Lesson_Cards_009.png" id="36_75tn7"]
 [ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="37_yebvn"]
+[ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="42_2fdqk"]
+[ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="43_ihbhp"]
+[ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="44_i71hg"]
+[ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="45_m0han"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lneat"]
 
@@ -61,71 +65,6 @@ size = Vector2(54.5747, 45.9718)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bulmj"]
 size = Vector2(13.9374, 130.355)
-
-[sub_resource type="Animation" id="Animation_u4s2c"]
-resource_name = "free_menu_anim"
-length = 0.25
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Play:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.916, 0.916), Vector2(0.916, 0.916)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Play:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(672, 256), Vector2(108.245, 328), Vector2(128, 328)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CarouselContainer:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1232, 1128), Vector2(1232, 66.89), Vector2(1232, 104)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Free:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(280, 1079), Vector2(280, 859), Vector2(280, 872)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Advanced:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(160, 1167), Vector2(160, 952), Vector2(160, 960)]
-}
 
 [sub_resource type="Animation" id="Animation_gavew"]
 length = 0.001
@@ -188,6 +127,263 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(160, 1167)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Notes:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 352)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Settings:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1368, 352)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Notes:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Settings:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LeftButton:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 864)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RightButton:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1448, 864)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("LeftButton:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RightButton:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.145098, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_u4s2c"]
+resource_name = "free_menu_anim"
+length = 0.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Play:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.916, 0.916), Vector2(0.916, 0.916)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(672, 256), Vector2(108.245, 328), Vector2(128, 328)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CarouselContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1232, 2248), Vector2(1232, 66.89), Vector2(1232, 104)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Free:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(280, 1079), Vector2(280, 859), Vector2(280, 872)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Advanced:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(160, 1167), Vector2(160, 952), Vector2(160, 960)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Notes:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, 352), Vector2(-816, 352)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Settings:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1368, 352), Vector2(2432, 352)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Notes:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Settings:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LeftButton:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, 864), Vector2(288, 1240)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("RightButton:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1448, 864), Vector2(1448, 1240)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("LeftButton:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("RightButton:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.145098, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gavew"]
@@ -1131,6 +1327,7 @@ layout_mode = 2
 texture = ExtResource("23_28w0c")
 
 [node name="Play" type="TouchScreenButton" parent="."]
+process_mode = 4
 material = ExtResource("4_lneat")
 position = Vector2(672, 256)
 texture_normal = ExtResource("12_bulmj")
@@ -1145,9 +1342,9 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="Button" parent="."]
 layout_mode = 0
 offset_left = 280.0
-offset_top = 1079.0
+offset_top = 872.0
 offset_right = 645.0
-offset_bottom = 1219.0
+offset_bottom = 1012.0
 scale = Vector2(0.609104, 0.609104)
 theme_override_fonts/font = ExtResource("30_yfa7k")
 theme_override_font_sizes/font_size = 126
@@ -1156,9 +1353,9 @@ text = "FREE"
 [node name="Advanced" type="Button" parent="."]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 1167.0
+offset_top = 960.0
 offset_right = 943.0
-offset_bottom = 1307.0
+offset_bottom = 1100.0
 scale = Vector2(0.609104, 0.609104)
 theme_override_fonts/font = ExtResource("30_yfa7k")
 theme_override_font_sizes/font_size = 126
@@ -1174,10 +1371,35 @@ offset_bottom = 207.0
 scale = Vector2(2.19875, 2.59371)
 text = "Complete Grade"
 
+[node name="Notes" type="TouchScreenButton" parent="."]
+material = ExtResource("4_lneat")
+position = Vector2(160, 352)
+scale = Vector2(0.68, 0.68)
+texture_normal = ExtResource("42_2fdqk")
+
+[node name="Settings" type="TouchScreenButton" parent="."]
+material = ExtResource("4_lneat")
+position = Vector2(1368, 352)
+scale = Vector2(0.68, 0.68)
+texture_normal = ExtResource("43_ihbhp")
+
 [node name="freemenuAnim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_gavew")
 }
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+material = ExtResource("4_lneat")
+position = Vector2(288, 864)
+texture_normal = ExtResource("44_i71hg")
+action = "ui_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 0.752941, 0.145098, 1)
+material = ExtResource("4_lneat")
+position = Vector2(1448, 864)
+texture_normal = ExtResource("45_m0han")
+action = "ui_right"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

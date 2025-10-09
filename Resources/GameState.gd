@@ -22,6 +22,9 @@ const SAVE_PATH = "user://saved_grades.save"
 const MAX_GRADES = 25
 
 var sample_selection_anim_has_played = false
+var notes_section_anim_has_played = false
+
+var main_menu_index = 1
 
 func _ready() -> void:
 	load_grades()

@@ -336,7 +336,6 @@ scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_qke8r")
 
 [node name="Free" type="Button" parent="."]
-layout_mode = 0
 offset_left = 200.0
 offset_top = 896.0
 offset_right = 565.0
@@ -347,7 +346,6 @@ theme_override_font_sizes/font_size = 126
 text = "FREE"
 
 [node name="Advanced" type="Button" parent="."]
-layout_mode = 0
 offset_left = 1376.0
 offset_top = 896.0
 offset_right = 2159.0

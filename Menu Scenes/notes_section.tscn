@@ -1,9 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://dign4hotw0f7s"]
+[gd_scene load_steps=29 format=3 uid="uid://dign4hotw0f7s"]
 
 [ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
+[ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_8mnoc"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_otgxm"]
+[ext_resource type="Texture2D" uid="uid://bdux1ufjgb5et" path="res://Menu Assets/drum bg.png" id="3_gbwgf"]
 [ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]
+[ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="4_ls0eo"]
 [ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="5_4rcy6"]
 [ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="6_0d0so"]
 [ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="7_ls0eo"]
@@ -17,6 +20,408 @@
 [ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="15_6sqpu"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_lk4x5"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="16_tap5y"]
+[ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="19_un2gc"]
+[ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="20_37m5n"]
+[ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="21_37m5n"]
+[ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="24_b7bqg"]
+[ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="25_6sqpu"]
+
+[sub_resource type="Animation" id="Animation_0d0so"]
+resource_name = "menu_anim"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("notes_section_anim/Notes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(672, 256), Vector2(-1232, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("notes_section_anim/Notes:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("notes_section_anim/CarouselContainer2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3368, 472), Vector2(-144, 472), Vector2(-64, 472)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("notes_section_anim/Free:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(200, 1080), Vector2(200, 864), Vector2(200, 896)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("notes_section_anim/Advanced:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1376, 1080), Vector2(1376, 864), Vector2(1376, 896)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("notes_section_anim/Notes Title:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(528, 1048), Vector2(528, 896)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("notes_section_anim/Play:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1368, 352), Vector2(2288, 352)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("notes_section_anim/Settings:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1928, 352), Vector2(2848, 352)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("notes_section_anim/Play:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("notes_section_anim/Settings:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("notes_section_anim/SelectionTitle:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(529, 0), Vector2(529, -152)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("notes_section_anim/SelectionTitle:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("notes_section_anim/RightButton:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1448, 864), Vector2(1448, 1192)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("notes_section_anim/LeftButton:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, 864), Vector2(288, 1192)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("notes_section_anim/RightButton:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.145098, 1), Color(1, 0.752941, 0.145098, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("notes_section_anim/LeftButton:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.752941, 0.145098, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ls0eo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("notes_section_anim/Notes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(672, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("notes_section_anim/Notes:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("notes_section_anim/CarouselContainer2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-64, 472)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("notes_section_anim/Free:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 896)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("notes_section_anim/Advanced:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1376, 896)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("notes_section_anim/Notes Title:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(528, 896)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("notes_section_anim/Play:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1368, 352)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("notes_section_anim/Settings:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1928, 352)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("notes_section_anim/Play:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("notes_section_anim/Settings:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("notes_section_anim/SelectionTitle:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(529, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("notes_section_anim/SelectionTitle:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("notes_section_anim/RightButton:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1448, 864)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("notes_section_anim/LeftButton:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 864)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("notes_section_anim/RightButton:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.145098, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("notes_section_anim/LeftButton:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ls0eo"]
+_data = {
+&"RESET": SubResource("Animation_ls0eo"),
+&"menu_anim": SubResource("Animation_0d0so")
+}
 
 [node name="notes_section" type="Control"]
 layout_mode = 3
@@ -33,200 +438,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ppldb")
 
-[node name="Notes Title" type="TextureRect" parent="."]
-material = ExtResource("1_tgiwa")
+[node name="MenuBg2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.258824)
+material = ExtResource("2_8mnoc")
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -431.0
-offset_top = -184.0
-offset_right = 431.0
+anchors_preset = -1
+anchor_left = 0.502
+anchor_top = 0.5
+anchor_right = 0.502
+anchor_bottom = 0.5
+offset_left = -1001.84
+offset_top = -555.0
+offset_right = 2227.16
+offset_bottom = 1261.0
 grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("2_otgxm")
-
-[node name="CarouselContainer2" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("3_otgxm")]
-position = Vector2(-64, 472)
-scale = Vector2(1.05905, 1.05905)
-spacing = -57.0
-scale_strength = 0.193
-scale_min = 0.01
-position_offset_node = NodePath("Control")
-
-[node name="Control" type="Control" parent="CarouselContainer2"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 211.0
-offset_right = 251.0
-offset_bottom = 40.0
-
-[node name="Notes1" type="TextureButton" parent="CarouselContainer2/Control"]
-z_index = 1
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_top = -367.0
-offset_right = 1102.0
-offset_bottom = 367.0
-pivot_offset = Vector2(551, 367)
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("6_0d0so")
-
-[node name="Notes2" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -1
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 1045.0
-offset_top = -367.0
-offset_right = 2147.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("7_ls0eo")
-
-[node name="Notes3" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -2
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 2090.0
-offset_top = -367.0
-offset_right = 3192.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("8_tewhv")
-
-[node name="Notes4" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -3
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 3135.0
-offset_top = -367.0
-offset_right = 4237.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("9_un2gc")
-
-[node name="Notes5" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -4
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 4180.0
-offset_top = -367.0
-offset_right = 5282.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("10_37m5n")
-
-[node name="Notes6" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -5
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 5225.0
-offset_top = -367.0
-offset_right = 6327.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("11_tujtb")
-
-[node name="Notes7" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -6
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 6270.0
-offset_top = -367.0
-offset_right = 7372.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("12_8mnoc")
-
-[node name="Notes8" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -7
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 7315.0
-offset_top = -367.0
-offset_right = 8417.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("13_gbwgf")
-
-[node name="Notes9" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -8
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 8360.0
-offset_top = -367.0
-offset_right = 9462.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("14_b7bqg")
-
-[node name="Notes10" type="TextureButton" parent="CarouselContainer2/Control"]
-modulate = Color(1, 1, 1, 0.65)
-z_index = -9
-material = ExtResource("1_tgiwa")
-layout_mode = 0
-offset_left = 9405.0
-offset_top = -367.0
-offset_right = 10507.0
-offset_bottom = 367.0
-scale = Vector2(0.807, 0.807)
-pivot_offset = Vector2(551, 367)
-focus_mode = 0
-mouse_filter = 2
-disabled = true
-texture_normal = ExtResource("5_4rcy6")
-texture_pressed = ExtResource("15_6sqpu")
+grow_vertical = 2
+scale = Vector2(0.620382, 0.624595)
+texture = ExtResource("3_gbwgf")
 
 [node name="Back" type="TextureButton" parent="."]
 material = ExtResource("1_tgiwa")
@@ -243,8 +471,206 @@ offset_bottom = 115.36
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_lk4x5")
 
-[node name="Free" type="Button" parent="."]
+[node name="notes_section_anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ls0eo")
+}
+
+[node name="Notes Title" type="TextureRect" parent="notes_section_anim"]
+material = ExtResource("1_tgiwa")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -432.0
+offset_top = -184.0
+offset_right = 430.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_otgxm")
+
+[node name="CarouselContainer2" parent="notes_section_anim" node_paths=PackedStringArray("position_offset_node") instance=ExtResource("3_otgxm")]
+position = Vector2(-64, 472)
+scale = Vector2(1.05905, 1.05905)
+spacing = -57.0
+scale_strength = 0.193
+scale_min = 0.01
+position_offset_node = NodePath("Control")
+
+[node name="Control" type="Control" parent="notes_section_anim/CarouselContainer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 211.0
+offset_right = 251.0
+offset_bottom = 40.0
+
+[node name="Notes1" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+z_index = 1
+material = ExtResource("1_tgiwa")
 layout_mode = 0
+offset_top = -367.0
+offset_right = 1102.0
+offset_bottom = 367.0
+pivot_offset = Vector2(551, 367)
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("6_0d0so")
+
+[node name="Notes2" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -1
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 1045.0
+offset_top = -367.0
+offset_right = 2147.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("7_ls0eo")
+
+[node name="Notes3" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -2
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 2090.0
+offset_top = -367.0
+offset_right = 3192.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("8_tewhv")
+
+[node name="Notes4" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -3
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 3135.0
+offset_top = -367.0
+offset_right = 4237.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("9_un2gc")
+
+[node name="Notes5" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -4
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 4180.0
+offset_top = -367.0
+offset_right = 5282.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("10_37m5n")
+
+[node name="Notes6" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -5
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 5225.0
+offset_top = -367.0
+offset_right = 6327.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("11_tujtb")
+
+[node name="Notes7" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -6
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 6270.0
+offset_top = -367.0
+offset_right = 7372.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("12_8mnoc")
+
+[node name="Notes8" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -7
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 7315.0
+offset_top = -367.0
+offset_right = 8417.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("13_gbwgf")
+
+[node name="Notes9" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -8
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 8360.0
+offset_top = -367.0
+offset_right = 9462.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("14_b7bqg")
+
+[node name="Notes10" type="TextureButton" parent="notes_section_anim/CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.65)
+z_index = -9
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 9405.0
+offset_top = -367.0
+offset_right = 10507.0
+offset_bottom = 367.0
+scale = Vector2(0.807, 0.807)
+pivot_offset = Vector2(551, 367)
+focus_mode = 0
+mouse_filter = 2
+disabled = true
+texture_normal = ExtResource("5_4rcy6")
+texture_pressed = ExtResource("15_6sqpu")
+
+[node name="Free" type="Button" parent="notes_section_anim"]
 offset_left = 200.0
 offset_top = 896.0
 offset_right = 565.0
@@ -254,8 +680,7 @@ theme_override_fonts/font = ExtResource("16_tap5y")
 theme_override_font_sizes/font_size = 126
 text = "FREE"
 
-[node name="Advanced" type="Button" parent="."]
-layout_mode = 0
+[node name="Advanced" type="Button" parent="notes_section_anim"]
 offset_left = 1376.0
 offset_top = 896.0
 offset_right = 2159.0
@@ -265,15 +690,59 @@ theme_override_fonts/font = ExtResource("16_tap5y")
 theme_override_font_sizes/font_size = 126
 text = "ADVANCED"
 
-[connection signal="pressed" from="CarouselContainer2/Control/Notes1" to="." method="_on_notes_1_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes2" to="." method="_on_notes_2_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes3" to="." method="_on_notes_3_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes4" to="." method="_on_notes_4_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes5" to="." method="_on_notes_5_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes6" to="." method="_on_notes_6_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes7" to="." method="_on_notes_7_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes8" to="." method="_on_notes_8_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes9" to="." method="_on_notes_9_pressed"]
-[connection signal="pressed" from="CarouselContainer2/Control/Notes10" to="." method="_on_notes_10_pressed"]
+[node name="Notes" type="TouchScreenButton" parent="notes_section_anim"]
+material = ExtResource("1_tgiwa")
+position = Vector2(672, 256)
+texture_normal = ExtResource("4_ls0eo")
+
+[node name="Play" type="TouchScreenButton" parent="notes_section_anim"]
+material = ExtResource("1_tgiwa")
+position = Vector2(1368, 352)
+scale = Vector2(0.68, 0.68)
+texture_normal = ExtResource("19_un2gc")
+
+[node name="Settings" type="TouchScreenButton" parent="notes_section_anim"]
+material = ExtResource("1_tgiwa")
+position = Vector2(1928, 352)
+scale = Vector2(0.68, 0.68)
+texture_normal = ExtResource("20_37m5n")
+
+[node name="SelectionTitle" type="VBoxContainer" parent="notes_section_anim"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -431.0
+offset_right = 431.0
+offset_bottom = 192.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="notes_section_anim/SelectionTitle"]
+material = ExtResource("1_tgiwa")
+layout_mode = 2
+texture = ExtResource("21_37m5n")
+
+[node name="LeftButton" type="TouchScreenButton" parent="notes_section_anim"]
+material = ExtResource("1_tgiwa")
+position = Vector2(288, 864)
+texture_normal = ExtResource("24_b7bqg")
+action = "ui_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="notes_section_anim"]
+modulate = Color(1, 0.752941, 0.145098, 1)
+material = ExtResource("1_tgiwa")
+position = Vector2(1448, 864)
+texture_normal = ExtResource("25_6sqpu")
+action = "ui_right"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Advanced" to="." method="_on_advanced_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes1" to="." method="_on_notes_1_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes2" to="." method="_on_notes_2_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes3" to="." method="_on_notes_3_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes4" to="." method="_on_notes_4_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes5" to="." method="_on_notes_5_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes6" to="." method="_on_notes_6_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes7" to="." method="_on_notes_7_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes8" to="." method="_on_notes_8_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes9" to="." method="_on_notes_9_pressed"]
+[connection signal="pressed" from="notes_section_anim/CarouselContainer2/Control/Notes10" to="." method="_on_notes_10_pressed"]
+[connection signal="pressed" from="notes_section_anim/Advanced" to="." method="_on_advanced_pressed"]
