@@ -14,12 +14,16 @@ var notes = 0
 var music_bus = AudioServer.get_bus_index("Master")
 var is_muted: bool = false
 
-var notes_index = 0
+var notes_index: int = 0
 var lesson_index = 0
 
 var module_grades: Array[String] = []
 const SAVE_PATH = "user://saved_grades.save"
 const MAX_GRADES = 25
+
+var sample_selection_anim_has_played = false
+var notes_section_anim_has_played = false
+var main_menu_index = 1
 
 func _ready() -> void:
 	load_grades()

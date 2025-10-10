@@ -1,6 +1,9 @@
 extends Control
 
 func _ready() -> void:
+	$advnotes_section_anim.play("advnotes_anim")
+	$advnotes_section_anim.seek(0.25, true)
+	$advnotes_section_anim.pause()
 	change_card()
 	
 func _on_notes_11_pressed() -> void:
@@ -73,6 +76,8 @@ func _on_notes_20_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
+	$advnotes_section_anim.play_backwards("advnotes_anim")
+	await $advnotes_section_anim.animation_finished
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 

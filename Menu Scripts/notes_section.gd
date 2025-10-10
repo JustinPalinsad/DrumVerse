@@ -1,8 +1,30 @@
 extends Control
 
+var swipe_active := false
+var start_pos := Vector2.ZERO
+var drag_threshold := 20.0
+
 func _ready() -> void:
+	if GameState.notes_section_anim_has_played == false:
+		$notes_section_anim.play("notes_anim")
+		GameState.notes_section_anim_has_played = true
+	else:
+		$notes_section_anim.play("notes_anim")
+		$notes_section_anim.seek(0.25, true)
+		$notes_section_anim.pause()
 	change_card()
-	
+
+func _unhandled_input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		start_pos = event.position
+		swipe_active = false
+	elif event is InputEventScreenDrag:
+		if event.position.distance_to(start_pos) > drag_threshold:
+			swipe_active = true
+
+	if swipe_active:
+		get_viewport().set_input_as_handled()  # stop touch from reaching buttons
+
 func _on_notes_1_pressed() -> void:
 	GameState.notes = 1
 	var loaded_resource = load("res://NotesResource/wholenote.tres")
@@ -74,6 +96,8 @@ func _on_notes_10_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	GameState.notes_index = 0
+	$notes_section_anim.play_backwards("notes_anim")
+	await $notes_section_anim.animation_finished
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 func _on_advanced_pressed() -> void:
