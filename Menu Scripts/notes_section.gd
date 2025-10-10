@@ -2,13 +2,6 @@ extends Control
 
 func _ready() -> void:
 	change_card()
-	if GameState.notes_section_anim_has_played == false:
-		$notes_section_anim.play("menu_anim")
-		GameState.notes_section_anim_has_played = true
-	else:
-		$notes_section_anim.play("menu_anim")
-		$notes_section_anim.seek(0.25, true)
-		$notes_section_anim.pause()
 	
 func _on_notes_1_pressed() -> void:
 	GameState.notes = 1
@@ -81,9 +74,6 @@ func _on_notes_10_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	GameState.notes_index = 0
-	
-	$notes_section_anim.play_backwards("menu_anim")
-	await  $notes_section_anim.animation_finished
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 func _on_advanced_pressed() -> void:
@@ -108,7 +98,7 @@ func change_card():
 
 	for i in range(card_textures.size()):
 		var lesson_num = i + 1
-		var lesson_node = $notes_section_anim/CarouselContainer2.get_node("Notes" + str(lesson_num))
+		var lesson_node = $CarouselContainer2/Control.get_node("Notes" + str(lesson_num))
 		if not lesson_node:
 			continue
 
