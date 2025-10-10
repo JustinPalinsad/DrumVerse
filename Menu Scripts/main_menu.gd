@@ -2,7 +2,6 @@ extends Control
 
 @onready var anim_player = $"Selection Container/Selection Animation"
 
-var current_index := 1
 const STEP := 0.3  # time step between button states
 
 var target_time := 0.0
@@ -10,46 +9,31 @@ var is_animating := false
 var animation_direction := 1  # 1 for forward, -1 for backward
 
 func _ready():
-	# Play the animation, then pause it at 0.0 to prevent auto-loop
-	anim_player.play("menu_animation")	
-	anim_player.seek(0.3, true)
-	anim_player.pause()
+	_update_menu_position()
 	
 	GameState.sample_selection_anim_has_played = false
+	GameState.notes_section_anim_has_played = false
 	GameState.notes_index = 0
 
 func _unhandled_input(event):
 	if is_animating:
-		return  # Prevent spamming during animation
+		return  # Prevent input spam during animation
 
-	# Enforce directional limits based on the current position (index)
-	match current_index:
-		0:
-			if event.is_action_pressed("ui_right"):
-				$ClickSoundPlayer.play()
-				await get_tree().create_timer(0.1).timeout
-				current_index = 1
-				_play_to_index(current_index)
-		1:
-			if event.is_action_pressed("ui_right"):
-				$ClickSoundPlayer.play()
-				await get_tree().create_timer(0.1).timeout
-				current_index = 2
-				_play_to_index(current_index)
-			elif event.is_action_pressed("ui_left"):
-				$ClickSoundPlayer.play()
-				await get_tree().create_timer(0.1).timeout
-				current_index = 0
-				_play_to_index(current_index)
-		2:
-			if event.is_action_pressed("ui_left"):
-				$ClickSoundPlayer.play()
-				await get_tree().create_timer(0.1).timeout
-				current_index = 1
-				_play_to_index(current_index)
+	var current_index = GameState.main_menu_index
+
+	if event.is_action_pressed("ui_right") and current_index < 2:
+		$ClickSoundPlayer.play()
+		await get_tree().create_timer(0.1).timeout
+		GameState.main_menu_index += 1
+		_play_to_index(GameState.main_menu_index)
+
+	elif event.is_action_pressed("ui_left") and current_index > 0:
+		$ClickSoundPlayer.play()
+		await get_tree().create_timer(0.1).timeout
+		GameState.main_menu_index -= 1
+		_play_to_index(GameState.main_menu_index)
 
 func _play_to_index(index: int):
-	# Calculate target time with a small offset to prevent exact boundary issues
 	target_time = clamp(index * STEP, 0.0, anim_player.current_animation_length - 0.001)
 	var current_time = anim_player.current_animation_position
 
@@ -57,48 +41,51 @@ func _play_to_index(index: int):
 		return  # Already at correct time
 
 	animation_direction = sign(target_time - current_time)
-
-	# Play the animation in the correct direction
 	anim_player.play("menu_animation")
 	anim_player.speed_scale = animation_direction
-
-
-
 	is_animating = true
 
 func _process(_delta):
 	if is_animating:
 		var current_time = anim_player.current_animation_position
-		# Check if we've reached or passed the target time
 		if (animation_direction > 0 and current_time >= target_time) or \
 		   (animation_direction < 0 and current_time <= target_time):
 			anim_player.seek(target_time, true)
-
 			anim_player.pause()
 			is_animating = false
+	else:
+		# Always sync with GameState
+		_sync_with_game_state()
 
+func _sync_with_game_state():
+	# Ensure animation stays synced to GameState.main_menu_index
+	var expected_time = GameState.main_menu_index * STEP
+	if not is_equal_approx(anim_player.current_animation_position, expected_time):
+		anim_player.seek(expected_time, true)
+		anim_player.pause()
 
 func _on_select_button_pressed() -> void:
 	$BackSoundPlayer.play()
-	#await get_tree().create_timer(0.5).timeout
-	match current_index:
+	#await get_tree().create_timer(0.2).timeout
+
+	match GameState.main_menu_index:
 		0:
 			print("Notes")
 			get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
-			#get_tree().change_scene_to_file("res://Menu Scenes/notes_scene.tscn")
-			#go to notes scene
 		1:
 			print("Play")
 			get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
-			#go to play scene / sample selection scene
-		2: 
-			print("Settings")	
+		2:
 			print("Settings")
 			get_tree().change_scene_to_file("res://Menu Scenes/settings_scene.tscn")
-			#go to settings
 
 func _on_back_pressed() -> void:
 	$BackSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
-	#return to title screen
 	get_tree().change_scene_to_file("res://Menu Scenes/title_screen.tscn")
+
+func _update_menu_position():
+	var index = GameState.main_menu_index
+	anim_player.play("menu_animation")
+	anim_player.seek(index * STEP + 0.001, true)
+	anim_player.pause()

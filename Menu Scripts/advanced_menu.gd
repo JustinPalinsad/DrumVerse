@@ -5,14 +5,19 @@ func _ready() -> void:
 	grade_display()
 	change_card()
 	unlocked_advanced_lessons()
+	$advlessons_anim.play("advlessons_anim")
+	$advlessons_anim.seek(0.25, true)
+	$advlessons_anim.pause()
 
 func _on_back_pressed() -> void:
 	$ClickSoundPlayer.play()
-	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
+	#await get_tree().create_timer(0.2).timeout
 	if GameState.notes_index > 0:
 		GameState.notes_index = 0
 		print(GameState.notes_index)
+	$advlessons_anim.play_backwards("advlessons_anim")
+	await $advlessons_anim.animation_finished
+	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 	
 
 func _on_free_pressed() -> void:
