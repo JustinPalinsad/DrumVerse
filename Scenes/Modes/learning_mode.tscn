@@ -296,7 +296,7 @@ visible = false
 position = Vector2(1356, -33)
 
 [node name="Back" type="TouchScreenButton" parent="."]
-modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+material = ExtResource("4_71jwu")
 position = Vector2(92, 66)
 scale = Vector2(0.529703, 0.529703)
 texture_normal = ExtResource("18_kgv2n")
