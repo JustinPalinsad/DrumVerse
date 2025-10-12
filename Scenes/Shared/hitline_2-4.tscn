@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://66tbdhkgqns1"]
+[gd_scene load_steps=12 format=3 uid="uid://66tbdhkgqns1"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_75j2y"]
 [ext_resource type="Texture2D" uid="uid://do44m1e04vx5k" path="res://Assets/Time SIgnature Parts/Continue.png" id="2_v4bt6"]
 [ext_resource type="Texture2D" uid="uid://d182fu3fw4tq8" path="res://Assets/Time SIgnature Parts/Line.png" id="3_8xbnx"]
 [ext_resource type="Texture2D" uid="uid://c8eodby2f53qg" path="res://Assets/Time SIgnature Parts/TimeSigRef.png" id="4_mqw2h"]
 [ext_resource type="Texture2D" uid="uid://hqwn8e44qnpv" path="res://Assets/Time SIgnature Parts/End.png" id="5_cv8cd"]
+[ext_resource type="Texture2D" uid="uid://ckcgchag8atmu" path="res://Assets/Time SIgnature Parts/TimeSig.png" id="6_v4bt6"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="7_8xbnx"]
 
 [sub_resource type="Animation" id="Animation_s7ys8"]
 resource_name = "Animation"
@@ -139,6 +141,7 @@ scale = Vector2(0.546279, 1)
 texture = ExtResource("3_8xbnx")
 
 [node name="TimeSigRef" type="Sprite2D" parent="Node2D"]
+visible = false
 texture_filter = 1
 material = ExtResource("1_75j2y")
 texture = ExtResource("4_mqw2h")
@@ -147,8 +150,24 @@ texture = ExtResource("4_mqw2h")
 visible = false
 texture_filter = 1
 material = ExtResource("1_75j2y")
-position = Vector2(111, 0)
+position = Vector2(-1291, 0)
 texture = ExtResource("5_cv8cd")
+
+[node name="TimeSig" type="Sprite2D" parent="Node2D"]
+material = ExtResource("1_75j2y")
+texture = ExtResource("6_v4bt6")
+
+[node name="Label" type="Label" parent="Node2D"]
+material = ExtResource("1_75j2y")
+offset_left = -1347.0
+offset_top = -200.0
+offset_right = -1110.0
+offset_bottom = 225.0
+theme_override_constants/line_spacing = -40
+theme_override_fonts/font = ExtResource("7_8xbnx")
+theme_override_font_sizes/font_size = 190
+text = "2 
+4"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
