@@ -358,3 +358,7 @@ func _on_advanced_pressed() -> void:
 func _on_complete_grades_pressed() -> void:
 	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
 	print("New Module Grades: ", GameState.module_grades)
+
+
+func _on_rubric_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menu Scenes/rubrics_scene.tscn")
