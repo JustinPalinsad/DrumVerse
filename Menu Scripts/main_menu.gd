@@ -65,7 +65,7 @@ func _sync_with_game_state():
 		anim_player.pause()
 
 func _on_select_button_pressed() -> void:
-	$BackSoundPlayer.play()
+	GlobalAudio.play_click()
 	#await get_tree().create_timer(0.2).timeout
 
 	match GameState.main_menu_index:

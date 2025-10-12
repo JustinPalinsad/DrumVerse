@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://2ogpwbrbmfgl"]
+[gd_scene load_steps=41 format=3 uid="uid://2ogpwbrbmfgl"]
 
 [ext_resource type="Script" uid="uid://yn2ct3n8pebr" path="res://Sample/sample_scene.gd" id="1_i6auh"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_q6e57"]
@@ -36,6 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://cmscp1so67gcd" path="res://Menu Assets/advanced cards/Lesson_Cards__023.png" id="28_6lvi0"]
 [ext_resource type="Texture2D" uid="uid://dm1ffvty14faq" path="res://Menu Assets/advanced cards/Lesson_Cards__024.png" id="29_kh8v1"]
 [ext_resource type="Texture2D" uid="uid://b4thhqefi2osw" path="res://Menu Assets/advanced cards/Lesson_Cards__025.png" id="30_iw1n8"]
+[ext_resource type="Texture2D" uid="uid://c4gdwuhxuh5ns" path="res://Assets/3Button_Highlight/Learning.png" id="32_kh8v1"]
+[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="33_ss5m1"]
+[ext_resource type="Texture2D" uid="uid://bj4ds2y0tf4tj" path="res://Assets/3Button_Highlight/Practice.png" id="34_iw1n8"]
+[ext_resource type="Texture2D" uid="uid://bi7hoftge7kyd" path="res://Assets/3Button_Highlight/Challenge.png" id="36_ehnn3"]
 
 [node name="ModeSelection" type="Control"]
 layout_mode = 3
@@ -286,16 +290,22 @@ scale = Vector2(1.33986, 1.33986)
 material = ExtResource("2_q6e57")
 layout_mode = 2
 texture_normal = ExtResource("13_drgsa")
+texture_pressed = ExtResource("32_kh8v1")
+script = ExtResource("33_ss5m1")
 
 [node name="Practice" type="TextureButton" parent="Buttons Container"]
 material = ExtResource("2_q6e57")
 layout_mode = 2
 texture_normal = ExtResource("14_eq3po")
+texture_pressed = ExtResource("34_iw1n8")
+script = ExtResource("33_ss5m1")
 
 [node name="Challenge" type="TextureButton" parent="Buttons Container"]
 material = ExtResource("2_q6e57")
 layout_mode = 2
 texture_normal = ExtResource("15_dh22i")
+texture_pressed = ExtResource("36_ehnn3")
+script = ExtResource("33_ss5m1")
 
 [node name="SelectionTitle" type="VBoxContainer" parent="."]
 layout_mode = 1

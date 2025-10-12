@@ -22,7 +22,7 @@ func _on_back_pressed() -> void:
 
 func _on_free_pressed() -> void:
 	GameState.notes_index = 0
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	#await get_tree().create_timer(0.2).timeout
 	#go back to main menu
 	get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
@@ -33,7 +33,7 @@ func _on_free_pressed() -> void:
 
 func _on_advance_lesson_11_pressed() -> void:
 	GameState.lessons = 11
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module11.tres and Module11_Learning.tres...")
@@ -52,7 +52,7 @@ func _on_advance_lesson_11_pressed() -> void:
 
 func _on_advance_lesson_12_pressed() -> void:
 	GameState.lessons = 12
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module12.tres and Module12_Learning.tres...")
@@ -71,7 +71,7 @@ func _on_advance_lesson_12_pressed() -> void:
 
 func _on_advance_lesson_13_pressed() -> void:
 	GameState.lessons = 13
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module13.tres and Module13_Learning.tres...")
@@ -90,7 +90,7 @@ func _on_advance_lesson_13_pressed() -> void:
 
 func _on_advance_lesson_14_pressed() -> void:
 	GameState.lessons = 14
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module14.tres and Module14_Learning.tres...")
@@ -109,7 +109,7 @@ func _on_advance_lesson_14_pressed() -> void:
 
 func _on_advance_lesson_15_pressed() -> void:
 	GameState.lessons = 15
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module15.tres and Module15_Learning.tres...")
@@ -128,7 +128,7 @@ func _on_advance_lesson_15_pressed() -> void:
 
 func _on_advance_lesson_16_pressed() -> void:
 	GameState.lessons = 16
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module16.tres and Module16_Learning.tres...")
@@ -147,7 +147,7 @@ func _on_advance_lesson_16_pressed() -> void:
 
 func _on_advance_lesson_17_pressed() -> void:
 	GameState.lessons = 17
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module17.tres and Module17_Learning.tres...")
@@ -166,7 +166,7 @@ func _on_advance_lesson_17_pressed() -> void:
 
 func _on_advance_lesson_18_pressed() -> void:
 	GameState.lessons = 18
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module18.tres and Module18_Learning.tres...")
@@ -185,7 +185,7 @@ func _on_advance_lesson_18_pressed() -> void:
 
 func _on_advance_lesson_19_pressed() -> void:
 	GameState.lessons = 19
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module19.tres and Module19_Learning.tres...")
@@ -204,7 +204,7 @@ func _on_advance_lesson_19_pressed() -> void:
 
 func _on_advance_lesson_20_pressed() -> void:
 	GameState.lessons = 20
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module20.tres and Module20_Learning.tres...")
@@ -222,7 +222,7 @@ func _on_advance_lesson_20_pressed() -> void:
 
 func _on_advance_lesson_21_pressed() -> void:
 	GameState.lessons = 21
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module21.tres and Module21_Learning.tres...")
@@ -240,7 +240,7 @@ func _on_advance_lesson_21_pressed() -> void:
 		
 func _on_advance_lesson_22_pressed() -> void:
 	GameState.lessons = 22
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module22.tres and Module22_Learning.tres...")
@@ -258,7 +258,7 @@ func _on_advance_lesson_22_pressed() -> void:
 		
 func _on_advance_lesson_23_pressed() -> void:
 	GameState.lessons = 23
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module23.tres and Module23_Learning.tres...")
@@ -276,7 +276,7 @@ func _on_advance_lesson_23_pressed() -> void:
 		
 func _on_advance_lesson_24_pressed() -> void:
 	GameState.lessons = 24
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module24.tres and Module24_Learning.tres...")
@@ -301,7 +301,7 @@ func _goto_sample_scene() -> void:
 
 func _on_advance_lesson_25_pressed() -> void: 
 	GameState.lessons = 25
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")

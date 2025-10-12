@@ -54,7 +54,7 @@ func _ready() -> void:
 
 func _on_module1_button_pressed() -> void:
 	GameState.lessons = 1
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module1.tres and Module1_Learning.tres...")
@@ -72,7 +72,7 @@ func _on_module1_button_pressed() -> void:
 
 func _on_module2_button_pressed() -> void:
 	GameState.lessons = 2
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module2.tres and Module2_Learning.tres...")
@@ -90,7 +90,7 @@ func _on_module2_button_pressed() -> void:
 		
 func _on_module3_button_pressed() -> void:
 	GameState.lessons = 3
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module3.tres and Module3_Learning.tres...")
@@ -108,7 +108,7 @@ func _on_module3_button_pressed() -> void:
 	
 func _on_module4_button_pressed() -> void:
 	GameState.lessons = 4
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	
 	print("Loading Module4.tres and Module4_Learning.tres...")
@@ -126,7 +126,7 @@ func _on_module4_button_pressed() -> void:
 		
 func _on_module5_button_pressed() -> void:
 	GameState.lessons = 5
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	print("Loading Module5.tres and Module5_Learning.tres...")
 
@@ -143,7 +143,7 @@ func _on_module5_button_pressed() -> void:
 		
 func _on_module6_button_pressed() -> void:
 	GameState.lessons = 6
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	print("Loading Module6.tres and Module6_Learning.tres...")
 
@@ -160,7 +160,7 @@ func _on_module6_button_pressed() -> void:
 		
 func _on_module7_button_pressed() -> void:
 	GameState.lessons = 7
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	print("Loading Module7.tres and Module7_Learning.tres...")
 
@@ -177,7 +177,7 @@ func _on_module7_button_pressed() -> void:
 	
 func _on_module8_button_pressed() -> void:
 	GameState.lessons = 8
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	print("Loading Module8.tres and Module8_Learning.tres...")
 
@@ -194,7 +194,7 @@ func _on_module8_button_pressed() -> void:
 	
 func _on_module9_button_pressed() -> void:
 	GameState.lessons = 9
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	print("Loading Module9.tres and Module9_Learning.tres...")
 
@@ -211,7 +211,7 @@ func _on_module9_button_pressed() -> void:
 	
 func _on_module10_button_pressed() -> void:
 	GameState.lessons = 10
-	$ClickSoundPlayer.play()
+	
 	await get_tree().create_timer(0.2).timeout
 	print("Loading Module10.tres and Module10_Learning.tres...")
 
@@ -361,4 +361,5 @@ func _on_complete_grades_pressed() -> void:
 
 
 func _on_rubric_button_pressed() -> void:
+	$ClickSoundPlayer.play()
 	get_tree().change_scene_to_file("res://Menu Scenes/rubrics_scene.tscn")

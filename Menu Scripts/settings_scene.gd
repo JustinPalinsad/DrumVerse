@@ -61,8 +61,8 @@ func _on_dark_mode_button_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	$Sound.play()
-	await get_tree().create_timer(0.2).timeout
+	GlobalAudio.play_click()
+	#await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 
