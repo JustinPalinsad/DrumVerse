@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bvf8g3vtmafq0"]
+[gd_scene load_steps=36 format=3 uid="uid://bvf8g3vtmafq0"]
 
 [ext_resource type="Script" uid="uid://gbinb1ry81c1" path="res://Menu Scripts/advanced_notes_section.gd" id="1_hl3y6"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_04jee"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bq2embbuq4tjf" path="res://Menu Assets/highlights/Lesson_Cards_019.png" id="14_qke8r"]
 [ext_resource type="Texture2D" uid="uid://cix12lc7atpsl" path="res://Menu Assets/highlights/Lesson_Cards_020.png" id="15_3ua8c"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_qke8r"]
-[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="16_3ua8c"]
 [ext_resource type="Texture2D" uid="uid://ust6nl5pkpq6" path="res://Menu Assets/highlights/Lesson_Cards_021.png" id="16_j10o4"]
 [ext_resource type="Texture2D" uid="uid://bv6wepbfkvubq" path="res://Menu Assets/highlights/Lesson_Cards_022.png" id="17_x0s42"]
 [ext_resource type="Texture2D" uid="uid://bsmu78p4xftxy" path="res://Menu Assets/highlights/Lesson_Cards_023.png" id="18_r4dek"]
@@ -24,8 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://0u8wsxsv4eeb" path="res://Menu Assets/highlights/Lesson_Cards_025.png" id="20_ntife"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="23_jxjbu"]
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="24_1fuhu"]
+[ext_resource type="Texture2D" uid="uid://sfe67wt0gjim" path="res://Assets/Free_Advanced/Free.png" id="24_x0s42"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="25_3jgvv"]
+[ext_resource type="Texture2D" uid="uid://cmij1qcjw5i7a" path="res://Assets/Free_Advanced/Free_H.png" id="25_r4dek"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="26_3jgvv"]
+[ext_resource type="Texture2D" uid="uid://cvnc0cunefg4p" path="res://Assets/Free_Advanced/Advanced_H.png" id="27_ntife"]
 [ext_resource type="Texture2D" uid="uid://bdux1ufjgb5et" path="res://Menu Assets/drum bg.png" id="27_rdd5w"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="28_rdd5w"]
 [ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="29_qke8r"]
@@ -332,10 +334,10 @@ tracks/8/path = NodePath("Free:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(200, 1088), Vector2(200, 896)]
+"values": [Vector2(112, 1088), Vector2(112, 934.4), Vector2(112, 896)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -470,9 +472,8 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -431.0
-offset_top = -32.0
+offset_top = -184.0
 offset_right = 431.0
-offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_3hnub")
@@ -757,27 +758,26 @@ offset_bottom = 115.36
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_qke8r")
 
-[node name="Free" type="Button" parent="."]
+[node name="Free" type="TextureButton" parent="."]
+material = ExtResource("2_04jee")
 layout_mode = 0
 offset_left = 200.0
-offset_top = 1088.0
-offset_right = 565.0
-offset_bottom = 1228.0
+offset_top = 896.0
+offset_right = 888.0
+offset_bottom = 1069.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("16_3ua8c")
-theme_override_font_sizes/font_size = 126
-text = "FREE"
+texture_normal = ExtResource("24_x0s42")
+texture_pressed = ExtResource("25_r4dek")
 
-[node name="Advanced" type="Button" parent="."]
+[node name="Advanced" type="TextureButton" parent="."]
+material = ExtResource("2_04jee")
 layout_mode = 0
 offset_left = 1376.0
-offset_top = 1088.0
+offset_top = 896.0
 offset_right = 2159.0
-offset_bottom = 1228.0
+offset_bottom = 1069.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("16_3ua8c")
-theme_override_font_sizes/font_size = 126
-text = "ADVANCED"
+texture_normal = ExtResource("27_ntife")
 
 [node name="advnotes_section_anim" type="AnimationPlayer" parent="."]
 libraries = {

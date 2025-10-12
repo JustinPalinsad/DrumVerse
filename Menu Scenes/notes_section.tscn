@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dign4hotw0f7s"]
+[gd_scene load_steps=31 format=3 uid="uid://dign4hotw0f7s"]
 
 [ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
@@ -19,10 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://cp1nai02qlky2" path="res://Menu Assets/highlights/Lesson_Cards_009.png" id="14_b7bqg"]
 [ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="15_6sqpu"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_lk4x5"]
-[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="16_tap5y"]
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="19_un2gc"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="20_37m5n"]
+[ext_resource type="Texture2D" uid="uid://cmij1qcjw5i7a" path="res://Assets/Free_Advanced/Free_H.png" id="21_4t3fb"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="21_37m5n"]
+[ext_resource type="Texture2D" uid="uid://bxa5bgqvyfndy" path="res://Assets/Free_Advanced/Advanced.png" id="22_oc1d3"]
+[ext_resource type="Texture2D" uid="uid://cvnc0cunefg4p" path="res://Assets/Free_Advanced/Advanced_H.png" id="23_4pe3o"]
 [ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="24_b7bqg"]
 [ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="25_6sqpu"]
 
@@ -306,7 +308,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(200, 1208), Vector2(200, 864), Vector2(200, 896)]
+"values": [Vector2(112, 1208), Vector2(112, 864), Vector2(112, 896)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -441,8 +443,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -431.0
-offset_top = -184.0
+offset_top = -40.0
 offset_right = 431.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_otgxm")
@@ -454,9 +457,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -431.0
-offset_top = -160.0
 offset_right = 431.0
-offset_bottom = 32.0
+offset_bottom = 192.0
 grow_horizontal = 2
 
 [node name="TextureRect" type="TextureRect" parent="SelectionTitle"]
@@ -659,27 +661,26 @@ offset_bottom = 115.36
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_lk4x5")
 
-[node name="Free" type="Button" parent="."]
+[node name="Free" type="TextureButton" parent="."]
+material = ExtResource("1_tgiwa")
 layout_mode = 0
-offset_left = 200.0
-offset_top = 896.0
-offset_right = 565.0
-offset_bottom = 1036.0
+offset_left = 112.0
+offset_top = 1208.0
+offset_right = 800.0
+offset_bottom = 1381.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("16_tap5y")
-theme_override_font_sizes/font_size = 126
-text = "FREE"
+texture_normal = ExtResource("21_4t3fb")
 
-[node name="Advanced" type="Button" parent="."]
+[node name="Advanced" type="TextureButton" parent="."]
+material = ExtResource("1_tgiwa")
 layout_mode = 0
 offset_left = 1376.0
-offset_top = 896.0
-offset_right = 2159.0
-offset_bottom = 1036.0
+offset_top = 1208.0
+offset_right = 2851.0
+offset_bottom = 1389.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("16_tap5y")
-theme_override_font_sizes/font_size = 126
-text = "ADVANCED"
+texture_normal = ExtResource("22_oc1d3")
+texture_pressed = ExtResource("23_4pe3o")
 
 [node name="notes_section_anim" type="AnimationPlayer" parent="."]
 libraries = {

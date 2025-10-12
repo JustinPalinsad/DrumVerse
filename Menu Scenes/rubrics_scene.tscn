@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxgk362gnnida"]
+[gd_scene load_steps=6 format=3 uid="uid://dlc6yr84p0sfx"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_e20mw"]
 [ext_resource type="Script" uid="uid://bv1nmd624qege" path="res://Menu Scripts/rubrics_scene.gd" id="1_gu0ru"]
@@ -8,6 +8,7 @@
 
 [node name="rubrics" type="Control"]
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -59,35 +60,35 @@ material = ExtResource("1_e20mw")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gu0ru")
 theme_override_font_sizes/font_size = 181
-text = "S"
+text = "S - above or equal to 95%"
 
 [node name="A" type="Label" parent="gradesBox"]
 material = ExtResource("1_e20mw")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gu0ru")
 theme_override_font_sizes/font_size = 181
-text = "a"
+text = "a - above or equal to 85%"
 
 [node name="B" type="Label" parent="gradesBox"]
 material = ExtResource("1_e20mw")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gu0ru")
 theme_override_font_sizes/font_size = 181
-text = "b"
+text = "b - above or equal to 75%"
 
 [node name="C" type="Label" parent="gradesBox"]
 material = ExtResource("1_e20mw")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gu0ru")
 theme_override_font_sizes/font_size = 181
-text = "c"
+text = "c - above or equal to 55%"
 
 [node name="FAILED" type="Label" parent="gradesBox"]
 material = ExtResource("1_e20mw")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gu0ru")
 theme_override_font_sizes/font_size = 181
-text = "Failed"
+text = "Failed - below 50%"
 
 [node name="percentBox" type="VBoxContainer" parent="."]
 layout_mode = 0

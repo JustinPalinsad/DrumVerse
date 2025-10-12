@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=58 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
@@ -31,9 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="26_pm2xg"]
 [ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
 [ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="27_u4s2c"]
+[ext_resource type="Texture2D" uid="uid://cn3d8nlq56g4x" path="res://Assets/Rubrics/Rubrics.png" id="28_yebvn"]
 [ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="29_gavew"]
+[ext_resource type="Texture2D" uid="uid://bbn0a6hr63msb" path="res://Assets/Rubrics/Rubrics_Highlight.png" id="29_ljih7"]
 [ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="30_es5p8"]
-[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="30_yfa7k"]
 [ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="31_2fdqk"]
 [ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="32_ihbhp"]
 [ext_resource type="Texture2D" uid="uid://dk3lt3k67fxbb" path="res://Menu Assets/highlights/Lesson_Cards_006.png" id="33_i71hg"]
@@ -41,7 +42,10 @@
 [ext_resource type="Texture2D" uid="uid://dpef8xtpelnvw" path="res://Menu Assets/highlights/Lesson_Cards_008.png" id="35_ui2kx"]
 [ext_resource type="Texture2D" uid="uid://cp1nai02qlky2" path="res://Menu Assets/highlights/Lesson_Cards_009.png" id="36_75tn7"]
 [ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="37_yebvn"]
+[ext_resource type="Texture2D" uid="uid://cmij1qcjw5i7a" path="res://Assets/Free_Advanced/Free_H.png" id="41_m0han"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="42_2fdqk"]
+[ext_resource type="Texture2D" uid="uid://bxa5bgqvyfndy" path="res://Assets/Free_Advanced/Advanced.png" id="42_75tn7"]
+[ext_resource type="Texture2D" uid="uid://cvnc0cunefg4p" path="res://Assets/Free_Advanced/Advanced_H.png" id="42_ui2kx"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="43_ihbhp"]
 [ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="44_i71hg"]
 [ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="45_m0han"]
@@ -275,7 +279,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-688, 232), Vector2(328, 232), Vector2(280, 232)]
+"values": [Vector2(-688, 218), Vector2(328, 218), Vector2(184, 218)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -287,7 +291,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-784, 872), Vector2(200, 872), Vector2(160, 872)]
+"values": [Vector2(-784, 872), Vector2(232, 872), Vector2(184, 872)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -848,16 +852,18 @@ offset_right = 538.0
 offset_bottom = 644.0
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
-texture_normal = ExtResource("7_28w0c")
-texture_pressed = ExtResource("27_u4s2c")
+texture_normal = ExtResource("28_yebvn")
+texture_pressed = ExtResource("29_ljih7")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/RubricButton"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(926.856, 425.983)
 scale = Vector2(2.14564, 1.78043)
 texture = ExtResource("8_8ebx2")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/RubricButton"]
+visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = 71.535
@@ -1379,27 +1385,26 @@ position = Vector2(1199.48, 295.852)
 scale = Vector2(85.8047, 0.904198)
 shape = SubResource("RectangleShape2D_bulmj")
 
-[node name="Free" type="Button" parent="."]
+[node name="Free" type="TextureButton" parent="."]
+material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 280.0
-offset_top = 1079.0
-offset_right = 645.0
-offset_bottom = 1219.0
+offset_left = 328.0
+offset_top = 218.0
+offset_right = 1016.0
+offset_bottom = 391.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("30_yfa7k")
-theme_override_font_sizes/font_size = 126
-text = "FREE"
+texture_normal = ExtResource("41_m0han")
 
-[node name="Advanced" type="Button" parent="."]
+[node name="Advanced" type="TextureButton" parent="."]
+material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 160.0
-offset_top = 1167.0
-offset_right = 943.0
-offset_bottom = 1307.0
+offset_left = 232.0
+offset_top = 872.0
+offset_right = 920.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("30_yfa7k")
-theme_override_font_sizes/font_size = 126
-text = "ADVANCED"
+texture_normal = ExtResource("42_75tn7")
+texture_pressed = ExtResource("42_ui2kx")
 
 [node name="CompleteGrades" type="Button" parent="."]
 visible = false
