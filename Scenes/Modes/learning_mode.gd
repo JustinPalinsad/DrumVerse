@@ -419,4 +419,5 @@ func _on_metronome_tick_timeout():
 		sprite.play()
 
 func _on_back_pressed() -> void:
+	GlobalAudio.play_click()
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")

@@ -25,7 +25,7 @@ func _ready() -> void:
 			child.visible = false
 
 func _on_learning_button_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
 		GameState.polyrhythm_mode = "learning"
@@ -35,7 +35,7 @@ func _on_learning_button_pressed() -> void:
 
 
 func _on_practice_button_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
 		GameState.polyrhythm_mode = "practice"
@@ -44,7 +44,7 @@ func _on_practice_button_pressed() -> void:
 		change_to_game_scene("practice")
 
 func _on_challenge_button_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
 		GameState.polyrhythm_mode = "challenge"
@@ -86,7 +86,7 @@ func change_to_learning_scene(mode: String) -> void:
 
 
 func _on_back_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.2).timeout
 	if GameState.lessons < 11:
 		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
