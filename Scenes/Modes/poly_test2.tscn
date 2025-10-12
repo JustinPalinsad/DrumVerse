@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="6_m7tj4"]
 [ext_resource type="PackedScene" uid="uid://66tbdhkgqns1" path="res://Scenes/Shared/hitline_2-4.tscn" id="7_ojrvq"]
 [ext_resource type="PackedScene" uid="uid://c3hy268ubw8ts" path="res://Assets/Junk/ActualNotes/4_note.tscn" id="8_gq143"]
-[ext_resource type="PackedScene" uid="uid://0l5rdbnob23c" path="res://Assets/New Effect/Hitteffect2.tscn" id="9_o46p2"]
+[ext_resource type="PackedScene" uid="uid://cijuwbww32k1s" path="res://Assets/New Effect/Hitteffect2.tscn" id="9_o46p2"]
 [ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="9_x5dye"]
 [ext_resource type="Texture2D" uid="uid://battv6y8amyfm" path="res://Assets/vecteezy_geometric-design-element_21048718.png" id="10_nt3le"]
 [ext_resource type="AudioStream" uid="uid://c17iemnbpj7rm" path="res://Audio/tick.mp3" id="11_7j3g2"]

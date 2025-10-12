@@ -284,6 +284,7 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 
 
 func _on_back_pressed() -> void:
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
 
