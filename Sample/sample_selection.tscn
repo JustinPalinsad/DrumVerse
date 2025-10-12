@@ -1382,9 +1382,9 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="Button" parent="."]
 layout_mode = 0
 offset_left = 280.0
-offset_top = 232.0
+offset_top = 1079.0
 offset_right = 645.0
-offset_bottom = 372.0
+offset_bottom = 1219.0
 scale = Vector2(0.609104, 0.609104)
 theme_override_fonts/font = ExtResource("30_yfa7k")
 theme_override_font_sizes/font_size = 126
@@ -1393,9 +1393,9 @@ text = "FREE"
 [node name="Advanced" type="Button" parent="."]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 872.0
+offset_top = 1167.0
 offset_right = 943.0
-offset_bottom = 1012.0
+offset_bottom = 1307.0
 scale = Vector2(0.609104, 0.609104)
 theme_override_fonts/font = ExtResource("30_yfa7k")
 theme_override_font_sizes/font_size = 126

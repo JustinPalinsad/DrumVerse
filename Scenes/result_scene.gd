@@ -21,6 +21,7 @@ func _on_menu_pressed():
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 	hide()
-	if GameState.notes_index > 0:
-		GameState.notes_index = 0
-		print(GameState.notes_index)
+	if GameState.lessons > 10:
+		get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
