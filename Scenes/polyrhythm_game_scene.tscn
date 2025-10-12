@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bik162a4anf2x"]
+[gd_scene load_steps=27 format=3 uid="uid://bik162a4anf2x"]
 
 [ext_resource type="Script" uid="uid://cvl4viruu28xf" path="res://Scenes/polyrhythm_game_scene.gd" id="1_vabtg"]
 [ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="2_8lhxk"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_d0yf2"]
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="12_iv2sl"]
 [ext_resource type="Texture2D" uid="uid://bu1mpu22fct5w" path="res://Assets/Drum2_F.png" id="13_tkqq0"]
+[ext_resource type="PackedScene" uid="uid://biq2jy3uh3cxn" path="res://NoteScene/quarter_note.tscn" id="14_ndwsn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
 radius = 18.0
@@ -410,7 +411,15 @@ texture = ExtResource("5_vabtg")
 
 [node name="Node2D" type="Node2D" parent="Moving Circe"]
 
+[node name="QuarterNote" parent="." instance=ExtResource("14_ndwsn")]
+position = Vector2(760, 448)
+
+[node name="QuarterNote2" parent="." instance=ExtResource("14_ndwsn")]
+position = Vector2(728, 696)
+
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
 [connection signal="pressed" from="TouchPadContainer/RightTouchPad" to="TouchPadContainer" method="_on_right_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/RightTouchPad" to="TouchPadContainer" method="_on_right_touch_pad_released"]
+[connection signal="area_entered" from="Moving Circe/MovingCircleTop/HitArea" to="." method="_on_hit_area_area_entered"]
+[connection signal="body_entered" from="Moving Circe/MovingCircleTop/HitArea" to="." method="_on_hit_area_body_entered"]

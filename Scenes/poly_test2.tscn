@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://c0prltnh2t7yw"]
+[gd_scene load_steps=31 format=3 uid="uid://c0prltnh2t7yw"]
 
-[ext_resource type="Script" uid="uid://cvl4viruu28xf" path="res://Scenes/polyrhythm_game_scene.gd" id="1_yjtkh"]
+[ext_resource type="Script" path="res://Scenes/poly_test_2.gd" id="1_yjtkh"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="2_rbad5"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="3_xgh5x"]
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="4_pfkuq"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://s3dmyig6b0or" path="res://Assets/Metronome_Pendulum.png" id="12_xs11p"]
 [ext_resource type="PackedScene" uid="uid://b2fgioqo75kcb" path="res://Scenes/Shared/hitline_3-4.tscn" id="13_3uanj"]
 [ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="14_qv7y0"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="15_rbad5"]
+[ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="16_xgh5x"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="17_pfkuq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgbhm"]
 radius = 18.0
@@ -21,7 +24,6 @@ radius = 18.0
 [sub_resource type="Animation" id="Animation_817jg"]
 resource_name = "Bottom_Line"
 length = 3.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -167,7 +169,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_mgbhm"]
 resource_name = "Top_Line"
 length = 3.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -386,7 +387,9 @@ _data = {
 &"poly_test": SubResource("Animation_dj2j3")
 }
 
-[node name="Polyrhythm_Game_Scene" type="Node2D"]
+[node name="Polyrhythm_Game_Scene2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_yjtkh")
 
 [node name="TouchPadContainer" type="Node2D" parent="."]
@@ -411,6 +414,7 @@ stream = ExtResource("6_m7tj4")
 
 [node name="Middle_Point" type="Node2D" parent="."]
 position = Vector2(860, 540)
+metadata/_edit_lock_ = true
 
 [node name="HitLineTop" parent="Middle_Point" instance=ExtResource("7_ojrvq")]
 position = Vector2(167, -241)
@@ -577,7 +581,48 @@ position = Vector2(0, -56)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("12_xs11p")
 
+[node name="CountdownLabel" type="Label" parent="."]
+material = ExtResource("3_xgh5x")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 960.0
+offset_top = 640.0
+offset_right = 1070.0
+offset_bottom = 788.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("15_rbad5")
+theme_override_font_sizes/font_size = 141
+text = "3"
+
+[node name="CountdownAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_xgh5x")
+
+[node name="Back" type="TouchScreenButton" parent="."]
+material = ExtResource("3_xgh5x")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("17_pfkuq")
+
+[node name="TutorialLabel" type="Label" parent="."]
+visible = false
+material = ExtResource("3_xgh5x")
+layout_mode = 0
+offset_left = 448.0
+offset_top = 696.0
+offset_right = 1424.0
+offset_bottom = 1032.0
+theme_override_fonts/font = ExtResource("15_rbad5")
+theme_override_font_sizes/font_size = 76
+text = "Placeholder"
+
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
 [connection signal="pressed" from="TouchPadContainer/RightTouchPad" to="TouchPadContainer" method="_on_right_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/RightTouchPad" to="TouchPadContainer" method="_on_right_touch_pad_released"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
