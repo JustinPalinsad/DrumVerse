@@ -8,6 +8,7 @@ func _ready() -> void:
 	
 func _on_notes_11_pressed() -> void:
 	GameState.notes = 11
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missinge.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -15,6 +16,7 @@ func _on_notes_11_pressed() -> void:
 
 func _on_notes_12_pressed() -> void:
 	GameState.notes = 12
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingn.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -22,6 +24,7 @@ func _on_notes_12_pressed() -> void:
 
 func _on_notes_13_pressed() -> void:
 	GameState.notes = 13
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingna.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -29,6 +32,7 @@ func _on_notes_13_pressed() -> void:
 
 func _on_notes_14_pressed() -> void:
 	GameState.notes = 14
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missing1.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -36,6 +40,7 @@ func _on_notes_14_pressed() -> void:
 
 func _on_notes_15_pressed() -> void:
 	GameState.notes = 15
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missing1e.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -43,6 +48,7 @@ func _on_notes_15_pressed() -> void:
 
 func _on_notes_16_pressed() -> void:
 	GameState.notes = 16
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingen.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -50,6 +56,7 @@ func _on_notes_16_pressed() -> void:
 
 func _on_notes_17_pressed() -> void:
 	GameState.notes = 17
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missingna.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -57,12 +64,14 @@ func _on_notes_17_pressed() -> void:
 
 func _on_notes_18_pressed() -> void:
 	GameState.notes = 18
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/broken16missing1a.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 func _on_notes_19_pressed() -> void:
 	GameState.notes = 19
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/paradiddle_diddle.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -70,12 +79,14 @@ func _on_notes_19_pressed() -> void:
 
 func _on_notes_20_pressed() -> void:
 	GameState.notes = 20
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/double_paradiddle.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 
 func _on_back_pressed() -> void:
+	GlobalAudio.play_click()
 	$advnotes_section_anim.play_backwards("advnotes_anim")
 	await $advnotes_section_anim.animation_finished
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
@@ -83,6 +94,7 @@ func _on_back_pressed() -> void:
 
 func _on_free_pressed() -> void:
 	GameState.notes_index = 0
+	GlobalAudio.play_click()
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_section.tscn")
 	if GameState.notes_index > 0:
 		GameState.notes_index = 0
@@ -92,6 +104,7 @@ func _on_free_pressed() -> void:
 
 func _on_notes_21_pressed() -> void:
 	GameState.notes = 21
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/five_stroke_roll.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -99,6 +112,7 @@ func _on_notes_21_pressed() -> void:
 
 func _on_notes_22_pressed() -> void:
 	GameState.notes = 22
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/six_stroke_roll.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -106,6 +120,7 @@ func _on_notes_22_pressed() -> void:
 
 func _on_notes_23_pressed() -> void:
 	GameState.notes = 23
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/seven_stroke_roll.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -113,6 +128,7 @@ func _on_notes_23_pressed() -> void:
 
 func _on_notes_24_pressed() -> void:
 	GameState.notes = 24
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/swiss_army_triplet.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -120,6 +136,7 @@ func _on_notes_24_pressed() -> void:
 
 func _on_notes_25_pressed() -> void:
 	GameState.notes = 25
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/advanced notes resource/polyrhythm.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")

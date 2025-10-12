@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bvf8g3vtmafq0"]
+[gd_scene load_steps=37 format=3 uid="uid://bvf8g3vtmafq0"]
 
 [ext_resource type="Script" uid="uid://gbinb1ry81c1" path="res://Menu Scripts/advanced_notes_section.gd" id="1_hl3y6"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_04jee"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dfblf1quuck6k" path="res://Menu Assets/highlights/Lesson_Cards_012.png" id="7_cetvk"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_8dsdw"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_jxjbu"]
+[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_x0s42"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_1fuhu"]
 [ext_resource type="Texture2D" uid="uid://b5kepsn6uyhug" path="res://Menu Assets/highlights/Lesson_Cards_016.png" id="11_3jgvv"]
 [ext_resource type="Texture2D" uid="uid://c21j1lr8ap2i2" path="res://Menu Assets/highlights/Lesson_Cards_017.png" id="12_rdd5w"]
@@ -504,6 +505,7 @@ pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("6_wcgb8")
+script = ExtResource("9_x0s42")
 
 [node name="Notes12" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -521,6 +523,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("7_cetvk")
+script = ExtResource("9_x0s42")
 
 [node name="Notes13" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -538,6 +541,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("8_8dsdw")
+script = ExtResource("9_x0s42")
 
 [node name="Notes14" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -555,6 +559,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("9_jxjbu")
+script = ExtResource("9_x0s42")
 
 [node name="Notes15" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -572,6 +577,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("10_1fuhu")
+script = ExtResource("9_x0s42")
 
 [node name="Notes16" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -589,6 +595,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("11_3jgvv")
+script = ExtResource("9_x0s42")
 
 [node name="Notes17" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -606,6 +613,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("12_rdd5w")
+script = ExtResource("9_x0s42")
 
 [node name="Notes18" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -623,6 +631,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("13_w1uul")
+script = ExtResource("9_x0s42")
 
 [node name="Notes19" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -640,6 +649,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("14_qke8r")
+script = ExtResource("9_x0s42")
 
 [node name="Notes20" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -657,6 +667,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("15_3ua8c")
+script = ExtResource("9_x0s42")
 
 [node name="Notes21" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -674,6 +685,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("16_j10o4")
+script = ExtResource("9_x0s42")
 
 [node name="Notes22" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -691,6 +703,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("17_x0s42")
+script = ExtResource("9_x0s42")
 
 [node name="Notes23" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -708,6 +721,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("18_r4dek")
+script = ExtResource("9_x0s42")
 
 [node name="Notes24" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -725,6 +739,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("19_ubsbp")
+script = ExtResource("9_x0s42")
 
 [node name="Notes25" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -742,6 +757,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_bvaox")
 texture_pressed = ExtResource("20_ntife")
+script = ExtResource("9_x0s42")
 
 [node name="Back" type="TextureButton" parent="."]
 material = ExtResource("2_04jee")

@@ -92,3 +92,20 @@ func _on_back_pressed() -> void:
 		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
+
+func button_shake() -> void:
+	var shake_strength := 25.0
+	var shake_duration := 0.2
+	var shake_count := 4
+
+	var original_pos := position
+	var tween := create_tween()
+
+	for i in range(shake_count):
+		var offset := Vector2(
+			randf_range(-shake_strength, shake_strength),
+			randf_range(-shake_strength, shake_strength)
+		)
+		tween.tween_property(self, "position", original_pos + offset, shake_duration / shake_count)
+
+	tween.tween_property(self, "position", original_pos, shake_duration / shake_count)

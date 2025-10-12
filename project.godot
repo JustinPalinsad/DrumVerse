@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 GameState="*res://Resources/GameState.gd"
 Results="*res://Resources/Results.gd"
+GlobalAudio="*res://Menu Scenes/global_audio.tscn"
 
 [display]
 

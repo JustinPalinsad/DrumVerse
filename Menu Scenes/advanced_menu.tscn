@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ba8jsoptp8x8q"]
+[gd_scene load_steps=36 format=3 uid="uid://ba8jsoptp8x8q"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7ykpt"]
 [ext_resource type="Script" uid="uid://dc2xqa5qvq8p3" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ca3y7mttg1hur" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_vnhdg"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
+[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_ihbiu"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_e2tj8"]
 [ext_resource type="Texture2D" uid="uid://b5kepsn6uyhug" path="res://Menu Assets/highlights/Lesson_Cards_016.png" id="11_dm0fn"]
 [ext_resource type="Texture2D" uid="uid://c21j1lr8ap2i2" path="res://Menu Assets/highlights/Lesson_Cards_017.png" id="12_ghggj"]
@@ -168,7 +169,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-784, 872), Vector2(200, 872), Vector2(160, 872)]
+"values": [Vector2(-784, 872), Vector2(200, 872), Vector2(184, 872)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -325,6 +326,7 @@ pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("6_back5")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson11"]
 visible = false
@@ -354,6 +356,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("7_0egvd")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson12"]
 visible = false
@@ -383,6 +386,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("8_vnhdg")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson13"]
 visible = false
@@ -412,6 +416,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("9_6f14r")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson14"]
 visible = false
@@ -441,6 +446,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("10_e2tj8")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson15"]
 visible = false
@@ -470,6 +476,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("11_dm0fn")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson16"]
 visible = false
@@ -499,6 +506,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("12_ghggj")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson17"]
 visible = false
@@ -528,6 +536,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("13_4a6ue")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson18"]
 visible = false
@@ -557,6 +566,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("14_ihbiu")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson19"]
 visible = false
@@ -586,6 +596,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("15_y1kmf")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson20"]
 visible = false
@@ -615,6 +626,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("16_i30v3")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson21"]
 visible = false
@@ -644,6 +656,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("17_h0m75")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson22"]
 visible = false
@@ -673,6 +686,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("18_rqjic")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson23"]
 visible = false
@@ -702,6 +716,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("19_3p4md")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson24"]
 visible = false
@@ -731,6 +746,7 @@ mouse_filter = 2
 disabled = true
 texture_normal = ExtResource("5_rugy4")
 texture_pressed = ExtResource("20_ys1tp")
+script = ExtResource("9_ihbiu")
 
 [node name="Grade Text" type="Label" parent="carousel_container_3/Control/AdvanceLesson25"]
 visible = false
@@ -762,10 +778,10 @@ texture = ExtResource("2_xibpe")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("1_7ykpt")
 layout_mode = 0
-offset_left = 328.0
-offset_top = 218.0
-offset_right = 1016.0
-offset_bottom = 391.0
+offset_left = 280.0
+offset_top = 872.0
+offset_right = 968.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("24_4a6ue")
 texture_pressed = ExtResource("25_ihbiu")
@@ -773,10 +789,10 @@ texture_pressed = ExtResource("25_ihbiu")
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("1_7ykpt")
 layout_mode = 0
-offset_left = 232.0
-offset_top = 872.0
-offset_right = 920.0
-offset_bottom = 1045.0
+offset_left = 160.0
+offset_top = 960.0
+offset_right = 848.0
+offset_bottom = 1133.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("26_y1kmf")
 
