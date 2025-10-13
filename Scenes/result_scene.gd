@@ -8,11 +8,28 @@ var grade = "N/A"
 var mode = "practice"  # This is passed from the game scene
 
 func _ready():
-	$VBoxContainer/HitsLabel.text = "Hits: %d / %d" % [total_hits, total_notes]
-	$VBoxContainer/MissesLabel.text = "Misses: %d" % total_misses
-	$VBoxContainer/AccuracyLabel.text = "Accuracy: " + str(round(hit_percentage * 10) / 10.0) + "%"
-	$VBoxContainer/GradeLabel.text = "Grade: %s" % grade
+	# Set corresponding value labels
+	$HitsValue.text = "%d / %d" % [total_hits, total_notes]
+	$MissesValue.text = str(total_misses)
+	$AccuracyValue.text = str(round(hit_percentage * 10) / 10.0) + "%"
+	$GradeValue.text = grade
 
+	var white = Color(1, 1, 1)
+	var red = Color(1, 0, 0)
+
+	$HitsValue.add_theme_color_override("font_color", white)
+	$MissesValue.add_theme_color_override("font_color", white)
+	$AccuracyValue.add_theme_color_override("font_color", white)
+
+	# Grade color logic:
+	# Red if grade is empty, N/A, F, or Fail (case-insensitive)
+	
+	if grade == "Failed":
+		$GradeValue.add_theme_color_override("font_color", red)
+	else:
+		$GradeValue.add_theme_color_override("font_color", white)
+
+	# Connect button and save grades
 	$VBoxContainer/HBoxContainer/MenuButton.pressed.connect(_on_menu_pressed)
 	GameState.save_grades()
 

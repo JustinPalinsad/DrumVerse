@@ -106,3 +106,39 @@ flat = true
 
 [node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6c85i")
+
+[node name="HitsValue" type="Label" parent="."]
+offset_left = 821.0
+offset_top = 223.0
+offset_right = 2234.0
+offset_bottom = 297.0
+theme_override_fonts/font = ExtResource("4_72020")
+theme_override_font_sizes/font_size = 70
+text = "0"
+
+[node name="AccuracyValue" type="Label" parent="."]
+offset_left = 582.0
+offset_top = 387.0
+offset_right = 1995.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("4_72020")
+theme_override_font_sizes/font_size = 70
+text = "0"
+
+[node name="MissesValue" type="Label" parent="."]
+offset_left = 539.0
+offset_top = 551.0
+offset_right = 1952.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("4_72020")
+theme_override_font_sizes/font_size = 70
+text = "0"
+
+[node name="GradeValue" type="Label" parent="."]
+offset_left = 605.0
+offset_top = 715.0
+offset_right = 2018.0
+offset_bottom = 789.0
+theme_override_fonts/font = ExtResource("4_72020")
+theme_override_font_sizes/font_size = 70
+text = "0"
