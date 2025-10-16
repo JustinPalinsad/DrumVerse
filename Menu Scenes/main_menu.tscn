@@ -317,9 +317,11 @@ action = "ui_right"
 
 [node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_cv22u")
+volume_db = -20.0
 
 [node name="BackSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_i72bd")
+volume_db = -20.0
 
 [node name="Control" type="Control" parent="."]
 visible = false

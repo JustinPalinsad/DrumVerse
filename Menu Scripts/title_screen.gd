@@ -12,6 +12,8 @@ func _on_start_button_pressed() -> void:
 	drum_animPlayer.play("drum_bounce_animation")
 	$ClickSoundPlayer.play()
 	await get_tree().create_timer(0.2).timeout
+	GlobalAudio.play_bgm()
 	print("Going to Main Menu...!")
 	await text_animPlayer.animation_finished
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
+	

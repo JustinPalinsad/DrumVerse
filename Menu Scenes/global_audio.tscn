@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://vd4av52m27cg"]
+[gd_scene load_steps=4 format=3 uid="uid://vd4av52m27cg"]
 
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="1_i7rba"]
 [ext_resource type="Script" uid="uid://tipy01vixakg" path="res://Menu Scripts/global_audio.gd" id="1_kubv1"]
+[ext_resource type="AudioStream" uid="uid://b38o2ufdawv38" path="res://Audio/drumverse theme song.mp3" id="3_o5mdi"]
 
 [node name="GlobalAudio" type="Node"]
 script = ExtResource("1_kubv1")
 
 [node name="ClickSoundPlayerGlobal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_i7rba")
+volume_db = -20.0
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_o5mdi")
+volume_db = -35.0
