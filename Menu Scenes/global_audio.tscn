@@ -8,3 +8,5 @@ script = ExtResource("1_kubv1")
 
 [node name="ClickSoundPlayerGlobal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_i7rba")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
