@@ -234,7 +234,7 @@ func _goto_sample_scene() -> void:
 	
 func _on_back_pressed() -> void:
 	GameState.notes_index = 0
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	#await get_tree().create_timer(0.2).timeout
 	if GameState.notes_index > 0:
 		GameState.notes_index = 0

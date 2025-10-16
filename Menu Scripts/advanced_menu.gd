@@ -10,7 +10,7 @@ func _ready() -> void:
 	$advlessons_anim.pause()
 
 func _on_back_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	#await get_tree().create_timer(0.2).timeout
 	if GameState.notes_index > 0:
 		GameState.notes_index = 0
