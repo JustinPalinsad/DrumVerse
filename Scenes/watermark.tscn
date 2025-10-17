@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqnxseiyc5u8"]
+
+[ext_resource type="Script" uid="uid://daujmjidtno5u" path="res://watermark.gd" id="1_3cjmn"]
+[ext_resource type="Texture2D" uid="uid://ceqflowy2gekk" path="res://Menu Assets/Watermark.png" id="2_1io1o"]
+
+[node name="Watermark" type="CanvasLayer"]
+script = ExtResource("1_3cjmn")
+
+[node name="Watermark" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.462745)
+position = Vector2(976, 480)
+texture = ExtResource("2_1io1o")
