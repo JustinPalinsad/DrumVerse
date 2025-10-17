@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="5_uscyt"]
 [ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="6_4xiap"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="6_rgj8m"]
-[ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="7_a7fet"]
 [ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="8_7iton"]
+[ext_resource type="AudioStream" uid="uid://c0hvf3f2whwjj" path="res://Audio/Drum.mp3" id="8_aq00n"]
 [ext_resource type="AudioStream" uid="uid://c3fnu8ebevbk4" path="res://Audio/congrats.wav" id="9_5dgvu"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="11_4xiap"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="14_ldntv"]
@@ -195,7 +195,7 @@ texture_normal = ExtResource("5_a7fet")
 action = "right_pad"
 
 [node name="Snare" type="AudioStreamPlayer" parent="TouchPadContainer"]
-stream = ExtResource("7_a7fet")
+stream = ExtResource("8_aq00n")
 
 [node name="HitLine" parent="." instance=ExtResource("3_ikfsv")]
 position = Vector2(972, 366)
