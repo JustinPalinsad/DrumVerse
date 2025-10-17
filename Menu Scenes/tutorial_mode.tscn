@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("questionPanel:position")
+tracks/0/path = NodePath("Control/questionPanel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +28,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("questionPanel:position")
+tracks/0/path = NodePath("Control/questionPanel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -354,21 +354,33 @@ libraries = {
 &"": SubResource("AnimationLibrary_btk02")
 }
 
-[node name="questionPanel" type="Panel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -920.0
+offset_bottom = -500.0
+
+[node name="questionPanel" type="Panel" parent="Control"]
 material = ExtResource("1_wf4ld")
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.502
 anchor_top = 0.514
 anchor_right = 0.502
 anchor_bottom = 0.514
-offset_left = -851.84
-offset_top = -291.12
-offset_right = 623.16
-offset_bottom = 212.88
+offset_left = 91.92
+offset_top = 243.44
+offset_right = 1566.92
+offset_bottom = 747.44
 scale = Vector2(1.15511, 1.15511)
 theme_override_styles/panel = SubResource("StyleBoxTexture_btk02")
 
-[node name="Label" type="Label" parent="questionPanel"]
+[node name="Label" type="Label" parent="Control/questionPanel"]
 visible = false
 material = ExtResource("1_wf4ld")
 layout_mode = 1
@@ -385,7 +397,7 @@ theme_override_fonts/font = ExtResource("3_lr75e")
 theme_override_font_sizes/font_size = 80
 text = "First time playing Drumverse?"
 
-[node name="YesButton" type="TextureButton" parent="questionPanel"]
+[node name="YesButton" type="TextureButton" parent="Control/questionPanel"]
 material = ExtResource("1_wf4ld")
 layout_mode = 0
 offset_left = 166.218
@@ -396,7 +408,7 @@ scale = Vector2(0.267662, 0.269783)
 texture_normal = ExtResource("2_yiv6j")
 texture_pressed = ExtResource("4_yiv6j")
 
-[node name="Yes" type="Label" parent="questionPanel/YesButton"]
+[node name="Yes" type="Label" parent="Control/questionPanel/YesButton"]
 material = ExtResource("1_wf4ld")
 layout_mode = 0
 offset_left = 80.0425
@@ -407,7 +419,7 @@ theme_override_fonts/font = ExtResource("3_lr75e")
 theme_override_font_sizes/font_size = 400
 text = "Yes"
 
-[node name="NoButton" type="TextureButton" parent="questionPanel"]
+[node name="NoButton" type="TextureButton" parent="Control/questionPanel"]
 material = ExtResource("1_wf4ld")
 layout_mode = 0
 offset_left = 1011.16
@@ -418,7 +430,7 @@ scale = Vector2(0.267662, 0.269783)
 texture_normal = ExtResource("2_yiv6j")
 texture_pressed = ExtResource("4_yiv6j")
 
-[node name="No" type="Label" parent="questionPanel/NoButton"]
+[node name="No" type="Label" parent="Control/questionPanel/NoButton"]
 material = ExtResource("1_wf4ld")
 layout_mode = 0
 offset_left = 206.999
@@ -429,7 +441,7 @@ theme_override_fonts/font = ExtResource("3_lr75e")
 theme_override_font_sizes/font_size = 400
 text = "No"
 
-[node name="Label2" type="Label" parent="questionPanel"]
+[node name="Label2" type="Label" parent="Control/questionPanel"]
 material = ExtResource("1_wf4ld")
 layout_mode = 0
 offset_left = 83.0
@@ -761,6 +773,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_cgywf")
 action_mode = 0
 text = "Continue"
 
-[connection signal="pressed" from="questionPanel/YesButton" to="." method="_on_yes_button_pressed"]
-[connection signal="pressed" from="questionPanel/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="Control/questionPanel/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Control/questionPanel/NoButton" to="." method="_on_no_button_pressed"]
 [connection signal="pressed" from="tutorialPanel/Press/continueButt" to="." method="_on_continue_butt_pressed"]
