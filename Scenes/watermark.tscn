@@ -6,7 +6,18 @@
 [node name="Watermark" type="CanvasLayer"]
 script = ExtResource("1_3cjmn")
 
-[node name="Watermark" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.511
+anchor_right = 0.5
+anchor_bottom = 0.511
+offset_left = -960.0
+offset_top = -551.88
+offset_right = -920.0
+offset_bottom = -511.88
+
+[node name="Watermark" type="Sprite2D" parent="Control"]
 modulate = Color(1, 1, 1, 0.462745)
 position = Vector2(976, 480)
 texture = ExtResource("2_1io1o")

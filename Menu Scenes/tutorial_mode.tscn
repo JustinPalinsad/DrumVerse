@@ -66,6 +66,7 @@ texture_margin_right = 100.0
 texture_margin_bottom = 100.0
 
 [node name="TutorialMode" type="CanvasLayer"]
+follow_viewport_enabled = true
 script = ExtResource("1_lr75e")
 
 [node name="tutorialText" type="TextureRect" parent="."]
@@ -357,13 +358,13 @@ libraries = {
 material = ExtResource("1_wf4ld")
 anchors_preset = -1
 anchor_left = 0.502
-anchor_top = 0.5
+anchor_top = 0.514
 anchor_right = 0.502
-anchor_bottom = 0.5
+anchor_bottom = 0.514
 offset_left = -851.84
-offset_top = -276.0
+offset_top = -291.12
 offset_right = 623.16
-offset_bottom = 228.0
+offset_bottom = 212.88
 scale = Vector2(1.15511, 1.15511)
 theme_override_styles/panel = SubResource("StyleBoxTexture_btk02")
 
@@ -430,6 +431,7 @@ text = "No"
 
 [node name="Label2" type="Label" parent="questionPanel"]
 material = ExtResource("1_wf4ld")
+layout_mode = 0
 offset_left = 83.0
 offset_top = 76.0
 offset_right = 1419.0
@@ -441,7 +443,7 @@ text = "First time playing Drumverse?"
 [node name="tutorialPanel" type="Panel" parent="."]
 visible = false
 material = ExtResource("1_wf4ld")
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -699,6 +701,7 @@ vertical_alignment = 1
 
 [node name="Press" type="Label" parent="tutorialPanel"]
 material = ExtResource("1_wf4ld")
+layout_mode = 0
 offset_left = 270.104
 offset_top = 180.069
 offset_right = 1008.1
@@ -758,7 +761,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_cgywf")
 action_mode = 0
 text = "Continue"
 
-[connection signal="pressed" from="tutorialText/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="questionPanel/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="questionPanel/NoButton" to="." method="_on_no_button_pressed"]
 [connection signal="pressed" from="tutorialPanel/Press/continueButt" to="." method="_on_continue_butt_pressed"]
