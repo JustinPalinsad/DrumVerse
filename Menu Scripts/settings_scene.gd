@@ -93,7 +93,7 @@ func check_mute() -> void:
 
 func _on_button_pressed() -> void:
 	GameState.reset_grades()
-	GameState.save_grades()
+	GameState.save_data()
 
 
 func _on_button_2_pressed() -> void:

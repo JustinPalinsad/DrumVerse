@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy6rnul4iyn7q"]
+[gd_scene load_steps=21 format=3 uid="uid://cy6rnul4iyn7q"]
 
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="1_akhtc"]
 [ext_resource type="Script" uid="uid://bvukgvf67mb2h" path="res://Menu Scripts/main_menu.gd" id="1_l382o"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://co282gm4j7ur8" path="res://Audio/opening_sound.wav" id="13_cv22u"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="14_i72bd"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="16_rswhg"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="17_kkdnl"]
 
 [sub_resource type="Animation" id="Animation_afnto"]
 length = 0.001
@@ -339,5 +340,25 @@ offset_bottom = 111.04
 position = Vector2(48, 99)
 scale = Vector2(0.0844553, 0.0844553)
 
+[node name="questionMark" type="Label" parent="."]
+material = ExtResource("2_8mjjn")
+layout_mode = 0
+offset_left = 1736.0
+offset_right = 1862.0
+offset_bottom = 181.0
+theme_override_fonts/font = ExtResource("17_kkdnl")
+theme_override_font_sizes/font_size = 161
+text = "?"
+
+[node name="qmarkButt" type="Button" parent="questionMark"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -3.0
+offset_top = 16.0
+offset_right = 5.0
+offset_bottom = 24.0
+scale = Vector2(13.2882, 20.7965)
+
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="questionMark/qmarkButt" to="." method="_on_qmark_butt_pressed"]
