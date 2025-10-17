@@ -1,6 +1,7 @@
 extends Control
 
 @onready var anim_player = $"Selection Container/Selection Animation"
+@onready var tutorial_mode_scene = preload("res://Menu Scenes/tutorial_mode.tscn") # 💡 ADDED: Tutorial scene preload
 
 const STEP := 0.3
 const MIN_INDEX := 0
@@ -11,31 +12,61 @@ var is_animating := false
 var animation_direction := 1
 var input_locked := false
 var changing_scene := false
-var scene_just_loaded := true # 💡 STILL NEEDED: Flag to debounce input on load
+var scene_just_loaded := true # Flag to debounce input on load
 
 # Swipe detection
 var swipe_start_pos: Vector2
 var swipe_threshold: float = 100.0 # minimum swipe distance
 
 func _ready():
+	# 💡 CONSOLIDATED: GameState resets from old script
 	GameState.sample_selection_anim_has_played = false
-	GameState.notes_section_anim_has_played =false
+	GameState.notes_section_anim_has_played = false
 	GameState.notes_index = 0
-	# Ensure GameState.main_menu_index exists
+	
 	_update_menu_position()
 	
-	# 💡 REFINED FIX: Increase the debounce timer to 0.1 seconds.
-	# This gives the system more time to flush any immediate, residual input events 
-	# (like a touch-release event from the scene change).
-	await get_tree().create_timer(0.1).timeout 
+	# 🧠 TUTORIAL LOGIC: Only show tutorial when first_time_play is true
+	if GameState.first_time_play:
+		input_locked = true
+		show_tutorial_mode() # call the tutorial scene here
+	else:
+		# 💡 DEBOUNCE FIX: Only run the debounce timer if the tutorial ISN'T showing,
+		# otherwise, the tutorial finish handler unlocks input.
+		_apply_load_debounce()
+
+# 💡 NEW/MODIFIED: Helper for the debounce timer
+func _apply_load_debounce() -> void:
+	# Increase the debounce timer to 0.1 seconds.
+	get_tree().create_timer(0.1).timeout.connect(Callable(self, "_on_debounce_finished"))
+
+func _on_debounce_finished() -> void:
 	scene_just_loaded = false
 
+
+# -----------------------------
+# TUTORIAL FUNCTIONS
+# -----------------------------
+func show_tutorial_mode() -> void:
+	TutorialManager.start_tutorial()
+
+	# Wait until tutorial finishes (tree_exited signal)
+	if TutorialManager.tutorial_instance:
+		# Use the simplified connect syntax for Godot 4
+		TutorialManager.tutorial_instance.tree_exited.connect(_on_tutorial_finished)
+
+
+func _on_tutorial_finished() -> void:
+	GameState.first_time_play = false # 🔁 remember that tutorial is done
+	input_locked = false
+	# Once tutorial finishes, apply the debounce to prevent post-tutorial swipe input
+	_apply_load_debounce()
 
 # -----------------------------
 # Public function to change index (buttons, swipe, keyboard)
 # -----------------------------
 func change_index(direction: int) -> void:
-	# 💡 REFINED CHECK: Check if the scene just loaded
+	# Check if the scene just loaded OR if tutorial is active
 	if input_locked or is_animating or changing_scene or scene_just_loaded:
 		return
 	var new_index = clamp(GameState.main_menu_index + direction, MIN_INDEX, MAX_INDEX)
@@ -133,11 +164,19 @@ func _on_back_pressed() -> void:
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/title_screen.tscn")
 
+# 💡 NEW: Button for manually starting the tutorial
+func _on_qmark_butt_pressed() -> void:
+	if input_locked:
+		return
+	show_tutorial_mode()
+	input_locked = true
+	# Lock input, tutorial_finished handler will unlock it.
+
 # -----------------------------
 # Swipe and keyboard input
 # -----------------------------
 func _input(event: InputEvent) -> void:
-	# 💡 REFINED CHECK: Check scene_just_loaded here
+	# Check scene_just_loaded here
 	if input_locked or is_animating or changing_scene or scene_just_loaded:
 		return
 
