@@ -25,6 +25,8 @@ var sample_selection_anim_has_played = false
 var notes_section_anim_has_played = false
 var main_menu_index = 1
 
+var first_time_play = true
+
 func _ready() -> void:
 	load_grades()
 	print(module_grades)
