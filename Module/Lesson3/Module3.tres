@@ -10,7 +10,7 @@
 [resource]
 script = ExtResource("2_hva1r")
 continue_bars = Array[ExtResource("1_fuy6p")]([ExtResource("2_2cnlj"), ExtResource("3_leciw"), ExtResource("4_kn17t")])
-show_note_labels = true
+show_note_labels = false
 end_bar = ExtResource("5_ot2vg")
 bpm = 60
 moving_circle_duration = 4.0
