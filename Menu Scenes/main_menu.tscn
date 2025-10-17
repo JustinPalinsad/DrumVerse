@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cy6rnul4iyn7q"]
+[gd_scene load_steps=22 format=3 uid="uid://cy6rnul4iyn7q"]
 
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="1_akhtc"]
 [ext_resource type="Script" uid="uid://bvukgvf67mb2h" path="res://Menu Scripts/main_menu.gd" id="1_l382o"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="14_i72bd"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="16_rswhg"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="17_kkdnl"]
+[ext_resource type="Script" uid="uid://bih17fckuqqbt" path="res://Menu Scripts/swipe.gd" id="18_kcw28"]
 
 [sub_resource type="Animation" id="Animation_afnto"]
 length = 0.001
@@ -359,6 +360,14 @@ offset_right = 5.0
 offset_bottom = 24.0
 scale = Vector2(13.2882, 20.7965)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 538)
+script = ExtResource("18_kcw28")
+
+[connection signal="pressed" from="Selection Container/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="Selection Container/RightButton" to="." method="_on_right_button_pressed"]
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LeftB" to="." method="_on_left_b_pressed"]
+[connection signal="pressed" from="RightB" to="." method="_on_right_b_pressed"]
 [connection signal="pressed" from="questionMark/qmarkButt" to="." method="_on_qmark_butt_pressed"]
