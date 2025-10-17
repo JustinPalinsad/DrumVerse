@@ -361,9 +361,9 @@ anchor_top = 0.5
 anchor_right = 0.502
 anchor_bottom = 0.5
 offset_left = -851.84
-offset_top = 540.0
+offset_top = -276.0
 offset_right = 623.16
-offset_bottom = 1044.0
+offset_bottom = 228.0
 scale = Vector2(1.15511, 1.15511)
 theme_override_styles/panel = SubResource("StyleBoxTexture_btk02")
 

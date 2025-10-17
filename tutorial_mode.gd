@@ -7,6 +7,7 @@ func _ready() -> void:
 
 
 func _on_yes_button_pressed() -> void:
+	GlobalAudio.play_click()
 	GameState.first_time_play = false
 	GameState.main_menu_index = 1
 	GameState.game_tutorial_active = true
@@ -21,6 +22,7 @@ func _on_yes_button_pressed() -> void:
 
 
 func _on_no_button_pressed() -> void:
+	GlobalAudio.play_click()
 	GameState.first_time_play = true
 	await play_pop_up_anim_reverse()
 	_end_tutorial()
@@ -58,6 +60,7 @@ func _show_current_label() -> void:
 
 
 func _on_continue_butt_pressed() -> void:
+	GlobalAudio.play_click()
 	var holder = $tutorialPanel/tutorialtextholder
 	if not holder:
 		return

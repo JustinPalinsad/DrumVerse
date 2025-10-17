@@ -8,6 +8,8 @@ func _ready() -> void:
 	if GameState.notes_section_anim_has_played == false:
 		$notes_section_anim.play("notes_anim")
 		GameState.notes_section_anim_has_played = true
+		await $notes_section_anim.animation_finished
+		$notes_section_anim.play("hand_swipe")
 	else:
 		$notes_section_anim.play("notes_anim")
 		$notes_section_anim.seek(0.25, true)

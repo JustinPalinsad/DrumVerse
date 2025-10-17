@@ -43,6 +43,8 @@ func _ready() -> void:
 	if GameState.sample_selection_anim_has_played == false:
 		$freemenuAnim.play("free_menu_anim")
 		GameState.sample_selection_anim_has_played = true
+		await $freemenuAnim.animation_finished
+		$freemenuAnim.play("hand_swipe")
 	else:
 		$freemenuAnim.play("free_menu_anim")
 		$freemenuAnim.seek(0.25, true)

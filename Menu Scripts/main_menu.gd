@@ -11,6 +11,7 @@ var input_locked := false
 
 func _ready():
 	_update_menu_position()
+	
 
 	# 🧠 Only show tutorial when first_time_play is true
 	if GameState.first_time_play:
