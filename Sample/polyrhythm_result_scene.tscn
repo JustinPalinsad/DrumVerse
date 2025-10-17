@@ -108,6 +108,7 @@ flat = true
 stream = ExtResource("5_6c85i")
 
 [node name="HitsValue" type="Label" parent="."]
+layout_mode = 0
 offset_left = 821.0
 offset_top = 223.0
 offset_right = 2234.0
@@ -117,6 +118,7 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 
 [node name="AccuracyValue" type="Label" parent="."]
+layout_mode = 0
 offset_left = 582.0
 offset_top = 387.0
 offset_right = 1995.0
@@ -126,6 +128,7 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 
 [node name="MissesValue" type="Label" parent="."]
+layout_mode = 0
 offset_left = 539.0
 offset_top = 551.0
 offset_right = 1952.0
@@ -135,6 +138,7 @@ theme_override_font_sizes/font_size = 70
 text = "0"
 
 [node name="GradeValue" type="Label" parent="."]
+layout_mode = 0
 offset_left = 605.0
 offset_top = 715.0
 offset_right = 2018.0

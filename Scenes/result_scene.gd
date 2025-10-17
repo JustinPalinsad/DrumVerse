@@ -31,10 +31,11 @@ func _ready():
 
 	# Connect button and save grades
 	$VBoxContainer/HBoxContainer/MenuButton.pressed.connect(_on_menu_pressed)
-	GameState.save_grades()
+	GameState.save_data()
 
 func _on_menu_pressed():
 	$ClickSoundPlayer.play()
+	GlobalAudio.mute_bgm(false)
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 	hide()

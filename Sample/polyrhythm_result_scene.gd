@@ -1,17 +1,17 @@
 extends Control
 
-var total_hits = 0
-var total_notes = 0
-var total_misses = 0
-var hit_percentage = 0.0
-var grade = "N/A"
+var total_hits = Results.total_hits
+var total_notes = Results.total_notes
+var total_misses = Results.total_misses
+var hit_percentage = Results.hit_percentage
+var grade = Results.grade
 var mode = "practice"  # This is passed from the game scene
 
 func _ready():
 		# Set corresponding value labels (white color)
 	$HitsValue.text = "%d / %d" % [total_hits, total_notes]
 	$MissesValue.text = str(total_misses)
-	$AccuracyValue.text = str(round(hit_percentage * 1000) / 10.0) + "%"
+	$AccuracyValue.text = str(round(hit_percentage * 10) / 10.0) + "%"
 	$GradeValue.text = grade
 
 	var white = Color(1, 1, 1)
@@ -47,7 +47,7 @@ func save_lesson_25_grade() -> void:
 	GameState.module_grades[index] = Results.grade
 	
 	# Save it to file
-	GameState.save_grades()
+	GameState.save_data()
 	print("✅ Saved grade for Lesson 25:", Results.grade)
 	print("Current module_grades:", GameState.module_grades)
 
