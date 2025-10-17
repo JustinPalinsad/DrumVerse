@@ -20,6 +20,7 @@ GameState="*res://Resources/GameState.gd"
 Results="*res://Resources/Results.gd"
 GlobalAudio="*res://Menu Scenes/global_audio.tscn"
 TutorialManager="*res://Scripts/TutorialManager.gd"
+Watermark="*res://Scenes/watermark.tscn"
 
 [display]
 
