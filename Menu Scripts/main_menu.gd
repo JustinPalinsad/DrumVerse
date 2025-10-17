@@ -18,6 +18,9 @@ var swipe_start_pos: Vector2
 var swipe_threshold: float = 100.0 # minimum swipe distance
 
 func _ready():
+	GameState.sample_selection_anim_has_played = false
+	GameState.notes_section_anim_has_played =false
+	GameState.notes_index = 0
 	# Ensure GameState.main_menu_index exists
 	_update_menu_position()
 	

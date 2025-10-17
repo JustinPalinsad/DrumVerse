@@ -361,7 +361,7 @@ offset_bottom = 24.0
 scale = Vector2(13.2882, 20.7965)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 536)
+position = Vector2(960, 538)
 script = ExtResource("18_kcw28")
 
 [connection signal="pressed" from="Selection Container/LeftButton" to="." method="_on_left_button_pressed"]
