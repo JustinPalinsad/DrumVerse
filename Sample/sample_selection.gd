@@ -26,7 +26,7 @@ var module_callbacks = {
 	10: _on_module10_button_pressed
 }
 
-func _ready() -> void:
+func _ready() -> void:	
 	module1_button.pressed.connect(_on_module1_button_pressed)
 	module2_button.pressed.connect(_on_module2_button_pressed)
 	module3_button.pressed.connect(_on_module3_button_pressed)

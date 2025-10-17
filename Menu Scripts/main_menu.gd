@@ -117,3 +117,6 @@ func _update_menu_position():
 func _on_qmark_butt_pressed() -> void:
 	show_tutorial_mode()
 	input_locked = true
+
+
+		

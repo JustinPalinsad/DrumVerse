@@ -9,6 +9,7 @@ func _ready() -> void:
 func _on_yes_button_pressed() -> void:
 	GameState.first_time_play = false
 	GameState.main_menu_index = 1
+	GameState.game_tutorial_active = true
 	await play_pop_up_anim_reverse()
 
 	if has_node("questionPanel"):
@@ -124,10 +125,6 @@ func _resume_after_scene_change() -> void:
 		$tutorialPanel.show()
 
 	_show_current_label()
-
-
-
-
 
 
 

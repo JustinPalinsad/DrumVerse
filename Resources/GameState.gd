@@ -25,6 +25,9 @@ var sample_selection_anim_has_played = false
 var notes_section_anim_has_played = false
 var main_menu_index = 1
 
+var game_tutorial_active: bool = false
+var input_locked: bool = false
+
 var first_time_play: bool = true:
 	set(value):
 		first_time_play = value
