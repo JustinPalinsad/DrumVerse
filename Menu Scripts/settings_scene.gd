@@ -12,6 +12,7 @@ const DARK_TEXTURE := preload("res://Menu Assets/DarkMode.png")
 const SOUND_ON := preload("res://Menu Assets/Sound.png")
 const SOUND_OFF := preload("res://Menu Assets/Sound_Mute.png")
 
+
 func _ready() -> void:
 	# Ensure GameState.is_muted exists, default false
 	if not "is_muted" in GameState:
@@ -61,6 +62,7 @@ func _on_dark_mode_button_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
+	GameState.main_menu_index = 2
 	GlobalAudio.play_click()
 	#await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
