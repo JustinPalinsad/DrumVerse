@@ -103,6 +103,8 @@ func _on_button_2_pressed() -> void:
 	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
 	set_advanced_lessons_to_S()
 	$UNLOCKED.show()
+	await get_tree().create_timer(3.0).timeout
+	$UNLOCKED.hide()
 
 
 func set_advanced_lessons_to_S():
@@ -124,6 +126,8 @@ func _on_yes_pressed() -> void:
 	GameState.save_data()
 	_on_no_pressed()
 	$DELETED.show()
+	await get_tree().create_timer(3.0).timeout
+	$DELETED.hide()
 	
 
 
