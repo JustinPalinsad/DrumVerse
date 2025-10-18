@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ba8jsoptp8x8q"]
+[gd_scene load_steps=43 format=3 uid="uid://ba8jsoptp8x8q"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_7ykpt"]
 [ext_resource type="Script" uid="uid://dc2xqa5qvq8p3" path="res://Menu Scripts/advanced_menu.gd" id="1_h4asb"]
@@ -17,20 +17,27 @@
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
 [ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_ihbiu"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_e2tj8"]
+[ext_resource type="Texture2D" uid="uid://d3gd015a7463" path="res://Assets/NewNotes/br3.png" id="10_yicks"]
 [ext_resource type="Texture2D" uid="uid://b5kepsn6uyhug" path="res://Menu Assets/highlights/Lesson_Cards_016.png" id="11_dm0fn"]
 [ext_resource type="Texture2D" uid="uid://c21j1lr8ap2i2" path="res://Menu Assets/highlights/Lesson_Cards_017.png" id="12_ghggj"]
 [ext_resource type="Texture2D" uid="uid://bob2ulj25w540" path="res://Menu Assets/highlights/Lesson_Cards_018.png" id="13_4a6ue"]
+[ext_resource type="Texture2D" uid="uid://bfhrng4ogxwy7" path="res://Assets/NewNotes/br4.png" id="13_6l2v7"]
 [ext_resource type="Texture2D" uid="uid://bq2embbuq4tjf" path="res://Menu Assets/highlights/Lesson_Cards_019.png" id="14_ihbiu"]
 [ext_resource type="Texture2D" uid="uid://cix12lc7atpsl" path="res://Menu Assets/highlights/Lesson_Cards_020.png" id="15_y1kmf"]
+[ext_resource type="Texture2D" uid="uid://l0c206s1mw4" path="res://Assets/NewNotes/br2.png" id="16_dljvs"]
 [ext_resource type="Texture2D" uid="uid://ust6nl5pkpq6" path="res://Menu Assets/highlights/Lesson_Cards_021.png" id="16_i30v3"]
 [ext_resource type="Texture2D" uid="uid://bv6wepbfkvubq" path="res://Menu Assets/highlights/Lesson_Cards_022.png" id="17_h0m75"]
 [ext_resource type="Texture2D" uid="uid://bsmu78p4xftxy" path="res://Menu Assets/highlights/Lesson_Cards_023.png" id="18_rqjic"]
 [ext_resource type="Texture2D" uid="uid://ds4r63bi33uoa" path="res://Menu Assets/highlights/Lesson_Cards_024.png" id="19_3p4md"]
+[ext_resource type="Texture2D" uid="uid://bymu70coi2004" path="res://Assets/NewNotes/br1.png" id="19_bfbil"]
 [ext_resource type="Texture2D" uid="uid://0u8wsxsv4eeb" path="res://Menu Assets/highlights/Lesson_Cards_025.png" id="20_ys1tp"]
+[ext_resource type="Texture2D" uid="uid://c10wttntlncqd" path="res://Assets/NewNotes/br6.png" id="22_b532m"]
 [ext_resource type="Texture2D" uid="uid://sfe67wt0gjim" path="res://Assets/Free_Advanced/Free.png" id="24_4a6ue"]
 [ext_resource type="Texture2D" uid="uid://cmij1qcjw5i7a" path="res://Assets/Free_Advanced/Free_H.png" id="25_ihbiu"]
+[ext_resource type="Texture2D" uid="uid://m5o70eiubffv" path="res://Assets/NewNotes/16_NoteSingle.png" id="25_qqnwa"]
 [ext_resource type="Texture2D" uid="uid://cvnc0cunefg4p" path="res://Assets/Free_Advanced/Advanced_H.png" id="26_y1kmf"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="27_e2tj8"]
+[ext_resource type="Texture2D" uid="uid://03t1igx8yu6q" path="res://Assets/NewNotes/br5.png" id="28_ckbts"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="28_dm0fn"]
 
 [sub_resource type="Animation" id="Animation_6f14r"]
@@ -340,6 +347,13 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson11"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(852.571, 493.741)
+scale = Vector2(0.488416, 0.488416)
+texture = ExtResource("10_yicks")
+
 [node name="AdvanceLesson12" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -1
@@ -369,6 +383,13 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson12"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(852.571, 493.741)
+scale = Vector2(0.488416, 0.488416)
+texture = ExtResource("13_6l2v7")
 
 [node name="AdvanceLesson13" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -400,6 +421,13 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson13"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(874.909, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("16_dljvs")
+
 [node name="AdvanceLesson14" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -3
@@ -429,6 +457,13 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson14"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(807.894, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("19_bfbil")
 
 [node name="AdvanceLesson15" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -460,6 +495,13 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson15"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(863.74, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("22_b532m")
+
 [node name="AdvanceLesson16" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -5
@@ -489,6 +531,20 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson16"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(863.74, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("25_qqnwa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson16"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(1075.96, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("25_qqnwa")
 
 [node name="AdvanceLesson17" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -520,6 +576,13 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson17"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(863.74, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("28_ckbts")
+
 [node name="AdvanceLesson18" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -7
@@ -549,6 +612,13 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson18"]
+visible = false
+material = ExtResource("1_7ykpt")
+position = Vector2(863.74, 494.745)
+scale = Vector2(0.594361, 0.594361)
+texture = ExtResource("22_b532m")
 
 [node name="AdvanceLesson19" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -580,6 +650,22 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Paradiddle" type="Label" parent="carousel_container_3/Control/AdvanceLesson19"]
+visible = false
+material = ExtResource("1_7ykpt")
+layout_mode = 0
+offset_left = 305.276
+offset_top = 359.848
+offset_right = 1135.28
+offset_bottom = 626.848
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Paradiddle-
+Diddle"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="AdvanceLesson20" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -9
@@ -609,6 +695,21 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Paradiddle" type="Label" parent="carousel_container_3/Control/AdvanceLesson20"]
+visible = false
+material = ExtResource("1_7ykpt")
+offset_left = 305.276
+offset_top = 359.848
+offset_right = 1135.28
+offset_bottom = 626.848
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Double-
+Paradiddle"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="AdvanceLesson21" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -640,6 +741,21 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson21"]
+visible = false
+material = ExtResource("1_7ykpt")
+offset_left = 305.276
+offset_top = 359.848
+offset_right = 1135.28
+offset_bottom = 626.848
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Five-Stroke
+Roll"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="AdvanceLesson22" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -11
@@ -669,6 +785,21 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson22"]
+visible = false
+material = ExtResource("1_7ykpt")
+offset_left = 305.276
+offset_top = 359.848
+offset_right = 1135.28
+offset_bottom = 626.848
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Six-Stroke
+Roll"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="AdvanceLesson23" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -700,6 +831,21 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson23"]
+visible = false
+material = ExtResource("1_7ykpt")
+offset_left = 305.276
+offset_top = 359.848
+offset_right = 1135.28
+offset_bottom = 626.848
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Seven-Stroke
+Roll"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="AdvanceLesson24" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -13
@@ -729,6 +875,21 @@ offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
+
+[node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson24"]
+visible = false
+material = ExtResource("1_7ykpt")
+offset_left = 305.276
+offset_top = 359.848
+offset_right = 1135.28
+offset_bottom = 626.848
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Swiss Army
+Triplet"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="AdvanceLesson25" type="TextureButton" parent="carousel_container_3/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -760,6 +921,20 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 96
 text = "Grade:  S"
 
+[node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson25"]
+visible = false
+material = ExtResource("1_7ykpt")
+offset_left = 305.276
+offset_top = 414.829
+offset_right = 1135.28
+offset_bottom = 681.829
+scale = Vector2(0.859786, 0.859786)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Polyrhythm"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="SelectionTitle" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -778,10 +953,10 @@ texture = ExtResource("2_xibpe")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("1_7ykpt")
 layout_mode = 0
-offset_left = 280.0
-offset_top = 872.0
-offset_right = 968.0
-offset_bottom = 1045.0
+offset_left = 184.0
+offset_top = 218.0
+offset_right = 872.0
+offset_bottom = 391.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("24_4a6ue")
 texture_pressed = ExtResource("25_ihbiu")
@@ -789,10 +964,10 @@ texture_pressed = ExtResource("25_ihbiu")
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("1_7ykpt")
 layout_mode = 0
-offset_left = 160.0
-offset_top = 960.0
-offset_right = 848.0
-offset_bottom = 1133.0
+offset_left = 184.0
+offset_top = 872.0
+offset_right = 872.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("26_y1kmf")
 

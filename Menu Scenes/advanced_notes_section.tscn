@@ -1,38 +1,53 @@
-[gd_scene load_steps=37 format=3 uid="uid://bvf8g3vtmafq0"]
+[gd_scene load_steps=52 format=3 uid="uid://bvf8g3vtmafq0"]
 
 [ext_resource type="Script" uid="uid://gbinb1ry81c1" path="res://Menu Scripts/advanced_notes_section.gd" id="1_hl3y6"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_04jee"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="3_3hnub"]
 [ext_resource type="PackedScene" uid="uid://qs1x3djvj7me" path="res://Menu Scenes/carousel_container_2.tscn" id="4_d3apn"]
-[ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="5_bvaox"]
 [ext_resource type="Texture2D" uid="uid://da6mthi7jt8je" path="res://Menu Assets/highlights/Lesson_Cards_011.png" id="6_wcgb8"]
+[ext_resource type="Texture2D" uid="uid://q5j700ebio86" path="res://Menu Assets/advanced cards/Lesson_Cards__011.png" id="7_3rlur"]
 [ext_resource type="Texture2D" uid="uid://dfblf1quuck6k" path="res://Menu Assets/highlights/Lesson_Cards_012.png" id="7_cetvk"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_8dsdw"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_jxjbu"]
 [ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_x0s42"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_1fuhu"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="10_eeleb"]
 [ext_resource type="Texture2D" uid="uid://b5kepsn6uyhug" path="res://Menu Assets/highlights/Lesson_Cards_016.png" id="11_3jgvv"]
+[ext_resource type="Texture2D" uid="uid://3a8xge8c408l" path="res://Menu Assets/advanced cards/Lesson_Cards__012.png" id="11_4perg"]
 [ext_resource type="Texture2D" uid="uid://c21j1lr8ap2i2" path="res://Menu Assets/highlights/Lesson_Cards_017.png" id="12_rdd5w"]
+[ext_resource type="Texture2D" uid="uid://1wnpnwsqen2s" path="res://Menu Assets/advanced cards/Lesson_Cards__013.png" id="13_tspa6"]
 [ext_resource type="Texture2D" uid="uid://bob2ulj25w540" path="res://Menu Assets/highlights/Lesson_Cards_018.png" id="13_w1uul"]
 [ext_resource type="Texture2D" uid="uid://bq2embbuq4tjf" path="res://Menu Assets/highlights/Lesson_Cards_019.png" id="14_qke8r"]
 [ext_resource type="Texture2D" uid="uid://cix12lc7atpsl" path="res://Menu Assets/highlights/Lesson_Cards_020.png" id="15_3ua8c"]
+[ext_resource type="Texture2D" uid="uid://dxk15uv7jws7m" path="res://Menu Assets/advanced cards/Lesson_Cards__014.png" id="15_7c20q"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_qke8r"]
 [ext_resource type="Texture2D" uid="uid://ust6nl5pkpq6" path="res://Menu Assets/highlights/Lesson_Cards_021.png" id="16_j10o4"]
+[ext_resource type="Texture2D" uid="uid://c3s7bwwhw7bo0" path="res://Menu Assets/advanced cards/Lesson_Cards__015.png" id="17_4jpu7"]
 [ext_resource type="Texture2D" uid="uid://bv6wepbfkvubq" path="res://Menu Assets/highlights/Lesson_Cards_022.png" id="17_x0s42"]
 [ext_resource type="Texture2D" uid="uid://bsmu78p4xftxy" path="res://Menu Assets/highlights/Lesson_Cards_023.png" id="18_r4dek"]
+[ext_resource type="Texture2D" uid="uid://bf3ax2jly6isy" path="res://Menu Assets/advanced cards/Lesson_Cards__016.png" id="19_sdcvl"]
 [ext_resource type="Texture2D" uid="uid://ds4r63bi33uoa" path="res://Menu Assets/highlights/Lesson_Cards_024.png" id="19_ubsbp"]
 [ext_resource type="Texture2D" uid="uid://0u8wsxsv4eeb" path="res://Menu Assets/highlights/Lesson_Cards_025.png" id="20_ntife"]
+[ext_resource type="Texture2D" uid="uid://h3p04kedoqf" path="res://Menu Assets/advanced cards/Lesson_Cards__017.png" id="21_jxcae"]
+[ext_resource type="Texture2D" uid="uid://duf45ihu7vutl" path="res://Menu Assets/advanced cards/Lesson_Cards__018.png" id="23_a2cdj"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="23_jxjbu"]
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="24_1fuhu"]
 [ext_resource type="Texture2D" uid="uid://sfe67wt0gjim" path="res://Assets/Free_Advanced/Free.png" id="24_x0s42"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="25_3jgvv"]
+[ext_resource type="Texture2D" uid="uid://s54p4p0y5jpj" path="res://Menu Assets/advanced cards/Lesson_Cards__019.png" id="25_gjo5j"]
 [ext_resource type="Texture2D" uid="uid://cmij1qcjw5i7a" path="res://Assets/Free_Advanced/Free_H.png" id="25_r4dek"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="26_3jgvv"]
+[ext_resource type="Texture2D" uid="uid://c6m3ryyp3b6i3" path="res://Menu Assets/advanced cards/Lesson_Cards__020.png" id="27_11lyw"]
 [ext_resource type="Texture2D" uid="uid://cvnc0cunefg4p" path="res://Assets/Free_Advanced/Advanced_H.png" id="27_ntife"]
 [ext_resource type="Texture2D" uid="uid://bdux1ufjgb5et" path="res://Menu Assets/drum bg.png" id="27_rdd5w"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="28_rdd5w"]
 [ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="29_qke8r"]
+[ext_resource type="Texture2D" uid="uid://c58umkgwsscge" path="res://Menu Assets/advanced cards/Lesson_Cards__021.png" id="29_vguff"]
 [ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="30_3ua8c"]
+[ext_resource type="Texture2D" uid="uid://bofp3k76xxj1q" path="res://Menu Assets/advanced cards/Lesson_Cards__022.png" id="31_4pvmh"]
+[ext_resource type="Texture2D" uid="uid://cmscp1so67gcd" path="res://Menu Assets/advanced cards/Lesson_Cards__023.png" id="33_7vpl6"]
+[ext_resource type="Texture2D" uid="uid://dm1ffvty14faq" path="res://Menu Assets/advanced cards/Lesson_Cards__024.png" id="35_38gqj"]
+[ext_resource type="Texture2D" uid="uid://b4thhqefi2osw" path="res://Menu Assets/advanced cards/Lesson_Cards__025.png" id="37_4nm3m"]
 
 [sub_resource type="Animation" id="Animation_w1uul"]
 length = 0.001
@@ -503,9 +518,20 @@ offset_right = 1102.0
 offset_bottom = 367.0
 pivot_offset = Vector2(551, 367)
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("7_3rlur")
 texture_pressed = ExtResource("6_wcgb8")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes11"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing e"
 
 [node name="Notes12" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -521,9 +547,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("11_4perg")
 texture_pressed = ExtResource("7_cetvk")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes12"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing N"
 
 [node name="Notes13" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -539,9 +576,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("13_tspa6")
 texture_pressed = ExtResource("8_8dsdw")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes13"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing a"
 
 [node name="Notes14" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -557,9 +605,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("15_7c20q")
 texture_pressed = ExtResource("9_jxjbu")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes14"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing 1"
 
 [node name="Notes15" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -575,9 +634,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("17_4jpu7")
 texture_pressed = ExtResource("10_1fuhu")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes15"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.912939, 0.912939)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing 1,e"
 
 [node name="Notes16" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -593,9 +663,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("19_sdcvl")
 texture_pressed = ExtResource("11_3jgvv")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes16"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.912939, 0.912939)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing e,n"
 
 [node name="Notes17" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -611,9 +692,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("21_jxcae")
 texture_pressed = ExtResource("12_rdd5w")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes17"]
+material = ExtResource("2_04jee")
+offset_left = 55.7816
+offset_top = 495.417
+offset_right = 1117.78
+offset_bottom = 587.417
+scale = Vector2(0.912939, 0.912939)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing n,a"
 
 [node name="Notes18" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -629,9 +721,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("23_a2cdj")
 texture_pressed = ExtResource("13_w1uul")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes18"]
+material = ExtResource("2_04jee")
+offset_left = 55.7816
+offset_top = 495.417
+offset_right = 1117.78
+offset_bottom = 587.417
+scale = Vector2(0.912939, 0.912939)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "BROKEN 16TH Missing 1,a"
 
 [node name="Notes19" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -647,9 +750,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("25_gjo5j")
 texture_pressed = ExtResource("14_qke8r")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes19"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "Paradiddle-diddle"
 
 [node name="Notes20" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -665,9 +779,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("27_11lyw")
 texture_pressed = ExtResource("15_3ua8c")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes20"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "Double-Paradiddle"
 
 [node name="Notes21" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -683,9 +808,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("29_vguff")
 texture_pressed = ExtResource("16_j10o4")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes21"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "five-stroke roll"
 
 [node name="Notes22" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -701,9 +837,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("31_4pvmh")
 texture_pressed = ExtResource("17_x0s42")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes22"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "six-stroke roll"
 
 [node name="Notes23" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -719,9 +866,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("33_7vpl6")
 texture_pressed = ExtResource("18_r4dek")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes23"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "seven-stroke roll"
 
 [node name="Notes24" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -737,9 +895,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("35_38gqj")
 texture_pressed = ExtResource("19_ubsbp")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes24"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "Swiss army triplet"
 
 [node name="Notes25" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -755,9 +924,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_bvaox")
+texture_normal = ExtResource("37_4nm3m")
 texture_pressed = ExtResource("20_ntife")
 script = ExtResource("9_x0s42")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes25"]
+material = ExtResource("2_04jee")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(0.965107, 0.965107)
+theme_override_fonts/font = ExtResource("10_eeleb")
+theme_override_font_sizes/font_size = 81
+text = "polyrhythm"
 
 [node name="Back" type="TextureButton" parent="."]
 material = ExtResource("2_04jee")
