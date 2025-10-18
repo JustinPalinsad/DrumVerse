@@ -354,6 +354,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_btk02")
 }
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -56.0
+offset_top = -56.0
+offset_right = 2016.0
+offset_bottom = 1152.0
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -365,6 +371,8 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = -920.0
 offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="questionPanel" type="Panel" parent="Control"]
 material = ExtResource("1_wf4ld")
