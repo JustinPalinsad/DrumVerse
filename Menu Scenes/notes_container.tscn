@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cauh5jax5yya2"]
+[gd_scene load_steps=23 format=3 uid="uid://cauh5jax5yya2"]
 
 [ext_resource type="Script" uid="uid://g6f8fn5eo7f3" path="res://Menu Scripts/notes_container.gd" id="1_ajmvm"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_gn6xg"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://blkqcxqkiindh" path="res://Menu Assets/NotePreview/Triplet.png" id="12_ec4fg"]
 [ext_resource type="Texture2D" uid="uid://bymu70coi2004" path="res://Assets/NewNotes/br1.png" id="13_6sgqt"]
 [ext_resource type="Texture2D" uid="uid://cqlpbd3f0twx6" path="res://Menu Assets/NotePreview/Flam.png" id="13_m60bu"]
+[ext_resource type="Texture2D" uid="uid://c5v3i83vwtkt7" path="res://Assets/HNote.png" id="13_pq0pr"]
 [ext_resource type="Texture2D" uid="uid://l0c206s1mw4" path="res://Assets/NewNotes/br2.png" id="14_lp35a"]
+[ext_resource type="Texture2D" uid="uid://bfe33it6jxmc1" path="res://Assets/4Note.png" id="14_yh8qq"]
 [ext_resource type="Texture2D" uid="uid://d3gd015a7463" path="res://Assets/NewNotes/br3.png" id="15_pq0pr"]
 [ext_resource type="Texture2D" uid="uid://bfhrng4ogxwy7" path="res://Assets/NewNotes/br4.png" id="16_yh8qq"]
 [ext_resource type="Texture2D" uid="uid://03t1igx8yu6q" path="res://Assets/NewNotes/br5.png" id="17_5o7y8"]
@@ -170,11 +172,16 @@ position = Vector2(504, 552)
 scale = Vector2(0.446933, 0.446933)
 
 [node name="Notes10" type="Sprite2D" parent="NotesIconContainer"]
-visible = false
 material = ExtResource("1_gn6xg")
-position = Vector2(400, 552)
+position = Vector2(664, 552)
 scale = Vector2(1.29289, 1.29289)
-texture = ExtResource("13_6sgqt")
+texture = ExtResource("13_pq0pr")
+
+[node name="Sprite2D" type="Sprite2D" parent="NotesIconContainer/Notes10"]
+material = ExtResource("1_gn6xg")
+position = Vector2(-68.0646, -61.8769)
+scale = Vector2(0.482146, 0.482146)
+texture = ExtResource("14_yh8qq")
 
 [node name="Notes11" type="Sprite2D" parent="NotesIconContainer"]
 visible = false
