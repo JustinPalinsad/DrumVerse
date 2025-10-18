@@ -24,7 +24,6 @@ var swipe_active := false
 var queued_print_index := -1
 var last_known_global_index := -1
 
-
 # 🔹 Property directly tied to GameState.notes_index
 var selected_index: int:
 	get:
@@ -42,7 +41,7 @@ func _ready():
 			if child.has_signal("pressed") and not child.is_connected("pressed", Callable(self, "_on_button_pressed")):
 				child.connect("pressed", Callable(self, "_on_button_pressed").bind(child))
 
-		_apply_module_grade_locks() # 🔹 Initialize locked buttons based on grades
+		_apply_module_grade_locks() # Initialize button locks
 
 	if up_button:
 		up_button.connect("pressed", Callable(self, "_up"))
@@ -50,19 +49,19 @@ func _ready():
 		down_button.connect("pressed", Callable(self, "_down"))
 
 
-# 🔹 Reapply GameState.module_grades locks after swipe ends
+# 🔹 Lock buttons for lessons 11–25 based on GameState.module_grades
 func _apply_module_grade_locks():
-	if !position_offset_node:
+	if !position_offset_node or GameState.module_grades.size() < 25:
 		return
 
 	for i in range(position_offset_node.get_child_count()):
+		var lesson_index = i + 10 # since we start checking from lesson 11
 		var child = position_offset_node.get_child(i)
+
 		if child is TextureButton or child is Button:
-			if i > 1 and i < GameState.module_grades.size():
-				if str(GameState.module_grades[i]) == "N/A":
-					child.disabled = true
-				else:
-					child.disabled = false
+			if lesson_index < GameState.module_grades.size():
+				var grade = str(GameState.module_grades[lesson_index])
+				child.disabled = (grade == "N/A")
 			else:
 				child.disabled = false
 
@@ -73,6 +72,7 @@ func _on_button_pressed(button: Control):
 		queued_print_index = button.get_index()
 
 
+# 🔹 Temporarily disable/enable all buttons (used during scrolling)
 func _set_children_disabled(state: bool):
 	if position_offset_node:
 		for child in position_offset_node.get_children():
@@ -105,7 +105,7 @@ func _input(event):
 					dragging = false
 					released = true
 					if swipe_active:
-						_apply_module_grade_locks() # 🔹 Reapply real disable states
+						_apply_module_grade_locks() # ✅ Restore lock states after swipe
 					swipe_active = false
 
 	elif event is InputEventMouseMotion and dragging:
@@ -114,7 +114,7 @@ func _input(event):
 		velocity = delta.y
 		last_mouse_pos = event.position
 
-		# 🔹 Detect swipe motion, disable all buttons temporarily
+		# 🔹 Detect swipe motion → disable buttons temporarily
 		if abs(delta.y) > 5:
 			if not swipe_active:
 				swipe_active = true
@@ -171,7 +171,7 @@ func _process(delta: float) -> void:
 
 		selected_index = closest_index
 		last_known_global_index = selected_index
-		_apply_module_grade_locks() # 🔹 Reapply lock states again
+		_apply_module_grade_locks() # ✅ Reapply locks
 
 	# Visual updates
 	var center_y := get_viewport_rect().size.y / 2.0

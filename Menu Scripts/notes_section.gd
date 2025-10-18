@@ -142,12 +142,22 @@ func change_card():
 		if not lesson_node:
 			continue
 
-		# ✅ Fix: use current index for checking unlock condition, not i - 1
 		var current_grade = GameState.module_grades[i] if i < GameState.module_grades.size() else "N/A"
 
 		if current_grade in ["S", "A", "B", "C"]:
+			# ✅ Unlocked state
 			lesson_node.texture_normal = card_textures[i]
 			lesson_node.disabled = false
+
+			# Show all children
+			for child in lesson_node.get_children():
+				child.visible = true
+
 		else:
+			# 🔒 Locked state
 			lesson_node.texture_normal = locked_texture
 			lesson_node.disabled = true
+
+			# Hide children except lock overlay (if any)
+			for child in lesson_node.get_children():
+				child.visible = false
