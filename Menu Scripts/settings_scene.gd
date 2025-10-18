@@ -94,8 +94,8 @@ func check_mute() -> void:
 
 
 func _on_button_pressed() -> void:
-	GameState.reset_grades()
-	GameState.save_data()
+	GlobalAudio.play_click()
+	show_pop_up()
 
 
 func _on_button_2_pressed() -> void:
@@ -109,3 +109,21 @@ func set_advanced_lessons_to_S():
 	for i in range(10, 25):
 		GameState.module_grades[i] = "S"
 	print("✅ Lessons 11–24 grades set to 'S'!")
+
+func show_pop_up():
+	$deletePopup.show()
+	$deletepopup_anim.play("del_pop_anim")
+
+
+
+func _on_yes_pressed() -> void:
+	GlobalAudio.play_click()
+	GameState.reset_grades()
+	GameState.save_data()
+	_on_no_pressed()
+	
+
+
+func _on_no_pressed() -> void:
+	GlobalAudio.play_click()
+	$deletepopup_anim.play_backwards("del_pop_anim")

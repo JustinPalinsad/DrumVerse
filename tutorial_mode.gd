@@ -131,8 +131,6 @@ func _resume_after_scene_change() -> void:
 
 
 
-
-
 func _end_tutorial():
 	if has_node("tutorialPanel"):
 		$tutorialPanel.hide()
