@@ -99,8 +99,10 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	GlobalAudio.play_click()
 	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
 	set_advanced_lessons_to_S()
+	$UNLOCKED.show()
 
 
 func set_advanced_lessons_to_S():
@@ -121,6 +123,7 @@ func _on_yes_pressed() -> void:
 	GameState.reset_grades()
 	GameState.save_data()
 	_on_no_pressed()
+	$DELETED.show()
 	
 
 
