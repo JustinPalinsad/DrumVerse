@@ -5,6 +5,7 @@ var start_pos := Vector2.ZERO
 var drag_threshold := 20.0
 
 func _ready() -> void:
+	change_card()
 	if GameState.notes_section_anim_has_played == false:
 		$notes_section_anim.play("notes_anim")
 		GameState.notes_section_anim_has_played = true
@@ -14,7 +15,7 @@ func _ready() -> void:
 		$notes_section_anim.play("notes_anim")
 		$notes_section_anim.seek(0.25, true)
 		$notes_section_anim.pause()
-	change_card()
+
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch and event.pressed:
