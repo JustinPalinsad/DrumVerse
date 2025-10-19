@@ -1496,20 +1496,19 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 280.0
-offset_top = 1079.0
-offset_right = 968.0
-offset_bottom = 1252.0
+offset_left = -688.0
+offset_top = 218.0
+offset_bottom = 391.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("41_m0han")
 
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 160.0
-offset_top = 1167.0
-offset_right = 848.0
-offset_bottom = 1340.0
+offset_left = -784.0
+offset_top = 872.0
+offset_right = -96.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("42_75tn7")
 texture_pressed = ExtResource("42_ui2kx")

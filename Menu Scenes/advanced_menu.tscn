@@ -699,6 +699,7 @@ text = "Grade:  S"
 [node name="Paradiddle" type="Label" parent="carousel_container_3/Control/AdvanceLesson20"]
 visible = false
 material = ExtResource("1_7ykpt")
+layout_mode = 0
 offset_left = 305.276
 offset_top = 359.848
 offset_right = 1135.28
@@ -744,6 +745,7 @@ text = "Grade:  S"
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson21"]
 visible = false
 material = ExtResource("1_7ykpt")
+layout_mode = 0
 offset_left = 305.276
 offset_top = 359.848
 offset_right = 1135.28
@@ -789,6 +791,7 @@ text = "Grade:  S"
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson22"]
 visible = false
 material = ExtResource("1_7ykpt")
+layout_mode = 0
 offset_left = 305.276
 offset_top = 359.848
 offset_right = 1135.28
@@ -834,6 +837,7 @@ text = "Grade:  S"
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson23"]
 visible = false
 material = ExtResource("1_7ykpt")
+layout_mode = 0
 offset_left = 305.276
 offset_top = 359.848
 offset_right = 1135.28
@@ -879,6 +883,7 @@ text = "Grade:  S"
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson24"]
 visible = false
 material = ExtResource("1_7ykpt")
+layout_mode = 0
 offset_left = 305.276
 offset_top = 359.848
 offset_right = 1135.28
@@ -924,6 +929,7 @@ text = "Grade:  S"
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson25"]
 visible = false
 material = ExtResource("1_7ykpt")
+layout_mode = 0
 offset_left = 305.276
 offset_top = 414.829
 offset_right = 1135.28
