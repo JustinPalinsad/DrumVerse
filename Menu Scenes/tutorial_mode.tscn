@@ -559,7 +559,7 @@ grow_horizontal = 2
 scale = Vector2(1.36689, 1.36689)
 theme_override_fonts/font = ExtResource("6_g7vc6")
 theme_override_font_sizes/font_size = 81
-text = "in order to progress you must each lesson's
+text = "in order to progress you must pass each lesson's
 challenge mode"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -734,9 +734,9 @@ text = "- Press to continue -"
 [node name="continueButt" type="Button" parent="tutorialPanel/Press"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 744.0
+offset_left = -229.0
+offset_top = -152.0
+offset_right = 963.0
 offset_bottom = 80.0
 
 [node name="continueButton" type="Panel" parent="."]
