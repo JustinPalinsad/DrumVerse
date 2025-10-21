@@ -987,10 +987,10 @@ modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 217.801
-offset_top = 22.9094
-offset_right = 1293.8
-offset_bottom = 666.909
+offset_left = -544.503
+offset_top = 6.15544
+offset_right = 531.496
+offset_bottom = 650.155
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
@@ -999,6 +999,7 @@ script = ExtResource("30_ljih7")
 
 [node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson1"]
 material = ExtResource("4_lneat")
+layout_mode = 0
 offset_left = 351.832
 offset_top = 343.456
 offset_right = 895.832
