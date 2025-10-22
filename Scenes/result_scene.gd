@@ -27,6 +27,7 @@ func _ready():
 	if grade == "Failed":
 		$GradeValue.add_theme_color_override("font_color", red)
 	else:
+		GameState.notes_index += 1
 		$GradeValue.add_theme_color_override("font_color", white)
 
 	# Connect button and save grades
