@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="23_28w0c"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="24_puqb1"]
 [ext_resource type="AudioStream" uid="uid://t8pixmwvdbbu" path="res://Audio/card swipe sfx bitcrushed.wav" id="25_47u5r"]
-[ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="26_pm2xg"]
 [ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
 [ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="27_u4s2c"]
 [ext_resource type="Texture2D" uid="uid://cn3d8nlq56g4x" path="res://Assets/Rubrics/Rubrics.png" id="28_yebvn"]
@@ -37,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="30_es5p8"]
 [ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="30_ljih7"]
 [ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="31_2fdqk"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="32_ays4d"]
 [ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="32_ihbhp"]
 [ext_resource type="Texture2D" uid="uid://dk3lt3k67fxbb" path="res://Menu Assets/highlights/Lesson_Cards_006.png" id="33_i71hg"]
 [ext_resource type="Texture2D" uid="uid://dju1fd1g1kv61" path="res://Menu Assets/highlights/Lesson_Cards_007.png" id="34_m0han"]
@@ -1006,11 +1006,11 @@ offset_right = 895.832
 offset_bottom = 475.456
 scale = Vector2(0.683068, 0.683068)
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
 theme_override_font_sizes/font_size = 96
 text = "Whole Note"
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson1"]
-visible = false
 material = ExtResource("4_lneat")
 position = Vector2(926.856, 425.983)
 scale = Vector2(2.14564, 1.78043)
@@ -1050,7 +1050,7 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("9_puqb1")
 texture_pressed = ExtResource("29_gavew")
 script = ExtResource("30_ljih7")
 
@@ -1082,6 +1082,19 @@ position = Vector2(542.66, 309.028)
 scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
+[node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson2"]
+visible = false
+material = ExtResource("4_lneat")
+offset_left = 383.461
+offset_top = 343.0
+offset_right = 824.461
+offset_bottom = 475.0
+scale = Vector2(0.683068, 0.683068)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
+theme_override_font_sizes/font_size = 96
+text = "Half Note"
+
 [node name="Lesson3" type="TextureButton" parent="CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -2
@@ -1096,7 +1109,7 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("11_pm2xg")
 texture_pressed = ExtResource("30_es5p8")
 script = ExtResource("30_ljih7")
 
@@ -1128,6 +1141,20 @@ position = Vector2(542.66, 309.028)
 scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
+[node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson3"]
+visible = false
+material = ExtResource("4_lneat")
+offset_left = 48.0
+offset_top = 343.0
+offset_right = 1471.0
+offset_bottom = 475.0
+scale = Vector2(0.683068, 0.683068)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
+theme_override_font_sizes/font_size = 96
+text = "Quarter Note"
+horizontal_alignment = 1
+
 [node name="Lesson4" type="TextureButton" parent="CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -3
@@ -1142,7 +1169,7 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("13_47u5r")
 texture_pressed = ExtResource("31_2fdqk")
 script = ExtResource("30_ljih7")
 
@@ -1174,6 +1201,20 @@ position = Vector2(542.66, 309.028)
 scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
+[node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson4"]
+visible = false
+material = ExtResource("4_lneat")
+offset_left = 48.0
+offset_top = 343.0
+offset_right = 1471.0
+offset_bottom = 475.0
+scale = Vector2(0.683068, 0.683068)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
+theme_override_font_sizes/font_size = 96
+text = "Eight Notes"
+horizontal_alignment = 1
+
 [node name="Lesson5" type="TextureButton" parent="CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -4
@@ -1188,15 +1229,15 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("15_yfa7k")
 texture_pressed = ExtResource("32_ihbhp")
 script = ExtResource("30_ljih7")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson5"]
 visible = false
 material = ExtResource("4_lneat")
-position = Vector2(874.454, 495.179)
-scale = Vector2(0.428407, 0.428407)
+position = Vector2(874.454, 515.361)
+scale = Vector2(0.338325, 0.338325)
 texture = ExtResource("10_rpu63")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson5"]
@@ -1220,6 +1261,20 @@ position = Vector2(542.66, 309.028)
 scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
+[node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson5"]
+visible = false
+material = ExtResource("4_lneat")
+offset_left = 48.0
+offset_top = 343.0
+offset_right = 1471.0
+offset_bottom = 475.0
+scale = Vector2(0.683068, 0.683068)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
+theme_override_font_sizes/font_size = 96
+text = "Sixteenth Notes"
+horizontal_alignment = 1
+
 [node name="Lesson6" type="TextureButton" parent="CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -5
@@ -1234,15 +1289,15 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("17_vhmeq")
 texture_pressed = ExtResource("33_i71hg")
 script = ExtResource("30_ljih7")
 
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson6"]
 visible = false
 material = ExtResource("4_lneat")
-position = Vector2(896.288, 477.271)
-scale = Vector2(0.31154, 0.31154)
+position = Vector2(896.288, 494.739)
+scale = Vector2(0.225752, 0.225752)
 texture = ExtResource("11_tu1r8")
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson6"]
@@ -1266,6 +1321,20 @@ position = Vector2(542.66, 309.028)
 scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
+[node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson6"]
+visible = false
+material = ExtResource("4_lneat")
+offset_left = 48.0
+offset_top = 343.0
+offset_right = 1471.0
+offset_bottom = 475.0
+scale = Vector2(0.683068, 0.683068)
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
+theme_override_font_sizes/font_size = 96
+text = "Triplets"
+horizontal_alignment = 1
+
 [node name="Lesson7" type="TextureButton" parent="CarouselContainer/Control"]
 modulate = Color(1, 1, 1, 0.65)
 z_index = -6
@@ -1280,24 +1349,24 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("19_ntfsj")
 texture_pressed = ExtResource("34_m0han")
 script = ExtResource("30_ljih7")
 
 [node name="Label2" type="Label" parent="CarouselContainer/Control/Lesson7"]
-visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 651.747
-offset_top = 386.218
-offset_right = 1253.75
-offset_bottom = 653.218
+offset_left = 59.5515
+offset_top = 340.087
+offset_right = 1329.55
+offset_bottom = 472.087
 scale = Vector2(0.75257, 0.764354)
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
 theme_override_font_sizes/font_size = 96
-text = "Single 
-Stroke"
+text = "Single Stroke"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson7"]
 visible = false
@@ -1334,7 +1403,7 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("20_e3w4p")
 texture_pressed = ExtResource("35_ui2kx")
 script = ExtResource("30_ljih7")
 
@@ -1342,16 +1411,15 @@ script = ExtResource("30_ljih7")
 visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 548.035
-offset_top = 360.668
-offset_right = 1284.03
-offset_bottom = 762.668
+offset_left = -40.9721
+offset_top = 330.635
+offset_right = 1229.03
+offset_bottom = 462.635
 scale = Vector2(0.894287, 0.894287)
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
 theme_override_font_sizes/font_size = 96
-text = "Double 
-Stroke
-"
+text = "Double Stroke"
 horizontal_alignment = 1
 
 [node name="Grade Text" type="Label" parent="CarouselContainer/Control/Lesson8"]
@@ -1389,7 +1457,7 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("21_q7vma")
 texture_pressed = ExtResource("36_75tn7")
 script = ExtResource("30_ljih7")
 
@@ -1397,12 +1465,13 @@ script = ExtResource("30_ljih7")
 visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 649.563
-offset_top = 474.856
-offset_right = 1149.56
-offset_bottom = 606.856
+offset_left = 338.784
+offset_top = 343.521
+offset_right = 838.781
+offset_bottom = 475.521
 scale = Vector2(0.723228, 0.723228)
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
 theme_override_font_sizes/font_size = 96
 text = "Paradiddle"
 
@@ -1441,7 +1510,7 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("26_pm2xg")
+texture_normal = ExtResource("22_h82b0")
 texture_pressed = ExtResource("37_yebvn")
 script = ExtResource("30_ljih7")
 
@@ -1449,11 +1518,12 @@ script = ExtResource("30_ljih7")
 visible = false
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 782.751
-offset_top = 451.489
-offset_right = 1194.75
-offset_bottom = 583.489
+offset_left = 428.138
+offset_top = 334.07
+offset_right = 653.138
+offset_bottom = 466.07
 mouse_filter = 1
+theme_override_fonts/font = ExtResource("32_ays4d")
 theme_override_font_sizes/font_size = 96
 text = "Flam"
 
@@ -1510,20 +1580,20 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 280.0
-offset_top = 1079.0
-offset_right = 968.0
-offset_bottom = 1252.0
+offset_left = 184.0
+offset_top = 218.0
+offset_right = 872.0
+offset_bottom = 391.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("41_m0han")
 
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 160.0
-offset_top = 1167.0
-offset_right = 848.0
-offset_bottom = 1340.0
+offset_left = 184.0
+offset_top = 872.0
+offset_right = 872.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("42_75tn7")
 texture_pressed = ExtResource("42_ui2kx")
