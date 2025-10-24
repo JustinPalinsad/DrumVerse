@@ -1085,6 +1085,7 @@ shape = SubResource("RectangleShape2D_lneat")
 [node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson2"]
 visible = false
 material = ExtResource("4_lneat")
+layout_mode = 0
 offset_left = 383.461
 offset_top = 343.0
 offset_right = 824.461
@@ -1144,6 +1145,7 @@ shape = SubResource("RectangleShape2D_lneat")
 [node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson3"]
 visible = false
 material = ExtResource("4_lneat")
+layout_mode = 0
 offset_left = 48.0
 offset_top = 343.0
 offset_right = 1471.0
@@ -1204,6 +1206,7 @@ shape = SubResource("RectangleShape2D_lneat")
 [node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson4"]
 visible = false
 material = ExtResource("4_lneat")
+layout_mode = 0
 offset_left = 48.0
 offset_top = 343.0
 offset_right = 1471.0
@@ -1264,6 +1267,7 @@ shape = SubResource("RectangleShape2D_lneat")
 [node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson5"]
 visible = false
 material = ExtResource("4_lneat")
+layout_mode = 0
 offset_left = 48.0
 offset_top = 343.0
 offset_right = 1471.0
@@ -1324,6 +1328,7 @@ shape = SubResource("RectangleShape2D_lneat")
 [node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson6"]
 visible = false
 material = ExtResource("4_lneat")
+layout_mode = 0
 offset_left = 48.0
 offset_top = 343.0
 offset_right = 1471.0
