@@ -505,17 +505,19 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer2"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 211.001
-offset_right = 251.001
+offset_left = 121.001
+offset_right = 161.001
 offset_bottom = 40.0
 
 [node name="Notes11" type="TextureButton" parent="CarouselContainer2/Control"]
+modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("2_04jee")
 layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
+scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("7_3rlur")
@@ -524,6 +526,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes11"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -553,6 +556,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes12"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -582,6 +586,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes13"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -611,6 +616,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes14"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -640,6 +646,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes15"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -669,6 +676,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes16"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -698,6 +706,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes17"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 55.7816
 offset_top = 495.417
 offset_right = 1117.78
@@ -727,6 +736,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes18"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 55.7816
 offset_top = 495.417
 offset_right = 1117.78
@@ -756,6 +766,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes19"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -785,6 +796,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes20"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -814,6 +826,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes21"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -843,6 +856,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes22"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -872,6 +886,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes23"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -901,6 +916,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes24"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496
@@ -930,6 +946,7 @@ script = ExtResource("9_x0s42")
 
 [node name="Label" type="Label" parent="CarouselContainer2/Control/Notes25"]
 material = ExtResource("2_04jee")
+layout_mode = 0
 offset_left = 68.4958
 offset_top = 495.417
 offset_right = 569.496

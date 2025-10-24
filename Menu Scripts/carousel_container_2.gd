@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 @export var spacing: float = 20.0
@@ -20,13 +19,11 @@ var dragging := false
 var last_mouse_pos := Vector2.ZERO
 var velocity := 0.0
 var released := false
-var swipe_active := false
 
 var queued_print_index := -1
 var last_known_global_index := -1
 
-
-# 🔹 Property directly tied to GameState.notes_index
+# 🔹 Property tied to GameState.notes_index
 var selected_index: int:
 	get:
 		return GameState.notes_index if Engine.is_editor_hint() == false else 0
@@ -43,43 +40,16 @@ func _ready():
 			if child.has_signal("pressed") and not child.is_connected("pressed", Callable(self, "_on_button_pressed")):
 				child.connect("pressed", Callable(self, "_on_button_pressed").bind(child))
 
-		_apply_module_grade_locks() # Initialize locks
-
 	if left_button:
 		left_button.connect("pressed", Callable(self, "_left"))
 	if right_button:
 		right_button.connect("pressed", Callable(self, "_right"))
 
 
-# 🔹 Lock buttons for lessons 11–25 based on GameState.module_grades
-func _apply_module_grade_locks():
-	if !position_offset_node or GameState.module_grades.size() < 25:
-		return
-
-	for i in range(position_offset_node.get_child_count()):
-		var lesson_index = i + 10 # lesson 11 is index 10
-		var child = position_offset_node.get_child(i)
-
-		if child is TextureButton or child is Button:
-			if lesson_index < GameState.module_grades.size():
-				var grade = str(GameState.module_grades[lesson_index])
-				child.disabled = (grade == "N/A")
-			else:
-				child.disabled = false
-
-
 func _on_button_pressed(button: Control):
 	if button.get_index() == selected_index:
 		selected_index = button.get_index()
 		queued_print_index = button.get_index()
-
-
-# 🔹 Temporarily disable/enable all buttons during swiping
-func _set_children_disabled(state: bool):
-	if position_offset_node:
-		for child in position_offset_node.get_children():
-			if child is TextureButton or child is Button:
-				child.disabled = state
 
 
 func _input(event):
@@ -90,24 +60,14 @@ func _input(event):
 				released = false
 				last_mouse_pos = event.position
 				velocity = 0.0
-				swipe_active = false
 
 				if position_offset_node:
 					for child in position_offset_node.get_children():
 						if child.has_focus():
 							child.release_focus()
-
-				# Cancel pressed state on start
-				for child in position_offset_node.get_children():
-					if child is TextureButton:
-						child.set_pressed(false)
 			else:
-				if dragging:
-					dragging = false
-					released = true
-					if swipe_active:
-						_apply_module_grade_locks() # Restore proper lock states
-					swipe_active = false
+				dragging = false
+				released = true
 
 	elif event is InputEventMouseMotion and dragging:
 		var delta = event.position - last_mouse_pos
@@ -115,48 +75,39 @@ func _input(event):
 		velocity = delta.x
 		last_mouse_pos = event.position
 
-		# 🔹 Detect swipe motion → disable all temporarily
-		if abs(delta.x) > 5:
-			if not swipe_active:
-				swipe_active = true
-				_set_children_disabled(true)
-			for child in position_offset_node.get_children():
-				if child is TextureButton and child.button_pressed:
-					child.set_pressed(false)
-
 
 func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
 
-	# Sync with GameState
+	# 🔹 Sync GameState.notes_index
 	if GameState.notes_index != last_known_global_index:
 		selected_index = GameState.notes_index
 		last_known_global_index = GameState.notes_index
 
 	selected_index = clamp(selected_index, 0, position_offset_node.get_child_count() - 1)
 
-	# 🔹 Layout horizontally
+	# 🔹 Layout children horizontally
 	var x := 0.0
 	for i in position_offset_node.get_children():
 		i.pivot_offset = i.size / 2.0
 		i.position = Vector2(x, -i.size.y / 2.0)
 		x += i.size.x + spacing
 
-	# Focus tracking
+	# 🔹 Focus tracking
 	if follow_button_focus:
 		for i in position_offset_node.get_children():
 			if i.has_focus():
 				selected_index = i.get_index()
 				break
 
-	# 🔹 Smooth horizontal scroll
+	# 🔹 Smooth scroll (horizontal)
 	if !dragging:
 		var target_item = position_offset_node.get_child(selected_index)
 		var target_x = -(target_item.position.x + target_item.size.x / 2.0 - get_viewport_rect().size.x / 2.0)
 		position_offset_node.position.x = lerp(position_offset_node.position.x, target_x, smoothing_speed * delta)
 
-	# 🔹 Snap to closest item on release
+	# 🔹 Snap on release
 	if released:
 		released = false
 		var center_x = get_viewport_rect().size.x / 2.0
@@ -172,9 +123,8 @@ func _process(delta: float) -> void:
 
 		selected_index = closest_index
 		last_known_global_index = selected_index
-		_apply_module_grade_locks() # Reapply locks
 
-	# 🔹 Visual effects (scale & fade)
+	# 🔹 Visual updates (scale + opacity)
 	var center_x := get_viewport_rect().size.x / 2.0
 	for i in position_offset_node.get_children():
 		var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0
@@ -197,10 +147,8 @@ func _process(delta: float) -> void:
 func _left():
 	selected_index -= 1
 	last_known_global_index = selected_index
-	_apply_module_grade_locks()
 
 
 func _right():
 	selected_index += 1
 	last_known_global_index = selected_index
-	_apply_module_grade_locks()

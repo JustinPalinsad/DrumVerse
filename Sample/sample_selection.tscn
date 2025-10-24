@@ -987,16 +987,30 @@ modulate = Color(1, 1, 1, 0.999999)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = -538.0
-offset_right = 538.0
-offset_bottom = 644.0
+offset_left = -544.503
+offset_top = 6.15544
+offset_right = 531.496
+offset_bottom = 650.155
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
 texture_pressed = ExtResource("27_u4s2c")
 script = ExtResource("30_ljih7")
 
+[node name="lesson_name" type="Label" parent="CarouselContainer/Control/Lesson1"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 351.832
+offset_top = 343.456
+offset_right = 895.832
+offset_bottom = 475.456
+scale = Vector2(0.683068, 0.683068)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Whole Note"
+
 [node name="whole note" type="Sprite2D" parent="CarouselContainer/Control/Lesson1"]
+visible = false
 material = ExtResource("4_lneat")
 position = Vector2(926.856, 425.983)
 scale = Vector2(2.14564, 1.78043)
