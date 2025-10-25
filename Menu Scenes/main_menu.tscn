@@ -191,6 +191,7 @@ grow_vertical = 2
 script = ExtResource("1_l382o")
 
 [node name="bg2" type="TextureRect" parent="."]
+z_index = -2
 material = ExtResource("2_8mjjn")
 layout_mode = 1
 anchors_preset = 15

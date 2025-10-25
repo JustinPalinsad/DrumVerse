@@ -17,5 +17,5 @@ void fragment() {
 [resource]
 shader = SubResource("Shader_mgsxb")
 shader_parameter/layer_color = Color(0.188235, 0.0901961, 0.0470588, 1)
-shader_parameter/sub_color = Color(1, 0.752941, 0.145098, 1)
+shader_parameter/sub_color = Color(0.913725, 0.737255, 0.27451, 1)
 shader_parameter/opacity = 1.0

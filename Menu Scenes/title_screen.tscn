@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2auy1v2ih4mq"]
+[gd_scene load_steps=16 format=3 uid="uid://b2auy1v2ih4mq"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_t8d06"]
 [ext_resource type="Texture2D" uid="uid://bw88j21ejf4db" path="res://Menu Assets/Title_Full.png" id="1_v5vr5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bjknw2ufvrid6" path="res://Menu Scripts/title_screen.gd" id="2_t8d06"]
 [ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_bt1m7"]
 [ext_resource type="Texture2D" uid="uid://brgnm7s6r367t" path="res://Menu Assets/Icon_Bg.png" id="4_2teth"]
+[ext_resource type="Texture2D" uid="uid://bq1q44vq7ij6u" path="res://Assets/New_Title_icon.png" id="4_tfv06"]
 [ext_resource type="AudioStream" uid="uid://dvgqg4u0q0qwp" path="res://Audio/tr808-snare-drum-241403.mp3" id="6_swmdy"]
 
 [sub_resource type="Animation" id="Animation_t8d06"]
@@ -127,24 +128,13 @@ pivot_offset = Vector2(960, 540)
 texture = ExtResource("3_bt1m7")
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
 [node name="Drum" type="Sprite2D" parent="Control"]
 material = ExtResource("1_t8d06")
 position = Vector2(960, 592)
-scale = Vector2(0.773303, 0.773303)
-texture = ExtResource("1_v5vr5")
+scale = Vector2(1.06659, 1.06659)
+texture = ExtResource("4_tfv06")
 
 [node name="Drum Animation" type="AnimationPlayer" parent="Control/Drum"]
 libraries = {

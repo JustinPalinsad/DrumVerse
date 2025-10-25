@@ -1,6 +1,6 @@
-[gd_scene load_steps=51 format=3 uid="uid://42cljxwc17o7"]
+[gd_scene load_steps=51 format=3 uid="uid://dptl8okrqtlem"]
 
-[ext_resource type="Script" uid="uid://bug7g8io2vhvw" path="res://Scripts/poly_test_2.gd" id="1_sqxbx"]
+[ext_resource type="Script" path="res://Scripts/poly_test_2.gd" id="1_sqxbx"]
 [ext_resource type="Script" uid="uid://xy3210x8a5kp" path="res://Scenes/touch_pad_container.gd" id="2_rbad5"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="3_xgh5x"]
 [ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="4_pfkuq"]
