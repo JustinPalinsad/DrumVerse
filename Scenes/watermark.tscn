@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqnxseiyc5u8"]
+
+[ext_resource type="Script" uid="uid://daujmjidtno5u" path="res://watermark.gd" id="1_3cjmn"]
+[ext_resource type="Texture2D" uid="uid://ceqflowy2gekk" path="res://Menu Assets/Watermark.png" id="2_1io1o"]
+
+[node name="Watermark" type="CanvasLayer"]
+script = ExtResource("1_3cjmn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.511
+anchor_right = 0.5
+anchor_bottom = 0.511
+offset_left = -960.0
+offset_top = -551.88
+offset_right = -920.0
+offset_bottom = -511.88
+
+[node name="Watermark" type="Sprite2D" parent="Control"]
+modulate = Color(1, 1, 1, 0.462745)
+position = Vector2(976, 480)
+texture = ExtResource("2_1io1o")

@@ -35,6 +35,7 @@ func _input(event: InputEvent) -> void:
 		tap_detected.emit()
 
 func _ready() -> void:
+	GlobalAudio.mute_bgm(true)
 	if GameState.polyrhythm_mode == "learning":
 		learning_mode()
 		# In learning_mode(), Demo Vid and TutorialHolder are shown, Middle_Point is hidden.
@@ -284,6 +285,8 @@ func _show_results(passed_hit_percentage: float, passed_grade: String):
 
 
 func _on_back_pressed() -> void:
+	GlobalAudio.mute_bgm(false)
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
 

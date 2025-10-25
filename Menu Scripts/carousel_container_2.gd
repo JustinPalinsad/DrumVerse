@@ -12,8 +12,8 @@ extends Node2D
 @export var smoothing_speed: float = 6.5
 @export var follow_button_focus: bool = true
 @export var position_offset_node: Control
-@export var up_button: Button
-@export var down_button: Button
+@export var left_button: Button
+@export var right_button: Button
 
 var dragging := false
 var last_mouse_pos := Vector2.ZERO
@@ -21,8 +21,9 @@ var velocity := 0.0
 var released := false
 
 var queued_print_index := -1
+var last_known_global_index := -1
 
-# 🔹 Property directly tied to GameState.notes_index
+# 🔹 Property tied to GameState.notes_index
 var selected_index: int:
 	get:
 		return GameState.notes_index if Engine.is_editor_hint() == false else 0
@@ -32,21 +33,24 @@ var selected_index: int:
 		else:
 			GameState.notes_index = value
 
+
 func _ready():
 	if position_offset_node:
 		for child in position_offset_node.get_children():
 			if child.has_signal("pressed") and not child.is_connected("pressed", Callable(self, "_on_button_pressed")):
 				child.connect("pressed", Callable(self, "_on_button_pressed").bind(child))
 
-	if up_button:
-		up_button.connect("pressed", Callable(self, "_up"))
-	if down_button:
-		down_button.connect("pressed", Callable(self, "_down"))
+	if left_button:
+		left_button.connect("pressed", Callable(self, "_left"))
+	if right_button:
+		right_button.connect("pressed", Callable(self, "_right"))
+
 
 func _on_button_pressed(button: Control):
 	if button.get_index() == selected_index:
 		selected_index = button.get_index()
 		queued_print_index = button.get_index()
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -56,6 +60,7 @@ func _input(event):
 				released = false
 				last_mouse_pos = event.position
 				velocity = 0.0
+
 				if position_offset_node:
 					for child in position_offset_node.get_children():
 						if child.has_focus():
@@ -70,33 +75,39 @@ func _input(event):
 		velocity = delta.x
 		last_mouse_pos = event.position
 
+
 func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
 
+	# 🔹 Sync GameState.notes_index
+	if GameState.notes_index != last_known_global_index:
+		selected_index = GameState.notes_index
+		last_known_global_index = GameState.notes_index
+
 	selected_index = clamp(selected_index, 0, position_offset_node.get_child_count() - 1)
 
-	# Layout children horizontally
+	# 🔹 Layout children horizontally
 	var x := 0.0
 	for i in position_offset_node.get_children():
 		i.pivot_offset = i.size / 2.0
 		i.position = Vector2(x, -i.size.y / 2.0)
 		x += i.size.x + spacing
 
-	# Focus tracking
+	# 🔹 Focus tracking
 	if follow_button_focus:
 		for i in position_offset_node.get_children():
 			if i.has_focus():
 				selected_index = i.get_index()
 				break
 
-	# Smooth scroll
+	# 🔹 Smooth scroll (horizontal)
 	if !dragging:
 		var target_item = position_offset_node.get_child(selected_index)
 		var target_x = -(target_item.position.x + target_item.size.x / 2.0 - get_viewport_rect().size.x / 2.0)
 		position_offset_node.position.x = lerp(position_offset_node.position.x, target_x, smoothing_speed * delta)
 
-	# Swipe release logic
+	# 🔹 Snap on release
 	if released:
 		released = false
 		var center_x = get_viewport_rect().size.x / 2.0
@@ -110,9 +121,10 @@ func _process(delta: float) -> void:
 				smallest_dist = dist
 				closest_index = i.get_index()
 
-		selected_index = closest_index  # ✅ Update GameState.notes_index when swiping
+		selected_index = closest_index
+		last_known_global_index = selected_index
 
-	# Visual updates
+	# 🔹 Visual updates (scale + opacity)
 	var center_x := get_viewport_rect().size.x / 2.0
 	for i in position_offset_node.get_children():
 		var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0
@@ -131,8 +143,12 @@ func _process(delta: float) -> void:
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			i.focus_mode = Control.FOCUS_NONE
 
-func _up():
-	selected_index -= 1
 
-func _down():
+func _left():
+	selected_index -= 1
+	last_known_global_index = selected_index
+
+
+func _right():
 	selected_index += 1
+	last_known_global_index = selected_index

@@ -34,6 +34,7 @@ var input_event_handled := false
 var input_cooldown_timer: Timer
 
 func _ready() -> void:
+	GlobalAudio.mute_bgm(true)
 	if learning_module == null:
 		learning_module = GameState.selected_learning_module  # ✅ Fallback if not set by loading screen
 
@@ -419,4 +420,6 @@ func _on_metronome_tick_timeout():
 		sprite.play()
 
 func _on_back_pressed() -> void:
+	GlobalAudio.mute_bgm(false)
+	GlobalAudio.play_click()
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")

@@ -12,6 +12,7 @@ const DARK_TEXTURE := preload("res://Menu Assets/DarkMode.png")
 const SOUND_ON := preload("res://Menu Assets/Sound.png")
 const SOUND_OFF := preload("res://Menu Assets/Sound_Mute.png")
 
+
 func _ready() -> void:
 	# Ensure GameState.is_muted exists, default false
 	if not "is_muted" in GameState:
@@ -61,8 +62,9 @@ func _on_dark_mode_button_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	$Sound.play()
-	await get_tree().create_timer(0.2).timeout
+	GameState.main_menu_index = 2
+	GlobalAudio.play_click()
+	#await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 
@@ -92,13 +94,17 @@ func check_mute() -> void:
 
 
 func _on_button_pressed() -> void:
-	GameState.reset_grades()
-	GameState.save_grades()
+	GlobalAudio.play_click()
+	show_pop_up()
 
 
 func _on_button_2_pressed() -> void:
+	GlobalAudio.play_click()
 	GameState.module_grades = ['S','S','S','S','S','S','S','S','S','S']
 	set_advanced_lessons_to_S()
+	$UNLOCKED.show()
+	await get_tree().create_timer(3.0).timeout
+	$UNLOCKED.hide()
 
 
 func set_advanced_lessons_to_S():
@@ -107,3 +113,24 @@ func set_advanced_lessons_to_S():
 	for i in range(10, 25):
 		GameState.module_grades[i] = "S"
 	print("✅ Lessons 11–24 grades set to 'S'!")
+
+func show_pop_up():
+	$deletePopup.show()
+	$deletepopup_anim.play("del_pop_anim")
+
+
+
+func _on_yes_pressed() -> void:
+	GlobalAudio.play_click()
+	GameState.reset_grades()
+	GameState.save_data()
+	_on_no_pressed()
+	$DELETED.show()
+	await get_tree().create_timer(3.0).timeout
+	$DELETED.hide()
+	
+
+
+func _on_no_pressed() -> void:
+	GlobalAudio.play_click()
+	$deletepopup_anim.play_backwards("del_pop_anim")

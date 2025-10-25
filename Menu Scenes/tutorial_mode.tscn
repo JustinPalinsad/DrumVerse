@@ -1,0 +1,787 @@
+[gd_scene load_steps=13 format=3 uid="uid://cenqjxi1iiujh"]
+
+[ext_resource type="Script" uid="uid://cv2w3p2sp0bis" path="res://tutorial_mode.gd" id="1_lr75e"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_wf4ld"]
+[ext_resource type="Texture2D" uid="uid://cdqv6heddyqna" path="res://Menu Assets/Button.png" id="2_yiv6j"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="3_lr75e"]
+[ext_resource type="Texture2D" uid="uid://b0p5bu7iwysrl" path="res://Menu Assets/Button_Highlight.png" id="4_yiv6j"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="6_g7vc6"]
+
+[sub_resource type="Animation" id="Animation_g7vc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/questionPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, 264)]
+}
+
+[sub_resource type="Animation" id="Animation_lr75e"]
+resource_name = "pop_up_anim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/questionPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(112, 1080), Vector2(112, 176), Vector2(112, 264)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btk02"]
+_data = {
+&"RESET": SubResource("Animation_g7vc6"),
+&"pop_up_anim": SubResource("Animation_lr75e")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btk02"]
+texture = ExtResource("2_yiv6j")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g7vc6"]
+texture = ExtResource("4_yiv6j")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgywf"]
+texture = ExtResource("2_yiv6j")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[node name="TutorialMode" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_lr75e")
+
+[node name="tutorialText" type="TextureRect" parent="."]
+visible = false
+material = ExtResource("1_wf4ld")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -712.0
+offset_top = 268.0
+offset_right = 2725.0
+offset_bottom = 912.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.421256, 0.421256)
+texture = ExtResource("2_yiv6j")
+
+[node name="tutorialtextholder" type="Control" parent="tutorialText"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="text1" type="Label" parent="tutorialText/tutorialtextholder"]
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "This is the main menu
+You will see here the play, notes, and settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text2" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "This is the play menu
+this is where you will learn all the lessons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text3" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "each lessons will have
+learning, practice and challenge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text4" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "in order to progress you must each lesson's
+challenge mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text5" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "Check the rubrics for the passing grade
+in play menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text6" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "next is the notes section"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text7" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "as you can see all notes are locked"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text8" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "you have to pass the challenge mode
+of each lessons to unlock these notes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text9" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "next is the settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text10" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "you can toggle the audio here 
+and the dark mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text11" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "the game autosaves your progress 
+after each try of the lesson"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text12" type="Label" parent="tutorialText/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "Happy drumming!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="TextureButton" parent="tutorialText"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 1063.49
+offset_top = 436.789
+offset_right = 2139.49
+offset_bottom = 1080.79
+scale = Vector2(1.30661, 0.290697)
+texture_normal = ExtResource("2_yiv6j")
+texture_pressed = ExtResource("4_yiv6j")
+
+[node name="continue" type="Label" parent="tutorialText/ContinueButton"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 218.017
+offset_top = 130.657
+offset_right = 2484.02
+offset_bottom = 548.657
+scale = Vector2(0.276943, 1.15205)
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 400
+text = "Continue"
+
+[node name="tuts_anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_btk02")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -56.0
+offset_top = -56.0
+offset_right = 2016.0
+offset_bottom = 1152.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -920.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="questionPanel" type="Panel" parent="Control"]
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502
+anchor_top = 0.514
+anchor_right = 0.502
+anchor_bottom = 0.514
+offset_left = 91.92
+offset_top = 243.44
+offset_right = 1566.92
+offset_bottom = 747.44
+scale = Vector2(1.15511, 1.15511)
+theme_override_styles/panel = SubResource("StyleBoxTexture_btk02")
+
+[node name="Label" type="Label" parent="Control/questionPanel"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -439.817
+offset_top = 96.9604
+offset_right = 1086.18
+offset_bottom = 181.96
+grow_horizontal = 2
+scale = Vector2(0.582049, 0.896356)
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 80
+text = "First time playing Drumverse?"
+
+[node name="YesButton" type="TextureButton" parent="Control/questionPanel"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 166.218
+offset_top = 256.253
+offset_right = 1242.22
+offset_bottom = 900.253
+scale = Vector2(0.267662, 0.269783)
+texture_normal = ExtResource("2_yiv6j")
+texture_pressed = ExtResource("4_yiv6j")
+
+[node name="Yes" type="Label" parent="Control/questionPanel/YesButton"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 80.0425
+offset_top = 133.404
+offset_right = 978.042
+offset_bottom = 551.404
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 400
+text = "Yes"
+
+[node name="NoButton" type="TextureButton" parent="Control/questionPanel"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 1011.16
+offset_top = 256.253
+offset_right = 2087.16
+offset_bottom = 900.253
+scale = Vector2(0.267662, 0.269783)
+texture_normal = ExtResource("2_yiv6j")
+texture_pressed = ExtResource("4_yiv6j")
+
+[node name="No" type="Label" parent="Control/questionPanel/NoButton"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 206.999
+offset_top = 133.0
+offset_right = 831.999
+offset_bottom = 551.0
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 400
+text = "No"
+
+[node name="Label2" type="Label" parent="Control/questionPanel"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 83.0
+offset_top = 76.0
+offset_right = 1419.0
+offset_bottom = 187.0
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 70
+text = "First time playing Drumverse?"
+
+[node name="tutorialPanel" type="Panel" parent="."]
+visible = false
+material = ExtResource("1_wf4ld")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -728.0
+offset_top = 196.0
+offset_right = 539.0
+offset_bottom = 485.0
+scale = Vector2(1.15511, 1.15511)
+theme_override_styles/panel = SubResource("StyleBoxTexture_btk02")
+
+[node name="tutorialtextholder" type="Control" parent="tutorialPanel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 27.703
+offset_top = 6.92575
+offset_right = 67.703
+offset_bottom = 46.9258
+scale = Vector2(0.347598, 0.347598)
+
+[node name="text1" type="Label" parent="tutorialPanel/tutorialtextholder"]
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "This is the main menu
+You will see here the play, notes, and settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text2" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "This is the play menu
+this is where you will learn all the lessons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text3" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "each lessons will have
+learning, practice and challenge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text4" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "in order to progress you must pass each lesson's
+challenge mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text5" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "Check the rubrics for the passing grade
+in play menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text6" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "next is the notes section"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text7" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "as you can see all notes are locked"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text8" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "you have to pass the challenge mode
+of each lessons to unlock these notes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text9" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "next is the settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text10" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "you can toggle the audio here 
+and the dark mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text11" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "the game autosaves your progress 
+after each try of the lesson"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text12" type="Label" parent="tutorialPanel/tutorialtextholder"]
+visible = false
+material = ExtResource("1_wf4ld")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 226.881
+offset_top = 151.927
+offset_right = 2413.88
+offset_bottom = 338.927
+grow_horizontal = 2
+scale = Vector2(1.36689, 1.36689)
+theme_override_fonts/font = ExtResource("6_g7vc6")
+theme_override_font_sizes/font_size = 81
+text = "Happy drumming!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Press" type="Label" parent="tutorialPanel"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 270.104
+offset_top = 180.069
+offset_right = 1008.1
+offset_bottom = 239.069
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 56
+text = "- Press to continue -"
+
+[node name="continueButt" type="Button" parent="tutorialPanel/Press"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -152.0
+offset_right = 963.0
+offset_bottom = 80.0
+
+[node name="continueButton" type="Panel" parent="."]
+visible = false
+material = ExtResource("1_wf4ld")
+offset_left = 136.0
+offset_top = 240.0
+offset_right = 1403.0
+offset_bottom = 529.0
+scale = Vector2(1.15511, 1.15511)
+theme_override_styles/panel = SubResource("StyleBoxTexture_btk02")
+
+[node name="Label" type="Label" parent="continueButton"]
+material = ExtResource("1_wf4ld")
+layout_mode = 0
+offset_left = 90.0
+offset_top = 48.0
+offset_right = 1172.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 191
+text = "Continue"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+material = ExtResource("1_wf4ld")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.863445, 0.34277)
+texture_normal = ExtResource("2_yiv6j")
+
+[node name="continueButton2" type="Button" parent="."]
+visible = false
+material = ExtResource("1_wf4ld")
+offset_left = 760.0
+offset_top = 920.0
+offset_right = 1187.0
+offset_bottom = 1163.0
+theme_override_fonts/font = ExtResource("3_lr75e")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g7vc6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_cgywf")
+action_mode = 0
+text = "Continue"
+
+[connection signal="pressed" from="Control/questionPanel/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Control/questionPanel/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="tutorialPanel/Press/continueButt" to="." method="_on_continue_butt_pressed"]

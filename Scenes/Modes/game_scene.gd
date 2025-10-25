@@ -61,6 +61,7 @@ var in_countdown := false
 
 # -----------------------
 func _ready() -> void:
+	GlobalAudio.mute_bgm(true)
 	drum_module = GameState.selected_module
 	if not drum_module:
 		push_error("No module selected!")
@@ -602,6 +603,8 @@ func update_bpm(new_bpm: int) -> void:
 
 # -----------------------
 func _on_back_pressed() -> void:
+	GlobalAudio.mute_bgm(false)
+	GlobalAudio.play_click()
 	get_tree().change_scene_to_file("res://Sample/sample_scene.tscn")
 
 

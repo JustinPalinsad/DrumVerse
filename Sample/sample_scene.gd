@@ -25,7 +25,7 @@ func _ready() -> void:
 			child.visible = false
 
 func _on_learning_button_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
 		GameState.polyrhythm_mode = "learning"
@@ -35,7 +35,7 @@ func _on_learning_button_pressed() -> void:
 
 
 func _on_practice_button_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
 		GameState.polyrhythm_mode = "practice"
@@ -44,7 +44,7 @@ func _on_practice_button_pressed() -> void:
 		change_to_game_scene("practice")
 
 func _on_challenge_button_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.3).timeout
 	if GameState.lessons == 25:
 		GameState.polyrhythm_mode = "challenge"
@@ -86,9 +86,26 @@ func change_to_learning_scene(mode: String) -> void:
 
 
 func _on_back_pressed() -> void:
-	$ClickSoundPlayer.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.2).timeout
 	if GameState.lessons < 11:
 		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
+
+func button_shake() -> void:
+	var shake_strength := 25.0
+	var shake_duration := 0.2
+	var shake_count := 4
+
+	var original_pos := position
+	var tween := create_tween()
+
+	for i in range(shake_count):
+		var offset := Vector2(
+			randf_range(-shake_strength, shake_strength),
+			randf_range(-shake_strength, shake_strength)
+		)
+		tween.tween_property(self, "position", original_pos + offset, shake_duration / shake_count)
+
+	tween.tween_property(self, "position", original_pos, shake_duration / shake_count)

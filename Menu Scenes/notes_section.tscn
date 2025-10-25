@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dign4hotw0f7s"]
+[gd_scene load_steps=44 format=3 uid="uid://dign4hotw0f7s"]
 
 [ext_resource type="Script" uid="uid://b2ovwjgaomukn" path="res://Menu Scripts/notes_section.gd" id="1_ppldb"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_tgiwa"]
@@ -7,22 +7,38 @@
 [ext_resource type="Texture2D" uid="uid://bdux1ufjgb5et" path="res://Menu Assets/drum bg.png" id="3_gbwgf"]
 [ext_resource type="PackedScene" uid="uid://qs1x3djvj7me" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="4_ls0eo"]
-[ext_resource type="Texture2D" uid="uid://bpcq25eun2mr" path="res://Menu Assets/Locked_Card.png" id="5_4rcy6"]
 [ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="6_0d0so"]
 [ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="7_ls0eo"]
 [ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="8_tewhv"]
+[ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="8_w8gc0"]
 [ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="9_un2gc"]
 [ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="10_37m5n"]
+[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="10_sofsx"]
 [ext_resource type="Texture2D" uid="uid://dk3lt3k67fxbb" path="res://Menu Assets/highlights/Lesson_Cards_006.png" id="11_tujtb"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="11_vm41j"]
 [ext_resource type="Texture2D" uid="uid://dju1fd1g1kv61" path="res://Menu Assets/highlights/Lesson_Cards_007.png" id="12_8mnoc"]
+[ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="12_lt2is"]
 [ext_resource type="Texture2D" uid="uid://dpef8xtpelnvw" path="res://Menu Assets/highlights/Lesson_Cards_008.png" id="13_gbwgf"]
 [ext_resource type="Texture2D" uid="uid://cp1nai02qlky2" path="res://Menu Assets/highlights/Lesson_Cards_009.png" id="14_b7bqg"]
+[ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="14_vjsqd"]
 [ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="15_6sqpu"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="15_lk4x5"]
-[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="16_tap5y"]
+[ext_resource type="Texture2D" uid="uid://rwgkhha6dj4u" path="res://Menu Assets/cards v2/Lesson_Cards_004.png" id="16_cyxi7"]
+[ext_resource type="Texture2D" uid="uid://b6m05r7vtdh2j" path="res://Menu Assets/cards v2/Lesson_Cards_005.png" id="18_urfyx"]
 [ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="19_un2gc"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="20_37m5n"]
+[ext_resource type="Texture2D" uid="uid://1wb7qyfvrcsw" path="res://Menu Assets/cards v2/Lesson_Cards_006.png" id="20_fbjol"]
+[ext_resource type="Texture2D" uid="uid://cmij1qcjw5i7a" path="res://Assets/Free_Advanced/Free_H.png" id="21_4t3fb"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="21_37m5n"]
+[ext_resource type="Texture2D" uid="uid://d1tpmykefv61n" path="res://Menu Assets/cards v2/Lesson_Cards_007.png" id="22_a7tji"]
+[ext_resource type="Texture2D" uid="uid://bxa5bgqvyfndy" path="res://Assets/Free_Advanced/Advanced.png" id="22_oc1d3"]
+[ext_resource type="Texture2D" uid="uid://cvnc0cunefg4p" path="res://Assets/Free_Advanced/Advanced_H.png" id="23_4pe3o"]
+[ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="24_b7bqg"]
+[ext_resource type="Texture2D" uid="uid://bew2bm8ubto0n" path="res://Menu Assets/cards v2/Lesson_Cards_008.png" id="24_qc660"]
+[ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="25_6sqpu"]
+[ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="26_ln0c7"]
+[ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="28_5c7rp"]
+[ext_resource type="Texture2D" uid="uid://bjrpcft67c1yn" path="res://Menu Assets/Hand.png" id="29_4t3fb"]
 
 [sub_resource type="Animation" id="Animation_un2gc"]
 length = 0.001
@@ -158,6 +174,124 @@ tracks/10/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RightButton:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.145098, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("LeftButton:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("RightButton:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1448, 864)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("LeftButton:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(288, 864)]
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Hand:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Hand:position:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(656, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Hand:position:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_oc1d3"]
+resource_name = "hand_swipe"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.309, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1.309, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1.309, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1272, -0.25, 0, 0.25, 0, 656, -0.25, 0, 0.25, 0, 1272, -0.25, 0, 0.25, 0, 656, -0.25, 0, 0.25, 0, 1272, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hand:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2)
+}
 
 [sub_resource type="Animation" id="Animation_ls0eo"]
 resource_name = "notes_anim"
@@ -256,7 +390,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(200, 1208), Vector2(200, 864), Vector2(200, 896)]
+"values": [Vector2(112, 1208), Vector2(112, 864), Vector2(112, 896)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -294,10 +428,81 @@ tracks/10/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RightButton:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.752941, 0.145098, 1), Color(1, 0.752941, 0.145098, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("LeftButton:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.752941, 0.145098, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("RightButton:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1448, 864), Vector2(1448, 1232)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("LeftButton:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, 864), Vector2(288, 1232)]
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Hand:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1272, -0.125, 0, 0.125, 0, 1272, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Hand:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1456, -0.125, 0, 0.125, 0, 960, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tewhv"]
 _data = {
 &"RESET": SubResource("Animation_un2gc"),
+&"hand_swipe": SubResource("Animation_oc1d3"),
 &"notes_anim": SubResource("Animation_ls0eo")
 }
 
@@ -389,8 +594,21 @@ offset_right = 1102.0
 offset_bottom = 367.0
 pivot_offset = Vector2(551, 367)
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("8_w8gc0")
 texture_pressed = ExtResource("6_0d0so")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes1"]
+material = ExtResource("1_tgiwa")
+layout_mode = 0
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Whole Note"
 
 [node name="Notes2" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -406,8 +624,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("12_lt2is")
 texture_pressed = ExtResource("7_ls0eo")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes2"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Half Note"
 
 [node name="Notes3" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -423,8 +653,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("14_vjsqd")
 texture_pressed = ExtResource("8_tewhv")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes3"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Quarter note"
 
 [node name="Notes4" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -440,8 +682,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("16_cyxi7")
 texture_pressed = ExtResource("9_un2gc")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes4"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Eighth Notes"
 
 [node name="Notes5" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -457,8 +711,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("18_urfyx")
 texture_pressed = ExtResource("10_37m5n")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes5"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Sixteenth Note"
 
 [node name="Notes6" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -474,8 +740,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("20_fbjol")
 texture_pressed = ExtResource("11_tujtb")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes6"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "tRIPLETS"
 
 [node name="Notes7" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -491,8 +769,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("22_a7tji")
 texture_pressed = ExtResource("12_8mnoc")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes7"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "single stroke"
 
 [node name="Notes8" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -508,8 +798,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("24_qc660")
 texture_pressed = ExtResource("13_gbwgf")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes8"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = " double stroke"
 
 [node name="Notes9" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -525,8 +827,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("26_ln0c7")
 texture_pressed = ExtResource("14_b7bqg")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes9"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Paradiddle"
 
 [node name="Notes10" type="TextureButton" parent="CarouselContainer2/Control"]
 modulate = Color(1, 1, 1, 0.65)
@@ -542,8 +856,20 @@ pivot_offset = Vector2(551, 367)
 focus_mode = 0
 mouse_filter = 2
 disabled = true
-texture_normal = ExtResource("5_4rcy6")
+texture_normal = ExtResource("28_5c7rp")
 texture_pressed = ExtResource("15_6sqpu")
+script = ExtResource("10_sofsx")
+
+[node name="Label" type="Label" parent="CarouselContainer2/Control/Notes10"]
+material = ExtResource("1_tgiwa")
+offset_left = 68.4958
+offset_top = 495.417
+offset_right = 569.496
+offset_bottom = 587.417
+scale = Vector2(1.03039, 1.03039)
+theme_override_fonts/font = ExtResource("11_vm41j")
+theme_override_font_sizes/font_size = 81
+text = "Flam"
 
 [node name="Back" type="TextureButton" parent="."]
 material = ExtResource("1_tgiwa")
@@ -560,27 +886,26 @@ offset_bottom = 115.36
 scale = Vector2(0.554455, 0.554455)
 texture_normal = ExtResource("15_lk4x5")
 
-[node name="Free" type="Button" parent="."]
+[node name="Free" type="TextureButton" parent="."]
+material = ExtResource("1_tgiwa")
 layout_mode = 0
 offset_left = 200.0
 offset_top = 896.0
-offset_right = 565.0
-offset_bottom = 1036.0
+offset_right = 888.0
+offset_bottom = 1069.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("16_tap5y")
-theme_override_font_sizes/font_size = 126
-text = "FREE"
+texture_normal = ExtResource("21_4t3fb")
 
-[node name="Advanced" type="Button" parent="."]
+[node name="Advanced" type="TextureButton" parent="."]
+material = ExtResource("1_tgiwa")
 layout_mode = 0
 offset_left = 1376.0
 offset_top = 896.0
-offset_right = 2159.0
-offset_bottom = 1036.0
+offset_right = 2851.0
+offset_bottom = 1077.0
 scale = Vector2(0.609104, 0.609104)
-theme_override_fonts/font = ExtResource("16_tap5y")
-theme_override_font_sizes/font_size = 126
-text = "ADVANCED"
+texture_normal = ExtResource("22_oc1d3")
+texture_pressed = ExtResource("23_4pe3o")
 
 [node name="notes_section_anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -603,6 +928,25 @@ material = ExtResource("1_tgiwa")
 position = Vector2(1928, 352)
 scale = Vector2(0.68, 0.68)
 texture_normal = ExtResource("20_37m5n")
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+material = ExtResource("1_tgiwa")
+position = Vector2(288, 864)
+texture_normal = ExtResource("24_b7bqg")
+action = "ui_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 0.752941, 0.145098, 1)
+material = ExtResource("1_tgiwa")
+position = Vector2(1448, 864)
+texture_normal = ExtResource("25_6sqpu")
+action = "ui_right"
+
+[node name="Hand" type="Sprite2D" parent="."]
+material = ExtResource("1_tgiwa")
+position = Vector2(656, 960)
+scale = Vector2(0.452206, 0.452206)
+texture = ExtResource("29_4t3fb")
 
 [connection signal="pressed" from="CarouselContainer2/Control/Notes1" to="." method="_on_notes_1_pressed"]
 [connection signal="pressed" from="CarouselContainer2/Control/Notes2" to="." method="_on_notes_2_pressed"]

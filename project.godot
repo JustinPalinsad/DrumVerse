@@ -12,12 +12,16 @@ config_version=5
 
 config/name="Drumverse v2"
 run/main_scene="uid://b2auy1v2ih4mq"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
 GameState="*res://Resources/GameState.gd"
 Results="*res://Resources/Results.gd"
+GlobalAudio="*res://Menu Scenes/global_audio.tscn"
+TutorialManager="*res://Scripts/TutorialManager.gd"
+Watermark="*res://Scenes/watermark.tscn"
 
 [display]
 
@@ -25,6 +29,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/handheld/orientation=4
 
 [editor_plugins]
 
@@ -72,5 +77,6 @@ pointing/emulate_touch_from_mouse=true
 
 textures/canvas_textures/default_texture_repeat=1
 renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.913725, 0.737255, 0.27451, 1)

@@ -5,14 +5,17 @@ var start_pos := Vector2.ZERO
 var drag_threshold := 20.0
 
 func _ready() -> void:
+	change_card()
 	if GameState.notes_section_anim_has_played == false:
 		$notes_section_anim.play("notes_anim")
 		GameState.notes_section_anim_has_played = true
+		await $notes_section_anim.animation_finished
+		$notes_section_anim.play("hand_swipe")
 	else:
 		$notes_section_anim.play("notes_anim")
 		$notes_section_anim.seek(0.25, true)
 		$notes_section_anim.pause()
-	change_card()
+
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch and event.pressed:
@@ -27,6 +30,8 @@ func _unhandled_input(event):
 
 func _on_notes_1_pressed() -> void:
 	GameState.notes = 1
+	GlobalAudio.global_click_sfx
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/wholenote.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -34,6 +39,7 @@ func _on_notes_1_pressed() -> void:
 
 func _on_notes_2_pressed() -> void:
 	GameState.notes = 2
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/halfnote.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -41,6 +47,7 @@ func _on_notes_2_pressed() -> void:
 
 func _on_notes_3_pressed() -> void:
 	GameState.notes = 3
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/quarternote.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -48,6 +55,7 @@ func _on_notes_3_pressed() -> void:
 
 func _on_notes_4_pressed() -> void:
 	GameState.notes = 4
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/eightnote.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -55,6 +63,7 @@ func _on_notes_4_pressed() -> void:
 
 func _on_notes_5_pressed() -> void:
 	GameState.notes = 5
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/sixteenthnote.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -62,6 +71,7 @@ func _on_notes_5_pressed() -> void:
 
 func _on_notes_6_pressed() -> void:
 	GameState.notes = 6
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/triplet.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -69,6 +79,7 @@ func _on_notes_6_pressed() -> void:
 
 func _on_notes_7_pressed() -> void:
 	GameState.notes = 7
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/singlestroke.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -76,12 +87,14 @@ func _on_notes_7_pressed() -> void:
 
 func _on_notes_8_pressed() -> void:
 	GameState.notes = 8
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/doublestroke.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
 
 func _on_notes_9_pressed() -> void:
 	GameState.notes = 9
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/paradiddle.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -89,6 +102,7 @@ func _on_notes_9_pressed() -> void:
 
 func _on_notes_10_pressed() -> void:
 	GameState.notes = 10
+	await get_tree().create_timer(0.2).timeout
 	var loaded_resource = load("res://NotesResource/flam.tres")
 	GameState.selected_notes_resource = loaded_resource
 	get_tree().change_scene_to_file("res://Menu Scenes/notes_container.tscn")
@@ -96,12 +110,14 @@ func _on_notes_10_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	GameState.notes_index = 0
+	GlobalAudio.play_click()
 	$notes_section_anim.play_backwards("notes_anim")
 	await $notes_section_anim.animation_finished
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 
 func _on_advanced_pressed() -> void:
 	GameState.notes_index = 0
+	GlobalAudio.play_click()
 	get_tree().change_scene_to_file("res://Menu Scenes/advanced_notes_section.tscn")
 
 func change_card():
@@ -126,12 +142,22 @@ func change_card():
 		if not lesson_node:
 			continue
 
-		# ✅ Fix: use current index for checking unlock condition, not i - 1
 		var current_grade = GameState.module_grades[i] if i < GameState.module_grades.size() else "N/A"
 
 		if current_grade in ["S", "A", "B", "C"]:
+			# ✅ Unlocked state
 			lesson_node.texture_normal = card_textures[i]
 			lesson_node.disabled = false
+
+			# Show all children
+			for child in lesson_node.get_children():
+				child.visible = true
+
 		else:
+			# 🔒 Locked state
 			lesson_node.texture_normal = locked_texture
 			lesson_node.disabled = true
+
+			# Hide children except lock overlay (if any)
+			for child in lesson_node.get_children():
+				child.visible = false
