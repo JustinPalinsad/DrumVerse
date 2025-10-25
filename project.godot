@@ -70,6 +70,7 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+textures/canvas_textures/default_texture_repeat=1
 renderer/rendering_method="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(1, 0.752941, 0.145098, 1)
+environment/defaults/default_clear_color=Color(0.913725, 0.737255, 0.27451, 1)

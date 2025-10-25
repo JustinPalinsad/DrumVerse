@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://da6mthi7jt8je" path="res://Menu Assets/highlights/Lesson_Cards_011.png" id="6_back5"]
 [ext_resource type="Texture2D" uid="uid://dfblf1quuck6k" path="res://Menu Assets/highlights/Lesson_Cards_012.png" id="7_0egvd"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="7_8dq57"]
-[ext_resource type="PackedScene" uid="uid://ca3y7mttg1hur" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
+[ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_vnhdg"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_e2tj8"]
@@ -28,6 +28,117 @@
 [ext_resource type="Texture2D" uid="uid://0u8wsxsv4eeb" path="res://Menu Assets/highlights/Lesson_Cards_025.png" id="20_ys1tp"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="27_e2tj8"]
 [ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="28_dm0fn"]
+
+[sub_resource type="Animation" id="Animation_6f14r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("carousel_container_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1232, 104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Advanced:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 960)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Free:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 872)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Play:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.916, 0.916)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Play:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(128, 328)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Notes:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 352)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Settings:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1368, 352)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Notes:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Settings:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vnhdg"]
 resource_name = "advlessons_anim"
@@ -141,117 +252,6 @@ tracks/8/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_6f14r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("carousel_container_3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1232, 104)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Advanced:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(160, 960)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Free:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(280, 872)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Play:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.916, 0.916)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Play:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(128, 328)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Notes:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(160, 352)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Settings:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1368, 352)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Notes:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Settings:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e2tj8"]
 _data = {
 &"RESET": SubResource("Animation_6f14r"),
@@ -273,14 +273,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4asb")
 
-[node name="Back" type="TouchScreenButton" parent="."]
-material = ExtResource("1_7ykpt")
-position = Vector2(133, 45)
-scale = Vector2(0.554455, 0.554455)
-texture_normal = ExtResource("3_xibpe")
-
 [node name="MenuBg2" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.258824)
+z_index = -2
 material = ExtResource("4_vnhdg")
 layout_mode = 1
 anchors_preset = -1
@@ -297,6 +292,12 @@ grow_vertical = 2
 scale = Vector2(0.620382, 0.624595)
 texture = ExtResource("5_6f14r")
 
+[node name="Back" type="TouchScreenButton" parent="."]
+material = ExtResource("1_7ykpt")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("3_xibpe")
+
 [node name="carousel_container_3" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("8_v615x")]
 z_index = -1
 position = Vector2(1232, 104)
@@ -305,6 +306,7 @@ spacing = -40.0
 position_offset_node = NodePath("Control")
 
 [node name="Control" type="Control" parent="carousel_container_3"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_top = 0.500007

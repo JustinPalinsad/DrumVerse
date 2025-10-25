@@ -4,7 +4,7 @@ extends Control
 @onready var button := $"DarkMode Button"
 @onready var sound_toggle := $"SoundToggle"
 
-const COLOR_YELLOW := Color("ffc025")
+const COLOR_YELLOW := Color("e9bc46")
 const COLOR_BROWN := Color("30170c")
 const LIGHT_TEXTURE := preload("res://Menu Assets/LightMode.png")
 const DARK_TEXTURE := preload("res://Menu Assets/DarkMode.png")

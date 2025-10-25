@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4mt324ieo60c"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_x8xgo"]
+[ext_resource type="Texture2D" uid="uid://487nf8hj41jv" path="res://Assets/Line1.png" id="2_dr8by"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+material = ExtResource("1_x8xgo")
+points = PackedVector2Array(-1, 0, 464, 0)
+texture = ExtResource("2_dr8by")
+texture_mode = 1
+
+[node name="Node2D" type="Node2D" parent="."]

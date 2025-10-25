@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b0nn87h7iqj6s"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dmowufrt4m4tt"]
 
-[sub_resource type="Shader" id="Shader_mct51"]
+[sub_resource type="Shader" id="Shader_mgsxb"]
 code = "shader_type canvas_item;
 
 uniform vec4 layer_color : source_color;
@@ -15,7 +15,7 @@ void fragment() {
 }"
 
 [resource]
-shader = SubResource("Shader_mct51")
-shader_parameter/layer_color = Color(0.188235, 0.0901961, 0.0470588, 1)
+shader = SubResource("Shader_mgsxb")
+shader_parameter/layer_color = Color(0.684543, 0.198166, 0.0719167, 1)
 shader_parameter/sub_color = Color(0.913725, 0.737255, 0.27451, 1)
-shader_parameter/opacity = 0.75
+shader_parameter/opacity = 1.0
