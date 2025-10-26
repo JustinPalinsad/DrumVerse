@@ -27,6 +27,9 @@ extends Control
 # 🔊 Use this AudioStreamPlayer node (child of GameScene) for your mp3 clicks
 @onready var bpm_audio: AudioStreamPlayer = $BPMAudio
 
+@onready var touchpad_container = get_node("TouchPadContainer")
+
+
 @onready var bar_offsets := {
 	"continue": Vector2(0, 0),   # perfectly aligned at origin
 	"end": Vector2(49, -1)       # the adjustment you tested
@@ -58,6 +61,7 @@ var grade: String
 
 # ⏳ Gate ticks during countdown so bars don’t advance
 var in_countdown := false
+
 
 # -----------------------
 func _ready() -> void:
@@ -123,6 +127,8 @@ func _ready() -> void:
 # -----------------------
 func play_countdown(bpm: int) -> void:
 	in_countdown = true
+	touchpad_container.set_enabled(false)
+
 
 	# Pause/hide circle during countdown
 	if animation_player:
@@ -150,6 +156,8 @@ func play_countdown(bpm: int) -> void:
 		moving_circle.show()
 
 	in_countdown = false
+	touchpad_container.set_enabled(true)
+
 
 	# 🔹 After countdown, spawn the first notes for challenge
 	if mode == "challenge":
