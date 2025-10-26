@@ -46,6 +46,7 @@ var current_bar_index: int = 0                  # 0..N where N == number of cont
 var beats_to_cover: int = 4                     # beats per bar
 var moving_circle_duration: float
 var challenge_mode_has_ended := false
+var input_disabled := false  # 🚫 disables drum pad hits after challenge ends
 var bpm_sequence: Array[int] = [60, 80, 100]
 var current_bpm_index: int = 0
 var bars_per_bpm: int = 4                       # expected bars per BPM (3 continue + 1 end)
@@ -58,6 +59,7 @@ var grade: String
 
 # ⏳ Gate ticks during countdown so bars don’t advance
 var in_countdown := false
+
 
 # -----------------------
 func _ready() -> void:
@@ -337,7 +339,12 @@ func end_challenge_mode():
 	metronome.stop()
 
 	challenge_mode_has_ended = true
+	input_disabled = true  # 🚫 disable drum hits after challenge ends
+	left_pad.visible = false
+	right_pad.visible = false
+
 	await get_tree().process_frame
+
 
 	if metronome.has_node("TickSound"):
 		var tick_sound = metronome.get_node("TickSound")
@@ -387,7 +394,7 @@ func end_challenge_mode():
 
 # -----------------------
 func _unhandled_input(event: InputEvent) -> void:
-	if in_countdown: # 🚫 Ignore all inputs during countdown
+	if in_countdown or input_disabled: # 🚫 Ignore all inputs during countdown
 		return
 
 	if event is InputEventScreenTouch and event.pressed:
@@ -413,7 +420,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # -----------------------
 func _on_left_pad_input(_viewport, event, _shape_idx):
-	if in_countdown: # 🚫 Ignore pad during countdown
+	if in_countdown or input_disabled: # 🚫 Ignore pad during countdown
 		return
 	if event is InputEventMouseButton and event.pressed:
 		animate_pad(left_pad)
@@ -421,7 +428,7 @@ func _on_left_pad_input(_viewport, event, _shape_idx):
 
 
 func _on_right_pad_input(_viewport, event, _shape_idx):
-	if in_countdown: # 🚫 Ignore pad during countdown
+	if in_countdown or input_disabled: # 🚫 Ignore pad during countdown
 		return
 	if event is InputEventMouseButton and event.pressed:
 		animate_pad(right_pad)
