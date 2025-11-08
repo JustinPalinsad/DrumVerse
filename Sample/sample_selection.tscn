@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="29_gavew"]
 [ext_resource type="Texture2D" uid="uid://bbn0a6hr63msb" path="res://Assets/Rubrics/Rubrics_Highlight.png" id="29_ljih7"]
 [ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="30_es5p8"]
-[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="30_ljih7"]
+[ext_resource type="Script" path="res://Scripts/button_shake.gd" id="30_ljih7"]
 [ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="31_2fdqk"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="32_ays4d"]
 [ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="32_ihbhp"]

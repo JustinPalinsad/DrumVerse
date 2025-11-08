@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="14_i72bd"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="16_rswhg"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="17_kkdnl"]
-[ext_resource type="Script" uid="uid://bih17fckuqqbt" path="res://Menu Scripts/swipe.gd" id="18_kcw28"]
+[ext_resource type="Script" path="res://Menu Scripts/swipe.gd" id="18_kcw28"]
 
 [sub_resource type="Animation" id="Animation_afnto"]
 length = 0.001
