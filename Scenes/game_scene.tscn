@@ -20,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://ilgvob86ldeh" path="res://Audio/Fail.mp3" id="17_aq00n"]
 [ext_resource type="Script" uid="uid://det1facwxs68p" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
 [ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="19_mipjh"]
-[ext_resource type="PackedScene" path="res://NoteScene/triplet_new.tscn" id="20_aq00n"]
+[ext_resource type="PackedScene" uid="uid://dhut0svmge575" path="res://NoteScene/triplet_new.tscn" id="20_aq00n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0

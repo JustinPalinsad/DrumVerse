@@ -27,6 +27,9 @@ extends Control
 # 🔊 Use this AudioStreamPlayer node (child of GameScene) for your mp3 clicks
 @onready var bpm_audio: AudioStreamPlayer = $BPMAudio
 
+@onready var touchpad_container = get_node("TouchPadContainer")
+
+
 @onready var bar_offsets := {
 	"continue": Vector2(0, 0),   # perfectly aligned at origin
 	"end": Vector2(49, -1)       # the adjustment you tested
@@ -58,6 +61,7 @@ var grade: String
 
 # ⏳ Gate ticks during countdown so bars don’t advance
 var in_countdown := false
+
 
 # -----------------------
 func _ready() -> void:
@@ -123,6 +127,8 @@ func _ready() -> void:
 # -----------------------
 func play_countdown(bpm: int) -> void:
 	in_countdown = true
+	touchpad_container.set_enabled(false)
+
 
 	# Pause/hide circle during countdown
 	if animation_player:
@@ -150,6 +156,8 @@ func play_countdown(bpm: int) -> void:
 		moving_circle.show()
 
 	in_countdown = false
+	touchpad_container.set_enabled(true)
+
 
 	# 🔹 After countdown, spawn the first notes for challenge
 	if mode == "challenge":
@@ -337,7 +345,14 @@ func end_challenge_mode():
 	metronome.stop()
 
 	challenge_mode_has_ended = true
+
+	# 🚫 Disable all pad input when challenge ends
+	touchpad_container.set_enabled(false)
+	left_pad.set_process_input(false)
+	right_pad.set_process_input(false)
+
 	await get_tree().process_frame
+
 
 	if metronome.has_node("TickSound"):
 		var tick_sound = metronome.get_node("TickSound")
@@ -387,7 +402,7 @@ func end_challenge_mode():
 
 # -----------------------
 func _unhandled_input(event: InputEvent) -> void:
-	if in_countdown: # 🚫 Ignore all inputs during countdown
+	if in_countdown or challenge_mode_has_ended: # 🚫 Ignore all inputs during countdown
 		return
 
 	if event is InputEventScreenTouch and event.pressed:
@@ -413,7 +428,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # -----------------------
 func _on_left_pad_input(_viewport, event, _shape_idx):
-	if in_countdown: # 🚫 Ignore pad during countdown
+	if in_countdown or challenge_mode_has_ended: # 🚫 Ignore pad during countdown
 		return
 	if event is InputEventMouseButton and event.pressed:
 		animate_pad(left_pad)
@@ -421,7 +436,7 @@ func _on_left_pad_input(_viewport, event, _shape_idx):
 
 
 func _on_right_pad_input(_viewport, event, _shape_idx):
-	if in_countdown: # 🚫 Ignore pad during countdown
+	if in_countdown or challenge_mode_has_ended: # 🚫 Ignore pad during countdown
 		return
 	if event is InputEventMouseButton and event.pressed:
 		animate_pad(right_pad)
