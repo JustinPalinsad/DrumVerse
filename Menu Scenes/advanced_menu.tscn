@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ca3y7mttg1hur" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_vnhdg"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
-[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_ihbiu"]
+[ext_resource type="Script" path="res://Scripts/button_shake.gd" id="9_ihbiu"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_e2tj8"]
 [ext_resource type="Texture2D" uid="uid://d3gd015a7463" path="res://Assets/NewNotes/br3.png" id="10_yicks"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="11_bfbil"]
@@ -1069,6 +1069,7 @@ offset_bottom = 192.0
 grow_horizontal = 2
 
 [node name="TextureRect" type="TextureRect" parent="SelectionTitle"]
+z_index = 5
 material = ExtResource("1_7ykpt")
 layout_mode = 2
 texture = ExtResource("2_xibpe")
