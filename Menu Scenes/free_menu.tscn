@@ -1,0 +1,139 @@
+[gd_scene load_steps=24 format=3 uid="uid://wy5o3oruakhj"]
+
+[ext_resource type="Script" uid="uid://dq2ec2qjpqkdx" path="res://Menu Scripts/free_menu.gd" id="1_ny36g"]
+[ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="1_yov6k"]
+[ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="2_bd1ri"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_gyt36"]
+[ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="4_ny36g"]
+[ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="5_5lc6y"]
+[ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="6_s82in"]
+[ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="7_4fbyb"]
+[ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="8_ocwwc"]
+[ext_resource type="Texture2D" uid="uid://rwgkhha6dj4u" path="res://Menu Assets/cards v2/Lesson_Cards_004.png" id="9_cye6h"]
+[ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="10_su87c"]
+[ext_resource type="Texture2D" uid="uid://b6m05r7vtdh2j" path="res://Menu Assets/cards v2/Lesson_Cards_005.png" id="11_5xtxb"]
+[ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="12_0fpob"]
+[ext_resource type="Texture2D" uid="uid://1wb7qyfvrcsw" path="res://Menu Assets/cards v2/Lesson_Cards_006.png" id="13_0sjt7"]
+[ext_resource type="Texture2D" uid="uid://dk3lt3k67fxbb" path="res://Menu Assets/highlights/Lesson_Cards_006.png" id="14_epurs"]
+[ext_resource type="Texture2D" uid="uid://d1tpmykefv61n" path="res://Menu Assets/cards v2/Lesson_Cards_007.png" id="15_sqfm5"]
+[ext_resource type="Texture2D" uid="uid://dju1fd1g1kv61" path="res://Menu Assets/highlights/Lesson_Cards_007.png" id="16_pvmmg"]
+[ext_resource type="Texture2D" uid="uid://bew2bm8ubto0n" path="res://Menu Assets/cards v2/Lesson_Cards_008.png" id="17_pfp8n"]
+[ext_resource type="Texture2D" uid="uid://dpef8xtpelnvw" path="res://Menu Assets/highlights/Lesson_Cards_008.png" id="18_0rxm4"]
+[ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="19_t1ocw"]
+[ext_resource type="Texture2D" uid="uid://cp1nai02qlky2" path="res://Menu Assets/highlights/Lesson_Cards_009.png" id="20_cfujr"]
+[ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="21_barkg"]
+[ext_resource type="Texture2D" uid="uid://bw66hyvqio8f3" path="res://Menu Assets/highlights/Lesson_Cards_010.png" id="22_kqpe1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ny36g")
+
+[node name="Lesson11" type="TextureButton" parent="."]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_left = 96.0
+offset_top = 360.0
+offset_right = 1172.0
+offset_bottom = 1004.0
+scale = Vector2(0.370769, 0.370769)
+mouse_filter = 2
+texture_normal = ExtResource("2_bd1ri")
+texture_pressed = ExtResource("4_ny36g")
+
+[node name="CarouselContainer" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("1_yov6k")]
+position = Vector2(752, 192)
+position_offset_node = NodePath("Control")
+vertical_offset = null
+swipe_threshold = null
+
+[node name="Control" type="Control" parent="CarouselContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture_normal = ExtResource("2_bd1ri")
+texture_pressed = ExtResource("4_ny36g")
+
+[node name="Lesson2" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("5_5lc6y")
+texture_pressed = ExtResource("6_s82in")
+
+[node name="Lesson3" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("7_4fbyb")
+texture_pressed = ExtResource("8_ocwwc")
+
+[node name="Lesson4" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("9_cye6h")
+texture_pressed = ExtResource("10_su87c")
+
+[node name="Lesson5" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("11_5xtxb")
+texture_pressed = ExtResource("12_0fpob")
+
+[node name="Lesson6" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("13_0sjt7")
+texture_pressed = ExtResource("14_epurs")
+
+[node name="Lesson7" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("15_sqfm5")
+texture_pressed = ExtResource("16_pvmmg")
+
+[node name="Lesson8" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("17_pfp8n")
+texture_pressed = ExtResource("18_0rxm4")
+
+[node name="Lesson9" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("19_t1ocw")
+texture_pressed = ExtResource("20_cfujr")
+
+[node name="Lesson10" type="TextureButton" parent="CarouselContainer/Control"]
+material = ExtResource("2_gyt36")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("21_barkg")
+texture_pressed = ExtResource("22_kqpe1")

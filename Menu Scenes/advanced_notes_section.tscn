@@ -517,7 +517,6 @@ layout_mode = 0
 offset_top = -367.0
 offset_right = 1102.0
 offset_bottom = 367.0
-scale = Vector2(1, 1)
 pivot_offset = Vector2(551, 367)
 disabled = true
 texture_normal = ExtResource("7_3rlur")
