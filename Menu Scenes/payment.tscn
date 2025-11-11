@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://487nf8hj41jv" path="res://Assets/Line1.png" id="2_o70r3"]
 [ext_resource type="Texture2D" uid="uid://cjai6r1kqfqv3" path="res://Assets/Button.png" id="3_o70r3"]
 [ext_resource type="Texture2D" uid="uid://6owjqaogefuf" path="res://Assets/Drum.png" id="3_y5pwv"]
-[ext_resource type="Texture2D" uid="uid://cu8irpi1ak2y1" path="res://Assets/Stick.png" id="4_7kq2f"]
+[ext_resource type="Texture2D" uid="uid://cu8irpi1ak2y1" path="res://Menu Shaders/Stick.png" id="4_7kq2f"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_7ydcn"]
 [ext_resource type="PackedScene" uid="uid://chhpipfjhex1m" path="res://Assets/Junk/ActualNotes/16_note.tscn" id="4_vskt2"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="6_34x80"]
 [ext_resource type="PackedScene" uid="uid://roxnyah5ksrl" path="res://Assets/Junk/ActualNotes/half_note.tscn" id="6_p0lh3"]
 [ext_resource type="PackedScene" uid="uid://h3cjfx0inhwn" path="res://Assets/Junk/ActualNotes/Broken16Notes/br16_7.tscn" id="7_r1v5j"]
 [ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="11_p0lh3"]
+
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ydcn"]
 texture = ExtResource("3_o70r3")

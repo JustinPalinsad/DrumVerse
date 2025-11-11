@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu8irpi1ak2y1"
-path="res://.godot/imported/Stick.png-7e83fba701c33080329932b3ea448ab4.ctex"
+uid="uid://b1vgqvo7u2jit"
+path="res://.godot/imported/Untitled.png-0a87153cd8aab9942d83a68cb5baefaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Stick.png"
-dest_files=["res://.godot/imported/Stick.png-7e83fba701c33080329932b3ea448ab4.ctex"]
+source_file="res://Assets/Untitled.png"
+dest_files=["res://.godot/imported/Untitled.png-0a87153cd8aab9942d83a68cb5baefaf.ctex"]
 
 [params]
 
