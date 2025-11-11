@@ -48,8 +48,6 @@ texture_pressed = ExtResource("4_ny36g")
 [node name="CarouselContainer" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("1_yov6k")]
 position = Vector2(752, 192)
 position_offset_node = NodePath("Control")
-vertical_offset = null
-swipe_threshold = null
 
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3

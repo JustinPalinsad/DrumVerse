@@ -2,7 +2,7 @@ extends CanvasLayer
 
 func _ready():
 	var label = Label.new()
-	label.text = "TEST BUILD - NOT FOR DISTRIBUTION"
+	label.text = ""
 	label.modulate.a = 0.2
 	label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

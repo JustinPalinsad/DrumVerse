@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ceqflowy2gekk" path="res://Menu Assets/Watermark.png" id="2_1io1o"]
 
 [node name="Watermark" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_3cjmn")
 
 [node name="Control" type="Control" parent="."]
