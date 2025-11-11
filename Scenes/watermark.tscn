@@ -19,6 +19,7 @@ offset_right = -920.0
 offset_bottom = -511.88
 
 [node name="Watermark" type="Sprite2D" parent="Control"]
+visible = false
 modulate = Color(1, 1, 1, 0.462745)
 position = Vector2(976, 480)
 texture = ExtResource("2_1io1o")

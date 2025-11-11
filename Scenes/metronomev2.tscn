@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3y8lswnxm60c"]
+[gd_scene load_steps=11 format=3 uid="uid://c3y8lswnxm60c"]
 
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_jq8md"]
 [ext_resource type="Script" uid="uid://cwo7lkpphws3f" path="res://Scenes/metronomev_2.gd" id="1_q0drd"]
@@ -67,6 +67,9 @@ tracks/4/keys = {
 "values": [1.5]
 }
 
+[sub_resource type="Animation" id="Animation_a8uw7"]
+resource_name = "rest"
+
 [sub_resource type="Animation" id="Animation_xlr62"]
 resource_name = "swing"
 length = 4.0
@@ -132,6 +135,7 @@ tracks/4/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a8uw7"]
 _data = {
 &"RESET": SubResource("Animation_k326g"),
+&"rest": SubResource("Animation_a8uw7"),
 &"swing": SubResource("Animation_xlr62")
 }
 

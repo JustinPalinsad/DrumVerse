@@ -1,0 +1,308 @@
+[gd_scene load_steps=18 format=3 uid="uid://cekb17td2ksmg"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_fcf3v"]
+[ext_resource type="Texture2D" uid="uid://487nf8hj41jv" path="res://Assets/Line1.png" id="2_o70r3"]
+[ext_resource type="Texture2D" uid="uid://cjai6r1kqfqv3" path="res://Assets/Button.png" id="3_o70r3"]
+[ext_resource type="Texture2D" uid="uid://6owjqaogefuf" path="res://Assets/Drum.png" id="3_y5pwv"]
+[ext_resource type="Texture2D" uid="uid://cu8irpi1ak2y1" path="res://Assets/Stick.png" id="4_7kq2f"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_7ydcn"]
+[ext_resource type="PackedScene" uid="uid://chhpipfjhex1m" path="res://Assets/Junk/ActualNotes/16_note.tscn" id="4_vskt2"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="6_34x80"]
+[ext_resource type="PackedScene" uid="uid://roxnyah5ksrl" path="res://Assets/Junk/ActualNotes/half_note.tscn" id="6_p0lh3"]
+[ext_resource type="PackedScene" uid="uid://h3cjfx0inhwn" path="res://Assets/Junk/ActualNotes/Broken16Notes/br16_7.tscn" id="7_r1v5j"]
+[ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="11_p0lh3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ydcn"]
+texture = ExtResource("3_o70r3")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+expand_margin_left = 10.0
+region_rect = Rect2(0, 93, 1076, 551)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8c1h"]
+texture = ExtResource("3_o70r3")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="Animation" id="Animation_yxp85"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h5xp4"]
+_data = {
+&"new_animation": SubResource("Animation_yxp85")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxp85"]
+font = ExtResource("4_7ydcn")
+font_size = 366
+
+[sub_resource type="LabelSettings" id="LabelSettings_w8c1h"]
+font = ExtResource("6_34x80")
+font_size = 366
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 377.0
+offset_right = 120.0
+offset_bottom = 417.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Line2D" type="Line2D" parent="MarginContainer"]
+material = ExtResource("1_fcf3v")
+position = Vector2(-4242.95, 51)
+scale = Vector2(8.55, 8.55)
+points = PackedVector2Array(-1, 0, 1099.53, 0)
+texture = ExtResource("2_o70r3")
+texture_mode = 1
+
+[node name="Line2D5" type="Line2D" parent="MarginContainer"]
+material = ExtResource("1_fcf3v")
+position = Vector2(-4242.95, 1030)
+scale = Vector2(8.55, 8.55)
+points = PackedVector2Array(-1, 0, 1099.53, 0)
+texture = ExtResource("2_o70r3")
+texture_mode = 1
+
+[node name="Line2D3" type="Line2D" parent="MarginContainer"]
+material = ExtResource("1_fcf3v")
+position = Vector2(-4244.17, 980)
+scale = Vector2(7.25259, 0.624783)
+points = PackedVector2Array(-1, 0, 1304.25, 0)
+texture_mode = 1
+
+[node name="Line2D4" type="Line2D" parent="MarginContainer"]
+material = ExtResource("1_fcf3v")
+position = Vector2(-4244.17, 101)
+scale = Vector2(7.25259, 0.624783)
+points = PackedVector2Array(-1, 0, 1312.39, 0)
+texture_mode = 1
+
+[node name="Panel2" type="Panel" parent="."]
+material = ExtResource("1_fcf3v")
+layout_mode = 0
+offset_left = 1310.0
+offset_top = 447.0
+offset_right = 2927.0
+offset_bottom = 1393.0
+scale = Vector2(0.27596, 0.27596)
+theme_override_styles/panel = SubResource("StyleBoxTexture_7ydcn")
+
+[node name="Line2D" type="Line2D" parent="Panel2"]
+material = ExtResource("1_fcf3v")
+position = Vector2(-14.4949, -10.8711)
+scale = Vector2(1.00341, 4.44787)
+points = PackedVector2Array(7.22266, 7.3324, 1579.94, 7.24744)
+
+[node name="Panel3" type="Panel" parent="Panel2"]
+material = ExtResource("1_fcf3v")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.376
+anchor_top = 0.299
+anchor_right = 0.376
+anchor_bottom = 0.299
+offset_left = -97.0479
+offset_top = -181.854
+offset_right = 536.952
+offset_bottom = 15.146
+scale = Vector2(0.867861, 0.867861)
+theme_override_styles/panel = SubResource("StyleBoxTexture_w8c1h")
+
+[node name="Inside" type="Control" parent="Panel2"]
+z_index = -1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="16Note" parent="Panel2/Inside" instance=ExtResource("4_vskt2")]
+position = Vector2(65.227, -818.96)
+rotation = 1.26425
+scale = Vector2(2.33293, 2.33293)
+
+[node name="Drum" type="Sprite2D" parent="Panel2/Inside"]
+material = ExtResource("1_fcf3v")
+position = Vector2(608.784, 119.583)
+rotation = 0.411052
+scale = Vector2(0.914962, 0.914962)
+texture = ExtResource("3_y5pwv")
+
+[node name="half_note" parent="Panel2/Inside" instance=ExtResource("6_p0lh3")]
+position = Vector2(1413.25, -637.774)
+rotation = -2.8043
+scale = Vector2(2.87467, 2.87467)
+
+[node name="Drum2" type="Sprite2D" parent="Panel2/Inside"]
+material = ExtResource("1_fcf3v")
+position = Vector2(945.79, 199.305)
+rotation = 0.701557
+scale = Vector2(0.914962, 0.914962)
+texture = ExtResource("3_y5pwv")
+
+[node name="16_note_br7" parent="Panel2/Inside" instance=ExtResource("7_r1v5j")]
+position = Vector2(844.326, -1228.44)
+rotation = 1.97579
+scale = Vector2(2.81498, 2.81498)
+
+[node name="Stick" type="Sprite2D" parent="Panel2/Inside"]
+material = ExtResource("1_fcf3v")
+position = Vector2(1523.37, 15.2606)
+rotation = 0.460231
+scale = Vector2(1.98059, 1.98059)
+texture = ExtResource("4_7kq2f")
+
+[node name="Stick2" type="Sprite2D" parent="Panel2/Inside"]
+material = ExtResource("1_fcf3v")
+position = Vector2(1432.78, 113.101)
+rotation = 0.237433
+scale = Vector2(1.98059, 1.98059)
+texture = ExtResource("4_7kq2f")
+
+[node name="MetronomeV2" parent="Panel2/Inside" instance=ExtResource("11_p0lh3")]
+position = Vector2(1058.13, 25.3661)
+rotation = 0.350118
+scale = Vector2(0.522825, 0.522825)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel2"]
+libraries = {
+&"": SubResource("AnimationLibrary_h5xp4")
+}
+
+[node name="Panel" type="Panel" parent="."]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 793.0
+offset_right = 3314.0
+offset_bottom = 1342.0
+scale = Vector2(0.27596, 0.27596)
+theme_override_styles/panel = SubResource("StyleBoxTexture_w8c1h")
+
+[node name="Label" type="Label" parent="Panel"]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1044.0
+offset_top = -274.5
+offset_right = 1033.0
+offset_bottom = 274.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy "
+label_settings = SubResource("LabelSettings_yxp85")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Information" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel3" type="Panel" parent="Information"]
+material = ExtResource("1_fcf3v")
+layout_mode = 0
+offset_left = 34.0001
+offset_top = 238.0
+offset_right = 4016.0
+offset_bottom = 2713.0
+scale = Vector2(0.27596, 0.27596)
+theme_override_styles/panel = SubResource("StyleBoxTexture_w8c1h")
+
+[node name="Label3" type="Label" parent="Information"]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 486.0
+offset_top = 249.0
+offset_right = 2563.0
+offset_bottom = 798.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.113645, 0.113645)
+text = "Free"
+label_settings = SubResource("LabelSettings_w8c1h")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label4" type="Label" parent="Information"]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 792.0
+offset_top = 249.0
+offset_right = 2869.0
+offset_bottom = 798.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.113645, 0.113645)
+text = "Premium"
+label_settings = SubResource("LabelSettings_w8c1h")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label2" type="Label" parent="Information"]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 188.0
+offset_top = 66.0
+offset_right = 2265.0
+offset_bottom = 615.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.318264, 0.318264)
+text = "Premium"
+label_settings = SubResource("LabelSettings_w8c1h")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
