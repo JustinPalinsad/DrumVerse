@@ -1,3 +1,4 @@
+@tool
 extends Node2D
 
 @export var spacing: float = 20.0
@@ -15,6 +16,11 @@ extends Node2D
 @export var left_button: Button
 @export var right_button: Button
 
+# Swipe detection threshold
+@export var swipe_threshold: float = 10.0
+var drag_accumulated := 0.0
+var swiping := false
+
 var dragging := false
 var last_mouse_pos := Vector2.ZERO
 var velocity := 0.0
@@ -23,7 +29,7 @@ var released := false
 var queued_print_index := -1
 var last_known_global_index := -1
 
-# 🔹 Property tied to GameState.notes_index
+# Property tied to GameState.notes_index
 var selected_index: int:
 	get:
 		return GameState.notes_index if Engine.is_editor_hint() == false else 0
@@ -32,7 +38,6 @@ var selected_index: int:
 			GameState.notes_index = clamp(value, 0, position_offset_node.get_child_count() - 1)
 		else:
 			GameState.notes_index = value
-
 
 func _ready():
 	if position_offset_node:
@@ -45,12 +50,12 @@ func _ready():
 	if right_button:
 		right_button.connect("pressed", Callable(self, "_right"))
 
-
 func _on_button_pressed(button: Control):
+	if swiping:
+		return
 	if button.get_index() == selected_index:
 		selected_index = button.get_index()
 		queued_print_index = button.get_index()
-
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -60,14 +65,25 @@ func _input(event):
 				released = false
 				last_mouse_pos = event.position
 				velocity = 0.0
-
-				if position_offset_node:
-					for child in position_offset_node.get_children():
-						if child.has_focus():
-							child.release_focus()
+				drag_accumulated = 0.0
+				swiping = false
 			else:
 				dragging = false
 				released = true
+
+				var was_swipe := swiping or (drag_accumulated > swipe_threshold)
+				if was_swipe:
+					for c in position_offset_node.get_children():
+						c.mouse_filter = Control.MOUSE_FILTER_IGNORE
+						if c is BaseButton:
+							if "set_pressed_no_signal" in c:
+								c.set_pressed_no_signal(false)
+							if "set_pressed" in c:
+								c.set_pressed(false)
+							c.release_focus()
+
+					swiping = false
+					drag_accumulated = 0.0
 
 	elif event is InputEventMouseMotion and dragging:
 		var delta = event.position - last_mouse_pos
@@ -75,39 +91,45 @@ func _input(event):
 		velocity = delta.x
 		last_mouse_pos = event.position
 
+		drag_accumulated += abs(delta.x)
+		if drag_accumulated > swipe_threshold and !swiping:
+			swiping = true
+			for c in position_offset_node.get_children():
+				c.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				if c is BaseButton:
+					if "set_pressed_no_signal" in c:
+						c.set_pressed_no_signal(false)
+					if "set_pressed" in c:
+						c.set_pressed(false)
+					c.release_focus()
 
 func _process(delta: float) -> void:
 	if !position_offset_node or position_offset_node.get_child_count() == 0:
 		return
 
-	# 🔹 Sync GameState.notes_index
 	if GameState.notes_index != last_known_global_index:
 		selected_index = GameState.notes_index
 		last_known_global_index = GameState.notes_index
 
 	selected_index = clamp(selected_index, 0, position_offset_node.get_child_count() - 1)
 
-	# 🔹 Layout children horizontally
 	var x := 0.0
 	for i in position_offset_node.get_children():
 		i.pivot_offset = i.size / 2.0
 		i.position = Vector2(x, -i.size.y / 2.0)
 		x += i.size.x + spacing
 
-	# 🔹 Focus tracking
 	if follow_button_focus:
 		for i in position_offset_node.get_children():
 			if i.has_focus():
 				selected_index = i.get_index()
 				break
 
-	# 🔹 Smooth scroll (horizontal)
 	if !dragging:
 		var target_item = position_offset_node.get_child(selected_index)
 		var target_x = -(target_item.position.x + target_item.size.x / 2.0 - get_viewport_rect().size.x / 2.0)
 		position_offset_node.position.x = lerp(position_offset_node.position.x, target_x, smoothing_speed * delta)
 
-	# 🔹 Snap on release
 	if released:
 		released = false
 		var center_x = get_viewport_rect().size.x / 2.0
@@ -124,7 +146,6 @@ func _process(delta: float) -> void:
 		selected_index = closest_index
 		last_known_global_index = selected_index
 
-	# 🔹 Visual updates (scale + opacity)
 	var center_x := get_viewport_rect().size.x / 2.0
 	for i in position_offset_node.get_children():
 		var item_center_x = position_offset_node.position.x + i.position.x + i.size.x / 2.0
@@ -133,6 +154,10 @@ func _process(delta: float) -> void:
 
 		i.scale = Vector2.ONE * clamp(1.0 - scale_strength * normalized, scale_min, 1.0)
 		i.modulate.a = clamp(1.0 - opacity_strength * normalized, 0.0, 1.0)
+
+		if swiping:
+			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			continue
 
 		if i.get_index() == selected_index:
 			i.z_index = 1
@@ -143,11 +168,9 @@ func _process(delta: float) -> void:
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			i.focus_mode = Control.FOCUS_NONE
 
-
 func _left():
 	selected_index -= 1
 	last_known_global_index = selected_index
-
 
 func _right():
 	selected_index += 1

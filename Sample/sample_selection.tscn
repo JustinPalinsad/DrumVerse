@@ -929,6 +929,8 @@ position = Vector2(1232, 1128)
 scale = Vector2(0.955, 0.955)
 spacing = -40.0
 position_offset_node = NodePath("Control")
+vertical_offset = -0.065
+swipe_threshold = 200.0
 
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
@@ -949,6 +951,7 @@ offset_right = 538.0
 offset_bottom = 644.0
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
+mouse_filter = 2
 texture_normal = ExtResource("28_yebvn")
 texture_pressed = ExtResource("29_ljih7")
 script = ExtResource("30_ljih7")
