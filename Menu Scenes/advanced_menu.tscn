@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ca3y7mttg1hur" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_vnhdg"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
-[ext_resource type="Script" path="res://Scripts/button_shake.gd" id="9_ihbiu"]
+[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_ihbiu"]
 [ext_resource type="Texture2D" uid="uid://cqwoquamwflal" path="res://Menu Assets/highlights/Lesson_Cards_015.png" id="10_e2tj8"]
 [ext_resource type="Texture2D" uid="uid://d3gd015a7463" path="res://Assets/NewNotes/br3.png" id="10_yicks"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="11_bfbil"]
@@ -330,6 +330,7 @@ position = Vector2(1232, 104)
 scale = Vector2(0.955, 0.955)
 spacing = -40.0
 position_offset_node = NodePath("Control")
+swipe_threshold = 100.0
 
 [node name="Control" type="Control" parent="carousel_container_3"]
 z_index = 5
