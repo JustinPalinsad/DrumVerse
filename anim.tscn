@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://du0gnb2k3csj8"]
+[gd_scene load_steps=9 format=3 uid="uid://b0ks2631f0yqs"]
 
 [ext_resource type="Texture2D" uid="uid://dka04a2tr3qwu" path="res://Assets/Fancy Stuff/Unlock1.png" id="1_ir72c"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_b4gub"]
