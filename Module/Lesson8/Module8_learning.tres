@@ -10,6 +10,6 @@ title_text = "Lesson 8"
 top_texts = Array[String](["Next is the double stroke roll", "Like this"])
 bottom_texts = Array[String](["This time, each hand plays two times before switching.", "Right, Right – Left, Left… or R-R-L-L.", "It trains your hands to bounce and control your stick better."])
 demo_bars = Array[Resource]([ExtResource("1_xxeal"), ExtResource("1_xxeal"), ExtResource("1_xxeal"), ExtResource("4_cmrbr")])
-show_note_labels = true
+show_note_labels = false
 slide3_message = "now Try Practice Mode first before proceeding to Challenge Mode."
 metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

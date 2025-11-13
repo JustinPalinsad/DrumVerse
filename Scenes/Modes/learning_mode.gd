@@ -251,7 +251,7 @@ func _animate_pad(note_type: String) -> void:
 			if stick_to_animate and stick_to_animate.has_animation("hit"):
 				stick_to_animate.play("hit")
 
-		"R", "B":  # Default both to right stick
+		"R", "B":
 			pad_to_animate = right_pad
 			stick_to_animate = right_stick_anim
 			if stick_to_animate and stick_to_animate.has_animation("hit"):
@@ -260,26 +260,22 @@ func _animate_pad(note_type: String) -> void:
 		_:
 			return
 
-	# Wait a bit so the stick lands before pad reacts
 	await get_tree().create_timer(delay).timeout
 
-	var original_scale = pad_to_animate.scale
+	# ✅ Remember original scale once
+	if not pad_to_animate.has_meta("original_scale"):
+		pad_to_animate.set_meta("original_scale", pad_to_animate.scale)
+
+	var original_scale = pad_to_animate.get_meta("original_scale")
+
+	# ✅ Use a smooth interpolation instead of stacking scale values
 	pad_to_animate.scale = original_scale * 0.7
 	pad_to_animate.modulate = Color(1, 1, 0.8)
 
-	# ⚠️ Removed hit_sound_player.play() here to prevent double sound
-
-	# Reset pad after 0.15 s
-	var reset_timer = Timer.new()
-	reset_timer.wait_time = 0.15
-	reset_timer.one_shot = true
-	reset_timer.timeout.connect(func():
-		pad_to_animate.scale = original_scale
-		pad_to_animate.modulate = Color(1, 1, 1)
-	)
-	add_child(reset_timer)
-	reset_timer.start()
-
+	# Smoothly return to normal scale — doesn’t interfere with next hit
+	var tween = create_tween()
+	tween.tween_property(pad_to_animate, "scale", original_scale, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(pad_to_animate, "modulate", Color(1, 1, 1), 0.12)
 
 
 func _show_slide_0():
