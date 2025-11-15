@@ -259,7 +259,6 @@ texture_normal = ExtResource("4_3kuvd")
 action = "ui_left"
 
 [node name="RightButton" type="TouchScreenButton" parent="Selection Container"]
-modulate = Color(1, 0.752941, 0.145098, 1)
 material = ExtResource("2_8mjjn")
 position = Vector2(1448, 864)
 texture_normal = ExtResource("5_5riwd")

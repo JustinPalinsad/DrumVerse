@@ -72,12 +72,12 @@ func _ready() -> void:
 		return
 
 	# 🚫 Disable BPM menu in challenge mode
-	if mode == "challenge" and bpm_menu_button:
-		bpm_menu_button.disabled = true
+	"""if mode == "challenge" and bpm_menu_button:
+		bpm_menu_button.disabled = true"""
 
 	# MovingCircle visible in practice or when testing toggle is on
 	moving_circle.visible = (mode == "practice") or show_moving_circle_in_challenge
-	hitline_sprite.modulate = Color("#30160D")
+	#hitline_sprite.modulate = Color("#30160D")
 	note_pattern_label.visible = false
 	countdown_label.visible = true
 
