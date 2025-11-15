@@ -34,7 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="29_gavew"]
 [ext_resource type="Texture2D" uid="uid://bbn0a6hr63msb" path="res://Assets/Rubrics/Rubrics_Highlight.png" id="29_ljih7"]
 [ext_resource type="Texture2D" uid="uid://co4tyl46gohne" path="res://Menu Assets/highlights/Lesson_Cards_003.png" id="30_es5p8"]
-[ext_resource type="Script" path="res://Scripts/button_shake.gd" id="30_ljih7"]
+[ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="30_ljih7"]
 [ext_resource type="Texture2D" uid="uid://cwjjk2bbe4jid" path="res://Menu Assets/highlights/Lesson_Cards_004.png" id="31_2fdqk"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="32_ays4d"]
 [ext_resource type="Texture2D" uid="uid://ca73mh8bgyf8f" path="res://Menu Assets/highlights/Lesson_Cards_005.png" id="32_ihbhp"]
@@ -929,6 +929,8 @@ position = Vector2(1232, 1128)
 scale = Vector2(0.955, 0.955)
 spacing = -40.0
 position_offset_node = NodePath("Control")
+vertical_offset = -0.065
+swipe_threshold = 100.0
 
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
@@ -949,6 +951,7 @@ offset_right = 538.0
 offset_bottom = 644.0
 scale = Vector2(0.999999, 0.999999)
 pivot_offset = Vector2(538, 322)
+mouse_filter = 2
 texture_normal = ExtResource("28_yebvn")
 texture_pressed = ExtResource("29_ljih7")
 script = ExtResource("30_ljih7")
@@ -1585,20 +1588,20 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 184.0
-offset_top = 218.0
-offset_right = 872.0
-offset_bottom = 391.0
+offset_left = 280.0
+offset_top = 1079.0
+offset_right = 968.0
+offset_bottom = 1252.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("41_m0han")
 
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 184.0
-offset_top = 872.0
-offset_right = 872.0
-offset_bottom = 1045.0
+offset_left = 160.0
+offset_top = 1167.0
+offset_right = 848.0
+offset_bottom = 1340.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("42_75tn7")
 texture_pressed = ExtResource("42_ui2kx")

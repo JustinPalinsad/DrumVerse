@@ -1,0 +1,247 @@
+[gd_scene load_steps=10 format=3 uid="uid://x5e8lwehw35g"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_4w4gr"]
+[ext_resource type="Script" uid="uid://bfrmc7l6ccjrb" path="res://button_test.gd" id="1_16d1s"]
+[ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="1_lv1yj"]
+[ext_resource type="Texture2D" uid="uid://b0p5bu7iwysrl" path="res://Menu Assets/Button_Highlight.png" id="2_lv1yj"]
+[ext_resource type="Texture2D" uid="uid://cjai6r1kqfqv3" path="res://Assets/Button.png" id="2_oxjxj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxjxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mnrh7"]
+texture = ExtResource("2_oxjxj")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16d1s"]
+texture = ExtResource("2_lv1yj")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lv1yj"]
+texture = ExtResource("2_oxjxj")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_16d1s")
+
+[node name="CarouselContainer" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("1_lv1yj")]
+position = Vector2(256, -32)
+position_offset_node = NodePath("Control")
+
+[node name="Control" type="Control" parent="CarouselContainer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 672.0
+offset_top = 352.0
+offset_right = 712.0
+offset_bottom = 392.0
+
+[node name="Button" type="Button" parent="CarouselContainer/Control"]
+material = ExtResource("1_4w4gr")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 1352.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow" type="Sprite2D" parent="CarouselContainer/Control/Button"]
+visible = false
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+position = Vector2(552, 311)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_oxjxj")
+
+[node name="shadow2" type="Sprite2D" parent="CarouselContainer/Control/Button"]
+modulate = Color(0, 0, 0, 0.435294)
+position = Vector2(556, 368)
+scale = Vector2(0.973978, 0.0885093)
+texture = ExtResource("2_oxjxj")
+
+[node name="Button2" type="Button" parent="CarouselContainer/Control"]
+visible = false
+material = ExtResource("1_4w4gr")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 1352.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow" type="Button" parent="CarouselContainer/Control/Button2"]
+visible = false
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = 256.0
+offset_right = 1104.0
+offset_bottom = 456.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow2" type="Sprite2D" parent="CarouselContainer/Control/Button2"]
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+position = Vector2(552, 311)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_oxjxj")
+
+[node name="Button3" type="Button" parent="CarouselContainer/Control"]
+visible = false
+material = ExtResource("1_4w4gr")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 1352.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow" type="Button" parent="CarouselContainer/Control/Button3"]
+visible = false
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = 256.0
+offset_right = 1104.0
+offset_bottom = 456.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow2" type="Sprite2D" parent="CarouselContainer/Control/Button3"]
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+position = Vector2(552, 311)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_oxjxj")
+
+[node name="Button4" type="Button" parent="CarouselContainer/Control"]
+visible = false
+material = ExtResource("1_4w4gr")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 1352.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow" type="Button" parent="CarouselContainer/Control/Button4"]
+visible = false
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = 256.0
+offset_right = 1104.0
+offset_bottom = 456.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow2" type="Sprite2D" parent="CarouselContainer/Control/Button4"]
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+position = Vector2(552, 311)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_oxjxj")
+
+[node name="Button5" type="Button" parent="CarouselContainer/Control"]
+visible = false
+material = ExtResource("1_4w4gr")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 1352.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow" type="Button" parent="CarouselContainer/Control/Button5"]
+visible = false
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = 256.0
+offset_right = 1104.0
+offset_bottom = 456.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow2" type="Sprite2D" parent="CarouselContainer/Control/Button5"]
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+position = Vector2(552, 311)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_oxjxj")
+
+[node name="Button6" type="Button" parent="CarouselContainer/Control"]
+visible = false
+material = ExtResource("1_4w4gr")
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 1352.0
+offset_bottom = 504.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow" type="Button" parent="CarouselContainer/Control/Button6"]
+visible = false
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_top = 256.0
+offset_right = 1104.0
+offset_bottom = 456.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oxjxj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnrh7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16d1s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_lv1yj")
+
+[node name="shadow2" type="Sprite2D" parent="CarouselContainer/Control/Button6"]
+modulate = Color(0, 0, 0, 0.435294)
+z_index = -1
+position = Vector2(552, 311)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_oxjxj")
