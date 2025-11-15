@@ -183,7 +183,6 @@ shader_parameter/sub_color = Color(1, 1, 1, 1)
 shader_parameter/opacity = 0.0
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(0, 126)
 
 [node name="Button" type="Sprite2D" parent="."]
 material = ExtResource("2_b4gub")

@@ -59,7 +59,7 @@ func _apply_popup_style(menu: PopupMenu) -> void:
 	menu.add_theme_font_size_override("font_size", popup_font_size)
 
 	# 🔹 Load ShaderMaterial color
-	var mat = load("res://Menu Shaders/Asset_Color.tres")
+	"""var mat = load("res://Menu Shaders/Asset_Color.tres")
 	if mat and mat is ShaderMaterial:
 		# ✅ Pick color based on dark mode (flipped)
 		var color_value: Color
@@ -69,15 +69,14 @@ func _apply_popup_style(menu: PopupMenu) -> void:
 				color_value = mat.get_shader_parameter("layer_color")  # 🔹 use layer_color in night mode
 			else:
 				color_value = mat.get_shader_parameter("layer_color")    # 🔹 use sub_color in day mode
-		
 		menu.add_theme_color_override("font_color", color_value)
-
+		
 	# Remove background/outline
 	menu.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
-
+"""
 	# Keep hover highlight only
 	var hover_box := StyleBoxFlat.new()
-	hover_box.bg_color = Color(0.85, 0.85, 0.85, 0.8) # light gray, slightly transparent
+	#hover_box.bg_color = Color(0.85, 0.85, 0.85, 0.8) # light gray, slightly transparent
 	hover_box.corner_radius_top_left = 4
 	hover_box.corner_radius_top_right = 4
 	hover_box.corner_radius_bottom_left = 4
