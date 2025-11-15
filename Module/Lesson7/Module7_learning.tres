@@ -10,6 +10,6 @@ title_text = "Lesson 7"
 top_texts = Array[String](["Single Stroke", "like this"])
 bottom_texts = Array[String](["Let’s start playing real drum patterns!", "A single stroke means tapping one hand, then the other.", "\"Right, Left, Right, Left…\"", "It’s simple, and great for building control."])
 demo_bars = Array[Resource]([ExtResource("1_flej2"), ExtResource("1_flej2"), ExtResource("1_flej2"), ExtResource("4_jdacg")])
-show_note_labels = true
+show_note_labels = false
 slide3_message = "now Try Practice Mode first before proceeding to Challenge Mode."
 metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

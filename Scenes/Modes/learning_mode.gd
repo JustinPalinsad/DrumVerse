@@ -5,6 +5,15 @@ extends Control
 @export var hit_effect_scene: PackedScene
 @export var miss_effect_scene: PackedScene
 
+@onready var drum_pad = $DrumPad
+@onready var left_pad = drum_pad.get_node("LeftPad")
+@onready var right_pad = drum_pad.get_node("RightPad")
+@onready var hit_sound_player = drum_pad.get_node("HitSoundPlayer")
+@onready var drumstick = $DrumStick
+@onready var left_stick_anim = drumstick.get_node("LeftStick/AnimationPlayer")
+@onready var right_stick_anim = drumstick.get_node("RightStick/AnimationPlayer")
+
+
 const NOTE_Y_POSITION := 460
 const HIT_RADIUS := 25.0
 
@@ -18,8 +27,9 @@ var effects_container
 var metronome
 var countdown_label
 var countdown_audio_player
-var hit_sound_player
 var note_pattern_label
+
+var demo_top_shown := false
 
 
 var notes: Array[Node2D] = []
@@ -51,7 +61,6 @@ func _ready() -> void:
 	replay_button = $ReplayButton
 	effects_container = $EffectsContainer
 	metronome = $Metronome
-	hit_sound_player = $HitSoundPlayer
 	note_pattern_label = $NotePatternLabel
 
 
@@ -96,24 +105,90 @@ func _process(_delta):
 
 func _check_auto_hits():
 	for note in notes:
-		for beam in note.get_node("BeamContainer").get_children():
-			if not beam.has_meta("hit") and abs(beam.global_position.x - moving_circle.global_position.x) < HIT_RADIUS:
-				beam.set_meta("hit", true)
-				_spawn_hit_effect(beam.global_position)
+		if not note.has_node("BeamContainer"):
+			continue
 
-func _spawn_hit_effect(hit_pos: Vector2):
-	if hit_effect_scene:
-		var effect = hit_effect_scene.instantiate()
-		effects_container.add_child(effect)
-		effect.global_position = hit_pos
-		effect.scale = Vector2(0.5, 0.5)
-		effect.z_index = 10
-		
-		if hit_sound_player:
-			hit_sound_player.play()
-		
-		await get_tree().create_timer(0.2).timeout
-		effect.queue_free()
+		var beams = note.get_node("BeamContainer").get_children()
+		for i in range(beams.size()):
+			var beam = beams[i]
+
+			# Only trigger once per beam
+			if beam.has_meta("hit") and beam.get_meta("hit"):
+				continue
+
+			# Check alignment: moving_circle x vs beam x
+			var distance = abs(beam.global_position.x - moving_circle.global_position.x)
+			if distance <= HIT_RADIUS:
+				beam.set_meta("hit", true)
+
+				# Get the note resource
+				var drum_note: DrumNote = beam.get_meta("drum_note_resource")
+				if drum_note == null:
+					continue
+
+				# Determine which pad this beam should use
+				var note_type = "R"  # default
+				match i:
+					0:
+						note_type = _beam_pad_to_type(drum_note.pad_beam_1)
+					1:
+						note_type = _beam_pad_to_type(drum_note.pad_beam_2)
+					2:
+						note_type = _beam_pad_to_type(drum_note.pad_beam_3)
+					3:
+						note_type = _beam_pad_to_type(drum_note.pad_beam_4)
+
+				# Animate the pad/stick
+				_animate_pad(note_type)
+
+				# Spawn hit effect at beam's position
+				_spawn_hit_effect_at_pos(beam.global_position)
+
+
+# Helper to convert pad string to "L", "R", "B"
+func _beam_pad_to_type(pad: String) -> String:
+	match pad:
+		"left":
+			return "L"
+		"right":
+			return "R"
+		"both":
+			return "B"
+		_:
+			return "R"  # default
+
+
+
+
+
+func _spawn_hit_effect_at_pos(pos: Vector2) -> void:
+	if not hit_effect_scene or not effects_container:
+		return
+
+	var effect = hit_effect_scene.instantiate()
+	effects_container.add_child(effect)
+	effect.global_position = pos
+	effect.scale = Vector2(0.5, 0.5)
+	effect.z_index = 100
+	effect.visible = true
+
+	# Play drum hit sound
+	if hit_sound_player:
+		hit_sound_player.stop()
+		hit_sound_player.play()
+
+	# Auto-remove effect after 0.2s
+	var timer = Timer.new()
+	timer.wait_time = 0.2
+	timer.one_shot = true
+	timer.timeout.connect(func():
+		if effect:
+			effect.queue_free()
+	)
+	add_child(timer)
+	timer.start()
+
+
 
 
 func _spawn_miss_effect(pos: Vector2):
@@ -164,7 +239,43 @@ func update_note_pattern_label(bar_data):
 	if note_pattern_label:
 		note_pattern_label.text = pattern
 
+func _animate_pad(note_type: String) -> void:
+	var pad_to_animate: Node2D
+	var stick_to_animate: AnimationPlayer
+	var delay := 0.05  # small delay before pad reacts
 
+	match note_type:
+		"L":
+			pad_to_animate = left_pad
+			stick_to_animate = left_stick_anim
+			if stick_to_animate and stick_to_animate.has_animation("hit"):
+				stick_to_animate.play("hit")
+
+		"R", "B":
+			pad_to_animate = right_pad
+			stick_to_animate = right_stick_anim
+			if stick_to_animate and stick_to_animate.has_animation("hit"):
+				stick_to_animate.play("hit")
+
+		_:
+			return
+
+	await get_tree().create_timer(delay).timeout
+
+	# ✅ Remember original scale once
+	if not pad_to_animate.has_meta("original_scale"):
+		pad_to_animate.set_meta("original_scale", pad_to_animate.scale)
+
+	var original_scale = pad_to_animate.get_meta("original_scale")
+
+	# ✅ Use a smooth interpolation instead of stacking scale values
+	pad_to_animate.scale = original_scale * 0.7
+	pad_to_animate.modulate = Color(1, 1, 0.8)
+
+	# Smoothly return to normal scale — doesn’t interfere with next hit
+	var tween = create_tween()
+	tween.tween_property(pad_to_animate, "scale", original_scale, 0.12).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(pad_to_animate, "modulate", Color(1, 1, 1), 0.12)
 
 
 func _show_slide_0():
@@ -201,6 +312,20 @@ func _start_demo_slide():
 	try_slide_started = false
 	replay_button.visible = false
 
+	# ✅ Show drumpad & drumstick
+	_set_drum_nodes_visible(true)
+
+	# ✅ Show BeatCountLabel during demo
+	if $BeatCountLabel:
+		$BeatCountLabel.visible = true
+
+	# ✅ Show TopLabel only the first time
+	if not demo_top_shown:
+		slide_control.get_node("TopLabel").visible = true
+		demo_top_shown = true
+	else:
+		slide_control.get_node("TopLabel").visible = false
+
 	moving_circle.position = Vector2(96, NOTE_Y_POSITION)
 	animation_player.stop()
 	animation_player.seek(0.0, true)
@@ -212,10 +337,12 @@ func _start_demo_slide():
 	if animation_player.has_animation("moving_circle"):
 		await _play_demo_sequence()
 
+	# Hide them again after demo ends (after endbar)
+	_set_drum_nodes_visible(false)
 	animation_player.stop()
 	moving_circle.visible = false
 
-	# 🔇 Stop the metronome after the last bar
+	# 🔇 Stop the metronome visuals
 	if metronome:
 		var tick_player = metronome.get_node("LearningTickPlayer")
 		var sprite = metronome.get_node("AnimatedSprite2D")
@@ -229,6 +356,7 @@ func _start_demo_slide():
 	replay_button.visible = true
 	input_enabled = true
 
+
 func _on_replay_button_pressed():
 	_restart_demo()
 
@@ -238,8 +366,12 @@ func _restart_demo():
 	replay_button.visible = false
 	try_slide_started = false
 	input_enabled = false
-	slide_index = 0  # 👈 Important! Reset the slide index
+	slide_index = 0  # 👈 Reset slide index
 	_clear_notes()
+
+	# ✅ Hide TopLabel when restarting demo
+	slide_control.get_node("TopLabel").visible = false
+
 	await get_tree().create_timer(0.2).timeout
 	_start_demo_slide()
 
@@ -298,9 +430,13 @@ func _start_slide_3():
 	moving_circle.visible = false
 	_clear_notes()
 
+	# ✅ Hide BeatCountLabel in Slide 3
+	if $BeatCountLabel:
+		$BeatCountLabel.visible = false
+
 	slide_control.get_node("TopLabel").text = ""
 	slide_control.get_node("BottomLabel").text = ""
-	slide_control.get_node("TitleLabel").visible = false  #  Hide TitleLabel 
+	slide_control.get_node("TitleLabel").visible = false
 
 	var slide3_label = slide_control.get_node("Slide3Label")
 	if slide3_label:
@@ -333,11 +469,17 @@ func _spawn_bar(bar_data):
 			var note = note_data.note_scene.instantiate()
 			note.position = Vector2(note_data.x_position, NOTE_Y_POSITION)
 
-			# ✅ Pass the resource into the Note node
+			# Store the DrumNote resource in the note node
 			note.set_meta("drum_note_resource", note_data)
+
+			# Also store the resource in each beam so _check_auto_hits can read it
+			if note.has_node("BeamContainer"):
+				for beam in note.get_node("BeamContainer").get_children():
+					beam.set_meta("drum_note_resource", note_data)
 
 			notes_container.add_child(note)
 			notes.append(note)
+
 
 
 func _clear_notes():
@@ -418,6 +560,12 @@ func _on_metronome_tick_timeout():
 		sprite.stop()
 		sprite.frame = 0
 		sprite.play()
+
+func _set_drum_nodes_visible(visible: bool) -> void:
+	drum_pad.visible = visible
+	$DrumStick.visible = visible
+
+
 
 func _on_back_pressed() -> void:
 	GlobalAudio.mute_bgm(false)
