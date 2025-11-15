@@ -66,6 +66,8 @@ var in_countdown := false
 # -----------------------
 func _ready() -> void:
 	GlobalAudio.mute_bgm(true)
+	transition_anim()
+	await  transition_anim()
 	drum_module = GameState.selected_module
 	if not drum_module:
 		push_error("No module selected!")
@@ -678,3 +680,16 @@ func module_score(final_grade_string: String):
 
 		if new_rank > existing_rank:
 			GameState.module_grades[lessons_index] = final_grade_string
+			
+			
+func transition_anim():
+	$animation_transition.show()
+	$animation_transition/AnimationPlayer.play("Transition")
+	await $animation_transition/AnimationPlayer.animation_finished
+	$animation_transition.queue_free()
+	$Back.show()
+	$HitLine.show()
+	$Metronome.show()
+	$BPMMenuButton.show()
+	$TouchPadContainer.show()
+	$MovingCircle.show()
