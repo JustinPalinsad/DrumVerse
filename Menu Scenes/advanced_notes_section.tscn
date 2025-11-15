@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://gbinb1ry81c1" path="res://Menu Scripts/advanced_notes_section.gd" id="1_hl3y6"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_04jee"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="3_3hnub"]
-[ext_resource type="PackedScene" uid="uid://qs1x3djvj7me" path="res://Menu Scenes/carousel_container_2.tscn" id="4_d3apn"]
+[ext_resource type="PackedScene" uid="uid://oq6h2ifxr55l" path="res://Menu Scenes/carousel_container_2.tscn" id="4_d3apn"]
 [ext_resource type="Texture2D" uid="uid://da6mthi7jt8je" path="res://Menu Assets/highlights/Lesson_Cards_011.png" id="6_wcgb8"]
 [ext_resource type="Texture2D" uid="uid://q5j700ebio86" path="res://Menu Assets/advanced cards/Lesson_Cards__011.png" id="7_3rlur"]
 [ext_resource type="Texture2D" uid="uid://dfblf1quuck6k" path="res://Menu Assets/highlights/Lesson_Cards_012.png" id="7_cetvk"]

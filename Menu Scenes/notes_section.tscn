@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_8mnoc"]
 [ext_resource type="Texture2D" uid="uid://da8a0h7cnkn5s" path="res://Menu Assets/Group 7.png" id="2_otgxm"]
 [ext_resource type="Texture2D" uid="uid://bdux1ufjgb5et" path="res://Menu Assets/drum bg.png" id="3_gbwgf"]
-[ext_resource type="PackedScene" uid="uid://qs1x3djvj7me" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]
+[ext_resource type="PackedScene" uid="uid://oq6h2ifxr55l" path="res://Menu Scenes/carousel_container_2.tscn" id="3_otgxm"]
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="4_ls0eo"]
 [ext_resource type="Texture2D" uid="uid://dxhnxb4s6eh3o" path="res://Menu Assets/highlights/Lesson_Cards_001.png" id="6_0d0so"]
 [ext_resource type="Texture2D" uid="uid://bl8aa7s3cwbx5" path="res://Menu Assets/highlights/Lesson_Cards_002.png" id="7_ls0eo"]
