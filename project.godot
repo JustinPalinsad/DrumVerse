@@ -29,6 +29,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
 window/handheld/orientation=4
 
 [editor_plugins]
@@ -46,10 +47,6 @@ folder_colors={
 "res://Scripts/": "green",
 "res://shader/": "pink"
 }
-
-[gui]
-
-common/snap_controls_to_pixels=false
 
 [input]
 

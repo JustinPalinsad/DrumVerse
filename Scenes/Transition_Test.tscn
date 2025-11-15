@@ -1,0 +1,445 @@
+[gd_scene load_steps=14 format=3 uid="uid://l17yx5bxwfsb"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_rax7e"]
+[ext_resource type="Texture2D" uid="uid://ccmbu6ekof6rh" path="res://Assets/Drum2.png" id="2_wnac0"]
+[ext_resource type="Texture2D" uid="uid://bu1mpu22fct5w" path="res://Assets/Drum2_F.png" id="3_86q0s"]
+[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="4_wnac0"]
+[ext_resource type="Texture2D" uid="uid://bcapswu1b5rjp" path="res://Assets/Fancy Stuff/fancy_button.png" id="5_86q0s"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="6_fsrq7"]
+[ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="8_hnt7p"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="9_7rgdx"]
+[ext_resource type="Script" uid="uid://det1facwxs68p" path="res://Scenes/menu_button.gd" id="10_d4quo"]
+
+[sub_resource type="Animation" id="Animation_lncnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftTouchPad:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-197, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftTouchPad:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.441223, 0.438173)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightTouchPad:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.442001, 0.438986)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightTouchPad:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1489, 586)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Line2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Line2D2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Line2D3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1088, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Line2D4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(219, 209)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Line2D5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1549, -3)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Line2D6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-26, -135)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Line2D7:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1551, 208)]
+}
+
+[sub_resource type="Animation" id="Animation_fsrq7"]
+resource_name = "Transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftTouchPad:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 2.1),
+"transitions": PackedFloat32Array(0.535887, 1),
+"update": 0,
+"values": [Vector2(-197, 1359), Vector2(-197, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftTouchPad:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.166667, 2.1),
+"transitions": PackedFloat32Array(0.535887, 1),
+"update": 0,
+"values": [Vector2(0.0279063, 0.0277134), Vector2(0.441223, 0.438173)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightTouchPad:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.633333, 2.23333),
+"transitions": PackedFloat32Array(0.482968, 0.5),
+"update": 0,
+"values": [Vector2(0.0335094, 0.0332808), Vector2(0.442001, 0.438986)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightTouchPad:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.633333, 2.23333),
+"transitions": PackedFloat32Array(0.482968, 0.5),
+"update": 0,
+"values": [Vector2(2041, 1361), Vector2(1489, 586)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Line2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4459, 2.2),
+"transitions": PackedFloat32Array(2.54912, 3.86374),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1704, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Line2D2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.8, 2.43333),
+"transitions": PackedFloat32Array(2.54912, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -257)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Line2D3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.13333, 2.56062),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1088, 0), Vector2(1088, -281)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Line2D4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.66667, 2.26667),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(219, 209), Vector2(219, 44)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Line2D5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.92652, 2.77872),
+"transitions": PackedFloat32Array(1.86607, 1),
+"update": 0,
+"values": [Vector2(1549, -3), Vector2(1549, 1170)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Line2D6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.01942, 2.73),
+"transitions": PackedFloat32Array(4.14106, 1),
+"update": 0,
+"values": [Vector2(-26, -135), Vector2(-26, -259)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Line2D7:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.31021, 2.66967),
+"transitions": PackedFloat32Array(3.86373, 1),
+"update": 0,
+"values": [Vector2(1551, 208), Vector2(1758, 208)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwran"]
+_data = {
+&"RESET": SubResource("Animation_lncnf"),
+&"Transition": SubResource("Animation_fsrq7")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsrq7"]
+texture = ExtResource("5_86q0s")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HitLine" parent="." instance=ExtResource("4_wnac0")]
+position = Vector2(972, 366)
+scale = Vector2(0.4, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="Metronome" parent="." instance=ExtResource("8_hnt7p")]
+material = ExtResource("1_rax7e")
+position = Vector2(1764, 136)
+scale = Vector2(0.25, 0.25)
+
+[node name="Back" type="TouchScreenButton" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("9_7rgdx")
+
+[node name="BPMMenuButton" type="MenuButton" parent="."]
+material = ExtResource("1_rax7e")
+layout_mode = 0
+offset_left = 1666.0
+offset_top = 231.0
+offset_right = 1851.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("6_fsrq7")
+theme_override_font_sizes/font_size = 40
+text = "BPM: 60"
+item_count = 3
+popup/item_0/text = "60"
+popup/item_0/id = 0
+popup/item_1/text = "80"
+popup/item_1/id = 1
+popup/item_2/text = "100"
+popup/item_2/id = 2
+script = ExtResource("10_d4quo")
+popup_font_size = 35
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lwran")
+}
+autoplay = "Transition"
+speed_scale = 2.0
+
+[node name="FancyButton" type="Sprite2D" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(-1197, 3346)
+texture = ExtResource("5_86q0s")
+
+[node name="Cooler Border" type="Panel" parent="FancyButton"]
+material = ExtResource("1_rax7e")
+anchors_preset = -1
+anchor_left = 0.376
+anchor_top = 0.299
+anchor_right = 0.376
+anchor_bottom = 0.299
+offset_left = -1509.58
+offset_top = 707.444
+offset_right = 754.424
+offset_bottom = 1879.44
+scale = Vector2(0.867861, 0.867861)
+theme_override_styles/panel = SubResource("StyleBoxTexture_fsrq7")
+
+[node name="Line2D" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+points = PackedVector2Array(334, 442, 1648, 442)
+width = 15.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+points = PackedVector2Array(517, 435, 517, 285)
+width = 15.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(1088, 0)
+points = PackedVector2Array(517, 435, 517, 285)
+width = 15.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D4" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(219, 209)
+points = PackedVector2Array(208, 208, 208, 90)
+width = 150.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D5" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(1549, -3)
+points = PackedVector2Array(208, 301, 208, 22)
+width = 195.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D7" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(1551, 208)
+points = PackedVector2Array(208, 83, 208, 22)
+width = 195.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D6" type="Line2D" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(-26, -135)
+points = PackedVector2Array(208, 301, 208, 22)
+width = 195.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+material = ExtResource("1_rax7e")
+layout_mode = 0
+offset_left = 424.0
+offset_top = -675.0
+offset_right = 687.0
+offset_bottom = -636.0
+scale = Vector2(4.91599, 6.73624)
+theme_override_fonts/font = ExtResource("6_fsrq7")
+theme_override_font_sizes/font_size = 5
+text = "aight, ima do my own thang "
+horizontal_alignment = 1
+
+[node name="LeftTouchPad" type="TouchScreenButton" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(-197, 584)
+scale = Vector2(0.441223, 0.438173)
+texture_normal = ExtResource("2_wnac0")
+action = "left_pad"
+
+[node name="RightTouchPad" type="TouchScreenButton" parent="."]
+material = ExtResource("1_rax7e")
+position = Vector2(1489, 586)
+scale = Vector2(0.442001, 0.438986)
+texture_normal = ExtResource("3_86q0s")
+action = "right_pad"
