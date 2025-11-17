@@ -65,6 +65,9 @@ func _ready() -> void:
 		_start_countdown()
 # --- COUNTDOWN ---
 func _start_countdown() -> void:
+	$TouchPadContainer.set_enabled(false)
+	$TouchPadContainer/LeftTouchPad.set_process_input(false)
+	$TouchPadContainer/RightTouchPad.set_process_input(false)
 	if GameState.polyrhythm_mode == "challenge":
 		$Middle_Point/HitLineTop/MovingCircleTop.hide()
 		$Middle_Point/HitLineBottom/MovingCircleBottom.hide()
@@ -85,7 +88,9 @@ func _start_countdown() -> void:
 	
 	# hide the label after "Go!"
 	countdown_label.visible = false
-	
+	$TouchPadContainer.set_enabled(true)
+	$TouchPadContainer/LeftTouchPad.set_process_input(true)
+	$TouchPadContainer/RightTouchPad.set_process_input(true)
 	# now start both animations
 	_play_top_animation()
 	_play_bottom_animation()
