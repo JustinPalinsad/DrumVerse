@@ -65,7 +65,7 @@ func _ready() -> void:
 
 
 	replay_button.visible = false
-	replay_button.modulate = Color("#30160d")
+	#replay_button.modulate = Color("#30160d")
 	replay_button.pressed.connect(_on_replay_button_pressed)
 
 	moving_circle.visible = false
