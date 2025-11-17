@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://uxracv1yjdng" path="res://Assets/Replay.png" id="6_71jwu"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="7_kgv2n"]
 [ext_resource type="Texture2D" uid="uid://dyokxh6o53pn" path="res://Assets/Stick.png" id="8_ebl8d"]
-[ext_resource type="AudioStream" uid="uid://cdrej3iwbfjfn" path="res://Audio/metronomes 0.25 ver/60 BPM.mp3" id="8_vifvf"]
 [ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="12_q7mwf"]
 [ext_resource type="PackedScene" uid="uid://bo17u5xw8qqc6" path="res://NoteScene/sixteenth_note.tscn" id="13_kpxic"]
 [ext_resource type="PackedScene" uid="uid://d1s4ulk21f4pq" path="res://NoteScene/eight_note.tscn" id="13_q10fe"]
+[ext_resource type="AudioStream" uid="uid://d3aqlidg5tk0b" path="res://Assets/NewBPM/metronome_60.wav" id="15_ebl8d"]
 [ext_resource type="PackedScene" uid="uid://biq2jy3uh3cxn" path="res://NoteScene/quarter_note.tscn" id="15_q7mwf"]
 [ext_resource type="PackedScene" uid="uid://k38i08o3l2w" path="res://NoteScene/triple_note.tscn" id="15_ufs4h"]
 [ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="16_ufs4h"]
@@ -166,6 +166,7 @@ tracks/0/keys = {
 resource_name = "moving_circle"
 length = 4.0
 loop_mode = 1
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -173,10 +174,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1.25, 2.25, 3.25, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(517, 488), Vector2(581, 488), Vector2(835, 488), Vector2(1092, 488), Vector2(1349, 488), Vector2(1574, 488)]
+"values": [Vector2(557, 488), Vector2(837, 488), Vector2(1093, 488), Vector2(1349, 488), Vector2(1543, 488)]
 }
 
 [sub_resource type="Animation" id="Animation_vifvf"]
@@ -424,7 +425,7 @@ scale = Vector2(0.281951, 0.281951)
 metadata/_edit_lock_ = true
 
 [node name="LearningTickPlayer" type="AudioStreamPlayer" parent="Metronome"]
-stream = ExtResource("8_vifvf")
+stream = ExtResource("15_ebl8d")
 
 [node name="HitLine" parent="." instance=ExtResource("2_qncf5")]
 position = Vector2(972, 411)
@@ -446,7 +447,6 @@ metadata/_edit_lock_ = true
 
 [node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
 position = Vector2(541, 488)
-metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
 libraries = {
@@ -510,12 +510,12 @@ metadata/_edit_lock_ = true
 [node name="BeatCountLabel" type="Label" parent="."]
 material = ExtResource("4_71jwu")
 layout_mode = 0
-offset_left = 595.0
+offset_left = 591.0
 offset_top = 281.0
-offset_right = 1277.0
+offset_right = 1400.0
 offset_bottom = 317.0
 theme_override_fonts/font = ExtResource("2_x1tyl")
 theme_override_font_sizes/font_size = 30
-text = "1                                   2                                 3                                 4"
+text = "1                                    2                                 3                                4"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
