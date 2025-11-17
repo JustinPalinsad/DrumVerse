@@ -1,7 +1,7 @@
 [gd_scene load_steps=101 format=3 uid="uid://bf1b1wnjbp6lo"]
 
 [ext_resource type="Script" uid="uid://byklclwjyn5y0" path="res://metronome.gd" id="1_l60vy"]
-[ext_resource type="AudioStream" uid="uid://cdrej3iwbfjfn" path="res://Audio/metronomes 0.25 ver/60 BPM.mp3" id="2_rdvl5"]
+[ext_resource type="AudioStream" uid="uid://dga6lnl3ob4ai" path="res://Audio/new metronome bpm/metronome_60.wav" id="2_eg3pq"]
 [ext_resource type="Texture2D" uid="uid://chie3rafcl2j3" path="res://Assets/Metronome_BW/Frame_0000.png" id="3_l60vy"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="3_qhcwb"]
 [ext_resource type="Texture2D" uid="uid://u0t40faib58w" path="res://Assets/Metronome_BW/Frame_0001.png" id="4_qhcwb"]
@@ -405,7 +405,6 @@ animations = [{
 script = ExtResource("1_l60vy")
 
 [node name="TickSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_rdvl5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = ExtResource("3_qhcwb")
@@ -416,3 +415,4 @@ animation = &"metronome"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BPMAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eg3pq")

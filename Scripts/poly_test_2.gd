@@ -73,6 +73,12 @@ func _start_countdown() -> void:
 		$Middle_Point/HitLineBottom/MovingCircleBottom.hide()
 	countdown_label.visible = true
 	
+	countdown_label.text = "5"
+	$CountdownAudioPlayer.play()
+	await get_tree().create_timer(1.0).timeout
+	countdown_label.text = "4"
+	$CountdownAudioPlayer.play()
+	await get_tree().create_timer(1.0).timeout
 	countdown_label.text = "3"
 	$CountdownAudioPlayer.play()
 	await get_tree().create_timer(1.0).timeout

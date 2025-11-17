@@ -37,7 +37,7 @@ extends Control
 
 
 const BPM_AUDIO_PATHS := {
-	60: "res://Audio/metronomes 0.25 ver/60 BPM.mp3",
+	60: "res://Audio/new metronome bpm/metronome_60.wav",
 	80: "res://Audio/metronomes 0.25 ver/80_BPM.mp3",
 	100: "res://Audio/metronomes 0.25 ver/100_BPM.mp3"
 }
