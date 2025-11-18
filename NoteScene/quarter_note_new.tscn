@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mcvfboqchq50"]
+[gd_scene load_steps=7 format=3 uid="uid://bnxlb8womcrpj"]
 
 [ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_tl88p"]
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="2_ayoxt"]
@@ -15,11 +15,12 @@ script = ExtResource("1_tl88p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("4_cp1cn")
-position = Vector2(0, -35)
+position = Vector2(97.2, -39.8)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_f54as")
 
 [node name="BeamContainer" type="Node2D" parent="."]
+position = Vector2(97.2, -4.8)
 
 [node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(-97, 5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4cmka6dx17b4"]
+[gd_scene load_steps=7 format=3 uid="uid://c5anmkgke44mm"]
 
 [ext_resource type="Texture2D" uid="uid://bymu70coi2004" path="res://Assets/NewNotes/br1.png" id="1_0uk3r"]
 [ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_pl5do"]
