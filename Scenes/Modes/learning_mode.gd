@@ -15,7 +15,7 @@ extends Control
 
 
 const NOTE_Y_POSITION := 460
-const HIT_RADIUS := 25.0
+const HIT_RADIUS := 30.0
 
 var slide_control
 var notes_container

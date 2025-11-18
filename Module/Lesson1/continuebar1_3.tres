@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_o2y8w"]
 script = ExtResource("1_1fq1r")
-x_position = 581.0
+x_position = 604.0
 note_scene = ExtResource("2_o2y8w")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
