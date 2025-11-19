@@ -48,6 +48,8 @@ func _ready() -> void:
 	if GameState.polyrhythm_mode == "learning":
 		learning_mode()
 		# In learning_mode(), Demo Vid and TutorialHolder are shown, Middle_Point is hidden.
+	elif GameState.polyrhythm_mode == "practice":
+		_start_practice_countdown()
 	else:
 		# If not learning mode (i.e., practice or challenge):
 		
@@ -73,14 +75,13 @@ func _ready() -> void:
 		# start countdown before game
 		_start_countdown()
 # --- COUNTDOWN ---
+# -----------------------------
+# Challenge Countdown
+# -----------------------------
 func _start_countdown() -> void:
-	if GameState.polyrhythm_mode == "challenge":
-		pass
-
 	countdown_label.visible = true
 
 	var numbers = ["3", "2", "1", "Go!"]
-
 	for n in numbers:
 		countdown_label.text = n
 		$CountdownAudioPlayer.play()
@@ -88,13 +89,31 @@ func _start_countdown() -> void:
 
 	countdown_label.visible = false
 
-	# Reset counters
 	top_play_count = 0
 	bottom_play_count = 0
 
-	# Start synchronized animation system
 	await _play_bpm_stage()
 
+# -----------------------------
+# Practice Countdown
+# -----------------------------
+func _start_practice_countdown() -> void:
+	countdown_label.visible = true
+
+	var numbers = ["3", "2", "1", "Go!"]
+	for n in numbers:
+		countdown_label.text = n
+		$CountdownAudioPlayer.play()
+		await get_tree().create_timer(1.0).timeout
+
+	countdown_label.visible = false
+
+	_play_practice_animation()
+
+
+# -----------------------------
+# Challenge Mode → 4 synced plays
+# -----------------------------
 func _play_bpm_stage() -> void:
 	var top_name = bpm_animations[current_bpm_index]["top"]
 	var bottom_name = bpm_animations[current_bpm_index]["bottom"]
@@ -102,23 +121,34 @@ func _play_bpm_stage() -> void:
 	for i in range(max_plays):
 		top_play_count = i + 1
 		bottom_play_count = i + 1
+#
+		#top_anim.loop = false
+		#bottom_anim.loop = false
 
 		top_anim.play(top_name)
 		bottom_anim.play(bottom_name)
 
-		var top_done := false
-		var bottom_done := false
+		await top_anim.animation_finished
+		await bottom_anim.animation_finished
 
-		# Wait until BOTH have finished
-		while not (top_done and bottom_done):
-			if top_anim.is_playing() == false:
-				top_done = true
-			if bottom_anim.is_playing() == false:
-				bottom_done = true
-			await get_tree().process_frame
-
-	# After doing all 4 plays → next BPM
 	_next_bpm_stage()
+
+# -----------------------------
+# Practice Mode → Loop forever
+# -----------------------------
+func _play_practice_animation() -> void:
+	var top_name = bpm_animations[current_bpm_index]["top"]
+	var bottom_name = bpm_animations[current_bpm_index]["bottom"]
+
+	while true:
+		top_anim.play(top_name)
+		bottom_anim.play(bottom_name)
+
+		# Wait until both finish
+		await top_anim.animation_finished
+		await bottom_anim.animation_finished
+
+
 
 
 
