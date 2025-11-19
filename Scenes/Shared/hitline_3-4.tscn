@@ -136,8 +136,8 @@ texture = ExtResource("2_dvikw")
 [node name="Line" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 material = ExtResource("1_7qwew")
-position = Vector2(-278, 0)
-scale = Vector2(0.746278, 1)
+position = Vector2(-323.231, 0)
+scale = Vector2(0.774636, 1)
 texture = ExtResource("3_ga64b")
 
 [node name="TimeSigRef" type="Sprite2D" parent="Node2D"]
@@ -155,13 +155,14 @@ texture = ExtResource("5_tfvok")
 
 [node name="TimeSig" type="Sprite2D" parent="Node2D"]
 material = ExtResource("1_7qwew")
+position = Vector2(-74, 0)
 texture = ExtResource("6_dvikw")
 
 [node name="Label" type="Label" parent="Node2D"]
 material = ExtResource("1_7qwew")
-offset_left = -1347.0
+offset_left = -1421.0
 offset_top = -200.0
-offset_right = -1110.0
+offset_right = -1184.0
 offset_bottom = 225.0
 theme_override_constants/line_spacing = -40
 theme_override_fonts/font = ExtResource("7_ga64b")
