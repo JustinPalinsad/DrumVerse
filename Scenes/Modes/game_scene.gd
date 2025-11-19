@@ -37,10 +37,15 @@ extends Control
 
 
 const BPM_AUDIO_PATHS := {
-	60: "res://Audio/metronomes 0.25 ver/60 BPM.mp3",
-	80: "res://Audio/metronomes 0.25 ver/80_BPM.mp3",
-	100: "res://Audio/metronomes 0.25 ver/100_BPM.mp3"
+	60: "res://Assets/NewBPM/metronome_60.wav",
+	80: "res://Assets/NewBPM/metronome_80.wav",
+	100: "res://Assets/NewBPM/metronome_100.wav"
 }
+
+# how many times to play the single-bar audio per BPM (4 bars per BPM)
+var bars_played: int = 0
+# uses bars_per_bpm already defined above (default 4)
+
 
 var notes: Array[Node2D] = []
 var tick_counter: int = 0                       # counts beats within current bar (resets at bar end)
@@ -66,6 +71,8 @@ var in_countdown := false
 # -----------------------
 func _ready() -> void:
 	GlobalAudio.mute_bgm(true)
+	transition_anim()
+	await  transition_anim()
 	drum_module = GameState.selected_module
 	if not drum_module:
 		push_error("No module selected!")
@@ -97,6 +104,11 @@ func _ready() -> void:
 		var per_bpm_note_count = compute_total_notes_from_module()
 		total_notes = per_bpm_note_count * bpm_sequence.size()
 		print("🔢 Total notes computed:", total_notes, "(per BPM:", per_bpm_note_count, "x", bpm_sequence.size(), "BPMs)")
+
+# ensure bpm_audio exists and connect its finished signal (safe connect)
+	if bpm_audio and not bpm_audio.is_connected("finished", Callable(self, "_on_bpm_audio_finished")):
+		bpm_audio.connect("finished", Callable(self, "_on_bpm_audio_finished"))
+
 
 	# Countdown first (no movement)
 	await play_countdown(start_bpm)
@@ -172,8 +184,9 @@ func spawn_current_bar():
 	clear_notes()
 
 	var total_continue_bars = drum_module.continue_bars.size()
-	var bar_data
+	var bar_data: Resource = null
 
+	# Determine which bar to show
 	if current_bar_index < total_continue_bars:
 		# Continue bar
 		bar_data = drum_module.continue_bars[current_bar_index]
@@ -187,24 +200,25 @@ func spawn_current_bar():
 		hitline_sprite.position = bar_offsets["end"]
 
 	else:
-		# Beyond end bar
+		# Beyond last bar
 		if mode == "practice":
-			# Wrap Practice Mode to loop the BPM indefinitely
 			current_bar_index = 0
 			bar_data = drum_module.continue_bars[current_bar_index]
 			hitline_sprite.texture = con_texture
 			hitline_sprite.position = bar_offsets["continue"]
 		else:
-			# Challenge Mode → finished this BPM's bars, ask to switch
+			# Challenge Mode → finished all bars, switch BPM or end
 			switch_or_finish()
 			return
 
-	print("Loading bar index:", current_bar_index)
-	spawn_notes_from_bar(bar_data)
+	# Spawn notes for this bar
+	if bar_data:
+		spawn_notes_from_bar(bar_data)
 
-	# Apply MovingCircle animation for current BPM
+	# ✅ Start moving circle + play audio for this bar
 	var bpm_now: int = bpm_sequence[current_bpm_index]
 	apply_moving_circle_for_bpm(bpm_now)
+	play_bpm_audio(bpm_now)
 
 
 
@@ -255,46 +269,23 @@ func _on_tick() -> void:
 
 	tick_counter += 1
 
-	# when a full bar passes (4 beats)
+	# When a full bar passes (4 beats)
 	if tick_counter >= beats_to_cover:
 		tick_counter = 0
 		current_bar_index += 1
 
-		var bpm_now: int = bpm_sequence[current_bpm_index]
-
-		# Restart moving circle animation to match current BPM
-		apply_moving_circle_for_bpm(bpm_now)
-
-		if mode == "practice":
-			# Loop back to first continue bar AFTER showing end bar
-			if current_bar_index > drum_module.continue_bars.size():
-				current_bar_index = 0
-			# spawn whatever is current
-			spawn_current_bar()
-			return
-		else:
-			# Challenge Mode: if still within this BPM's bars, spawn
-			if current_bar_index <= drum_module.continue_bars.size():
-				# either continue or end bar
-				spawn_current_bar()
-				return
-			else:
-				# completed end bar of this BPM -> switch or finish
-				switch_or_finish()
-				return
+		# Spawn the next bar (audio and circle start here)
+		spawn_current_bar()
 
 
 # -----------------------
 func switch_or_finish():
-	# if there is another BPM, switch; else end
 	if current_bpm_index + 1 < bpm_sequence.size():
-		switch_to_next_bpm()
+		# More BPMs left → switch
+		await switch_to_next_bpm()
 	else:
-		# finished last BPM completely
+		# No more BPMs → end challenge
 		end_challenge_mode()
-# Reset hitline to continue-bar during countdown
-	hitline_sprite.texture = con_texture
-	hitline_sprite.position = bar_offsets["continue"]
 
 
 
@@ -313,6 +304,7 @@ func switch_to_next_bpm():
 
 		# Stop old audio and metronome before countdown to avoid overlap
 		bpm_audio.stop()
+		bars_played = 0
 		metronome.stop()
 
 		# Countdown (circle hidden & ticks gated) -> play_countdown will spawn first bar
@@ -532,38 +524,100 @@ func update_bpm_menu_display(new_bpm: int) -> void:
 
 # -----------------------
 func play_bpm_audio(bpm: int) -> void:
-	if BPM_AUDIO_PATHS.has(bpm):
-		var p = BPM_AUDIO_PATHS[bpm]
-		bpm_audio.stop()
-		bpm_audio.stream = load(p)
-		bpm_audio.play()
+	if not BPM_AUDIO_PATHS.has(bpm):
+		print("No BPM audio path for", bpm)
+		return
+
+	var stream = load(BPM_AUDIO_PATHS[bpm])
+	if not stream:
+		print("Failed to load BPM audio:", BPM_AUDIO_PATHS[bpm])
+		return
+
+	bpm_audio.stop()
+	bpm_audio.stream = stream
+	bpm_audio.play()
+
+
+func _on_bpm_audio_finished() -> void:
+	if challenge_mode_has_ended or in_countdown:
+		return
+
+	var is_end_bar = bpm_audio.has_meta("is_end_bar") and bpm_audio.get_meta("is_end_bar")
+
+	if mode == "practice":
+		# Practice Mode: repeat audio for bars_per_bpm times
+		bars_played += 1
+		if bars_played < bars_per_bpm:
+			bpm_audio.play()
+		else:
+			bars_played = 0
+
+	else:
+		# Challenge Mode
+		if is_end_bar:
+			# Last bar for this BPM finished → go to next BPM
+			switch_or_finish()
+		else:
+			# Move to next continue bar
+			current_bar_index += 1
+			spawn_current_bar()
 
 
 # -----------------------
+func spawn_next_bar() -> void:
+	current_bar_index += 1
+	var total_continue = drum_module.continue_bars.size()
+	var total_bars = total_continue + 1  # +1 for end bar
+
+	if current_bar_index < total_bars:
+		# Spawn the next bar
+		spawn_current_bar()
+		# Play BPM audio again for the new bar
+		var bpm_now: int = bpm_sequence[current_bpm_index]
+		play_bpm_audio(bpm_now)
+	else:
+		# Finished all bars → go to next BPM
+		switch_or_finish()
+
+
+
+# -----------------------
+# Play moving circle animation for this BPM
 func apply_moving_circle_for_bpm(bpm: int) -> void:
-	var anim := "moving_circle"
+	# Choose animation based on BPM
+	var anim_name: String
 	match bpm:
-		60: anim = "moving_circle"
-		80: anim = "moving_circle_80"
-		100: anim = "moving_circle_100"
+		60:
+			anim_name = "moving_circle"
+		80:
+			anim_name = "moving_circle_80"
+		100:
+			anim_name = "moving_circle_100"
+		_:
+			anim_name = "moving_circle"  # fallback for any other BPM
 
-	# Duration a bar should take at this BPM
-	moving_circle_duration = (60.0 / float(bpm)) * beats_to_cover  # 4 beats
-
+	# Show or hide circle depending on mode/toggle
 	if show_moving_circle_in_challenge or mode == "practice":
 		moving_circle.show()
 	else:
 		moving_circle.hide()
 
-	if animation_player and animation_player.has_animation(anim):
-		var a = animation_player.get_animation(anim)
-		var original_length = a.length
+	# Check if the animation exists before playing
+	if animation_player.has_animation(anim_name):
+		var anim = animation_player.get_animation(anim_name)
 
-		# 🔹 Scale speed so the anim always matches bar duration
-		animation_player.speed_scale = original_length / moving_circle_duration
+		# Scale speed to match the length of the BPM audio
+		if bpm_audio.stream:
+			var audio_length = bpm_audio.stream.get_length()
+			animation_player.speed_scale = anim.length / audio_length
+		else:
+			animation_player.speed_scale = 1.0
 
 		animation_player.stop()
-		animation_player.play(anim)
+		animation_player.play(anim_name)
+	else:
+		print("⚠️ Warning: Animation not found:", anim_name)
+
 
 
 # -----------------------
@@ -678,3 +732,37 @@ func module_score(final_grade_string: String):
 
 		if new_rank > existing_rank:
 			GameState.module_grades[lessons_index] = final_grade_string
+			
+			
+# --------------------------------------------------------
+# DEBUG: print moving circle position at specific times
+func debug_circle_positions(bpm: int) -> void:
+	var checkpoints := []
+	
+	# define checkpoints depending on bpm
+	match bpm:
+		60:
+			checkpoints = [0.0, 1.0, 2.0, 3.0, 4.0]
+		80:
+			checkpoints = [0.0, 0.75, 1.5, 2.25, 3.0]
+		100:
+			checkpoints = [0.0, 0.60, 1.2, 1.8, 2.4]
+
+	# run timers for each checkpoint
+	for t in checkpoints:
+		await get_tree().create_timer(t).timeout
+		var pos_x = moving_circle.global_position.x
+		print("⏱️ BPM:", bpm, " | Time:", t, "sec | Circle X:", pos_x)
+
+
+func transition_anim():
+	$animation_transition.show()
+	$animation_transition/AnimationPlayer.play("Transition")
+	await $animation_transition/AnimationPlayer.animation_finished
+	$animation_transition.queue_free()
+	$Back.show()
+	$HitLine.show()
+	$Metronome.show()
+	$BPMMenuButton.show()
+	$TouchPadContainer.show()
+	$MovingCircle.show()

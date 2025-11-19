@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dfblf1quuck6k" path="res://Menu Assets/highlights/Lesson_Cards_012.png" id="7_0egvd"]
 [ext_resource type="Texture2D" uid="uid://q5j700ebio86" path="res://Menu Assets/advanced cards/Lesson_Cards__011.png" id="7_6l2v7"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="7_8dq57"]
-[ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
+[ext_resource type="PackedScene" uid="uid://blxovuuihy45o" path="res://Menu Scenes/carousel_container_3.tscn" id="8_v615x"]
 [ext_resource type="Texture2D" uid="uid://f1k7djiyoe4i" path="res://Menu Assets/highlights/Lesson_Cards_013.png" id="8_vnhdg"]
 [ext_resource type="Texture2D" uid="uid://0jxcxhvijawa" path="res://Menu Assets/highlights/Lesson_Cards_014.png" id="9_6f14r"]
 [ext_resource type="Script" uid="uid://ddryoyrkinxmg" path="res://Scripts/button_shake.gd" id="9_ihbiu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://12gneqnb4n55"]
+[gd_scene load_steps=32 format=3 uid="uid://12gneqnb4n55"]
 
 [ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
 [ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="2_5dgvu"]
@@ -19,8 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://bq5e7nhqsbiu6" path="res://Audio/passed.mp3" id="16_aq00n"]
 [ext_resource type="AudioStream" uid="uid://ilgvob86ldeh" path="res://Audio/Fail.mp3" id="17_aq00n"]
 [ext_resource type="Script" uid="uid://det1facwxs68p" path="res://Scenes/menu_button.gd" id="18_gtbs0"]
-[ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="19_mipjh"]
-[ext_resource type="PackedScene" path="res://NoteScene/triplet_new.tscn" id="20_aq00n"]
+[ext_resource type="Texture2D" uid="uid://bcapswu1b5rjp" path="res://Assets/Fancy Stuff/fancy_button.png" id="22_817jg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
 radius = 18.0
@@ -45,6 +44,7 @@ tracks/0/keys = {
 resource_name = "moving_circle"
 length = 4.0
 loop_mode = 1
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -52,16 +52,17 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1.25, 2.25, 3.25, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(517, 442), Vector2(580, 442), Vector2(838, 442), Vector2(1092, 442), Vector2(1349, 442), Vector2(1541, 442)]
+"values": [Vector2(580.728, 442), Vector2(1543, 442)]
 }
 
 [sub_resource type="Animation" id="Animation_4xiap"]
 resource_name = "moving_circle_100"
 length = 2.4
 loop_mode = 1
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,10 +70,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.85, 1.45, 2.05, 2.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(517, 442), Vector2(579, 442), Vector2(837, 442), Vector2(1092, 442), Vector2(1350, 442), Vector2(1542, 442)]
+"values": [Vector2(566, 442), Vector2(837, 442), Vector2(1093, 442), Vector2(1349, 442), Vector2(1543, 442)]
 }
 
 [sub_resource type="Animation" id="Animation_5dgvu"]
@@ -89,13 +90,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.75, 1.25, 1.75, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(517, 442), Vector2(581, 442), Vector2(838, 442), Vector2(1093, 442), Vector2(1350, 442), Vector2(1542, 442)]
+"values": [Vector2(517, 442), Vector2(581, 442), Vector2(838, 442), Vector2(1093, 442), Vector2(1350, 442), Vector2(1543, 442)]
 }
 
 [sub_resource type="Animation" id="Animation_uscyt"]
 resource_name = "moving_circle_80"
 length = 3.0
 loop_mode = 1
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -103,10 +105,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1, 1.75, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(517, 442), Vector2(581, 442), Vector2(838, 442), Vector2(1092, 442), Vector2(1349, 442), Vector2(1540, 442)]
+"values": [Vector2(566, 442), Vector2(837, 442), Vector2(1093, 442), Vector2(1349, 442), Vector2(1543, 442)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lsk3b"]
@@ -117,6 +119,290 @@ _data = {
 &"moving_circle_120": SubResource("Animation_5dgvu"),
 &"moving_circle_80": SubResource("Animation_uscyt")
 }
+
+[sub_resource type="Animation" id="Animation_lncnf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftTouchPad:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-197, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftTouchPad:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.441223, 0.438173)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightTouchPad:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.442001, 0.438986)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightTouchPad:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1489, 586)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Line2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Line2D2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Line2D3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1088, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Line2D4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(219, 209)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Line2D5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1549, -3)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Line2D6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-26, -135)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Line2D7:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1551, 208)]
+}
+
+[sub_resource type="Animation" id="Animation_fsrq7"]
+resource_name = "Transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftTouchPad:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 2.1),
+"transitions": PackedFloat32Array(0.535887, 1),
+"update": 0,
+"values": [Vector2(-197, 1359), Vector2(-197, 584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LeftTouchPad:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.166667, 2.1),
+"transitions": PackedFloat32Array(0.535887, 1),
+"update": 0,
+"values": [Vector2(0.0279063, 0.0277134), Vector2(0.441223, 0.438173)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightTouchPad:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.633333, 2.23333),
+"transitions": PackedFloat32Array(0.482968, 0.5),
+"update": 0,
+"values": [Vector2(0.0335094, 0.0332808), Vector2(0.442001, 0.438986)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightTouchPad:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.633333, 2.23333),
+"transitions": PackedFloat32Array(0.482968, 0.5),
+"update": 0,
+"values": [Vector2(2041, 1361), Vector2(1489, 586)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Line2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4459, 2.2),
+"transitions": PackedFloat32Array(2.54912, 3.86374),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1704, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Line2D2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.8, 2.43333),
+"transitions": PackedFloat32Array(2.54912, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -257)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Line2D3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.13333, 2.56062),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1088, 0), Vector2(1088, -281)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Line2D4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.66667, 2.26667),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(219, 209), Vector2(219, 44)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Line2D5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.92652, 2.77872),
+"transitions": PackedFloat32Array(1.86607, 1),
+"update": 0,
+"values": [Vector2(1549, -3), Vector2(1549, 1170)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Line2D6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.01942, 2.73),
+"transitions": PackedFloat32Array(4.14106, 1),
+"update": 0,
+"values": [Vector2(-26, -135), Vector2(-26, -259)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Line2D7:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.31021, 2.66967),
+"transitions": PackedFloat32Array(3.86373, 1),
+"update": 0,
+"values": [Vector2(1551, 208), Vector2(1758, 208)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwran"]
+_data = {
+&"RESET": SubResource("Animation_lncnf"),
+&"Transition": SubResource("Animation_fsrq7")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsrq7"]
+texture = ExtResource("22_817jg")
+texture_margin_left = 100.0
+texture_margin_top = 100.0
+texture_margin_right = 100.0
+texture_margin_bottom = 100.0
 
 [node name="GameScene" type="Control"]
 layout_mode = 3
@@ -178,6 +464,7 @@ metadata/_edit_lock_ = true
 [node name="NotesContainer" type="Node2D" parent="."]
 
 [node name="TouchPadContainer" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_ldntv")
 
 [node name="LeftTouchPad" type="TouchScreenButton" parent="TouchPadContainer"]
@@ -198,6 +485,7 @@ action = "right_pad"
 stream = ExtResource("8_aq00n")
 
 [node name="HitLine" parent="." instance=ExtResource("3_ikfsv")]
+visible = false
 position = Vector2(972, 366)
 scale = Vector2(0.4, 0.4)
 metadata/_edit_lock_ = true
@@ -216,6 +504,7 @@ scale = Vector2(0.5, 0.5)
 z_index = 1
 
 [node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
+visible = false
 position = Vector2(514, 442)
 
 [node name="HitArea" type="Area2D" parent="MovingCircle"]
@@ -232,6 +521,7 @@ libraries = {
 }
 
 [node name="Metronome" parent="." instance=ExtResource("6_4xiap")]
+visible = false
 material = ExtResource("11_4xiap")
 position = Vector2(1764, 136)
 scale = Vector2(0.25, 0.25)
@@ -286,6 +576,7 @@ stream = ExtResource("16_aq00n")
 stream = ExtResource("17_aq00n")
 
 [node name="Back" type="TouchScreenButton" parent="."]
+visible = false
 material = ExtResource("11_4xiap")
 position = Vector2(133, 45)
 scale = Vector2(0.554455, 0.554455)
@@ -294,6 +585,7 @@ texture_normal = ExtResource("14_ldntv")
 [node name="BPMAudio" type="AudioStreamPlayer" parent="."]
 
 [node name="BPMMenuButton" type="MenuButton" parent="."]
+visible = false
 material = ExtResource("11_4xiap")
 layout_mode = 0
 offset_left = 1666.0
@@ -314,13 +606,156 @@ popup/item_2/id = 2
 script = ExtResource("18_gtbs0")
 popup_font_size = 35
 
-[node name="QuarterNote" parent="." instance=ExtResource("19_mipjh")]
+[node name="animation_transition" type="Control" parent="."]
 visible = false
-position = Vector2(-80, 456)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Triplet_New" parent="." instance=ExtResource("20_aq00n")]
-visible = false
-position = Vector2(31, 434)
+[node name="HitLine" parent="animation_transition" instance=ExtResource("3_ikfsv")]
+position = Vector2(972, 366)
+scale = Vector2(0.4, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="Metronome" parent="animation_transition" instance=ExtResource("6_4xiap")]
+material = ExtResource("11_4xiap")
+position = Vector2(1764, 136)
+scale = Vector2(0.25, 0.25)
+
+[node name="Back" type="TouchScreenButton" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("14_ldntv")
+
+[node name="BPMMenuButton" type="MenuButton" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+layout_mode = 0
+offset_left = 1666.0
+offset_top = 231.0
+offset_right = 1851.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 40
+toggle_mode = false
+button_mask = 0
+text = "BPM: 60"
+item_count = 3
+popup/item_0/text = "60"
+popup/item_0/id = 0
+popup/item_1/text = "80"
+popup/item_1/id = 1
+popup/item_2/text = "100"
+popup/item_2/id = 2
+script = ExtResource("18_gtbs0")
+popup_font_size = 35
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="animation_transition"]
+libraries = {
+&"": SubResource("AnimationLibrary_lwran")
+}
+autoplay = "Transition"
+speed_scale = 2.0
+
+[node name="FancyButton" type="Sprite2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(-1197, 3346)
+texture = ExtResource("22_817jg")
+
+[node name="Cooler Border" type="Panel" parent="animation_transition/FancyButton"]
+material = ExtResource("11_4xiap")
+anchors_preset = -1
+anchor_left = 0.376
+anchor_top = 0.299
+anchor_right = 0.376
+anchor_bottom = 0.299
+offset_left = -1509.58
+offset_top = 707.444
+offset_right = 754.424
+offset_bottom = 1879.44
+scale = Vector2(0.867861, 0.867861)
+theme_override_styles/panel = SubResource("StyleBoxTexture_fsrq7")
+
+[node name="Line2D" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+points = PackedVector2Array(334, 442, 1648, 442)
+width = 15.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+points = PackedVector2Array(517, 435, 517, 285)
+width = 15.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(1088, 0)
+points = PackedVector2Array(517, 435, 517, 285)
+width = 15.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D4" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(219, 209)
+points = PackedVector2Array(208, 208, 208, 90)
+width = 150.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D5" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(1549, -3)
+points = PackedVector2Array(208, 301, 208, 22)
+width = 195.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D7" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(1551, 208)
+points = PackedVector2Array(208, 83, 208, 22)
+width = 195.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D6" type="Line2D" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(-26, -135)
+points = PackedVector2Array(208, 301, 208, 22)
+width = 195.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+layout_mode = 0
+offset_left = 424.0
+offset_top = -675.0
+offset_right = 687.0
+offset_bottom = -636.0
+scale = Vector2(4.91599, 6.73624)
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 5
+text = "aight, ima do my own thang "
+horizontal_alignment = 1
+
+[node name="LeftTouchPad" type="TouchScreenButton" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(-197, 584)
+scale = Vector2(0.441223, 0.438173)
+texture_normal = ExtResource("4_w8jfd")
+action = "left_pad"
+
+[node name="RightTouchPad" type="TouchScreenButton" parent="animation_transition"]
+material = ExtResource("11_4xiap")
+position = Vector2(1489, 586)
+scale = Vector2(0.442001, 0.438986)
+texture_normal = ExtResource("5_a7fet")
+action = "right_pad"
 
 [connection signal="pressed" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_pressed"]
 [connection signal="released" from="TouchPadContainer/LeftTouchPad" to="TouchPadContainer" method="_on_left_touch_pad_released"]
