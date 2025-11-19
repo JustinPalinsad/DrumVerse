@@ -20,6 +20,15 @@ var total_hits: int = 0
 var total_misses: int = 0
 var total_attempts: int = 0
 
+
+var bpm_animations = [
+	{"top": "Top_Line", "bottom": "Bottom_Line"},           # 60
+	{"top": "Top_Line_80", "bottom": "Bottom_Line_80"},       # 80
+	{"top": "Top_Line_100", "bottom": "Bottom_Line_100"}      # 100
+]
+
+var current_bpm_index := 0
+
 # references for readability
 @onready var top_anim = $Middle_Point/HitLineTop/MovingCircleTop/TopBallAnim
 @onready var bottom_anim = $Middle_Point/HitLineBottom/MovingCircleBottom/BottomBallAnim
@@ -39,6 +48,8 @@ func _ready() -> void:
 	if GameState.polyrhythm_mode == "learning":
 		learning_mode()
 		# In learning_mode(), Demo Vid and TutorialHolder are shown, Middle_Point is hidden.
+	elif GameState.polyrhythm_mode == "practice":
+		_start_practice_countdown()
 	else:
 		# If not learning mode (i.e., practice or challenge):
 		
@@ -64,67 +75,142 @@ func _ready() -> void:
 		# start countdown before game
 		_start_countdown()
 # --- COUNTDOWN ---
+# -----------------------------
+# Challenge Countdown
+# -----------------------------
 func _start_countdown() -> void:
-	if GameState.polyrhythm_mode == "challenge":
-		$Middle_Point/HitLineTop/MovingCircleTop.hide()
-		$Middle_Point/HitLineBottom/MovingCircleBottom.hide()
 	countdown_label.visible = true
-	
-	countdown_label.text = "3"
-	$CountdownAudioPlayer.play()
-	await get_tree().create_timer(1.0).timeout
-	countdown_label.text = "2"
-	$CountdownAudioPlayer.play()
-	await get_tree().create_timer(1.0).timeout
-	countdown_label.text = "1"
-	$CountdownAudioPlayer.play()
-	await get_tree().create_timer(1.0).timeout
-	countdown_label.text = "Go!"
-	$CountdownAudioPlayer.play()
-	await get_tree().create_timer(1.0).timeout
-	
-	# hide the label after "Go!"
+
+	var numbers = ["3", "2", "1", "Go!"]
+	for n in numbers:
+		countdown_label.text = n
+		$CountdownAudioPlayer.play()
+		await get_tree().create_timer(1.0).timeout
+
 	countdown_label.visible = false
-	
-	# now start both animations
-	_play_top_animation()
-	_play_bottom_animation()
+
+	top_play_count = 0
+	bottom_play_count = 0
+
+	await _play_bpm_stage()
+
+# -----------------------------
+# Practice Countdown
+# -----------------------------
+func _start_practice_countdown() -> void:
+	countdown_label.visible = true
+
+	var numbers = ["3", "2", "1", "Go!"]
+	for n in numbers:
+		countdown_label.text = n
+		$CountdownAudioPlayer.play()
+		await get_tree().create_timer(1.0).timeout
+
+	countdown_label.visible = false
+
+	_play_practice_animation()
+
+
+# -----------------------------
+# Challenge Mode → 4 synced plays
+# -----------------------------
+func _play_bpm_stage() -> void:
+	var top_name = bpm_animations[current_bpm_index]["top"]
+	var bottom_name = bpm_animations[current_bpm_index]["bottom"]
+
+	for i in range(max_plays):
+		top_play_count = i + 1
+		bottom_play_count = i + 1
+#
+		#top_anim.loop = false
+		#bottom_anim.loop = false
+
+		top_anim.play(top_name)
+		bottom_anim.play(bottom_name)
+
+		await top_anim.animation_finished
+		await bottom_anim.animation_finished
+
+	_next_bpm_stage()
+
+# -----------------------------
+# Practice Mode → Loop forever
+# -----------------------------
+func _play_practice_animation() -> void:
+	var top_name = bpm_animations[current_bpm_index]["top"]
+	var bottom_name = bpm_animations[current_bpm_index]["bottom"]
+
+	while true:
+		top_anim.play(top_name)
+		bottom_anim.play(bottom_name)
+
+		# Wait until both finish
+		await top_anim.animation_finished
+		await bottom_anim.animation_finished
+
+
+
 
 
 # --- ANIMATION PLAY LIMIT ---
 func _play_top_animation() -> void:
+	var anim_name = bpm_animations[current_bpm_index]["top"]
+
 	if GameState.polyrhythm_mode == "practice":
-		# loop forever
-		top_anim.play("Top_Line")
+		top_anim.play(anim_name)
+		await top_anim.animation_finished
+		_play_top_animation()
+		return
+
+	if top_play_count < max_plays:
+		top_play_count += 1
+		top_anim.play(anim_name)
 		await top_anim.animation_finished
 		_play_top_animation()
 	else:
-		# challenge → limit to 4 times
-		if top_play_count < max_plays:
-			top_play_count += 1
-			top_anim.play("Top_Line")
-			await top_anim.animation_finished
-			_play_top_animation()
-		else:
-			_check_results()
+		_check_bpm_complete()
+
 
 
 func _play_bottom_animation() -> void:
+	var anim_name = bpm_animations[current_bpm_index]["bottom"]
+
 	if GameState.polyrhythm_mode == "practice":
-		# loop forever
-		bottom_anim.play("Bottom_Line")
+		bottom_anim.play(anim_name)
+		await bottom_anim.animation_finished
+		_play_bottom_animation()
+		return
+
+	if bottom_play_count < max_plays:
+		bottom_play_count += 1
+		bottom_anim.play(anim_name)
 		await bottom_anim.animation_finished
 		_play_bottom_animation()
 	else:
-		# challenge → limit to 4 times
-		if bottom_play_count < max_plays:
-			bottom_play_count += 1
-			bottom_anim.play("Bottom_Line")
-			await bottom_anim.animation_finished
-			_play_bottom_animation()
-		else:
-			_check_results()
+		_check_bpm_complete()
 
+func _check_bpm_complete() -> void:
+	# Only move to next BPM when BOTH are done
+	if top_play_count >= max_plays and bottom_play_count >= max_plays:
+		_next_bpm_stage()
+
+
+func _next_bpm_stage() -> void:
+	current_bpm_index += 1
+
+	# When 60 → 80 → 100 finished
+	if current_bpm_index >= bpm_animations.size():
+		_check_results()
+		return
+
+	# Stop animations cleanly and rewind
+	top_anim.stop(true)
+	bottom_anim.stop(true)
+
+	await get_tree().create_timer(0.5).timeout
+
+	# Restart countdown for next BPM animation set
+	_start_countdown()
 
 
 # --- TOP HITBOX ---
