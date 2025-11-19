@@ -52,10 +52,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(566, 442), Vector2(838, 442), Vector2(1092, 442), Vector2(1350, 442), Vector2(1543, 442)]
+"values": [Vector2(580.728, 442), Vector2(1543, 442)]
 }
 
 [sub_resource type="Animation" id="Animation_4xiap"]
