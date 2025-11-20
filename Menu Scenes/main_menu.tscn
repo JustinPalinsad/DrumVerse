@@ -251,6 +251,7 @@ texture_normal = ExtResource("3_3kuvd")
 libraries = {
 &"": SubResource("AnimationLibrary_8mjjn")
 }
+speed_scale = 5.0
 
 [node name="LeftButton" type="TouchScreenButton" parent="Selection Container"]
 material = ExtResource("2_8mjjn")

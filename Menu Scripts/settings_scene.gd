@@ -40,7 +40,7 @@ func _ready() -> void:
 
 
 func _on_dark_mode_button_pressed() -> void:
-	$Sound.play()
+	GlobalAudio.play_click()
 	await get_tree().create_timer(0.2).timeout
 
 	GameState.dark_mode_enabled = !GameState.dark_mode_enabled

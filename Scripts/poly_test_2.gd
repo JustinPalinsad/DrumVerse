@@ -52,7 +52,8 @@ func _ready() -> void:
 		_start_practice_countdown()
 	else:
 		# If not learning mode (i.e., practice or challenge):
-		
+		$Middle_Point/HitLineTop/MovingCircleTop.hide()
+		$Middle_Point/HitLineBottom/MovingCircleBottom.hide()
 		# 1. DISABLE/HIDE Demo Vid
 		$"Demo Vid".hide()
 		$"Demo Vid".position.x = 2616.0
@@ -79,6 +80,8 @@ func _ready() -> void:
 # Challenge Countdown
 # -----------------------------
 func _start_countdown() -> void:
+	$TouchPadContainer/LeftTouchPad.set_process_input(false)
+	$TouchPadContainer/RightTouchPad.set_process_input(false)
 	countdown_label.visible = true
 
 	var numbers = ["3", "2", "1", "Go!"]
@@ -91,7 +94,7 @@ func _start_countdown() -> void:
 
 	top_play_count = 0
 	bottom_play_count = 0
-
+	
 	await _play_bpm_stage()
 
 # -----------------------------
@@ -115,6 +118,8 @@ func _start_practice_countdown() -> void:
 # Challenge Mode → 4 synced plays
 # -----------------------------
 func _play_bpm_stage() -> void:
+	$TouchPadContainer/LeftTouchPad.set_process_input(true)
+	$TouchPadContainer/RightTouchPad.set_process_input(true)
 	var top_name = bpm_animations[current_bpm_index]["top"]
 	var bottom_name = bpm_animations[current_bpm_index]["bottom"]
 
@@ -130,7 +135,8 @@ func _play_bpm_stage() -> void:
 
 		await top_anim.animation_finished
 		await bottom_anim.animation_finished
-
+	$TouchPadContainer/LeftTouchPad.set_process_input(false)
+	$TouchPadContainer/RightTouchPad.set_process_input(false)
 	_next_bpm_stage()
 
 # -----------------------------
@@ -196,6 +202,8 @@ func _check_bpm_complete() -> void:
 
 
 func _next_bpm_stage() -> void:
+	$TouchPadContainer/LeftTouchPad.set_process_input(true)
+	$TouchPadContainer/RightTouchPad.set_process_input(true)
 	current_bpm_index += 1
 
 	# When 60 → 80 → 100 finished

@@ -99,6 +99,7 @@ alignment = 1
 material = ExtResource("2_ypv0q")
 layout_mode = 2
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_wrphs")
 theme_override_font_sizes/font_size = 90
 text = "MAIN MENU"

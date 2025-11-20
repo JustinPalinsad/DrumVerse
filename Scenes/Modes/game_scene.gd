@@ -535,7 +535,7 @@ func play_bpm_audio(bpm: int) -> void:
 
 	bpm_audio.stop()
 	bpm_audio.stream = stream
-	bpm_audio.play()
+	#bpm_audio.play()
 
 
 func _on_bpm_audio_finished() -> void:
