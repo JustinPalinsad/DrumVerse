@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_kul56"]
 script = ExtResource("1_x0hju")
-x_position = 581.0
+x_position = 603.0
 note_scene = ExtResource("2_mujju")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_1ifng"]
 script = ExtResource("1_x0hju")
-x_position = 1092.0
+x_position = 1115.0
 note_scene = ExtResource("2_mujju")
 pad_beam_1 = "both"
 pad_beam_2 = "both"

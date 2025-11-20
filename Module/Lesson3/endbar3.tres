@@ -6,7 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_sdaf7"]
 script = ExtResource("1_rw8a2")
-x_position = 581.0
+x_position = 602.0
 note_scene = ExtResource("2_uc5ks")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
@@ -16,7 +16,7 @@ metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_2udh5"]
 script = ExtResource("1_rw8a2")
-x_position = 835.0
+x_position = 859.0
 note_scene = ExtResource("2_uc5ks")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
@@ -26,7 +26,7 @@ metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_2wldq"]
 script = ExtResource("1_rw8a2")
-x_position = 1092.0
+x_position = 1116.0
 note_scene = ExtResource("2_uc5ks")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
@@ -36,7 +36,7 @@ metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
 
 [sub_resource type="Resource" id="Resource_2vhsr"]
 script = ExtResource("1_rw8a2")
-x_position = 1349.0
+x_position = 1370.0
 note_scene = ExtResource("2_uc5ks")
 pad_beam_1 = "both"
 pad_beam_2 = "both"
