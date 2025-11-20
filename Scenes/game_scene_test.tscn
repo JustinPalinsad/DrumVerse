@@ -158,7 +158,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.25),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(517, 442), Vector2(1622.5, 442)]
@@ -393,7 +393,7 @@ position = Vector2(979, 621)
 scale = Vector2(0.101848, 0.101848)
 
 [node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
-position = Vector2(1556, 442)
+position = Vector2(517, 442)
 
 [node name="HitArea" type="Area2D" parent="MovingCircle"]
 visible = false
@@ -431,10 +431,10 @@ position = Vector2(978, 376)
 scale = Vector2(0.4, 0.4)
 
 [node name="0" type="Node2D" parent="."]
-visible = false
 position = Vector2(517, 424.2)
 
 [node name="triplets" parent="0" instance=ExtResource("22_m0nlo")]
+visible = false
 
 [node name="0_25" type="Node2D" parent="."]
 position = Vector2(581.938, 424.2)

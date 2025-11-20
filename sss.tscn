@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://faj6ioq1dynt"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_ldlww"]
+[ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="2_s6cyt"]
+[ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="3_toxu7"]
+[ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="4_xdouw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Play" type="Sprite2D" parent="."]
+material = ExtResource("1_ldlww")
+position = Vector2(303, 362)
+scale = Vector2(0.703448, 0.703448)
+texture = ExtResource("2_s6cyt")
+
+[node name="Notes" type="Sprite2D" parent="."]
+material = ExtResource("1_ldlww")
+position = Vector2(888, 812)
+scale = Vector2(0.715517, 0.715517)
+texture = ExtResource("3_toxu7")
+
+[node name="Settings" type="Sprite2D" parent="."]
+material = ExtResource("1_ldlww")
+position = Vector2(1431, 338)
+scale = Vector2(0.715517, 0.715517)
+texture = ExtResource("4_xdouw")

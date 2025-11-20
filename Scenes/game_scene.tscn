@@ -504,7 +504,6 @@ scale = Vector2(0.5, 0.5)
 z_index = 1
 
 [node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
-visible = false
 position = Vector2(514, 442)
 
 [node name="HitArea" type="Area2D" parent="MovingCircle"]
@@ -592,6 +591,7 @@ offset_left = 1666.0
 offset_top = 231.0
 offset_right = 1851.0
 offset_bottom = 282.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_rgj8m")
 theme_override_font_sizes/font_size = 40
 action_mode = 1
@@ -607,7 +607,6 @@ script = ExtResource("18_gtbs0")
 popup_font_size = 35
 
 [node name="animation_transition" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -642,6 +641,7 @@ offset_left = 1666.0
 offset_top = 231.0
 offset_right = 1851.0
 offset_bottom = 282.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_rgj8m")
 theme_override_font_sizes/font_size = 40
 toggle_mode = false

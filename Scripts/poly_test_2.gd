@@ -51,6 +51,8 @@ func _ready() -> void:
 	elif GameState.polyrhythm_mode == "practice":
 		_start_practice_countdown()
 	else:
+		$Middle_Point/HitLineTop/MovingCircleTop.hide()
+		$Middle_Point/HitLineBottom/MovingCircleBottom.hide()
 		# If not learning mode (i.e., practice or challenge):
 		
 		# 1. DISABLE/HIDE Demo Vid
