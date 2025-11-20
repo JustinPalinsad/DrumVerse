@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://jmr6h07m5fnq"]
+[gd_scene load_steps=7 format=3 uid="uid://jmr6h07m5fnq"]
 
 [ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_bceuq"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_kn46w"]
 [ext_resource type="Texture2D" uid="uid://d3gd015a7463" path="res://Assets/NewNotes/br3.png" id="3_rgfue"]
 [ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="4_yrqb8"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="5_t2wo6"]
-[ext_resource type="PackedScene" uid="uid://bnxlb8womcrpj" path="res://NoteScene/quarter_note_new.tscn" id="6_kn46w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_odni2"]
 radius = 15.228
@@ -16,12 +15,11 @@ script = ExtResource("1_bceuq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_kn46w")
-position = Vector2(97.2, -39.8)
+position = Vector2(0, -35)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_rgfue")
 
 [node name="BeamContainer" type="Node2D" parent="."]
-position = Vector2(97.2, -4.8)
 
 [node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
 position = Vector2(-99, 6)
@@ -88,5 +86,3 @@ theme_override_fonts/font = ExtResource("5_t2wo6")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Quarter Note" parent="." instance=ExtResource("6_kn46w")]
