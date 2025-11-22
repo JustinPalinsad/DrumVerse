@@ -42,5 +42,11 @@ func _on_menu_pressed():
 	hide()
 	if GameState.lessons > 10:
 		get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
-	else:
+	else: 
 		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
+	#if grade == "Failed" and GameState.lessons > 10:
+		#get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
+	#elif grade == "Failed" and GameState.lessons < 10:
+		#get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
+	#else:
+		#get_tree().change_scene_to_file("res://Menu Scenes/unlocked.tscn")

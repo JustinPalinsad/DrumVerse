@@ -256,17 +256,17 @@ anchor_left = 0.493
 anchor_top = 0.813
 anchor_right = 0.493
 anchor_bottom = 0.813
-offset_left = -307.56
-offset_top = -46.04
-offset_right = 309.44
-offset_bottom = 46.96
+offset_left = -450.56
+offset_top = -51.04
+offset_right = 413.44
+offset_bottom = 41.96
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("13_ycs1b")
 theme_override_font_sizes/font_size = 81
 theme_override_styles/hover = SubResource("StyleBoxFlat_rqbwp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_k2cyp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pjyjs")
-text = "DELETE SAVE"
+text = "DELETE progress"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
@@ -298,13 +298,14 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_k2cyp")
 [node name="Label" type="Label" parent="deletePopup"]
 material = ExtResource("1_itmm8")
 layout_mode = 0
-offset_left = 256.253
+offset_left = 103.886
 offset_top = 124.663
-offset_right = 1261.25
+offset_right = 1489.89
 offset_bottom = 251.663
+scale = Vector2(0.920759, 0.920759)
 theme_override_fonts/font = ExtResource("13_ycs1b")
 theme_override_font_sizes/font_size = 121
-text = "Delete Save?"
+text = "Delete Progress?"
 
 [node name="YES" type="TextureButton" parent="deletePopup"]
 material = ExtResource("1_itmm8")

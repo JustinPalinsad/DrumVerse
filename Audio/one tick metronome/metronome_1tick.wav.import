@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drt4qeh0ejvt7"
+path="res://.godot/imported/metronome_1tick.wav-fd324cee516980ecfa019d3463680ffb.sample"
+
+[deps]
+
+source_file="res://Audio/one tick metronome/metronome_1tick.wav"
+dest_files=["res://.godot/imported/metronome_1tick.wav-fd324cee516980ecfa019d3463680ffb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
