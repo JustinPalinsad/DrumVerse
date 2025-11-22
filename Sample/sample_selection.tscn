@@ -1194,7 +1194,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson4Area" type="Area2D" parent="CarouselContainer/Control/Lesson4"]
 position = Vector2(6.47788, 377.793)
@@ -1255,7 +1255,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson5Area" type="Area2D" parent="CarouselContainer/Control/Lesson5"]
 position = Vector2(-1.99143, 377.501)
@@ -1316,7 +1316,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson6Area" type="Area2D" parent="CarouselContainer/Control/Lesson6"]
 position = Vector2(-27.1244, 377.51)
@@ -1385,7 +1385,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson7Area" type="Area2D" parent="CarouselContainer/Control/Lesson7"]
 position = Vector2(-18.7679, 377.442)
@@ -1439,7 +1439,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson8Area" type="Area2D" parent="CarouselContainer/Control/Lesson8"]
 position = Vector2(14.7796, 385.924)
@@ -1492,7 +1492,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson9Area" type="Area2D" parent="CarouselContainer/Control/Lesson9"]
 position = Vector2(14.7164, 385.719)
@@ -1544,7 +1544,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson10Area" type="Area2D" parent="CarouselContainer/Control/Lesson10"]
 visible = false
@@ -1587,20 +1587,20 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 280.0
-offset_top = 1079.0
-offset_right = 968.0
-offset_bottom = 1252.0
+offset_left = 184.0
+offset_top = 218.0
+offset_right = 872.0
+offset_bottom = 391.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("41_m0han")
 
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 160.0
-offset_top = 1167.0
-offset_right = 848.0
-offset_bottom = 1340.0
+offset_left = 184.0
+offset_top = 872.0
+offset_right = 872.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("42_75tn7")
 texture_pressed = ExtResource("42_ui2kx")
