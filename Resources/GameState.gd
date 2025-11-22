@@ -55,7 +55,7 @@ func save_data() -> void:
 	# Ensure grades array is properly sized
 	if module_grades.size() < MAX_GRADES:
 		for i in range(module_grades.size(), MAX_GRADES):
-			module_grades.append("N/A")
+			module_grades.append("")
 
 	var save_dict := {
 		"module_grades": module_grades,
@@ -85,9 +85,9 @@ func load_data() -> void:
 				# Pad module_grades if missing entries
 				for i in range(MAX_GRADES):
 					if i >= module_grades.size():
-						module_grades.append("N/A")
+						module_grades.append("")
 					elif module_grades[i] == null:
-						module_grades[i] = "N/A"
+						module_grades[i] = ""
 			else:
 				reset_grades()
 			file.close()
@@ -102,7 +102,7 @@ func load_data() -> void:
 func reset_grades() -> void:
 	module_grades.clear()
 	for i in range(MAX_GRADES):
-		module_grades.append("N/A")
+		module_grades.append("")
 
 	last_results = {}         # 👈 reset last results
 	first_time_play = true     # reset tutorial state

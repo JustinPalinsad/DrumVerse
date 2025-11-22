@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	print(GameState.module_grades[24])
+
 	grade_display()
 	change_card()
 	unlocked_advanced_lessons()
@@ -314,11 +314,9 @@ func grade_display():
 		if not grade_label:
 			continue
 
-		var grade = "N/A"
-		if index < GameState.module_grades.size():
-			grade = GameState.module_grades[index]
+		if index < GameState.module_grades.size() and GameState.module_grades[index] != "":
+			grade_label.text = "Grade: " + GameState.module_grades[index]
 
-		grade_label.text = "Grade: " + grade
 
 
 func change_card():

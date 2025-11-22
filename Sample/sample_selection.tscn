@@ -973,8 +973,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "random
-"
+text = "Grade:  N/A"
 
 [node name="Lesson1Area" type="Area2D" parent="CarouselContainer/Control/RubricButton"]
 position = Vector2(-14.8797, 324.479)
@@ -1028,7 +1027,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson1Area" type="Area2D" parent="CarouselContainer/Control/Lesson1"]
 position = Vector2(-14.8797, 324.479)
@@ -1074,7 +1073,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson2Area" type="Area2D" parent="CarouselContainer/Control/Lesson2"]
 position = Vector2(-1.90284, 386.16)
@@ -1134,7 +1133,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Lesson3Area" type="Area2D" parent="CarouselContainer/Control/Lesson3"]
 position = Vector2(-27.0363, 386.155)
@@ -1588,20 +1587,20 @@ shape = SubResource("RectangleShape2D_bulmj")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 184.0
-offset_top = 218.0
-offset_right = 872.0
-offset_bottom = 391.0
+offset_left = 280.0
+offset_top = 1079.0
+offset_right = 968.0
+offset_bottom = 1252.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("41_m0han")
 
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("4_lneat")
 layout_mode = 0
-offset_left = 184.0
-offset_top = 872.0
-offset_right = 872.0
-offset_bottom = 1045.0
+offset_left = 160.0
+offset_top = 1167.0
+offset_right = 848.0
+offset_bottom = 1340.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("42_75tn7")
 texture_pressed = ExtResource("42_ui2kx")
@@ -1609,10 +1608,10 @@ texture_pressed = ExtResource("42_ui2kx")
 [node name="CompleteGrades" type="Button" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 224.0
-offset_top = 176.0
-offset_right = 358.0
-offset_bottom = 207.0
+offset_left = 218.0
+offset_top = -64.0
+offset_right = 352.0
+offset_bottom = -33.0
 scale = Vector2(2.19875, 2.59371)
 text = "Complete Grade"
 

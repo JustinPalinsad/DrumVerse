@@ -362,7 +362,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson11"]
 material = ExtResource("1_7ykpt")
@@ -411,7 +411,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson12"]
 material = ExtResource("1_7ykpt")
@@ -461,7 +461,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson13"]
 visible = false
@@ -512,7 +512,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson14"]
 visible = false
@@ -563,7 +563,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson15"]
 visible = false
@@ -614,7 +614,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson16"]
 visible = false
@@ -672,7 +672,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson17"]
 visible = false
@@ -723,7 +723,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Sprite2D" type="Sprite2D" parent="carousel_container_3/Control/AdvanceLesson18"]
 visible = false
@@ -774,7 +774,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Paradiddle" type="Label" parent="carousel_container_3/Control/AdvanceLesson19"]
 material = ExtResource("1_7ykpt")
@@ -819,7 +819,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Paradiddle" type="Label" parent="carousel_container_3/Control/AdvanceLesson20"]
 material = ExtResource("1_7ykpt")
@@ -864,7 +864,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson21"]
 material = ExtResource("1_7ykpt")
@@ -909,7 +909,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson22"]
 material = ExtResource("1_7ykpt")
@@ -953,7 +953,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson23"]
 material = ExtResource("1_7ykpt")
@@ -997,7 +997,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson24"]
 material = ExtResource("1_7ykpt")
@@ -1042,7 +1042,7 @@ offset_right = 483.535
 offset_bottom = 588.585
 mouse_filter = 1
 theme_override_font_sizes/font_size = 96
-text = "Grade:  S"
+text = "Grade:  N/A"
 
 [node name="Stroke Roll" type="Label" parent="carousel_container_3/Control/AdvanceLesson25"]
 material = ExtResource("1_7ykpt")
@@ -1078,10 +1078,10 @@ texture = ExtResource("2_xibpe")
 [node name="Free" type="TextureButton" parent="."]
 material = ExtResource("1_7ykpt")
 layout_mode = 0
-offset_left = 280.0
-offset_top = 872.0
-offset_right = 968.0
-offset_bottom = 1045.0
+offset_left = 184.0
+offset_top = 218.0
+offset_right = 872.0
+offset_bottom = 391.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("24_4a6ue")
 texture_pressed = ExtResource("25_ihbiu")
@@ -1089,10 +1089,10 @@ texture_pressed = ExtResource("25_ihbiu")
 [node name="Advanced" type="TextureButton" parent="."]
 material = ExtResource("1_7ykpt")
 layout_mode = 0
-offset_left = 160.0
-offset_top = 960.0
-offset_right = 848.0
-offset_bottom = 1133.0
+offset_left = 184.0
+offset_top = 872.0
+offset_right = 872.0
+offset_bottom = 1045.0
 scale = Vector2(0.609104, 0.609104)
 texture_normal = ExtResource("26_y1kmf")
 

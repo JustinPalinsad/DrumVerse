@@ -270,16 +270,13 @@ func _on_down_pressed() -> void:
 	$CarouselContainer._down()
 	
 func grade_display():
-	$"CarouselContainer/Control/Lesson1/Grade Text".text = "Grade: " + GameState.module_grades[0]
-	$"CarouselContainer/Control/Lesson2/Grade Text".text = "Grade: " + GameState.module_grades[1]
-	$"CarouselContainer/Control/Lesson3/Grade Text".text = "Grade: " + GameState.module_grades[2]
-	$"CarouselContainer/Control/Lesson4/Grade Text".text = "Grade: " + GameState.module_grades[3]
-	$"CarouselContainer/Control/Lesson5/Grade Text".text = "Grade: " + GameState.module_grades[4]
-	$"CarouselContainer/Control/Lesson6/Grade Text".text = "Grade: " + GameState.module_grades[5]
-	$"CarouselContainer/Control/Lesson7/Grade Text".text = "Grade: " + GameState.module_grades[6]
-	$"CarouselContainer/Control/Lesson8/Grade Text".text = "Grade: " + GameState.module_grades[7]
-	$"CarouselContainer/Control/Lesson9/Grade Text".text = "Grade: " + GameState.module_grades[8]
-	$"CarouselContainer/Control/Lesson10/Grade Text".text = "Grade: " + GameState.module_grades[9]
+	var g = GameState.module_grades
+
+	for i in range(10):
+		if i < g.size() and g[i] != "":
+			var label_path = "CarouselContainer/Control/Lesson%d/Grade Text" % (i + 1)
+			get_node(label_path).text = "Grade: " + g[i]
+
 	
 ## Fix for Lesson Unlocking
 

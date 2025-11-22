@@ -8,6 +8,7 @@ var grade = "N/A"
 var mode = "practice"  # This is passed from the game scene
 
 func _ready():
+	print(GameState.module_grades)
 	# Set corresponding value labels
 	$HitsValue.text = "%d / %d" % [total_hits, total_notes]
 	$MissesValue.text = str(total_misses)
@@ -35,18 +36,21 @@ func _ready():
 	GameState.save_data()
 
 func _on_menu_pressed():
+	var lesson = GameState.lessons
+	var islocked = false
+	
+	if GameState.module_grades[lesson] == "":
+		islocked = true
+		
 	$ClickSoundPlayer.play()
 	GlobalAudio.mute_bgm(false)
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Menu Scenes/main_menu.tscn")
 	hide()
-	if GameState.lessons > 10:
+	if grade != "Failed" and islocked == false:
+		get_tree().change_scene_to_file("res://Menu Scenes/unlocked.tscn")
+	elif GameState.lessons > 10:
 		get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
 	else: 
 		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
-	#if grade == "Failed" and GameState.lessons > 10:
-		#get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
-	#elif grade == "Failed" and GameState.lessons < 10:
-		#get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
-	#else:
-		#get_tree().change_scene_to_file("res://Menu Scenes/unlocked.tscn")
+	
