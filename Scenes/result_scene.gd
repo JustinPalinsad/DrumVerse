@@ -53,4 +53,7 @@ func _on_menu_pressed():
 		get_tree().change_scene_to_file("res://Menu Scenes/advanced_menu.tscn")
 	else: 
 		get_tree().change_scene_to_file("res://Sample/sample_selection.tscn")
+		
+
+	
 	
