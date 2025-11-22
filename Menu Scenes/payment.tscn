@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://487nf8hj41jv" path="res://Assets/Line1.png" id="2_o70r3"]
 [ext_resource type="Texture2D" uid="uid://cjai6r1kqfqv3" path="res://Assets/Button.png" id="3_o70r3"]
 [ext_resource type="Texture2D" uid="uid://6owjqaogefuf" path="res://Assets/Drum.png" id="3_y5pwv"]
-[ext_resource type="Texture2D" uid="uid://cu8irpi1ak2y1" path="res://Assets/Stick.png" id="4_7kq2f"]
+[ext_resource type="Texture2D" uid="uid://dyokxh6o53pn" path="res://Assets/Stick.png" id="4_7kq2f"]
 [ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_7ydcn"]
 [ext_resource type="PackedScene" uid="uid://chhpipfjhex1m" path="res://Assets/Junk/ActualNotes/16_note.tscn" id="4_vskt2"]
 [ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="6_34x80"]
@@ -250,9 +250,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 486.0
+offset_left = 164.0
 offset_top = 249.0
-offset_right = 2563.0
+offset_right = 2241.0
 offset_bottom = 798.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -272,9 +272,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 792.0
+offset_left = 738.0
 offset_top = 249.0
-offset_right = 2869.0
+offset_right = 2815.0
 offset_bottom = 798.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -283,6 +283,63 @@ text = "Premium"
 label_settings = SubResource("LabelSettings_w8c1h")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Label5" type="Label" parent="Information"]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 84.0
+offset_top = 324.0
+offset_right = 6304.0
+offset_bottom = 7065.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.109988, 0.109988)
+text = "- whole note
+- half note
+- eighth Note
+- Sixteenth note
+- triplets
+- single stroke
+- double stroke
+- paradiddle
+- flam"
+label_settings = SubResource("LabelSettings_w8c1h")
+autowrap_mode = 1
+
+[node name="Label6" type="Label" parent="Information"]
+material = ExtResource("1_fcf3v")
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 591.0
+offset_top = 324.0
+offset_right = 6707.0
+offset_bottom = 7156.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0923779, 0.0923779)
+text = "- notes from free mode
++ brokenth sixteenth 
+notes (8 varieties)
++ paradiddle-diddle
++ double paradiddle
++ five stroke roll
++ six stroke roll
++ seven stroke roll
++ swiss army triplet
++ polyrhythm"
+label_settings = SubResource("LabelSettings_w8c1h")
 autowrap_mode = 1
 
 [node name="Label2" type="Label" parent="Information"]
@@ -306,3 +363,16 @@ label_settings = SubResource("LabelSettings_w8c1h")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
+
+[node name="Line2D" type="Line2D" parent="Information"]
+material = ExtResource("1_fcf3v")
+position = Vector2(593, 336)
+points = PackedVector2Array(-500, 0, 500, 0)
+width = 5.0
+
+[node name="Line2D2" type="Line2D" parent="Information"]
+material = ExtResource("1_fcf3v")
+position = Vector2(593, 536)
+rotation = 1.5708
+points = PackedVector2Array(-250, 0, 340, 0)
+width = 5.0
